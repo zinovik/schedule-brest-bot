@@ -1,14 +1,14 @@
 process.env["NTBA_FIX_319"] = 1;
 
 const path = require('path');
+const brestHockey = require('./brest-hockey');
 const express = require('express');
-app = express(); 
+app = express();
 
-const NUMBER = 54;
+const NUMBER = process.env.NUMBER || 54;
 
 require('dotenv').load();
 
-const axios = require("axios");
 const TelegramBot = require('node-telegram-bot-api');
 
 var bot = new TelegramBot(process.env.token, { polling: true });
@@ -38,36 +38,19 @@ bot.on('message', (msg) => {
   const chatName = msg.chat['first_name'];
 
   if (msg.text.toString().toLowerCase().indexOf('/start') > -1 ||
-      msg.text.toString().toLowerCase().indexOf('/echo') > -1) {
+    msg.text.toString().toLowerCase().indexOf('/echo') > -1) {
     return;
   }
 
   if (msg.text.toString().toLowerCase() === 'коньки' ||
-      msg.text.toString().toLowerCase() === 'skates' ||
-      msg.text.toString().toLowerCase() === 'ледовый') {
+    msg.text.toString().toLowerCase() === 'skates' ||
+    msg.text.toString().toLowerCase() === 'ледовый') {
     bot.sendMessage(chatId, 'Расписание сеансов свободного катания? Хорошо, я потопал на сайт brest-hockey.by...');
-    return axios.get('http://brest-hockey.by')
-      .then((response) => {
-        let page = response.data;
-        let n = page.indexOf('время начала сеансов');
-        let free = 'Вот, что я там вычитал: ';
-        free = `${free}${page.substring(n + 54, n + 1440)}`;
-        // free = free.replace(/<small>/g, '');
-        // free = free.replace(/<\/small>/g, '');
-        // free = free.replace(/<tr>/g, '');
-        // free = free.replace(/<\/tr>/g, '');
-        // free = free.replace(/<td>/g, '');
-        // free = free.replace(/<td >/g, '');
-        // free = free.replace(/<\/td>/g, '');
-        // free = free.replace(/<tr class="saturday">/g, '');
-        // free = free.replace(/<tr class="sunday">/g, '');
-        // free = free.replace(/<\/table>/g, '');
-        // free = free.replace(/  /g, '');
-        free = free.replace(/<(?:.|\n)*?>/gm, '');
-        return bot.sendMessage(chatId, free);
+    return brestHockey.getSchedule()
+      .then(schedule => {
+        return bot.sendMessage(chatId, schedule);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         return bot.sendMessage(chatId, 'Что-то сломалось(');
       });
   }
@@ -83,7 +66,7 @@ bot.on('message', (msg) => {
   }
 
   if (msg.text.toString().toLowerCase() === 'ёжик' ||
-      msg.text.toString().toLowerCase() === 'ежик') {
+    msg.text.toString().toLowerCase() === 'ежик') {
     let rh = Math.floor(Math.random() * NUMBER) + 1;
     return bot.sendMessage(chatId, `Случайный ёжик №${rh}: https://zinovikbot.herokuapp.com/${rh}.jpg`);
   }
