@@ -1,6 +1,7 @@
 process.env["NTBA_FIX_319"] = 1;
 
 const path = require('path');
+const axios = require('axios');
 const brestHockey = require('./brest-hockey');
 const express = require('express');
 app = express();
@@ -11,7 +12,10 @@ require('dotenv').load();
 
 const TelegramBot = require('node-telegram-bot-api');
 
-var bot = new TelegramBot(process.env.token, { polling: true });
+let bot = new TelegramBot(process.env.token, { polling: true });
+
+const scheduleChatIds = {};
+let lastDay;
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
@@ -48,7 +52,14 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, 'Расписание сеансов свободного катания? Хорошо, я потопал на сайт brest-hockey.by...');
     return brestHockey.getSchedule()
       .then(schedule => {
-        return bot.sendMessage(chatId, schedule);
+        bot.sendMessage(chatId, 'Вот, что я там вычитал:');
+        bot.sendMessage(chatId, schedule);
+
+        scheduleChatIds[chatId] = !scheduleChatIds[chatId];
+        if (scheduleChatIds[chatId]) {
+          return bot.sendMessage(chatId, 'Теперь я буду присылать тебе новое рассписание, если оно обновится!');
+        }
+        return bot.sendMessage(chatId, 'Я больше не буду присылать тебе новое рассписание.');
       })
       .catch(() => {
         return bot.sendMessage(chatId, 'Что-то сломалось(');
@@ -99,6 +110,22 @@ app.listen(app.get('port'), () => {
 });
 
 // Prevent Heroku Node App From Sleeping
-setInterval(function () {
+setInterval(() => {
   axios.get("http://zinovikbot.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+}, 15 * 60 * 1000); // every 15 minutes
+
+setInterval(() => {
+  if (Object.keys(scheduleChatIds).length) {
+    brestHockey.getSchedule()
+      .then(schedule => {
+        if (lastDay !== schedule.substring(0, 2)) {
+          lastDay = schedule.substring(0, 2);
+          Object.keys(scheduleChatIds).forEach((chatId) => {
+            bot.sendMessage(chatId, 'Расписание сеансов свободного катания обновилось:');
+            bot.sendMessage(chatId, schedule);
+          });
+        }
+        return bot.sendMessage(chatId, schedule);
+      })
+  }
+}, 4 * 60 * 60 * 1000); // every 4 hours
