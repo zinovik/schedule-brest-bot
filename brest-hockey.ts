@@ -11,8 +11,7 @@ function getSchedule() {
       table.forEach((item: { children: Array<any> }, i) => {
         if (i) {
           const daySchedule = `${item.children[0].textContent}, ${item.children[1].textContent}: ${item.children[2].textContent}`;
-          schedule = `${schedule}
-${daySchedule.replace(/\t/g, '')}`;
+          schedule = `${schedule}\n${daySchedule.replace(/\t/g, '')}`;
         }
       });
       return schedule;

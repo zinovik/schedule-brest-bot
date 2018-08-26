@@ -15,12 +15,10 @@ require('dotenv').load();
 const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 
 const scheduleChatIds = {};
-let lastDay: string;
+const cache: { schedule: string } = { schedule: '' };
 
 bot.onText(/\/echo (.+)/, ({ chat: { id } }, match) => {
-  const chatId = id;
-  const resp = match[1]; // the captured "whatever"
-  bot.sendMessage(chatId, resp);
+  bot.sendMessage(id, match[1]);
 });
 
 bot.onText(/\/start/, ({ chat: { id } }) => {
@@ -39,7 +37,6 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
   console.log(text);
 
   const chatId = id;
-  const chatName = first_name;
 
   if (text.toString().toLowerCase().indexOf('/start') > -1 ||
     text.toString().toLowerCase().indexOf('/echo') > -1) {
@@ -49,23 +46,15 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
   if (text.toString().toLowerCase() === 'коньки' ||
     text.toString().toLowerCase() === 'skates' ||
     text.toString().toLowerCase() === 'ледовый') {
-    bot.sendMessage(chatId, 'Расписание сеансов свободного катания? Хорошо, я потопал на сайт brest-hockey.by...');
-    return brestHockey.getSchedule()
-      .then((schedule: string) => {
-        bot.sendMessage(chatId, schedule);
-
-        scheduleChatIds[chatId] = !scheduleChatIds[chatId];
-        if (scheduleChatIds[chatId]) {
-          return bot.sendMessage(chatId, 'Теперь я буду присылать тебе новое рассписание, если оно обновится!');
-        }
-        return bot.sendMessage(chatId, 'Я больше не буду присылать тебе новое рассписание.');
-      })
-      .catch(() => {
-        return bot.sendMessage(chatId, 'Что-то сломалось(');
-      });
+    bot.sendMessage(chatId, cache.schedule || 'Что-то пошло не так(');
+    scheduleChatIds[chatId] = !scheduleChatIds[chatId];
+    if (scheduleChatIds[chatId]) {
+      return bot.sendMessage(chatId, 'Теперь я буду присылать тебе новое рассписание, если оно обновится!');
+    }
+    return bot.sendMessage(chatId, 'Я больше не буду присылать тебе новое рассписание.');
   }
 
-  if (text.toString().toLowerCase() === '/help') {
+  if (text.toString().toLowerCase() === 'help') {
     return bot.sendMessage(chatId, `Фуф. Вот, что я уже умею:
       1) Фу
       2) Фуфты
@@ -77,7 +66,7 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
 
   if (text.toString().toLowerCase() === 'ёжик' ||
     text.toString().toLowerCase() === 'ежик') {
-    let rh = Math.floor(Math.random() * NUMBER) + 1;
+    const rh = Math.floor(Math.random() * NUMBER) + 1;
     return bot.sendMessage(chatId, `Случайный ёжик №${rh}: https://zinovikbot.herokuapp.com/${rh}.jpg`);
   }
 
@@ -97,7 +86,7 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
     return bot.sendMessage(chatId, `Фу!`);
   }
 
-  bot.sendMessage(chatId, `Фуфтыфу, ${chatName}! ЁжикБот на связи =] Я не шплю тут.`);
+  bot.sendMessage(chatId, `Фуфтыфу, ${first_name}! ЁжикБот на связи =] Я не шплю тут.`);
 });
 
 app.set('port', process.env.PORT || 8100);
@@ -110,20 +99,29 @@ app.listen(app.get('port'), () => {
 
 // Prevent Heroku Node App From Sleeping
 setInterval(() => {
-  axios.get("http://zinovikbot.herokuapp.com");
+  axios.get('http://zinovikbot.herokuapp.com');
 }, 15 * 60 * 1000); // every 15 minutes
 
+brestHockey.getSchedule()
+  .then((schedule: string) => {
+    cache.schedule = schedule;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 setInterval(() => {
-  if (Object.keys(scheduleChatIds).length) {
-    brestHockey.getSchedule()
-      .then((schedule: string) => {
-        if (lastDay !== schedule.substring(0, 2)) {
-          lastDay = schedule.substring(0, 2);
-          Object.keys(scheduleChatIds).forEach((chatId: string) => {
-            bot.sendMessage(chatId, 'Расписание сеансов свободного катания обновилось');
-            bot.sendMessage(chatId, schedule);
-          });
-        }
-      })
-  }
-}, 4 * 60 * 60 * 1000); // every 4 hours
+  brestHockey.getSchedule()
+    .then((schedule: string) => {
+      if (cache.schedule !== schedule) {
+        cache.schedule = schedule;
+        Object.keys(scheduleChatIds).forEach((id: string) => {
+          bot.sendMessage(id, 'Расписание сеансов свободного катания обновилось');
+          bot.sendMessage(id, cache.schedule);
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}, 1 * 60 * 60 * 1000); // every hour
