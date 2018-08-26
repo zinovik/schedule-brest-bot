@@ -1,16 +1,14 @@
-const jsdom = require('jsdom');
-const axios = require('axios');
-
-const { JSDOM } = jsdom;
+import { JSDOM } from 'jsdom';
+import axios from 'axios';
 
 function getSchedule() {
   return axios.get('http://brest-hockey.by')
-    .then((response) => {
-      const dom = new JSDOM(response.data);
+    .then(({ data }) => {
+      const dom = new JSDOM(data);
       const table = Array.from(dom.window.document.querySelector('table tbody').children);
 
       let schedule = ``;
-      table.forEach((item, i) => {
+      table.forEach((item: { children: Array<any> }, i) => {
         if (i) {
           const daySchedule = `${item.children[0].textContent}, ${item.children[1].textContent}: ${item.children[2].textContent}`;
           schedule = `${schedule}
@@ -21,6 +19,6 @@ ${daySchedule.replace(/\t/g, '')}`;
     });
 }
 
-module.exports = {
+export default {
   getSchedule: getSchedule
 };

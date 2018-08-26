@@ -1,30 +1,30 @@
-process.env["NTBA_FIX_319"] = 1;
+process.env['NTBA_FIX_319'] = '1';
 
-const path = require('path');
-const axios = require('axios');
-const brestHockey = require('./brest-hockey');
-const express = require('express');
-app = express();
+import * as path from 'path';
+import axios from 'axios';
+import TelegramBot = require('node-telegram-bot-api');
+import express = require('express');
+import brestHockey from './brest-hockey';
 
-const NUMBER = process.env.NUMBER || 54;
+const app = express();
+
+const NUMBER: number = +process.env.NUMBER;
 
 require('dotenv').load();
 
-const TelegramBot = require('node-telegram-bot-api');
-
-let bot = new TelegramBot(process.env.token, { polling: true });
+const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 
 const scheduleChatIds = {};
-let lastDay;
+let lastDay: string;
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
-  const chatId = msg.chat.id;
+bot.onText(/\/echo (.+)/, ({ chat: { id } }, match) => {
+  const chatId = id;
   const resp = match[1]; // the captured "whatever"
   bot.sendMessage(chatId, resp);
 });
 
-bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id, "Фуфтыфу! ЁжикБот на связи =]", {
+bot.onText(/\/start/, ({ chat: { id } }) => {
+  bot.sendMessage(id, "Фуфтыфу! ЁжикБот на связи =]", {
     "reply_markup": {
       "keyboard": [
         ["Фу", "Фуфты", "Фуфтыфу"],
@@ -35,24 +35,23 @@ bot.onText(/\/start/, (msg) => {
   });
 });
 
-bot.on('message', (msg) => {
-  console.log(msg.text);
+bot.on('message', ({ text, chat: { id, first_name } }) => {
+  console.log(text);
 
-  const chatId = msg.chat.id;
-  const chatName = msg.chat['first_name'];
+  const chatId = id;
+  const chatName = first_name;
 
-  if (msg.text.toString().toLowerCase().indexOf('/start') > -1 ||
-    msg.text.toString().toLowerCase().indexOf('/echo') > -1) {
+  if (text.toString().toLowerCase().indexOf('/start') > -1 ||
+    text.toString().toLowerCase().indexOf('/echo') > -1) {
     return;
   }
 
-  if (msg.text.toString().toLowerCase() === 'коньки' ||
-    msg.text.toString().toLowerCase() === 'skates' ||
-    msg.text.toString().toLowerCase() === 'ледовый') {
+  if (text.toString().toLowerCase() === 'коньки' ||
+    text.toString().toLowerCase() === 'skates' ||
+    text.toString().toLowerCase() === 'ледовый') {
     bot.sendMessage(chatId, 'Расписание сеансов свободного катания? Хорошо, я потопал на сайт brest-hockey.by...');
     return brestHockey.getSchedule()
-      .then(schedule => {
-        bot.sendMessage(chatId, 'Вот, что я там вычитал:');
+      .then((schedule: string) => {
         bot.sendMessage(chatId, schedule);
 
         scheduleChatIds[chatId] = !scheduleChatIds[chatId];
@@ -66,7 +65,7 @@ bot.on('message', (msg) => {
       });
   }
 
-  if (msg.text.toString().toLowerCase() === '/help') {
+  if (text.toString().toLowerCase() === '/help') {
     return bot.sendMessage(chatId, `Фуф. Вот, что я уже умею:
       1) Фу
       2) Фуфты
@@ -76,25 +75,25 @@ bot.on('message', (msg) => {
       6) Ёжик`);
   }
 
-  if (msg.text.toString().toLowerCase() === 'ёжик' ||
-    msg.text.toString().toLowerCase() === 'ежик') {
+  if (text.toString().toLowerCase() === 'ёжик' ||
+    text.toString().toLowerCase() === 'ежик') {
     let rh = Math.floor(Math.random() * NUMBER) + 1;
     return bot.sendMessage(chatId, `Случайный ёжик №${rh}: https://zinovikbot.herokuapp.com/${rh}.jpg`);
   }
 
-  if (msg.text >= 1 && msg.text <= NUMBER) {
-    return bot.sendMessage(chatId, `Ёжик №${msg.text}: https://zinovikbot.herokuapp.com/${msg.text}.jpg`);
+  if (text >= 1 && text <= NUMBER) {
+    return bot.sendMessage(chatId, `Ёжик №${text}: https://zinovikbot.herokuapp.com/${text}.jpg`);
   }
 
-  if (msg.text.toString().toLowerCase() === 'фуфтыфу') {
+  if (text.toString().toLowerCase() === 'фуфтыфу') {
     return bot.sendMessage(chatId, `И тебе фуфтыфу, добрчеловек.`);
   }
 
-  if (msg.text.toString().toLowerCase() === 'фуфты') {
+  if (text.toString().toLowerCase() === 'фуфты') {
     return bot.sendMessage(chatId, `Фуфты-фуфты!`);
   }
 
-  if (msg.text.toString().toLowerCase() === 'фу') {
+  if (text.toString().toLowerCase() === 'фу') {
     return bot.sendMessage(chatId, `Фу!`);
   }
 
@@ -117,15 +116,14 @@ setInterval(() => {
 setInterval(() => {
   if (Object.keys(scheduleChatIds).length) {
     brestHockey.getSchedule()
-      .then(schedule => {
+      .then((schedule: string) => {
         if (lastDay !== schedule.substring(0, 2)) {
           lastDay = schedule.substring(0, 2);
-          Object.keys(scheduleChatIds).forEach((chatId) => {
-            bot.sendMessage(chatId, 'Расписание сеансов свободного катания обновилось:');
+          Object.keys(scheduleChatIds).forEach((chatId: string) => {
+            bot.sendMessage(chatId, 'Расписание сеансов свободного катания обновилось');
             bot.sendMessage(chatId, schedule);
           });
         }
-        return bot.sendMessage(chatId, schedule);
       })
   }
 }, 4 * 60 * 60 * 1000); // every 4 hours

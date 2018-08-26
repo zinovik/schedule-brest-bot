@@ -2,7 +2,7 @@
   "name": "zinovikbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.0.0",
@@ -10,10 +10,16 @@
     "jsdom": "^12.0.0",
     "node-telegram-bot-api": "^0.30.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.9.2",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.0.1"
+  },
   "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
