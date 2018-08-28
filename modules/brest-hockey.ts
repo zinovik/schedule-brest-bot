@@ -1,13 +1,15 @@
 import { JSDOM } from 'jsdom';
 import axios from 'axios';
 
-function getSchedule() {
+const SCHEDULE_TABLE_SELECTOR = 'table tbody';
+
+function getSchedule(): Promise<string> {
   return axios.get('http://brest-hockey.by')
     .then(({ data }) => {
       const dom = new JSDOM(data);
-      const table = Array.from(dom.window.document.querySelector('table tbody').children);
+      const table = Array.from(dom.window.document.querySelector(SCHEDULE_TABLE_SELECTOR).children);
 
-      let schedule = ``;
+      let schedule = '';
       table.forEach((item: { children: Array<any> }, i) => {
         if (i) {
           const daySchedule = `${item.children[0].textContent}, ${item.children[1].textContent}: ${item.children[2].textContent}`;
@@ -19,5 +21,5 @@ function getSchedule() {
 }
 
 export default {
-  getSchedule: getSchedule
+  getSchedule: getSchedule,
 };

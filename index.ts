@@ -1,123 +1,85 @@
 process.env['NTBA_FIX_319'] = '1';
 
+require('dotenv').load();
 import * as path from 'path';
 import axios from 'axios';
 import TelegramBot = require('node-telegram-bot-api');
 import express = require('express');
-import brestHockey from './brest-hockey';
+import db from './modules/db';
+import hedgehog from './modules/hedgehog';
+import brestHockey from './modules/brest-hockey';
 
 const app = express();
-
-const NUMBER: number = +process.env.NUMBER;
-
-require('dotenv').load();
-
 const bot = new TelegramBot(process.env.TOKEN, { polling: true });
-
-const scheduleChatIds = {};
-const cache: { schedule: string } = { schedule: '' };
 
 bot.onText(/\/echo (.+)/, ({ chat: { id } }, match) => {
   bot.sendMessage(id, match[1]);
 });
 
 bot.onText(/\/start/, ({ chat: { id } }) => {
-  bot.sendMessage(id, "Фуфтыфу! ЁжикБот на связи =]", {
-    "reply_markup": {
-      "keyboard": [
-        ["Фу", "Фуфты", "Фуфтыфу"],
-        ["Коньки"],
-        ["Ёжик", "" + (Math.floor(Math.random() * NUMBER) + 1)]
-      ]
-    }
-  });
+  bot.sendMessage(id, hedgehog.getStartMessage(), hedgehog.getStartCommands());
 });
 
 bot.on('message', ({ text, chat: { id, first_name } }) => {
-  console.log(text);
+  const input = text.toString().toLowerCase();
+  console.log(id, input);
 
-  const chatId = id;
-
-  if (text.toString().toLowerCase().indexOf('/start') > -1 ||
-    text.toString().toLowerCase().indexOf('/echo') > -1) {
+  if (input.indexOf('/start') > -1 ||
+    input.indexOf('/echo') > -1) {
     return;
   }
 
-  if (text.toString().toLowerCase() === 'коньки' ||
-    text.toString().toLowerCase() === 'skates' ||
-    text.toString().toLowerCase() === 'ледовый') {
-    bot.sendMessage(chatId, cache.schedule || 'Что-то пошло не так(');
-    scheduleChatIds[chatId] = !scheduleChatIds[chatId];
-    if (scheduleChatIds[chatId]) {
-      return bot.sendMessage(chatId, 'Теперь я буду присылать тебе новое рассписание, если оно обновится!');
-    }
-    return bot.sendMessage(chatId, 'Я больше не буду присылать тебе новое рассписание.');
+  if (input === 'коньки' ||
+    input === 'skates' ||
+    input === 'ледовый') {
+
+    return Promise.all([db.getSchedule(), db.toggleSubscribedChatId(id)])
+      .then(([schedule, subscribed]: any[]) => {
+        bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
+        if (subscribed) {
+          return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
+        }
+        return bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+      });
   }
 
-  if (text.toString().toLowerCase() === 'help') {
-    return bot.sendMessage(chatId, `Фуф. Вот, что я уже умею:
-      1) Фу
-      2) Фуфты
-      3) Фуфтыфу
-      4) Коньки/Ледовый/Skates
-      5) Номер ёжика в каталогизаторе ёжиков
-      6) Ёжик`);
-  }
-
-  if (text.toString().toLowerCase() === 'ёжик' ||
-    text.toString().toLowerCase() === 'ежик') {
-    const rh = Math.floor(Math.random() * NUMBER) + 1;
-    return bot.sendMessage(chatId, `Случайный ёжик №${rh}: https://zinovikbot.herokuapp.com/${rh}.jpg`);
-  }
-
-  if (text >= 1 && text <= NUMBER) {
-    return bot.sendMessage(chatId, `Ёжик №${text}: https://zinovikbot.herokuapp.com/${text}.jpg`);
-  }
-
-  if (text.toString().toLowerCase() === 'фуфтыфу') {
-    return bot.sendMessage(chatId, `И тебе фуфтыфу, добрчеловек.`);
-  }
-
-  if (text.toString().toLowerCase() === 'фуфты') {
-    return bot.sendMessage(chatId, `Фуфты-фуфты!`);
-  }
-
-  if (text.toString().toLowerCase() === 'фу') {
-    return bot.sendMessage(chatId, `Фу!`);
-  }
-
-  bot.sendMessage(chatId, `Фуфтыфу, ${first_name}! ЁжикБот на связи =] Я не шплю тут.`);
+  return bot.sendMessage(id, hedgehog.getResponse({ text: input, name: first_name }));
 });
 
 app.set('port', process.env.PORT || 8100);
 
-app.use(express.static(path.join(__dirname, 'hedgehogs')));
+app.use(express.static(path.join(__dirname, '../hedgehogs')));
 
 app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-// Prevent Heroku Node App From Sleeping
-setInterval(() => {
-  axios.get('http://zinovikbot.herokuapp.com');
-}, 15 * 60 * 1000); // every 15 minutes
-
 brestHockey.getSchedule()
-  .then((schedule: string) => {
-    cache.schedule = schedule;
+  .then((scheduleBrestHockey: string) => {
+    return db.setSchedule(scheduleBrestHockey);
   })
   .catch((error) => {
     console.log(error);
   });
 
+// Schedule Subscription
 setInterval(() => {
-  brestHockey.getSchedule()
-    .then((schedule: string) => {
-      if (cache.schedule !== schedule) {
-        cache.schedule = schedule;
-        Object.keys(scheduleChatIds).forEach((id: string) => {
-          bot.sendMessage(id, 'Расписание сеансов свободного катания обновилось');
-          bot.sendMessage(id, cache.schedule);
+  let schedule: string;
+  let chatIds: any;
+  Promise.all([brestHockey.getSchedule(), db.getSchedule(), db.getSubscribedChatIds()])
+    .then(([scheduleBrestHockey, scheduleDb, subscribedChatIds]) => {
+      if (scheduleDb !== scheduleBrestHockey) {
+        schedule = scheduleBrestHockey;
+        chatIds = subscribedChatIds;
+        return db.setSchedule(scheduleBrestHockey);
+      }
+      return Promise.resolve('');
+    })
+    .then(() => {
+      if (schedule && chatIds) {
+        Object.keys(chatIds).forEach((id: string) => {
+          bot.sendMessage(id, hedgehog.getUpdateMessage());
+          bot.sendMessage(id, schedule);
         });
       }
     })
@@ -125,3 +87,8 @@ setInterval(() => {
       console.log(error);
     });
 }, 1 * 60 * 60 * 1000); // every hour
+
+// Prevent Heroku Node App From Sleeping
+setInterval(() => {
+  axios.get('https://zinovikbot.herokuapp.com');
+}, 15 * 60 * 1000); // every 15 minutes

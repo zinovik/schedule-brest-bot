@@ -10,7 +10,8 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "index.ts", "brest-hockey.ts"
+    "index.ts",
+    "modules/*.ts"
   ],
   "exclude": [
     "node_modules"
