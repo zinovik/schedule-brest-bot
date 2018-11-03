@@ -1,14 +1,16 @@
 import redis = require('redis');
 
-const SCHEDULE: string = 'schedule';
-const SUBSCRIBED_CHAT_IDS: string = 'subscribedChatIds';
+const SCHEDULE_SKATES: string = 'scheduleSkates';
+const SUBSCRIBED_SKATES_CHAT_IDS: string = 'subscribedSkatesChatIds';
+const SCHEDULE_POOL: string = 'schedulePool';
+const SUBSCRIBED_POOL_CHAT_IDS: string = 'subscribedPoolChatIds';
 
 const client = redis.createClient(process.env.REDIS_URL);
 
-function getSchedule(): Promise<string> {
+const getScheduleSkates = (): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(SCHEDULE, (err: string, reply: string) => {
-      console.log('getSchedule()', err, reply);
+    client.get(SCHEDULE_SKATES, (err: string, reply: string) => {
+      console.log('getScheduleSkates()', err, reply);
       if (err) {
         reject(err);
       }
@@ -17,10 +19,10 @@ function getSchedule(): Promise<string> {
   });
 }
 
-function setSchedule(schedule: string): Promise<string> {
+const setScheduleSkates = (schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SCHEDULE, schedule, (err: string, reply: string) => {
-      console.log('setSchedule()', err, reply);
+    client.set(SCHEDULE_SKATES, schedule, (err: string, reply: string) => {
+      console.log('setScheduleSkates()', err, reply);
       if (err) {
         reject(err);
       }
@@ -29,10 +31,10 @@ function setSchedule(schedule: string): Promise<string> {
   });
 }
 
-function getSubscribedChatIds(): Promise<any> {
+const getSubscribedSkatesChatIds = (): Promise<any> => {
   return new Promise((resolve, reject) => {
-    client.get(SUBSCRIBED_CHAT_IDS, (err: string, reply: string) => {
-      console.log('getSubscribedChatIds()', err, reply);
+    client.get(SUBSCRIBED_SKATES_CHAT_IDS, (err: string, reply: string) => {
+      console.log('getSubscribedSkatesChatIds()', err, reply);
       if (err) {
         reject(err);
       }
@@ -44,24 +46,89 @@ function getSubscribedChatIds(): Promise<any> {
   });
 }
 
-function toggleSubscribedChatId(subscribedChatId: string): Promise<boolean> {
+const toggleSubscribedSkatesChatId = (subscribedChatId: string): Promise<boolean> => {
   let subscribed: boolean;
 
-  return getSubscribedChatIds()
+  return getSubscribedSkatesChatIds()
     .then((subscribedChatIds) => {
       subscribedChatIds[subscribedChatId] = !subscribedChatIds[subscribedChatId];
       subscribed = subscribedChatIds[subscribedChatId];
-      return setSubscribedChatIds(subscribedChatIds);
+      return setSubscribedSkatesChatIds(subscribedChatIds);
     })
     .then(() => {
       return Promise.resolve(subscribed);
     });
 }
 
-function setSubscribedChatIds(subscribedChatIds: any): Promise<string> {
+const setSubscribedSkatesChatIds = (subscribedChatIds: any): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SUBSCRIBED_CHAT_IDS, JSON.stringify(subscribedChatIds), (err: string, reply: string) => {
-      console.log('setSubscribedChatIds()', err, reply);
+    client.set(SUBSCRIBED_SKATES_CHAT_IDS, JSON.stringify(subscribedChatIds), (err: string, reply: string) => {
+      console.log('setSubscribedSkatesChatIds()', err, reply);
+      if (err) {
+        reject(err);
+      }
+      resolve(reply);
+    });
+  });
+}
+
+const getSchedulePool = (): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    client.get(SCHEDULE_POOL, (err: string, reply: string) => {
+      console.log('getSchedulePool()', err, reply);
+      if (err) {
+        reject(err);
+      }
+      resolve(reply);
+    });
+  });
+}
+
+const setSchedulePool = (schedule: string): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    client.set(SCHEDULE_POOL, schedule, (err: string, reply: string) => {
+      console.log('setSchedulePool()', err, reply);
+      if (err) {
+        reject(err);
+      }
+      resolve(reply);
+    });
+  });
+}
+
+const getSubscribedPoolChatIds = (): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    client.get(SUBSCRIBED_POOL_CHAT_IDS, (err: string, reply: string) => {
+      console.log('getSubscribedPoolChatIds()', err, reply);
+      if (err) {
+        reject(err);
+      }
+      if (reply) {
+        return resolve(JSON.parse(reply));
+      }
+      resolve({});
+    });
+  });
+}
+
+const toggleSubscribedPoolChatId = (subscribedChatId: string): Promise<boolean> => {
+  let subscribed: boolean;
+
+  return getSubscribedPoolChatIds()
+    .then((subscribedChatIds) => {
+      subscribedChatIds[subscribedChatId] = !subscribedChatIds[subscribedChatId];
+      subscribed = subscribedChatIds[subscribedChatId];
+      return setSubscribedPoolChatIds(subscribedChatIds);
+    })
+    .then(() => {
+      return Promise.resolve(subscribed);
+    });
+}
+
+const setSubscribedPoolChatIds = (subscribedChatIds: any): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    client.set(SUBSCRIBED_POOL_CHAT_IDS, JSON.stringify(subscribedChatIds), (err: string, reply: string) => {
+      console.log('setSubscribedPoolChatIds()', err, reply);
       if (err) {
         reject(err);
       }
@@ -71,8 +138,12 @@ function setSubscribedChatIds(subscribedChatIds: any): Promise<string> {
 }
 
 export default {
-  getSchedule: getSchedule,
-  setSchedule: setSchedule,
-  getSubscribedChatIds: getSubscribedChatIds,
-  toggleSubscribedChatId: toggleSubscribedChatId,
+  getScheduleSkates: getScheduleSkates,
+  setScheduleSkates: setScheduleSkates,
+  getSubscribedSkatesChatIds: getSubscribedSkatesChatIds,
+  toggleSubscribedSkatesChatId: toggleSubscribedSkatesChatId,
+  getSchedulePool: getSchedulePool,
+  setSchedulePool: setSchedulePool,
+  getSubscribedPoolChatIds: getSubscribedPoolChatIds,
+  toggleSubscribedPoolChatId: toggleSubscribedPoolChatId,
 };

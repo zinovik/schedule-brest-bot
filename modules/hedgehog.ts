@@ -7,7 +7,7 @@ function getStartCommands(): any {
     'reply_markup': {
       'keyboard': [
         ['Фу', 'Фуфты', 'Фуфтыфу'],
-        ['Коньки'],
+        ['Коньки', 'Бассейн'],
         ['Ёжик', '' + (Math.floor(Math.random() * +process.env.NUMBER) + 1)]
       ]
     }
@@ -21,8 +21,9 @@ function getResponse({ text, name }: { text: string, name: string }): string {
       2) Фуфты
       3) Фуфтыфу
       4) Коньки/Ледовый/Skates
-      5) Номер ёжика в каталогизаторе ёжиков
-      6) Ёжик`;
+      5) Бассейн/Дввс/Pool
+      6) Номер ёжика в каталогизаторе ёжиков
+      7) Ёжик`;
   }
 
   if (text === 'ёжик' ||
@@ -66,6 +67,11 @@ function getErrorMessage(): string {
   return 'Что-то пошло не так(';
 }
 
+function getInviteMessage(): string {
+  return `Заходи в ${process.env.CHANNEL_ID} для получения обновлений расписания`;
+}
+
+
 export default {
   getStartMessage: getStartMessage,
   getStartCommands: getStartCommands,
@@ -74,4 +80,5 @@ export default {
   getUnsubscriptionMessage: getUnsubscriptionMessage,
   getUpdateMessage: getUpdateMessage,
   getErrorMessage: getErrorMessage,
+  getInviteMessage: getInviteMessage,
 };

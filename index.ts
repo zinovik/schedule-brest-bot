@@ -5,9 +5,11 @@ import * as path from 'path';
 import axios from 'axios';
 import TelegramBot = require('node-telegram-bot-api');
 import express = require('express');
+
 import db from './modules/db';
 import hedgehog from './modules/hedgehog';
 import brestHockey from './modules/brest-hockey';
+import brestDvvs from './modules/brest-dvvs';
 
 const app = express();
 const bot = new TelegramBot(process.env.TOKEN, { polling: true });
@@ -33,9 +35,25 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
     input === 'skates' ||
     input === 'ледовый') {
 
-    return Promise.all([db.getSchedule(), db.toggleSubscribedChatId(id)])
+    return Promise.all([db.getScheduleSkates(), db.toggleSubscribedSkatesChatId(id)])
       .then(([schedule, subscribed]: any[]) => {
         bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
+        bot.sendMessage(id, hedgehog.getInviteMessage());
+        if (subscribed) {
+          return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
+        }
+        return bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+      });
+  }
+
+  if (input === 'бассейн' ||
+    input === 'poll' ||
+    input === 'дввс') {
+
+    return Promise.all([db.getSchedulePool(), db.toggleSubscribedPoolChatId(id)])
+      .then(([schedule, subscribed]: any[]) => {
+        bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
+        bot.sendMessage(id, hedgehog.getInviteMessage());
         if (subscribed) {
           return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
         }
@@ -56,7 +74,15 @@ app.listen(app.get('port'), () => {
 
 brestHockey.getSchedule()
   .then((scheduleBrestHockey: string) => {
-    return db.setSchedule(scheduleBrestHockey);
+    return db.setScheduleSkates(scheduleBrestHockey);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+brestDvvs.getSchedule()
+  .then((scheduleBrestDvvs: string) => {
+    return db.setSchedulePool(scheduleBrestDvvs);
   })
   .catch((error) => {
     console.log(error);
@@ -64,22 +90,47 @@ brestHockey.getSchedule()
 
 // Schedule Subscription
 setInterval(() => {
-  let schedule: string;
-  let chatIds: any;
-  Promise.all([brestHockey.getSchedule(), db.getSchedule(), db.getSubscribedChatIds()])
+  let scheduleSkates: string;
+  let chatIdsSkates: any;
+  Promise.all([brestHockey.getSchedule(), db.getScheduleSkates(), db.getSubscribedSkatesChatIds()])
     .then(([scheduleBrestHockey, scheduleDb, subscribedChatIds]) => {
       if (scheduleDb !== scheduleBrestHockey) {
-        schedule = scheduleBrestHockey;
-        chatIds = subscribedChatIds;
-        return db.setSchedule(scheduleBrestHockey);
+        scheduleSkates = scheduleBrestHockey;
+        chatIdsSkates = subscribedChatIds;
+        chatIdsSkates[process.env.CHANNEL_ID] = true;
+        return db.setScheduleSkates(scheduleBrestHockey);
       }
       return Promise.resolve('');
     })
     .then(() => {
-      if (schedule && chatIds) {
-        Object.keys(chatIds).forEach((id: string) => {
+      if (scheduleSkates && chatIdsSkates) {
+        Object.keys(chatIdsSkates).forEach((id: string) => {
           bot.sendMessage(id, hedgehog.getUpdateMessage());
-          bot.sendMessage(id, schedule);
+          bot.sendMessage(id, scheduleSkates);
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  let schedulePool: string;
+  let chatIdsPool: any;
+  Promise.all([brestDvvs.getSchedule(), db.getSchedulePool(), db.getSubscribedPoolChatIds()])
+    .then(([scheduleBrestDvvs, scheduleDb, subscribedChatIds]) => {
+      if (scheduleDb !== scheduleBrestDvvs) {
+        schedulePool = scheduleBrestDvvs;
+        chatIdsPool = subscribedChatIds;
+        chatIdsPool[process.env.CHANNEL_ID] = true;
+        return db.setSchedulePool(scheduleBrestDvvs);
+      }
+      return Promise.resolve('');
+    })
+    .then(() => {
+      if (schedulePool && chatIdsPool) {
+        Object.keys(chatIdsPool).forEach((id: string) => {
+          bot.sendMessage(id, hedgehog.getUpdateMessage());
+          bot.sendMessage(id, schedulePool);
         });
       }
     })
