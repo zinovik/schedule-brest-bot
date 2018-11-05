@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 const URL = 'http://brest-dvvs.by/sched';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-const getSchedule = (): Promise<string> => {
+export const getSchedule = (): Promise<string> => {
   return axios.get(URL)
     .then(({ data }: { data: string }) => {
       const dom = new JSDOM(data);
@@ -20,10 +20,10 @@ const getSchedule = (): Promise<string> => {
 
       const pool50mSchedule = Array.from(table[6].children[0].children[0].children);
 
-      pool50mSchedule.forEach((row: { children: any[] }, i) => {
+      pool50mSchedule.forEach((row: { children: any[] }) => {
         const rowChildren = Array.from(row.children);
         rowChildren.forEach((col: any) => {
-          schedule = `${schedule} ${col.textContent.trim()}`;
+          schedule = `${schedule} ${col.textContent.trim().replace(/_/g, '-')}`;
         });
         schedule = `${schedule}\n`;
       });
@@ -37,19 +37,15 @@ const getSchedule = (): Promise<string> => {
 
       const pool25mSchedule = Array.from(table[11].children[0].children[0].children[0].children);
 
-      pool25mSchedule.forEach((row: { children: any[] }, i) => {
+      pool25mSchedule.forEach((row: { children: any[] }) => {
         const rowChildren = Array.from(row.children);
-        rowChildren.forEach((col: any, j) => {
-          schedule = `${schedule} ${col.textContent.trim()}`;
+        rowChildren.forEach((col: any) => {
+          schedule = `${schedule} ${col.textContent.trim().replace(/_/g, '-')}`;
         });
         schedule = `${schedule}\n`;
       });
 
       return schedule;
     })
-    .catch(() => '');
-}
-
-export default {
-  getSchedule: getSchedule,
+    .catch((): string => '');
 };

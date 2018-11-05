@@ -6,21 +6,21 @@ import axios from 'axios';
 import TelegramBot = require('node-telegram-bot-api');
 import express = require('express');
 
-import db from './modules/db';
-import hedgehog from './modules/hedgehog';
-import brestHockey from './modules/brest-hockey';
-import brestDvvs from './modules/brest-dvvs';
+import * as db from './modules/db';
+import * as hedgehog from './modules/hedgehog';
+import * as brestHockey from './modules/brest-hockey';
+import * as brestDvvs from './modules/brest-dvvs';
 
 const app = express();
 const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 
-bot.onText(/\/echo (.+)/, ({ chat: { id } }, match) => {
-  bot.sendMessage(id, match[1]);
-});
-
 bot.onText(/\/start/, ({ chat: { id } }) => {
   bot.sendMessage(id, hedgehog.getStartMessage(), hedgehog.getStartCommands());
 });
+
+bot.on('new_chat_members', (ctx) => {
+  bot.sendMessage(process.env.CHANNEL_ID, `Welcome, ${ctx.message.new_chat_members}!`);
+})
 
 bot.on('message', ({ text, chat: { id, first_name } }) => {
   const input = text.toString().toLowerCase();
@@ -31,107 +31,93 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
     return;
   }
 
-  if (input === 'коньки' ||
-    input === 'skates' ||
-    input === 'ледовый') {
-
+  if (hedgehog.isSkatesWord(input)) {
     return Promise.all([db.getScheduleSkates(), db.toggleSubscribedSkatesChatId(id)])
       .then(([schedule, subscribed]: any[]) => {
-        bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
         bot.sendMessage(id, hedgehog.getInviteMessage());
         if (subscribed) {
+          bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
           return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
         }
-        return bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+        bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
-  if (input === 'бассейн' ||
-    input === 'poll' ||
-    input === 'дввс') {
-
+  if (hedgehog.isPoolWord(input)) {
     return Promise.all([db.getSchedulePool(), db.toggleSubscribedPoolChatId(id)])
       .then(([schedule, subscribed]: any[]) => {
-        bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
         bot.sendMessage(id, hedgehog.getInviteMessage());
         if (subscribed) {
+          bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
           return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
         }
-        return bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+        bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
-  return bot.sendMessage(id, hedgehog.getResponse({ text: input, name: first_name }));
+  bot.sendMessage(id, hedgehog.getResponse({ text: input, name: first_name }));
 });
 
 app.set('port', process.env.PORT || 8100);
-
 app.use(express.static(path.join(__dirname, '../hedgehogs')));
-
 app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-brestHockey.getSchedule()
-  .then((scheduleBrestHockey: string) => {
-    return db.setScheduleSkates(scheduleBrestHockey);
+// Get first schedules
+Promise.all([brestHockey.getSchedule(), brestDvvs.getSchedule()])
+  .then(([scheduleBrestHockey, scheduleBrestDvvs]) => {
+    Promise.all([db.setScheduleSkates(scheduleBrestHockey), db.setSchedulePool(scheduleBrestDvvs),]);
   })
   .catch((error) => {
     console.log(error);
   });
 
-brestDvvs.getSchedule()
-  .then((scheduleBrestDvvs: string) => {
-    return db.setSchedulePool(scheduleBrestDvvs);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-// Schedule Subscription
+// Schedules subscription
 setInterval(() => {
-  let scheduleSkates: string;
-  let chatIdsSkates: any;
-  Promise.all([brestHockey.getSchedule(), db.getScheduleSkates(), db.getSubscribedSkatesChatIds()])
-    .then(([scheduleBrestHockey, scheduleDb, subscribedChatIds]) => {
-      if (scheduleDb !== scheduleBrestHockey) {
-        scheduleSkates = scheduleBrestHockey;
-        chatIdsSkates = subscribedChatIds;
-        chatIdsSkates[process.env.CHANNEL_ID] = true;
-        return db.setScheduleSkates(scheduleBrestHockey);
+  Promise.all([
+    brestHockey.getSchedule(),
+    db.getScheduleSkates(),
+    db.getSubscribedSkatesChatIds(),
+    brestDvvs.getSchedule(),
+    db.getSchedulePool(),
+    db.getSubscribedPoolChatIds(),
+  ])
+    .then(([
+      scheduleBrestHockey,
+      scheduleSkatesDb,
+      subscribedSkatesChatIds,
+      scheduleBrestDvvs,
+      schedulePoolDb,
+      subscribedPoolChatIds,
+    ]) => {
+      if (scheduleSkatesDb !== scheduleBrestHockey) {
+        subscribedSkatesChatIds[process.env.CHANNEL_ID] = true;
+        if (scheduleBrestHockey) {
+          Object.keys(subscribedSkatesChatIds).forEach((id: string) => {
+            if (subscribedSkatesChatIds[id]) {
+              bot.sendMessage(id, scheduleBrestHockey);
+            }
+          });
+        }
+        db.setScheduleSkates(scheduleBrestHockey);
       }
-      return Promise.resolve('');
-    })
-    .then(() => {
-      if (scheduleSkates && chatIdsSkates) {
-        Object.keys(chatIdsSkates).forEach((id: string) => {
-          bot.sendMessage(id, hedgehog.getUpdateMessage());
-          bot.sendMessage(id, scheduleSkates);
-        });
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-  let schedulePool: string;
-  let chatIdsPool: any;
-  Promise.all([brestDvvs.getSchedule(), db.getSchedulePool(), db.getSubscribedPoolChatIds()])
-    .then(([scheduleBrestDvvs, scheduleDb, subscribedChatIds]) => {
-      if (scheduleDb !== scheduleBrestDvvs) {
-        schedulePool = scheduleBrestDvvs;
-        chatIdsPool = subscribedChatIds;
-        chatIdsPool[process.env.CHANNEL_ID] = true;
-        return db.setSchedulePool(scheduleBrestDvvs);
-      }
-      return Promise.resolve('');
-    })
-    .then(() => {
-      if (schedulePool && chatIdsPool) {
-        Object.keys(chatIdsPool).forEach((id: string) => {
-          bot.sendMessage(id, hedgehog.getUpdateMessage());
-          bot.sendMessage(id, schedulePool);
-        });
+      if (schedulePoolDb !== scheduleBrestDvvs) {
+        subscribedPoolChatIds[process.env.CHANNEL_ID] = true;
+        if (scheduleBrestDvvs) {
+          Object.keys(subscribedPoolChatIds).forEach((id: string) => {
+            if (subscribedPoolChatIds[id]) {
+              bot.sendMessage(id, scheduleBrestDvvs);
+            }
+          });
+        }
+        db.setSchedulePool(scheduleBrestDvvs);
       }
     })
     .catch((error) => {

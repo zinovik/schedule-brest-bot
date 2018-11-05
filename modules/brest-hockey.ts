@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 const URL = 'http://brest-hockey.by';
 const SCHEDULE_TABLE_SELECTOR = 'table tbody';
 
-const getSchedule = (): Promise<string> => {
+export const getSchedule = (): Promise<string> => {
   return axios.get(URL)
     .then(({ data }: { data: string }) => {
       const dom = new JSDOM(data);
@@ -19,9 +19,5 @@ const getSchedule = (): Promise<string> => {
       });
       return schedule;
     })
-    .catch(() => '');
-}
-
-export default {
-  getSchedule: getSchedule,
+    .catch((): string => '');
 };

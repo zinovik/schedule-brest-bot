@@ -1,20 +1,31 @@
-function getStartMessage(): string {
-  return 'Фуфтыфу! ЁжикБот на связи =]';
-}
+const SKATES_WORDS = ['коньки', 'skates', 'ледовый'];
+const POOL_WORDS = ['бассейн', 'pool', 'дввс'];
 
-function getStartCommands(): any {
+export const isSkatesWord = (word: string): boolean => {
+  return SKATES_WORDS.indexOf(word) >= 0;
+};
+
+export const isPoolWord = (word: string): boolean => {
+  return POOL_WORDS.indexOf(word) >= 0;
+};
+
+export const getStartMessage = (): string => {
+  return 'Фуфтыфу! ЁжикБот на связи =]';
+};
+
+export const getStartCommands = (): any => {
   return {
     'reply_markup': {
       'keyboard': [
         ['Фу', 'Фуфты', 'Фуфтыфу'],
         ['Коньки', 'Бассейн'],
-        ['Ёжик', '' + (Math.floor(Math.random() * +process.env.NUMBER) + 1)]
+        ['Ёжик', '' + (Math.floor(Math.random() * +process.env.NUMBER) + 1)],
       ]
     }
   };
-}
+};
 
-function getResponse({ text, name }: { text: string, name: string }): string {
+export const getResponse = ({ text, name }: { text: string, name: string }): string => {
   if (text === 'help') {
     return `Фуф. Вот, что я уже умею:
       1) Фу
@@ -49,36 +60,20 @@ function getResponse({ text, name }: { text: string, name: string }): string {
   }
 
   return `Фуфтыфу, ${name}! ЁжикБот на связи =] Я не шплю тут.`;
-}
+};
 
-function getSubscriptionMessage(): string {
+export const getSubscriptionMessage = (): string => {
   return 'Теперь я буду присылать тебе новое рассписание, если оно обновится!';
-}
+};
 
-function getUnsubscriptionMessage(): string {
+export const getUnsubscriptionMessage = (): string => {
   return 'Я больше не буду присылать тебе новое рассписание.';
-}
+};
 
-function getUpdateMessage(): string {
-  return 'Расписание сеансов свободного катания обновилось';
-}
-
-function getErrorMessage(): string {
+export const getErrorMessage = (): string => {
   return 'Что-то пошло не так(';
-}
+};
 
-function getInviteMessage(): string {
+export const getInviteMessage = (): string => {
   return `Заходи в ${process.env.CHANNEL_ID} для получения обновлений расписания`;
-}
-
-
-export default {
-  getStartMessage: getStartMessage,
-  getStartCommands: getStartCommands,
-  getResponse: getResponse,
-  getSubscriptionMessage: getSubscriptionMessage,
-  getUnsubscriptionMessage: getUnsubscriptionMessage,
-  getUpdateMessage: getUpdateMessage,
-  getErrorMessage: getErrorMessage,
-  getInviteMessage: getInviteMessage,
 };
