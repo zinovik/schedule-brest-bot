@@ -13,10 +13,7 @@ export const getSchedule = (): Promise<string> => {
       let schedule = '';
 
       const pool50mTitle = table[5].children[0].textContent.trim();
-      schedule = `${schedule}${pool50mTitle}`;
-
-      const pool50mDates = table[6].children[0].children[0].children[0].textContent.trim();
-      schedule = `${schedule}\n${pool50mDates}`;
+      schedule = `${schedule}${pool50mTitle}\n`;
 
       const pool50mSchedule = Array.from(table[6].children[0].children[0].children);
 
@@ -30,10 +27,7 @@ export const getSchedule = (): Promise<string> => {
 
 
       const pool25mTitle = table[10].children[0].textContent.trim();
-      schedule = `${schedule}\n${pool25mTitle}`;
-
-      const pool25mDates = table[6].children[0].children[0].children[0].textContent.trim();
-      schedule = `${schedule}\n${pool25mDates}`;
+      schedule = `${schedule}\n${pool25mTitle}\n`;
 
       const pool25mSchedule = Array.from(table[11].children[0].children[0].children[0].children);
 

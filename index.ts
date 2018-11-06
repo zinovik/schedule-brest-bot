@@ -18,10 +18,6 @@ bot.onText(/\/start/, ({ chat: { id } }) => {
   bot.sendMessage(id, hedgehog.getStartMessage(), hedgehog.getStartCommands());
 });
 
-bot.on('new_chat_members', (ctx) => {
-  bot.sendMessage(process.env.CHANNEL_ID, `Welcome, ${ctx.message.new_chat_members}!`);
-})
-
 bot.on('message', ({ text, chat: { id, first_name } }) => {
   const input = text.toString().toLowerCase();
   console.log(id, input);
