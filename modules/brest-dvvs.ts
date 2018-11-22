@@ -15,29 +15,16 @@ export const getSchedule = (): Promise<string> => {
       const pool50mTitle = table[5].children[0].textContent.trim();
       schedule = `${schedule}${pool50mTitle}\n`;
 
-      const pool50mSchedule = Array.from(table[6].children[0].children[0].children);
+      // const pool50mSchedule = Array.from(table[6].children[0].children[0].children);
 
-      pool50mSchedule.forEach((row: { children: any[] }) => {
-        const rowChildren = Array.from(row.children);
-        rowChildren.forEach((col: any) => {
-          schedule = `${schedule} ${col.textContent.trim().replace(/_/g, '-')}`;
-        });
-        schedule = `${schedule}\n`;
-      });
+      // pool50mSchedule.forEach((row: { children: any[] }) => {
 
-
-      const pool25mTitle = table[10].children[0].textContent.trim();
-      schedule = `${schedule}\n${pool25mTitle}\n`;
-
-      const pool25mSchedule = Array.from(table[11].children[0].children[0].children[0].children);
-
-      pool25mSchedule.forEach((row: { children: any[] }) => {
-        const rowChildren = Array.from(row.children);
-        rowChildren.forEach((col: any) => {
-          schedule = `${schedule} ${col.textContent.trim().replace(/_/g, '-')}`;
-        });
-        schedule = `${schedule}\n`;
-      });
+      //   const rowChildren = Array.from(row.children);
+      //   rowChildren.forEach((col: any) => {
+      //     schedule = `${schedule} ${col.textContent.trim().replace(/_/g, '-')}`;
+      //   });
+      //   schedule = `${schedule}\n`;
+      // });
 
       return schedule;
     })

@@ -9,7 +9,7 @@ const client = redis.createClient(process.env.REDIS_URL);
 
 export const getScheduleSkates = (): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(SCHEDULE_SKATES, (err: string, reply: string) => {
+    client.get(SCHEDULE_SKATES, (err: Error, reply: string) => {
       console.log('getScheduleSkates()', err, reply);
       if (err) {
         return reject(err);
@@ -21,7 +21,7 @@ export const getScheduleSkates = (): Promise<string> => {
 
 export const setScheduleSkates = (schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SCHEDULE_SKATES, schedule, (err: string, reply: string) => {
+    client.set(SCHEDULE_SKATES, schedule, (err: Error, reply: string) => {
       console.log('setScheduleSkates()', err, reply);
       if (err) {
         return reject(err);
@@ -33,7 +33,7 @@ export const setScheduleSkates = (schedule: string): Promise<string> => {
 
 export const getSubscribedSkatesChatIds = (): Promise<any> => {
   return new Promise((resolve, reject) => {
-    client.get(SUBSCRIBED_SKATES_CHAT_IDS, (err: string, reply: string) => {
+    client.get(SUBSCRIBED_SKATES_CHAT_IDS, (err: Error, reply: string) => {
       console.log('getSubscribedSkatesChatIds()', err, reply);
       if (err) {
         return reject(err);
@@ -59,7 +59,7 @@ export const toggleSubscribedSkatesChatId = (id: string): Promise<boolean> => {
 
 export const setSubscribedSkatesChatIds = (ids: any): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SUBSCRIBED_SKATES_CHAT_IDS, JSON.stringify(ids), (err: string, reply: string) => {
+    client.set(SUBSCRIBED_SKATES_CHAT_IDS, JSON.stringify(ids), (err: Error, reply: string) => {
       console.log('setSubscribedSkatesChatIds()', err, reply);
       if (err) {
         return reject(err);
@@ -71,7 +71,7 @@ export const setSubscribedSkatesChatIds = (ids: any): Promise<string> => {
 
 export const getSchedulePool = (): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(SCHEDULE_POOL, (err: string, reply: string) => {
+    client.get(SCHEDULE_POOL, (err: Error, reply: string) => {
       console.log('getSchedulePool()', err, reply);
       if (err) {
         return reject(err);
@@ -83,7 +83,7 @@ export const getSchedulePool = (): Promise<string> => {
 
 export const setSchedulePool = (schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SCHEDULE_POOL, schedule, (err: string, reply: string) => {
+    client.set(SCHEDULE_POOL, schedule, (err: Error, reply: string) => {
       console.log('setSchedulePool()', err, reply);
       if (err) {
         return reject(err);
@@ -95,7 +95,7 @@ export const setSchedulePool = (schedule: string): Promise<string> => {
 
 export const getSubscribedPoolChatIds = (): Promise<any> => {
   return new Promise((resolve, reject) => {
-    client.get(SUBSCRIBED_POOL_CHAT_IDS, (err: string, reply: string) => {
+    client.get(SUBSCRIBED_POOL_CHAT_IDS, (err: Error, reply: string) => {
       console.log('getSubscribedPoolChatIds()', err, reply);
       if (err) {
         return reject(err);
@@ -121,7 +121,7 @@ export const toggleSubscribedPoolChatId = (id: string): Promise<boolean> => {
 
 export const setSubscribedPoolChatIds = (ids: any): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SUBSCRIBED_POOL_CHAT_IDS, JSON.stringify(ids), (err: string, reply: string) => {
+    client.set(SUBSCRIBED_POOL_CHAT_IDS, JSON.stringify(ids), (err: Error, reply: string) => {
       console.log('setSubscribedPoolChatIds()', err, reply);
       if (err) {
         return reject(err);
