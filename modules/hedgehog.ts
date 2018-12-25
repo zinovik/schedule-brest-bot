@@ -47,6 +47,10 @@ export const getResponse = ({ text, name }: { text: string, name: string }): str
     return `Ёжик №${text}: https://zinovikbot.herokuapp.com/${text}.jpg`;
   }
 
+  if (+text > +process.env.NUMBER) {
+    return `Столько ёжиков у меня пока нет :( Есть только ${process.env.NUMBER} фуфтыёжиков (=`;
+  }
+
   if (text === 'фуфтыфу') {
     return `И тебе фуфтыфу, добрчеловек.`;
   }
