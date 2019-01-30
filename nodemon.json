@@ -1,0 +1,7 @@
+{
+  "watch": ["./index.ts", "modules/*.ts"],
+  "ext": "ts",
+  "verbose": true,
+  "ignore": ["*.test.js", "fixtures/*"],
+  "exec": "tsc && npm start"
+}

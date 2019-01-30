@@ -38,12 +38,12 @@ export const getSubscribedSkatesChatIds = (): Promise<any> => {
       if (err) {
         return reject(err);
       }
-      resolve(JSON.parse(reply || "{}"));
+      resolve(JSON.parse(reply || '{}'));
     });
   });
 };
 
-export const toggleSubscribedSkatesChatId = (id: string): Promise<boolean> => {
+export const toggleSubscribedSkatesChatId = (id: number): Promise<boolean> => {
   let subscribed: boolean;
 
   return getSubscribedSkatesChatIds()
@@ -100,12 +100,12 @@ export const getSubscribedPoolChatIds = (): Promise<any> => {
       if (err) {
         return reject(err);
       }
-      resolve(JSON.parse(reply || "{}"));
+      resolve(JSON.parse(reply || '{}'));
     });
   });
 };
 
-export const toggleSubscribedPoolChatId = (id: string): Promise<boolean> => {
+export const toggleSubscribedPoolChatId = (id: number): Promise<boolean> => {
   let subscribed: boolean;
 
   return getSubscribedPoolChatIds()

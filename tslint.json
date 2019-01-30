@@ -1,4 +1,5 @@
 {
+  "extends": "tslint-config-airbnb",
   "rules": {
     "no-duplicate-variable": true,
     "no-var-keyword": true
