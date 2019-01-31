@@ -1,78 +1,109 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
-import { stringify } from 'querystring';
 
 const URL = 'http://brest-dvvs.by/sched';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-export const getSchedule = (): Promise<string> => {
+export const getSchedule = async (): Promise<string> => {
+
+  let page: string;
+
+  try {
+    page = await fetchSchedule(URL);
+  } catch (e) {
+    console.log('Error fetching brest-dvvs site schedule');
+    return '';
+  }
+
+  let parsedSchedule: any;
+
+  try {
+    parsedSchedule = parseSchedule(page, SCHEDULE_TABLE_SELECTOR);
+  } catch (e) {
+    console.log('Error parsing brest-dvvs site schedule');
+    return '';
+  }
+
+  let { schedule } = parsedSchedule;
+  const { scheduleObject } = parsedSchedule;
+
+  schedule += formatSchedule(scheduleObject);
+
+  console.log(schedule);
+
+  return schedule;
+};
+
+const fetchSchedule = (URL: string): Promise<string> => {
   return axios.get(URL)
     .then(({ data }: { data: string }) => {
-      const dom = new JSDOM(data);
-      const table: any[] = Array.from(
-        dom.window.document.querySelector(SCHEDULE_TABLE_SELECTOR).children,
-      );
+      return data;
+    });
+};
 
-      let schedule: string;
+const parseSchedule = (page: string, scheduleTableSelector: string): any => {
+  const dom = new JSDOM(page);
+  const table: any[] = Array.from(
+    dom.window.document.querySelector(scheduleTableSelector).children,
+  );
 
-      try {
-        const pool50mTitle = table[5].textContent.trim();
-        schedule = `${pool50mTitle}\n`;
+  let schedule: string;
 
-        const pool50mSubTitle = table[6].children[2].children[0].children[0].children[0]
-          .textContent.trim();
-        schedule = `${schedule}${pool50mSubTitle}\n`;
+  const header = table[5].textContent.trim();
+  schedule = `${header}\n`;
 
-        const pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
+  const subHeader = table[6].children[2].children[0].children[0].children[0]
+    .textContent.trim();
+  schedule = `${schedule}${subHeader}\n`;
 
-        const scheduleObject = {
-          monday: [],
-          tuesday: [],
-          wednesday: [],
-          thursday: [],
-          friday: [],
-          saturday: [],
-          sunday: [],
-        };
+  const pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
 
-        pool50mSchedule.forEach((row: { children: any[] }, i: number) => {
-          if (i < 2) return;
+  const scheduleObject = {
+    monday: [],
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: [],
+    sunday: [],
+  };
 
-          const rowChildren = Array.from(row.children);
+  pool50mSchedule.forEach((row: { children: any[] }, i: number) => {
+    if (i < 2) return;
 
-          const start = rowChildren[0].textContent.trim().replace(/_/g, '-');
-          const session = rowChildren[1].textContent.trim().replace(/_/g, '-');
-          const monday = rowChildren[2].textContent.trim().replace(/_/g, '-');
-          const tuesday = rowChildren[3].textContent.trim().replace(/_/g, '-');
-          const wednesday = rowChildren[4].textContent.trim().replace(/_/g, '-');
-          const thursday = rowChildren[5].textContent.trim().replace(/_/g, '-');
-          const friday = rowChildren[6].textContent.trim().replace(/_/g, '-');
-          const saturday = rowChildren[7].textContent.trim().replace(/_/g, '-');
-          const sunday = rowChildren[8].textContent.trim().replace(/_/g, '-');
+    const rowChildren = Array.from(row.children);
 
-          scheduleObject.monday.push({ start, session, tracks: monday });
-          scheduleObject.tuesday.push({ start, session, tracks: tuesday });
-          scheduleObject.wednesday.push({ start, session, tracks: wednesday });
-          scheduleObject.thursday.push({ start, session, tracks: thursday });
-          scheduleObject.friday.push({ start, session, tracks: friday });
-          scheduleObject.saturday.push({ start, session, tracks: saturday });
-          scheduleObject.sunday.push({ start, session, tracks: sunday });
-        });
+    const start = rowChildren[0].textContent.trim().replace(/_/g, '-');
+    const session = rowChildren[1].textContent.trim().replace(/_/g, '-');
+    const monday = rowChildren[2].textContent.trim().replace(/_/g, '-');
+    const tuesday = rowChildren[3].textContent.trim().replace(/_/g, '-');
+    const wednesday = rowChildren[4].textContent.trim().replace(/_/g, '-');
+    const thursday = rowChildren[5].textContent.trim().replace(/_/g, '-');
+    const friday = rowChildren[6].textContent.trim().replace(/_/g, '-');
+    const saturday = rowChildren[7].textContent.trim().replace(/_/g, '-');
+    const sunday = rowChildren[8].textContent.trim().replace(/_/g, '-');
 
-        Object.keys(scheduleObject).forEach((day: any) => {
-          schedule = `${schedule}\n${day.toUpperCase()}\n`;
-          scheduleObject[day].forEach((timeData: any) => {
-            schedule = `${schedule}${timeData.start} | ${timeData.session} | ${timeData.tracks}\n`;
-          });
-        });
+    scheduleObject.monday.push({ start, session, tracks: monday });
+    scheduleObject.tuesday.push({ start, session, tracks: tuesday });
+    scheduleObject.wednesday.push({ start, session, tracks: wednesday });
+    scheduleObject.thursday.push({ start, session, tracks: thursday });
+    scheduleObject.friday.push({ start, session, tracks: friday });
+    scheduleObject.saturday.push({ start, session, tracks: saturday });
+    scheduleObject.sunday.push({ start, session, tracks: sunday });
+  });
 
-        return schedule;
+  return { schedule, scheduleObject };
+};
 
-      } catch (e) {
-        console.log('Error parsing dvvs site schedule');
-        return '';
-      }
+const formatSchedule = (scheduleObject: any): string => {
+  let schedule = '';
 
-    })
-    .catch((): string => '');
+  Object.keys(scheduleObject).forEach((day: any) => {
+    schedule = `${schedule}\n${day.toUpperCase()}\n`;
+    scheduleObject[day].forEach((timeData: any) => {
+      schedule = `${schedule}${timeData.start} | ${timeData.session} | ${timeData.tracks}\n`;
+    });
+  });
+
+  return schedule;
 };

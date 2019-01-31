@@ -1,5 +1,5 @@
 const SKATES_WORDS = ['коньки', 'skates', 'ледовый'];
-const POOL_WORDS = ['бассейн', 'pool', 'дввс'];
+const POOL_WORDS = ['бассейн', 'pool', 'дввс', 'dvvs'];
 
 export const isSkatesWord = (word: string): boolean => {
   return SKATES_WORDS.indexOf(word) >= 0;
@@ -15,13 +15,13 @@ export const getStartMessage = (): string => {
 
 export const getStartCommands = (): any => {
   return {
-    'reply_markup': {
-      'keyboard': [
+    reply_markup: {
+      keyboard: [
         ['Фу', 'Фуфты', 'Фуфтыфу'],
         ['Коньки', 'Бассейн'],
-        ['Ёжик', '' + (Math.floor(Math.random() * +process.env.NUMBER) + 1)],
-      ]
-    }
+        ['Ёжик', `${(Math.floor(Math.random() * +process.env.NUMBER) + 1)}`],
+      ],
+    },
   };
 };
 
@@ -52,15 +52,15 @@ export const getResponse = ({ text, name }: { text: string, name: string }): str
   }
 
   if (text === 'фуфтыфу') {
-    return `И тебе фуфтыфу, добрчеловек.`;
+    return 'И тебе фуфтыфу, добрчеловек.';
   }
 
   if (text === 'фуфты') {
-    return `Фуфты-фуфты!`;
+    return 'Фуфты-фуфты!';
   }
 
   if (text === 'фу') {
-    return `Фу!`;
+    return 'Фу!';
   }
 
   return `Фуфтыфу, ${name}! ЁжикБот на связи =] Я не шплю тут.`;

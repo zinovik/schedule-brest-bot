@@ -11,6 +11,8 @@ import * as hedgehog from './modules/hedgehog';
 import * as brestHockey from './modules/brest-hockey';
 import * as brestDvvs from './modules/brest-dvvs';
 
+const CURRENT_URL = 'https://zinovikbot.herokuapp.com';
+
 const app = express();
 const bot = new nodeTelegramBotApi(process.env.TOKEN, { polling: true });
 
@@ -97,6 +99,7 @@ setInterval(
         schedulePoolDb,
         subscribedPoolChatIds,
       ]) => {
+
         if (scheduleSkatesDb !== scheduleBrestHockey) {
           subscribedSkatesChatIds[process.env.CHANNEL_ID] = true;
           if (scheduleBrestHockey) {
@@ -108,6 +111,7 @@ setInterval(
           }
           db.setScheduleSkates(scheduleBrestHockey);
         }
+
         if (schedulePoolDb !== scheduleBrestDvvs) {
           subscribedPoolChatIds[process.env.CHANNEL_ID] = true;
           if (scheduleBrestDvvs) {
@@ -119,6 +123,7 @@ setInterval(
           }
           db.setSchedulePool(scheduleBrestDvvs);
         }
+
       })
       .catch((error) => {
         console.log(error);
@@ -127,8 +132,4 @@ setInterval(
   1 * 60 * 60 * 1000); // every hour
 
 // Prevent Heroku Node App From Sleeping
-setInterval(
-  () => {
-    axios.get('https://zinovikbot.herokuapp.com');
-  },
-  15 * 60 * 1000); // every 15 minutes
+setInterval(() => axios.get(CURRENT_URL), 15 * 60 * 1000); // every 15 minutes
