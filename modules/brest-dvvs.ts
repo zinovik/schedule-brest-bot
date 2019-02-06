@@ -52,11 +52,21 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   const header = table[5].textContent.trim();
   schedule = `${header}\n`;
 
-  const subHeader = table[6].children[2].children[0].children[0].children[0]
-    .textContent.trim();
+  let subHeader: string;
+  try {
+    subHeader = table[6].children[2].children[0].children[0].children[0]
+      .textContent.trim();
+  } catch (error) {
+    subHeader = table[7].children[0].children[0].children[0].textContent.trim();
+  }
   schedule = `${schedule}${subHeader}\n`;
 
-  const pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
+  let pool50mSchedule;
+  try {
+    pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
+  } catch (error) {
+    pool50mSchedule = Array.from(table[7].children[0].children[0].children);
+  }
 
   const scheduleObject = {
     monday: [],
@@ -73,15 +83,15 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
 
     const rowChildren = Array.from(row.children);
 
-    const start = rowChildren[0].textContent.trim().replace(/_/g, '-');
-    const session = rowChildren[1].textContent.trim().replace(/_/g, '-');
-    const monday = rowChildren[2].textContent.trim().replace(/_/g, '-');
-    const tuesday = rowChildren[3].textContent.trim().replace(/_/g, '-');
-    const wednesday = rowChildren[4].textContent.trim().replace(/_/g, '-');
-    const thursday = rowChildren[5].textContent.trim().replace(/_/g, '-');
-    const friday = rowChildren[6].textContent.trim().replace(/_/g, '-');
-    const saturday = rowChildren[7].textContent.trim().replace(/_/g, '-');
-    const sunday = rowChildren[8].textContent.trim().replace(/_/g, '-');
+    const start = rowChildren[0].textContent.trim();
+    const session = rowChildren[1].textContent.trim();
+    const monday = rowChildren[2].textContent.trim();
+    const tuesday = rowChildren[3].textContent.trim();
+    const wednesday = rowChildren[4].textContent.trim();
+    const thursday = rowChildren[5].textContent.trim();
+    const friday = rowChildren[6].textContent.trim();
+    const saturday = rowChildren[7].textContent.trim();
+    const sunday = rowChildren[8].textContent.trim();
 
     scheduleObject.monday.push({ start, session, tracks: monday });
     scheduleObject.tuesday.push({ start, session, tracks: tuesday });
