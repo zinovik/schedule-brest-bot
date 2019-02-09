@@ -11,7 +11,7 @@ export const getSchedule = async (): Promise<string> => {
   try {
     page = await fetchSchedule(URL);
   } catch (e) {
-    console.log('Error fetching brest-hockey site schedule');
+    console.log('Error fetching brest-ice site schedule');
     return '';
   }
 

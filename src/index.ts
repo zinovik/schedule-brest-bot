@@ -8,7 +8,7 @@ import express = require('express');
 
 import * as db from './modules/db';
 import * as hedgehog from './modules/hedgehog';
-import * as brestHockey from './modules/brest-hockey';
+import * as brestIce from './modules/brest-ice';
 import * as brestDvvs from './modules/brest-dvvs';
 
 const CURRENT_URL = 'https://zinovikbot.herokuapp.com';
@@ -39,10 +39,10 @@ app.listen(app.get('port'), () => {
 });
 
 // Get first schedules
-Promise.all([brestHockey.getSchedule(), brestDvvs.getSchedule()])
-  .then(([scheduleBrestHockey, scheduleBrestDvvs]) => {
+Promise.all([brestIce.getSchedule(), brestDvvs.getSchedule()])
+  .then(([scheduleBrestIce, scheduleBrestDvvs]) => {
     Promise.all([
-      db.setScheduleIce(scheduleBrestHockey),
+      db.setScheduleIce(scheduleBrestIce),
       db.setScheduleDvvs(scheduleBrestDvvs),
     ]);
   })
@@ -54,22 +54,22 @@ Promise.all([brestHockey.getSchedule(), brestDvvs.getSchedule()])
 setInterval(
   () => {
     Promise.all([
-      brestHockey.getSchedule(),
+      brestIce.getSchedule(),
       db.getScheduleIce(),
       brestDvvs.getSchedule(),
       db.getScheduleDvvs(),
     ])
       .then(([
-        scheduleBrestHockey,
+        scheduleBrestIce,
         scheduleIceDb,
         scheduleBrestDvvs,
         scheduleDvvsDb,
       ]) => {
 
-        if (scheduleIceDb !== scheduleBrestHockey) {
-          bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestHockey);
-          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestHockey);
-          db.setScheduleIce(scheduleBrestHockey);
+        if (scheduleIceDb !== scheduleBrestIce) {
+          bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestIce);
+          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestIce);
+          db.setScheduleIce(scheduleBrestIce);
         }
 
         if (scheduleDvvsDb !== scheduleBrestDvvs) {
