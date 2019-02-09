@@ -10,8 +10,8 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "index.ts",
-    "modules/*.ts"
+    "src/index.ts",
+    "src/modules/*.ts"
   ],
   "exclude": [
     "node_modules"

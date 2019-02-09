@@ -1,5 +1,5 @@
 {
-  "watch": ["./index.ts", "modules/*.ts"],
+  "watch": ["src/index.ts", "src/modules/*.ts"],
   "ext": "ts",
   "verbose": true,
   "ignore": ["*.test.js", "fixtures/*"],
