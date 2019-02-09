@@ -1,14 +1,3 @@
-const SKATES_WORDS = ['коньки', 'skates', 'ледовый'];
-const POOL_WORDS = ['бассейн', 'pool', 'дввс', 'dvvs'];
-
-export const isSkatesWord = (word: string): boolean => {
-  return SKATES_WORDS.indexOf(word) >= 0;
-};
-
-export const isPoolWord = (word: string): boolean => {
-  return POOL_WORDS.indexOf(word) >= 0;
-};
-
 export const getStartMessage = (): string => {
   return 'Фуфтыфу! ЁжикБот на связи =]';
 };
@@ -18,7 +7,6 @@ export const getStartCommands = (): any => {
     reply_markup: {
       keyboard: [
         ['Фу', 'Фуфты', 'Фуфтыфу'],
-        ['Коньки', 'Бассейн'],
         ['Ёжик', `${(Math.floor(Math.random() * +process.env.NUMBER) + 1)}`],
       ],
     },
@@ -40,7 +28,8 @@ export const getResponse = ({ text, name }: { text: string, name: string }): str
   if (text === 'ёжик' ||
     text === 'ежик') {
     const randomHedgehogNumber = Math.floor(Math.random() * +process.env.NUMBER) + 1;
-    return `Случайный ёжик №${randomHedgehogNumber}: https://zinovikbot.herokuapp.com/${randomHedgehogNumber}.jpg`;
+    return `Случайный ёжик №${randomHedgehogNumber}: `
+      + `https://zinovikbot.herokuapp.com/${randomHedgehogNumber}.jpg`;
   }
 
   if (+text >= 1 && +text <= +process.env.NUMBER) {

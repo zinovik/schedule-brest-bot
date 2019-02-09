@@ -29,36 +29,6 @@ bot.on('message', ({ text, chat: { id, first_name } }) => {
     return;
   }
 
-  if (hedgehog.isSkatesWord(input)) {
-    return Promise.all([db.getScheduleSkates(), db.toggleSubscribedSkatesChatId(id)])
-      .then(([schedule, subscribed]: any[]) => {
-        bot.sendMessage(id, hedgehog.getInviteMessage());
-        if (subscribed) {
-          bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
-          return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
-        }
-        bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  if (hedgehog.isPoolWord(input)) {
-    return Promise.all([db.getSchedulePool(), db.toggleSubscribedPoolChatId(id)])
-      .then(([schedule, subscribed]: any[]) => {
-        bot.sendMessage(id, hedgehog.getInviteMessage());
-        if (subscribed) {
-          bot.sendMessage(id, schedule || hedgehog.getErrorMessage());
-          return bot.sendMessage(id, hedgehog.getSubscriptionMessage());
-        }
-        bot.sendMessage(id, hedgehog.getUnsubscriptionMessage());
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
   bot.sendMessage(id, hedgehog.getResponse({ text: input, name: first_name }));
 });
 
@@ -86,41 +56,25 @@ setInterval(
     Promise.all([
       brestHockey.getSchedule(),
       db.getScheduleSkates(),
-      db.getSubscribedSkatesChatIds(),
       brestDvvs.getSchedule(),
       db.getSchedulePool(),
-      db.getSubscribedPoolChatIds(),
     ])
       .then(([
         scheduleBrestHockey,
         scheduleSkatesDb,
-        subscribedSkatesChatIds,
         scheduleBrestDvvs,
         schedulePoolDb,
-        subscribedPoolChatIds,
       ]) => {
 
         if (scheduleSkatesDb !== scheduleBrestHockey) {
-          subscribedSkatesChatIds[process.env.CHANNEL_ID] = true;
-          if (scheduleBrestHockey) {
-            Object.keys(subscribedSkatesChatIds).forEach((id: string) => {
-              if (subscribedSkatesChatIds[id]) {
-                bot.sendMessage(id, scheduleBrestHockey);
-              }
-            });
-          }
+          bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestHockey);
+          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestHockey);
           db.setScheduleSkates(scheduleBrestHockey);
         }
 
         if (schedulePoolDb !== scheduleBrestDvvs) {
-          subscribedPoolChatIds[process.env.CHANNEL_ID] = true;
-          if (scheduleBrestDvvs) {
-            Object.keys(subscribedPoolChatIds).forEach((id: string) => {
-              if (subscribedPoolChatIds[id]) {
-                bot.sendMessage(id, scheduleBrestDvvs);
-              }
-            });
-          }
+          bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvs);
+          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestDvvs);
           db.setSchedulePool(scheduleBrestDvvs);
         }
 
