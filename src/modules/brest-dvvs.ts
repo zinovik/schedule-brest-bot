@@ -6,21 +6,21 @@ const SCHEDULE_TABLE_SELECTOR = '#content';
 
 export const getSchedule = async (): Promise<string> => {
 
-  let page: string;
+  let data: string;
 
   try {
-    page = await fetchSchedule(URL);
+    ({ data } = await axios.get(URL));
   } catch (e) {
-    console.log('Error fetching brest-dvvs site schedule');
+    console.log('Error fetching dvvs site schedule');
     return '';
   }
 
   let parsedSchedule: any;
 
   try {
-    parsedSchedule = parseSchedule(page, SCHEDULE_TABLE_SELECTOR);
+    parsedSchedule = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
   } catch (e) {
-    console.log('Error parsing brest-dvvs site schedule');
+    console.log('Error parsing dvvs site schedule');
     return '';
   }
 
@@ -32,16 +32,6 @@ export const getSchedule = async (): Promise<string> => {
   console.log(schedule);
 
   return schedule;
-};
-
-const fetchSchedule = (URL: string): Promise<string> => {
-  return axios.get(URL)
-    .then(({ data }: { data: string }) => {
-      return data;
-    })
-    .catch(() => {
-      throw new Error();
-    });
 };
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {

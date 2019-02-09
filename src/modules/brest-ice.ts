@@ -6,16 +6,16 @@ const SCHEDULE_TABLE_SELECTOR = 'table tbody';
 
 export const getSchedule = async (): Promise<string> => {
 
-  let page: string;
+  let data: string;
 
   try {
-    page = await fetchSchedule(URL);
+    ({ data } = await axios.get(URL));
   } catch (e) {
-    console.log('Error fetching brest-ice site schedule');
+    console.log('Error fetching ice site schedule');
     return '';
   }
 
-  const dom = new JSDOM(page);
+  const dom = new JSDOM(data);
   const table: any[] = Array.from(
     dom.window.document.querySelector(SCHEDULE_TABLE_SELECTOR).children,
   );
@@ -34,14 +34,4 @@ export const getSchedule = async (): Promise<string> => {
   console.log(schedule);
 
   return schedule;
-};
-
-const fetchSchedule = (URL: string): Promise<string> => {
-  return axios.get(URL)
-    .then(({ data }: { data: string }) => {
-      return data;
-    })
-    .catch(() => {
-      throw new Error();
-    });
 };

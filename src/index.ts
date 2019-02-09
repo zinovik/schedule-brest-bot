@@ -67,14 +67,14 @@ setInterval(
       ]) => {
 
         if (scheduleIceDb !== scheduleBrestIce) {
+          console.log('New Ice schedule. Sending message...');
           bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestIce);
-          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestIce);
           db.setScheduleIce(scheduleBrestIce);
         }
 
         if (scheduleDvvsDb !== scheduleBrestDvvs) {
+          console.log('New Dvvs schedule. Sending message...');
           bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvs);
-          bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestDvvs);
           db.setScheduleDvvs(scheduleBrestDvvs);
         }
 
