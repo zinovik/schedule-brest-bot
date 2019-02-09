@@ -21,7 +21,7 @@ export const getResponse = ({ text, name }: { text: string, name: string }): str
       3) Фуфтыфу
       4) Номер ёжика в каталогизаторе ёжиков
       5) Ёжик
-      6) @hlbrest, @icebrest, @dvvsbrest`;
+      6) @icebrest, @dvvsbrest`;
   }
 
   if (text === 'ёжик' ||

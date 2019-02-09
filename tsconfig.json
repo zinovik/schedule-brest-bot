@@ -10,8 +10,9 @@
     "./node_modules/@types/node/index.d.ts"
   ],
   "include": [
-    "src/index.ts",
-    "src/modules/*.ts"
+    "src/*.ts",
+    "src/hedgehog/*.ts",
+    "src/scheduler/*.ts"
   ],
   "exclude": [
     "node_modules"

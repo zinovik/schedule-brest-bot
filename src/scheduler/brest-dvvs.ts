@@ -10,7 +10,7 @@ export const getSchedule = async (): Promise<string> => {
 
   try {
     ({ data } = await axios.get(URL));
-  } catch (e) {
+  } catch (error) {
     console.log('Error fetching dvvs site schedule');
     return '';
   }
@@ -19,7 +19,7 @@ export const getSchedule = async (): Promise<string> => {
 
   try {
     parsedSchedule = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
-  } catch (e) {
+  } catch (error) {
     console.log('Error parsing dvvs site schedule');
     return '';
   }
@@ -47,10 +47,13 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
 
   let subHeader: string;
   try {
-    subHeader = table[6].children[2].children[0].children[0].children[0]
-      .textContent.trim();
+    subHeader = table[6].children[2].children[0].children[0].children[0].textContent.trim();
   } catch (error) {
-    subHeader = table[7].children[0].children[0].children[0].textContent.trim();
+    try {
+      subHeader = table[7].children[0].children[0].children[0].textContent.trim();
+    } catch (error) {
+      subHeader = table[8].children[0].children[0].children[0].textContent.trim();
+    }
   }
   schedule = `${schedule}${subHeader}\n`;
 
@@ -58,7 +61,11 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   try {
     pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
   } catch (error) {
-    pool50mSchedule = Array.from(table[7].children[0].children[0].children);
+    try {
+      pool50mSchedule = Array.from(table[7].children[0].children[0].children);
+    } catch (error) {
+      pool50mSchedule = Array.from(table[8].children[0].children[0].children);
+    }
   }
 
   const scheduleObject = {

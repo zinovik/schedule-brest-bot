@@ -10,7 +10,7 @@ export const getSchedule = async (): Promise<string> => {
 
   try {
     ({ data } = await axios.get(URL));
-  } catch (e) {
+  } catch (error) {
     console.log('Error fetching ice site schedule');
     return '';
   }
