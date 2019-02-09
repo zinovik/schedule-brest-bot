@@ -38,6 +38,9 @@ const fetchSchedule = (URL: string): Promise<string> => {
   return axios.get(URL)
     .then(({ data }: { data: string }) => {
       return data;
+    })
+    .catch(() => {
+      throw new Error();
     });
 };
 

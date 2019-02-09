@@ -25,7 +25,9 @@ export const getSchedule = async (): Promise<string> => {
   table.forEach((item: { children: any[] }, i) => {
     if (!i) return;
 
-    const daySchedule = `${item.children[0].textContent}, ${item.children[1].textContent}: ${item.children[2].textContent}`;
+    const daySchedule = `${item.children[0].textContent}, `
+      + `${item.children[1].textContent}: `
+      + `${item.children[2].textContent}`;
     schedule = `${schedule}\n${daySchedule.replace(/\t/g, '')}`;
   });
 
@@ -38,5 +40,8 @@ const fetchSchedule = (URL: string): Promise<string> => {
   return axios.get(URL)
     .then(({ data }: { data: string }) => {
       return data;
+    })
+    .catch(() => {
+      throw new Error();
     });
 };

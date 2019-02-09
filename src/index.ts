@@ -42,8 +42,8 @@ app.listen(app.get('port'), () => {
 Promise.all([brestHockey.getSchedule(), brestDvvs.getSchedule()])
   .then(([scheduleBrestHockey, scheduleBrestDvvs]) => {
     Promise.all([
-      db.setScheduleSkates(scheduleBrestHockey),
-      db.setSchedulePool(scheduleBrestDvvs),
+      db.setScheduleIce(scheduleBrestHockey),
+      db.setScheduleDvvs(scheduleBrestDvvs),
     ]);
   })
   .catch((error) => {
@@ -55,27 +55,27 @@ setInterval(
   () => {
     Promise.all([
       brestHockey.getSchedule(),
-      db.getScheduleSkates(),
+      db.getScheduleIce(),
       brestDvvs.getSchedule(),
-      db.getSchedulePool(),
+      db.getScheduleDvvs(),
     ])
       .then(([
         scheduleBrestHockey,
-        scheduleSkatesDb,
+        scheduleIceDb,
         scheduleBrestDvvs,
-        schedulePoolDb,
+        scheduleDvvsDb,
       ]) => {
 
-        if (scheduleSkatesDb !== scheduleBrestHockey) {
+        if (scheduleIceDb !== scheduleBrestHockey) {
           bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestHockey);
           bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestHockey);
-          db.setScheduleSkates(scheduleBrestHockey);
+          db.setScheduleIce(scheduleBrestHockey);
         }
 
-        if (schedulePoolDb !== scheduleBrestDvvs) {
+        if (scheduleDvvsDb !== scheduleBrestDvvs) {
           bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvs);
           bot.sendMessage(process.env.CHANNEL_ID, scheduleBrestDvvs);
-          db.setSchedulePool(scheduleBrestDvvs);
+          db.setScheduleDvvs(scheduleBrestDvvs);
         }
 
       })

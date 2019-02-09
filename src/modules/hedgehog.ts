@@ -19,10 +19,9 @@ export const getResponse = ({ text, name }: { text: string, name: string }): str
       1) Фу
       2) Фуфты
       3) Фуфтыфу
-      4) Коньки/Ледовый/Skates
-      5) Бассейн/Дввс/Pool
-      6) Номер ёжика в каталогизаторе ёжиков
-      7) Ёжик`;
+      4) Номер ёжика в каталогизаторе ёжиков
+      5) Ёжик
+      6) @hlbrest, @icebrest, @dvvsbrest`;
   }
 
   if (text === 'ёжик' ||

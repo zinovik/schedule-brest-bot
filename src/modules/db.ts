@@ -1,16 +1,14 @@
 import redis = require('redis');
 
-const SCHEDULE_SKATES: string = 'scheduleSkates';
-const SUBSCRIBED_SKATES_CHAT_IDS: string = 'subscribedSkatesChatIds';
-const SCHEDULE_POOL: string = 'schedulePool';
-const SUBSCRIBED_POOL_CHAT_IDS: string = 'subscribedPoolChatIds';
+const SCHEDULE_ICE: string = 'scheduleIce';
+const SCHEDULE_DVVS: string = 'scheduleDvvs';
 
 const client = redis.createClient(process.env.REDIS_URL);
 
-export const getScheduleSkates = (): Promise<string> => {
+export const getScheduleIce = (): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(SCHEDULE_SKATES, (err: Error, reply: string) => {
-      console.log('getScheduleSkates()', err, reply);
+    client.get(SCHEDULE_ICE, (err: Error, reply: string) => {
+      console.log('getScheduleIce()', err, reply);
       if (err) {
         return reject(err);
       }
@@ -19,10 +17,10 @@ export const getScheduleSkates = (): Promise<string> => {
   });
 };
 
-export const setScheduleSkates = (schedule: string): Promise<string> => {
+export const setScheduleIce = (schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SCHEDULE_SKATES, schedule, (err: Error, reply: string) => {
-      console.log('setScheduleSkates()', err, reply);
+    client.set(SCHEDULE_ICE, schedule, (err: Error, reply: string) => {
+      console.log('setScheduleIce()', err, reply);
       if (err) {
         return reject(err);
       }
@@ -31,10 +29,10 @@ export const setScheduleSkates = (schedule: string): Promise<string> => {
   });
 };
 
-export const getSchedulePool = (): Promise<string> => {
+export const getScheduleDvvs = (): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(SCHEDULE_POOL, (err: Error, reply: string) => {
-      console.log('getSchedulePool()', err, reply);
+    client.get(SCHEDULE_DVVS, (err: Error, reply: string) => {
+      console.log('getScheduleDvvs()', err, reply);
       if (err) {
         return reject(err);
       }
@@ -43,10 +41,10 @@ export const getSchedulePool = (): Promise<string> => {
   });
 };
 
-export const setSchedulePool = (schedule: string): Promise<string> => {
+export const setScheduleDvvs = (schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(SCHEDULE_POOL, schedule, (err: Error, reply: string) => {
-      console.log('setSchedulePool()', err, reply);
+    client.set(SCHEDULE_DVVS, schedule, (err: Error, reply: string) => {
+      console.log('setScheduleDvvs()', err, reply);
       if (err) {
         return reject(err);
       }
