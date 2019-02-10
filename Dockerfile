@@ -4,8 +4,8 @@ FROM node:latest
 WORKDIR /usr/src/app
 
 # Copy app source to work directory
-RUN mkdir /usr/src/app/hedgehogs
-ADD hedgehogs /usr/src/app/hedgehogs/
+RUN mkdir /usr/src/app/public
+ADD public /usr/src/app/public/
 
 RUN mkdir /usr/src/app/src
 ADD src /usr/src/app/src/
