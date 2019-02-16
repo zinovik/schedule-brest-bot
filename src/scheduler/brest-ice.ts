@@ -59,7 +59,7 @@ export const formatSchedule = ({ title, schedules }: {
       + `${schedule.dayOfWeek}: `
       + `${schedule.times}`;
 
-    scheduleFormatted = `${scheduleFormatted}\n${daySchedule.replace(/\t/g, '')}`;
+    scheduleFormatted = `${scheduleFormatted}\n${daySchedule}`;
   });
 
   return scheduleFormatted;

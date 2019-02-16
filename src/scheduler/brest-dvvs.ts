@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 const URL = 'http://brest-dvvs.by/sched';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-export const getSchedule = async (): Promise<string> => {
+export const getSchedule = async (): Promise<{ title: string, schedules: any[] }> => {
 
   let data: string;
 
@@ -12,7 +12,7 @@ export const getSchedule = async (): Promise<string> => {
     ({ data } = await axios.get(URL));
   } catch (error) {
     console.log('Error fetching dvvs site schedule');
-    return '';
+    return undefined;
   }
 
   let parsedSchedule: any;
@@ -21,41 +21,36 @@ export const getSchedule = async (): Promise<string> => {
     parsedSchedule = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
   } catch (error) {
     console.log('Error parsing dvvs site schedule');
-    return '';
+    return undefined;
   }
 
-  let { schedule } = parsedSchedule;
-  const { scheduleObject } = parsedSchedule;
+  const { title, schedules } = parsedSchedule;
 
-  schedule += formatSchedule(scheduleObject);
+  console.log(schedules);
 
-  console.log(schedule);
-
-  return schedule;
+  return { title, schedules };
 };
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   const dom = new JSDOM(page);
+
   const table: any[] = Array.from(
     dom.window.document.querySelector(scheduleTableSelector).children,
   );
 
-  let schedule: string;
+  let title = `${table[5].textContent.trim()}\n`;
 
-  const header = table[5].textContent.trim();
-  schedule = `${header}\n`;
-
-  let subHeader: string;
+  let subTitle: string;
   try {
-    subHeader = table[6].children[2].children[0].children[0].children[0].textContent.trim();
+    subTitle = table[6].children[2].children[0].children[0].children[0].textContent.trim();
   } catch (error) {
     try {
-      subHeader = table[7].children[0].children[0].children[0].textContent.trim();
+      subTitle = table[7].children[0].children[0].children[0].textContent.trim();
     } catch (error) {
-      subHeader = table[8].children[0].children[0].children[0].textContent.trim();
+      subTitle = table[8].children[0].children[0].children[0].textContent.trim();
     }
   }
-  schedule = `${schedule}${subHeader}\n`;
+  title = `${title}${subTitle}\n`;
 
   let pool50mSchedule;
   try {
@@ -68,15 +63,36 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     }
   }
 
-  const scheduleObject = {
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
-    sunday: [],
-  };
+  const schedules = [
+    {
+      dayOfWeek: 'Понедельник',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Вторник',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Среда',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Четверг',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Пятница',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Суббота',
+      times: [],
+    },
+    {
+      dayOfWeek: 'Воскресенье',
+      times: [],
+    },
+  ];
 
   pool50mSchedule.forEach((row: { children: any[] }, i: number) => {
     if (i < 2) return;
@@ -93,27 +109,30 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     const saturday = rowChildren[7].textContent.trim();
     const sunday = rowChildren[8].textContent.trim();
 
-    scheduleObject.monday.push({ start, session, tracks: monday });
-    scheduleObject.tuesday.push({ start, session, tracks: tuesday });
-    scheduleObject.wednesday.push({ start, session, tracks: wednesday });
-    scheduleObject.thursday.push({ start, session, tracks: thursday });
-    scheduleObject.friday.push({ start, session, tracks: friday });
-    scheduleObject.saturday.push({ start, session, tracks: saturday });
-    scheduleObject.sunday.push({ start, session, tracks: sunday });
+    schedules[0].times.push({ start, session, tracks: monday });
+    schedules[1].times.push({ start, session, tracks: tuesday });
+    schedules[2].times.push({ start, session, tracks: wednesday });
+    schedules[3].times.push({ start, session, tracks: thursday });
+    schedules[4].times.push({ start, session, tracks: friday });
+    schedules[5].times.push({ start, session, tracks: saturday });
+    schedules[6].times.push({ start, session, tracks: sunday });
   });
 
-  return { schedule, scheduleObject };
+  return { title, schedules };
 };
 
-export const formatSchedule = (scheduleObject: any): string => {
-  let schedule = '';
+export const formatSchedule = ({ title, schedules }: {
+  title: string,
+  schedules: any[],
+}): string => {
+  let scheduleFormatted = title;
 
-  Object.keys(scheduleObject).forEach((day: any) => {
-    schedule = `${schedule}\n${day.toUpperCase()}\n`;
-    scheduleObject[day].forEach((timeData: any) => {
-      schedule = `${schedule}${timeData.start} | ${timeData.session} | ${timeData.tracks}\n`;
+  schedules.forEach((schedule) => {
+    scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
+    schedule.times.forEach((time: any) => {
+      scheduleFormatted = `${scheduleFormatted}${time.start} | ${time.session} | ${time.tracks}\n`;
     });
   });
 
-  return schedule;
+  return scheduleFormatted;
 };

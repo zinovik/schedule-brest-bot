@@ -41,13 +41,18 @@ export const schedulerIce = async (bot: any) => {
 export const schedulerDvvs = async (bot: any) => {
 
   try {
-    const scheduleBrestDvvs = await brestDvvs.getSchedule();
     const scheduleDvvsDb = await db.getScheduleDvvs();
 
-    if (scheduleDvvsDb !== scheduleBrestDvvs) {
+    const scheduleBrestDvvs = await brestDvvs.getSchedule();
+    const scheduleBrestDvvsJSON = JSON.stringify(scheduleBrestDvvs);
+
+    if (scheduleDvvsDb !== scheduleBrestDvvsJSON) {
+      const scheduleBrestDvvsFormatted = brestDvvs.formatSchedule(scheduleBrestDvvs);
+
       console.log('New Dvvs schedule. Sending message...');
-      bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvs);
-      db.setScheduleDvvs(scheduleBrestDvvs);
+      bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvsFormatted);
+
+      db.setScheduleDvvs(scheduleBrestDvvsJSON);
     }
   } catch (error) {
     console.log(error);
