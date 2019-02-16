@@ -23,7 +23,7 @@ app.listen(app.get('port'), () => {
   console.log(`Express server listening on port ${app.get('port')}`);
 });
 
-// Schedules subscription
+// Schedules subscriptions
 schedulerIce(bot);
 schedulerDvvs(bot);
 setInterval(() => schedulerIce(bot), PERIOD * 60 * 1000);

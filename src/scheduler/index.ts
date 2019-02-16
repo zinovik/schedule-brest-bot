@@ -19,13 +19,18 @@ export const setEndpoints = (app: any) => {
 export const schedulerIce = async (bot: any) => {
 
   try {
-    const scheduleBrestIce = await brestIce.getSchedule();
     const scheduleIceDb = await db.getScheduleIce();
 
-    if (scheduleIceDb !== scheduleBrestIce) {
+    const scheduleBrestIce = await brestIce.getSchedule();
+    const scheduleBrestIceJSON = JSON.stringify(scheduleBrestIce);
+
+    if (scheduleIceDb !== scheduleBrestIceJSON) {
+      const scheduleBrestIceFormatted = brestIce.formatSchedule(scheduleBrestIce);
+
       console.log('New Ice schedule. Sending message...');
-      bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestIce);
-      db.setScheduleIce(scheduleBrestIce);
+      bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestIceFormatted);
+
+      db.setScheduleIce(scheduleBrestIceJSON);
     }
   } catch (error) {
     console.log(error);

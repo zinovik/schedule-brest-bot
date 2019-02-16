@@ -105,7 +105,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   return { schedule, scheduleObject };
 };
 
-const formatSchedule = (scheduleObject: any): string => {
+export const formatSchedule = (scheduleObject: any): string => {
   let schedule = '';
 
   Object.keys(scheduleObject).forEach((day: any) => {
