@@ -52,6 +52,8 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   }
   title = `${title}${subTitle}\n`;
 
+  // const dates = subTitle.split(' с ')[1].split(' по ');
+
   let pool50mSchedule;
   try {
     pool50mSchedule = Array.from(table[6].children[2].children[0].children[0].children);
@@ -101,21 +103,17 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
 
     const start = rowChildren[0].textContent.trim();
     const session = rowChildren[1].textContent.trim();
-    const monday = rowChildren[2].textContent.trim();
-    const tuesday = rowChildren[3].textContent.trim();
-    const wednesday = rowChildren[4].textContent.trim();
-    const thursday = rowChildren[5].textContent.trim();
-    const friday = rowChildren[6].textContent.trim();
-    const saturday = rowChildren[7].textContent.trim();
-    const sunday = rowChildren[8].textContent.trim();
 
-    schedules[0].times.push({ start, session, tracks: monday });
-    schedules[1].times.push({ start, session, tracks: tuesday });
-    schedules[2].times.push({ start, session, tracks: wednesday });
-    schedules[3].times.push({ start, session, tracks: thursday });
-    schedules[4].times.push({ start, session, tracks: friday });
-    schedules[5].times.push({ start, session, tracks: saturday });
-    schedules[6].times.push({ start, session, tracks: sunday });
+    for (let i = 0; i < 7; i += 1) {
+      if (rowChildren[i + 2].textContent.trim() !== '-') {
+        schedules[i].times.push({
+          start,
+          session,
+          tracks: rowChildren[i + 2].textContent.trim(),
+        });
+      }
+    }
+
   });
 
   return { title, schedules };
@@ -129,8 +127,17 @@ export const formatSchedule = ({ title, schedules }: {
 
   schedules.forEach((schedule) => {
     scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
+
     schedule.times.forEach((time: any) => {
-      scheduleFormatted = `${scheduleFormatted}${time.start} | ${time.session} | ${time.tracks}\n`;
+      scheduleFormatted = `${scheduleFormatted}${time.start}`;
+
+      if (time.session) {
+        scheduleFormatted = `${scheduleFormatted}   (${time.session})`;
+      }
+
+      if (time.tracks) {
+        scheduleFormatted = `${scheduleFormatted}   ${time.tracks}\n`;
+      }
     });
   });
 

@@ -39,9 +39,9 @@ const parseSchedule = (page: string, scheduleTableSelector: string): {
     if (!i) return;
 
     schedules.push({
-      day: item.children[0].textContent.replace(/\t/g, ''),
-      dayOfWeek: item.children[1].textContent.replace(/\t/g, ''),
-      times: item.children[2].textContent.replace(/\t/g, ''),
+      day: item.children[0].textContent.trim(),
+      dayOfWeek: item.children[1].textContent.trim(),
+      times: item.children[2].textContent.trim(),
     });
   });
 
