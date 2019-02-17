@@ -1,13 +1,19 @@
 process.env['NTBA_FIX_319'] = '1';
 
 require('dotenv').load();
-import * as path from 'path';
 import axios from 'axios';
-import nodeTelegramBotApi = require('node-telegram-bot-api');
-import express = require('express');
+import * as path from 'path';
+import * as nodeTelegramBotApi from 'node-telegram-bot-api';
+import * as express from 'express';
+import * as helmet from 'helmet';
 
 import { handleMessages } from './hedgehog';
-import { schedulerIce, schedulerDvvs, setEndpoints } from './scheduler';
+import {
+  schedulerIce,
+  schedulerDvvs,
+  setIceBrestEndpoint,
+  setDvvsBrestEndpoint,
+} from './scheduler';
 
 const CURRENT_URL = process.env.CURRENT_URL || 'https://zinovikbot.herokuapp.com';
 const PERIOD = Number(process.env.PERIOD) || 60;
@@ -16,9 +22,13 @@ const bot = new nodeTelegramBotApi(process.env.TOKEN, { polling: true });
 handleMessages(bot);
 
 const app = express();
+app.use(helmet());
 app.set('port', process.env.PORT || 8100);
 app.use(express.static(path.join(__dirname, '../public')));
-setEndpoints(app);
+
+setIceBrestEndpoint(app);
+setDvvsBrestEndpoint(app);
+
 app.listen(app.get('port'), () => {
   console.log(`Express server listening on port ${app.get('port')}`);
 });
