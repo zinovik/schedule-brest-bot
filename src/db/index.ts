@@ -1,14 +1,13 @@
-import redis = require('redis');
+import { createClient, ClientOpts } from 'redis';
 
 export const SCHEDULE_ICE: string = 'scheduleIce';
 export const SCHEDULE_DVVS: string = 'scheduleDvvs';
 
-const client = redis.createClient(process.env.REDIS_URL);
+const client = createClient(process.env.REDIS_URL as ClientOpts);
 
-export const getSchedule = (type: string): Promise<string> => {
+export const getScheduleDb = (type: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.get(type, (err: Error, reply: string) => {
-      console.log(`get ${type}`, err, reply);
+    client.get(type, (err: any, reply: string) => {
       if (err) {
         return reject(err);
       }
@@ -17,10 +16,9 @@ export const getSchedule = (type: string): Promise<string> => {
   });
 };
 
-export const setSchedule = (type: string, schedule: string): Promise<string> => {
+export const setScheduleDb = (type: string, schedule: string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    client.set(type, schedule, (err: Error, reply: string) => {
-      console.log(`set ${type}`, err, reply);
+    client.set(type, schedule, (err: any, reply: string) => {
       if (err) {
         return reject(err);
       }

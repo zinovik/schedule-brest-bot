@@ -10,21 +10,26 @@ export const helpMessage = `Фуф. Вот, что я уже умею:
 
 export const getCommands = (randomHedgehogNumber: number) => ({
   reply_markup: {
-    keyboard: [
-      ['Фу', 'Фуфты', 'Фуфтыфу'],
-      ['Ёжик', `${randomHedgehogNumber}`],
-    ],
+    keyboard: [['Фу', 'Фуфты', 'Фуфтыфу'], ['Ёжик', `${randomHedgehogNumber}`]],
   },
 });
 
 export const randomHedgehogMessages = ['ёжик', 'ежик'];
 
-export const getHedgehog = (number: number, { url, where, who, when }: {
-  url: string,
-  where: string,
-  who: string,
-  when: string,
-}) => `Ёжик №${number}: ${url}
+export const getHedgehog = (
+  number: number,
+  {
+    url,
+    where,
+    who,
+    when,
+  }: {
+    url: string;
+    where: string;
+    who: string;
+    when: string;
+  },
+) => `Ёжик №${number}: ${url}
 
 Фуфтыдосье
 Приехал из: ${where}

@@ -2,20 +2,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "outDir": "dist",
-    "sourceMap": true
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true
   },
-  "files": [
-    // "./node_modules/@types/mocha/index.d.ts",
-    "./node_modules/@types/node/index.d.ts"
-  ],
-  "include": [
-    "src/*.ts",
-    "src/db/*.ts",
-    "src/hedgehog/*.ts",
-    "src/scheduler/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

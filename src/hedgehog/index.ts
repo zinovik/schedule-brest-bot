@@ -11,26 +11,37 @@ import {
 } from './phrases-rus';
 
 export const handleMessages = (bot: any) => {
-  bot.onText(/\/start/, ({ chat: { id } }) => {
+  bot.onText(/\/start/, ({ chat: { id } }: { chat: { id: string } }) => {
     const randomHedgehogNumber = getRandomHedgehogNumber();
 
     bot.sendMessage(id, startMessage, getCommands(randomHedgehogNumber));
   });
 
-  bot.on('message', ({ text, chat: { id, first_name } }) => {
-    const input = text.toString().toLowerCase();
-    console.log(id, input);
+  bot.on(
+    'message',
+    ({
+      text,
+      chat: { id, first_name },
+    }: {
+      text: string;
+      chat: {
+        id: string;
+        first_name: string;
+      };
+    }) => {
+      const input = text.toString().toLowerCase();
+      console.log(id, input);
 
-    if (input.indexOf('/start') > -1 ||
-      input.indexOf('/echo') > -1) {
-      return;
-    }
+      if (input.indexOf('/start') > -1 || input.indexOf('/echo') > -1) {
+        return;
+      }
 
-    bot.sendMessage(id, getResponse({ text: input, name: first_name }));
-  });
+      bot.sendMessage(id, getResponse({ text: input, name: first_name }));
+    },
+  );
 };
 
-const getResponse = ({ text, name }: { text: string, name: string }): string => {
+const getResponse = ({ text, name }: { text: string; name: string }): string => {
   if (text === 'help') {
     return helpMessage;
   }
@@ -44,7 +55,6 @@ const getResponse = ({ text, name }: { text: string, name: string }): string => 
   const hedgehogNumber = Number(text);
 
   if (hedgehogNumber) {
-
     if (hedgehogNumber >= 1 && hedgehogNumber <= Number(hedgehogs.length)) {
       return getHedgehog(hedgehogNumber, hedgehogs[hedgehogNumber - 1]);
     }
@@ -52,11 +62,10 @@ const getResponse = ({ text, name }: { text: string, name: string }): string => 
     if (+text > hedgehogs.length) {
       return hedgehogsMaxCount(hedgehogs.length);
     }
-
   }
 
   if (simplePhrases.some(phrase => phrase.message === text)) {
-    return simplePhrases.find(phrase => phrase.message === text).answer;
+    return simplePhrases.find(phrase => phrase.message === text)!.answer;
   }
 
   return finalPhrase(name);

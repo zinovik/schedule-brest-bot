@@ -1,62 +1,95 @@
 import * as brestIce from './brest-ice';
 import * as brestDvvs from './brest-dvvs';
-import {
-  getSchedule,
-  setSchedule,
-  SCHEDULE_ICE,
-  SCHEDULE_DVVS,
-} from '../db';
+import * as TelegramBot from 'node-telegram-bot-api';
+
+import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db';
+import { ISchedules } from './schedules.interface';
 
 export const setIceBrestEndpoint = (app: any) => {
-  app.get('/icebrest', async (req, res) => {
-    const scheduleIceDb = await getSchedule(SCHEDULE_ICE);
+  app.get('/icebrest', async (req: Request, res: any) => {
+    const scheduleIceDb = await getScheduleDb(SCHEDULE_ICE);
     return res.status(200).send(scheduleIceDb);
   });
 };
 
 export const setDvvsBrestEndpoint = (app: any) => {
-  app.get('/dvvsbrest', async (req, res) => {
-    const scheduleDvvsDb = await getSchedule(SCHEDULE_DVVS);
+  app.get('/dvvsbrest', async (req: Request, res: any) => {
+    const scheduleDvvsDb = await getScheduleDb(SCHEDULE_DVVS);
     return res.status(200).send(scheduleDvvsDb);
   });
 };
 
-export const schedulerIce = async (bot: any) => {
+const commonScheduler = async ({
+  bot,
+  type,
+  getSchedule,
+  formatSchedule,
+  getDifference,
+  channelId,
+}: {
+  bot: TelegramBot;
+  type: string;
+  getSchedule: () => Promise<ISchedules>;
+  formatSchedule: (schedule: ISchedules) => string;
+  getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string,
+  channelId: string;
+}): Promise<boolean> => {
+  const scheduleDb = await getScheduleDb(type);
+
+  let scheduleSite: ISchedules = {
+    title: '',
+    schedules: [],
+  };
+
   try {
-    const scheduleIceDb = await getSchedule(SCHEDULE_ICE);
-
-    const scheduleBrestIce = await brestIce.getSchedule();
-    const scheduleBrestIceJSON = JSON.stringify(scheduleBrestIce);
-
-    if (scheduleIceDb !== scheduleBrestIceJSON) {
-      const scheduleBrestIceFormatted = brestIce.formatSchedule(scheduleBrestIce);
-
-      console.log('New Ice schedule. Sending message...');
-      bot.sendMessage(process.env.ICE_CHANNEL_ID, scheduleBrestIceFormatted);
-
-      setSchedule(SCHEDULE_ICE, scheduleBrestIceJSON);
-    }
+    scheduleSite = await getSchedule();
   } catch (error) {
-    console.log(error);
+    console.log('Error fetching schedule: ', type);
   }
+
+  const scheduleSiteJSON = JSON.stringify(scheduleSite);
+
+  if (scheduleDb !== scheduleSiteJSON) {
+    let scheduleFormatted = '';
+
+    try {
+      scheduleFormatted = formatSchedule(scheduleSite);
+    } catch (error) {
+      console.log('Error formatting brest ice schedule');
+    }
+
+    console.log('New Ice schedule. Sending message...');
+    bot.sendMessage(channelId, scheduleFormatted);
+
+    const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
+    if (difference) {
+      bot.sendMessage(channelId, difference);
+    }
+
+    setScheduleDb(type, scheduleSiteJSON);
+  }
+
+  return true;
 };
 
-export const schedulerDvvs = async (bot: any) => {
-  try {
-    const scheduleDvvsDb = await getSchedule(SCHEDULE_DVVS);
+export const schedulerIce = async (bot: TelegramBot) => {
+  return await commonScheduler({
+    bot,
+    type: SCHEDULE_ICE,
+    getSchedule: brestIce.getSchedule,
+    formatSchedule: brestIce.formatSchedule,
+    getDifference: brestIce.getDifference,
+    channelId: process.env.ICE_CHANNEL_ID || '',
+  });
+};
 
-    const scheduleBrestDvvs = await brestDvvs.getSchedule();
-    const scheduleBrestDvvsJSON = JSON.stringify(scheduleBrestDvvs);
-
-    if (scheduleDvvsDb !== scheduleBrestDvvsJSON) {
-      const scheduleBrestDvvsFormatted = brestDvvs.formatSchedule(scheduleBrestDvvs);
-
-      console.log('New Dvvs schedule. Sending message...');
-      bot.sendMessage(process.env.DVVS_CHANNEL_ID, scheduleBrestDvvsFormatted);
-
-      setSchedule(SCHEDULE_DVVS, scheduleBrestDvvsJSON);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+export const schedulerDvvs = async (bot: TelegramBot): Promise<boolean> => {
+  return await commonScheduler({
+    bot,
+    type: SCHEDULE_DVVS,
+    getSchedule: brestDvvs.getSchedule,
+    formatSchedule: brestDvvs.formatSchedule,
+    getDifference: brestDvvs.getDifference,
+    channelId: process.env.DVVS_CHANNEL_ID || '',
+  });
 };

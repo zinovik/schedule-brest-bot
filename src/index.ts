@@ -3,7 +3,7 @@ process.env['NTBA_FIX_319'] = '1';
 require('dotenv').load();
 import axios from 'axios';
 import * as path from 'path';
-import * as nodeTelegramBotApi from 'node-telegram-bot-api';
+import * as TelegramBot from 'node-telegram-bot-api';
 import * as express from 'express';
 import * as helmet from 'helmet';
 
@@ -18,7 +18,7 @@ import {
 const CURRENT_URL = process.env.CURRENT_URL || 'https://zinovikbot.herokuapp.com';
 const PERIOD = Number(process.env.PERIOD) || 60;
 
-const bot = new nodeTelegramBotApi(process.env.TOKEN, { polling: true });
+const bot: TelegramBot = new TelegramBot(process.env.TOKEN || '', { polling: true });
 handleMessages(bot);
 
 const app = express();

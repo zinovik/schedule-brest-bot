@@ -2,7 +2,8 @@
   "extends": "tslint-config-airbnb",
   "rules": {
     "no-duplicate-variable": true,
-    "no-var-keyword": true
+    "no-var-keyword": true,
+    "max-line-length": [true, 150]
   },
   "rulesDirectory": [
     "node_modules/tslint-eslint-rules/dist/rules"

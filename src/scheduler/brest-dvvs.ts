@@ -1,32 +1,15 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
+import { ISchedules, ISchedule, Time } from './schedules.interface';
+
 const URL = 'http://brest-dvvs.by/sched';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-export const getSchedule = async (): Promise<{ title: string, schedules: any[] }> => {
+export const getSchedule = async (): Promise<ISchedules> => {
+  const { data } = await axios.get(URL);
 
-  let data: string;
-
-  try {
-    ({ data } = await axios.get(URL));
-  } catch (error) {
-    console.log('Error fetching dvvs site schedule');
-    return undefined;
-  }
-
-  let parsedSchedule: any;
-
-  try {
-    parsedSchedule = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
-  } catch (error) {
-    console.log('Error parsing dvvs site schedule');
-    return undefined;
-  }
-
-  const { title, schedules } = parsedSchedule;
-
-  console.log(schedules);
+  const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
 
   return { title, schedules };
 };
@@ -34,11 +17,25 @@ export const getSchedule = async (): Promise<{ title: string, schedules: any[] }
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   const dom = new JSDOM(page);
 
-  const table: any[] = Array.from(
-    dom.window.document.querySelector(scheduleTableSelector).children,
-  );
+  const table: any[] = Array.from(dom.window.document.querySelector(scheduleTableSelector)!.children);
 
-  let title = `${table[5].textContent.trim()}\n`;
+  const result: ISchedules = {
+    title: '',
+    schedules: [
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота',
+      'Воскресенье',
+    ].map((day: string): ISchedule => ({
+      dayOfWeek: day,
+      times: [],
+    })),
+  };
+
+  result.title = `${table[5].textContent.trim()}\n`;
 
   let subTitle: string;
   try {
@@ -50,7 +47,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
       subTitle = table[8].children[0].children[0].children[0].textContent.trim();
     }
   }
-  title = `${title}${subTitle}\n`;
+  result.title = `${result.title}${subTitle}\n`;
 
   // const dates = subTitle.split(' с ')[1].split(' по ');
 
@@ -65,81 +62,63 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     }
   }
 
-  const schedules = [
-    {
-      dayOfWeek: 'Понедельник',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Вторник',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Среда',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Четверг',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Пятница',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Суббота',
-      times: [],
-    },
-    {
-      dayOfWeek: 'Воскресенье',
-      times: [],
-    },
-  ];
+  pool50mSchedule.forEach(({ children }: any, index: number) => {
+    if (index < 2) return;
 
-  pool50mSchedule.forEach((row: { children: any[] }, i: number) => {
-    if (i < 2) return;
-
-    const rowChildren = Array.from(row.children);
+    const rowChildren = Array.from(children) as { textContent: string }[];
 
     const start = rowChildren[0].textContent.trim();
     const session = rowChildren[1].textContent.trim();
 
     for (let i = 0; i < 7; i += 1) {
-      if (rowChildren[i + 2].textContent.trim() !== '-') {
-        schedules[i].times.push({
-          start,
-          session,
-          tracks: rowChildren[i + 2].textContent.trim(),
-        });
-      }
+      result.schedules[i].times.push({
+        start,
+        session,
+        tracks: rowChildren[i + 2].textContent.trim(),
+      });
     }
-
   });
 
-  return { title, schedules };
+  return result;
 };
 
-export const formatSchedule = ({ title, schedules }: {
-  title: string,
-  schedules: any[],
-}): string => {
+export const formatSchedule = ({ title, schedules }: ISchedules): string => {
   let scheduleFormatted = title;
 
   schedules.forEach((schedule) => {
     scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
 
-    schedule.times.forEach((time: any) => {
-      scheduleFormatted = `${scheduleFormatted}${time.start}`;
+    schedule.times.forEach(({ tracks, start, session }: Time) => {
+      if (tracks !== '-') {
+        scheduleFormatted = `${scheduleFormatted}${start}`;
 
-      if (time.session) {
-        scheduleFormatted = `${scheduleFormatted}   (${time.session})`;
-      }
+        if (session) {
+          scheduleFormatted = `${scheduleFormatted}   (${session})`;
+        }
 
-      if (time.tracks) {
-        scheduleFormatted = `${scheduleFormatted}   ${time.tracks}\n`;
+        if (tracks) {
+          scheduleFormatted = `${scheduleFormatted}   ${tracks}\n`;
+        }
       }
     });
   });
 
   return scheduleFormatted;
+};
+
+export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules): string => {
+  if (newSchedule.title !== oldSchedule.title) {
+    return '';
+  }
+
+  let result = '';
+
+  for (let i = 0; i < newSchedule.schedules.length; i += 1) {
+    if (JSON.stringify(newSchedule.schedules[i].times) !== JSON.stringify(oldSchedule.schedules[i].times)) {
+      result = `${result}${newSchedule.schedules[i].dayOfWeek}: ${newSchedule.schedules[i].times}/n`;
+    }
+  }
+
+  // return result;
+  return '';
 };

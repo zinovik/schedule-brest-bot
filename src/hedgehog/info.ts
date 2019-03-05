@@ -1,7 +1,7 @@
 let hedgehogsFromEnv: string;
 
 try {
-  hedgehogsFromEnv = JSON.parse(process.env.HEDGEHOGS);
+  hedgehogsFromEnv = JSON.parse(process.env.HEDGEHOGS || '');
 } catch (error) {
   hedgehogsFromEnv = '';
 }
