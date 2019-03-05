@@ -111,14 +111,18 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
     return '';
   }
 
-  let result = '';
+  let result = 'Изменения:';
 
   for (let i = 0; i < newSchedule.schedules.length; i += 1) {
-    if (JSON.stringify(newSchedule.schedules[i].times) !== JSON.stringify(oldSchedule.schedules[i].times)) {
-      result = `${result}${newSchedule.schedules[i].dayOfWeek}: ${newSchedule.schedules[i].times}/n`;
+    const newS = newSchedule.schedules[i];
+    const oldS = oldSchedule.schedules[i];
+
+    for (let j = 0; j < newS.times.length; j += 1) {
+      if (newS.times[j].tracks !== oldS.times[j].tracks) {
+        result = `${result}${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${newS.times[j].tracks}/n`;
+      }
     }
   }
 
-  // return result;
-  return '';
+  return result;
 };
