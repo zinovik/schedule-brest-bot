@@ -59,7 +59,7 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
 
   let result = 'Изменения:';
 
-  for (let i = 0; i < newSchedule.schedules.length; i++) {
+  for (let i = 0; i < newSchedule.schedules.length; i += 1) {
     if (newSchedule.schedules[i].times !== oldSchedule.schedules[i].times) {
       result = `${result}/n${newSchedule.schedules[i].day}: ${newSchedule.schedules[i].times}`;
     }
