@@ -44,7 +44,12 @@ const commonScheduler = async ({
   try {
     scheduleSite = await getSchedule();
   } catch (error) {
-    console.log('Error fetching schedule: ', type);
+    console.log(`Error fetching schedule: ${type}`);
+    return false;
+  }
+
+  if (!scheduleSite) {
+    return false;
   }
 
   const scheduleSiteJSON = JSON.stringify(scheduleSite);
@@ -56,9 +61,10 @@ const commonScheduler = async ({
       scheduleFormatted = formatSchedule(scheduleSite);
     } catch (error) {
       console.log('Error formatting brest ice schedule');
+      return false;
     }
 
-    console.log('New Ice schedule. Sending message...');
+    console.log(`New ${type} schedule. Sending message...`);
     bot.sendMessage(channelId, scheduleFormatted);
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);

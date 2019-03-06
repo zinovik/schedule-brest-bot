@@ -107,6 +107,10 @@ export const formatSchedule = ({ title, schedules }: ISchedules): string => {
 };
 
 export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules): string => {
+  if (!oldSchedule || !newSchedule) {
+    return '';
+  }
+
   if (newSchedule.title !== oldSchedule.title) {
     return '';
   }
@@ -119,7 +123,7 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
 
     for (let j = 0; j < newS.times.length; j += 1) {
       if (newS.times[j].tracks !== oldS.times[j].tracks) {
-        result = `${result}${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${newS.times[j].tracks}/n`;
+        result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldS.times[j].tracks} -> ${newS.times[j].tracks}`;
       }
     }
   }
