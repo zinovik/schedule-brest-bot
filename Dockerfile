@@ -10,7 +10,7 @@ ADD public /usr/src/app/public/
 RUN mkdir /usr/src/app/src
 ADD src /usr/src/app/src/
 
-COPY .env /usr/src/app/
+# COPY .env /usr/src/app/
 COPY nodemon.json /usr/src/app/
 COPY package.json /usr/src/app/
 COPY tsconfig.json /usr/src/app/
