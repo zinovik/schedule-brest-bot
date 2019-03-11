@@ -2,6 +2,10 @@ import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
 import { ISchedules } from './schedules.interface';
+import {
+  NEW_SCHEDULE,
+  CHANGES,
+} from '../phrases/phrases-rus';
 
 const URL = 'http://brest-hockey.by';
 const SCHEDULE_TABLE_SELECTOR = 'table tbody';
@@ -41,7 +45,7 @@ const parseSchedule = (
 };
 
 export const formatSchedule = ({ title, schedules }: ISchedules): string => {
-  let scheduleFormatted = title;
+  let scheduleFormatted = `${NEW_SCHEDULE}\n${title}`;
 
   schedules.forEach((schedule) => {
     const daySchedule = `${schedule.day}, ` + `${schedule.dayOfWeek}: ` + `${schedule.times}`;
@@ -61,14 +65,14 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
     return '';
   }
 
-  let result = 'Изменения:';
+  let result = CHANGES;
 
   for (let i = 0; i < newSchedule.schedules.length; i += 1) {
     const newS = newSchedule.schedules[i];
     const oldS = oldSchedule.schedules[i];
 
     if (newS.times !== oldS.times) {
-      result = `${result}\n${newS.day}: ${oldS.times} -> ${newS.times}`;
+      result = `${result}\n${newS.day}: ${oldS.times} → ${newS.times}`;
     }
   }
 

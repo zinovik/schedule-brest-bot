@@ -1,6 +1,6 @@
-export const startMessage = 'Фуфтыфу! ЁжикБот на связи =]';
+export const START_MESSAGE = 'Фуфтыфу! ЁжикБот на связи =]';
 
-export const helpMessage = `Фуф. Вот, что я уже умею:
+export const HELP_MESSAGE = `Фуф. Вот, что я уже умею:
 1) Фу
 2) Фуфты
 3) Фуфтыфу
@@ -39,7 +39,7 @@ export const getHedgehog = (
 export const hedgehogsMaxCount = (count: string) =>
   `Столько ёжиков у меня пока нет :( Есть только ${count} фуфтыёжиков (=`;
 
-export const simplePhrases = [
+export const SIMPLE_PHRASES = [
   {
     message: 'фуфтыфу',
     answer: 'И тебе фуфтыфу, добрчеловек.',
@@ -55,3 +55,17 @@ export const simplePhrases = [
 ];
 
 export const finalPhrase = (name: string) => `Фуфтыфу, ${name}! ЁжикБот на связи =] Я не шплю тут.`;
+
+export const DAYS_OF_WEEK = [
+  'Понедельник',
+  'Вторник',
+  'Среда',
+  'Четверг',
+  'Пятница',
+  'Суббота',
+  'Воскресенье',
+];
+
+export const NEW_SCHEDULE = 'Новое расписание:';
+
+export const CHANGES = 'Изменения:';
