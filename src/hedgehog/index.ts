@@ -1,20 +1,20 @@
 import { hedgehogs } from './info';
 import {
-  startMessage,
-  helpMessage,
+  START_MESSAGE,
+  HELP_MESSAGE,
   getCommands,
   randomHedgehogMessages,
   getHedgehog,
   hedgehogsMaxCount,
-  simplePhrases,
+  SIMPLE_PHRASES,
   finalPhrase,
-} from './phrases-rus';
+} from '../phrases/phrases-rus';
 
 export const handleMessages = (bot: any) => {
   bot.onText(/\/start/, ({ chat: { id } }: { chat: { id: string } }) => {
     const randomHedgehogNumber = getRandomHedgehogNumber();
 
-    bot.sendMessage(id, startMessage, getCommands(randomHedgehogNumber));
+    bot.sendMessage(id, START_MESSAGE, getCommands(randomHedgehogNumber));
   });
 
   bot.on(
@@ -43,7 +43,7 @@ export const handleMessages = (bot: any) => {
 
 const getResponse = ({ text, name }: { text: string; name: string }): string => {
   if (text === 'help') {
-    return helpMessage;
+    return HELP_MESSAGE;
   }
 
   if (randomHedgehogMessages.indexOf(text) >= 0) {
@@ -64,8 +64,8 @@ const getResponse = ({ text, name }: { text: string; name: string }): string => 
     }
   }
 
-  if (simplePhrases.some(phrase => phrase.message === text)) {
-    return simplePhrases.find(phrase => phrase.message === text)!.answer;
+  if (SIMPLE_PHRASES.some(phrase => phrase.message === text)) {
+    return SIMPLE_PHRASES.find(phrase => phrase.message === text)!.answer;
   }
 
   return finalPhrase(name);

@@ -2,6 +2,11 @@ import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
 import { ISchedules, ISchedule, Time } from './schedules.interface';
+import {
+  DAYS_OF_WEEK,
+  NEW_SCHEDULE,
+  CHANGES,
+} from '../phrases/phrases-rus';
 
 const URL = 'http://brest-dvvs.by/sched';
 const SCHEDULE_TABLE_SELECTOR = '#content';
@@ -21,15 +26,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
 
   const result: ISchedules = {
     title: '',
-    schedules: [
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота',
-      'Воскресенье',
-    ].map((day: string): ISchedule => ({
+    schedules: DAYS_OF_WEEK.map((day: string): ISchedule => ({
       dayOfWeek: day,
       times: [],
     })),
@@ -83,7 +80,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
 };
 
 export const formatSchedule = ({ title, schedules }: ISchedules): string => {
-  let scheduleFormatted = title;
+  let scheduleFormatted = `${NEW_SCHEDULE}\n${title}`;
 
   schedules.forEach((schedule) => {
     scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
@@ -115,7 +112,7 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
     return '';
   }
 
-  let result = 'Изменения:';
+  let result = CHANGES;
 
   for (let i = 0; i < newSchedule.schedules.length; i += 1) {
     const newS = newSchedule.schedules[i];
@@ -123,7 +120,7 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
 
     for (let j = 0; j < newS.times.length; j += 1) {
       if (newS.times[j].tracks !== oldS.times[j].tracks) {
-        result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldS.times[j].tracks} -> ${newS.times[j].tracks}`;
+        result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldS.times[j].tracks} → ${newS.times[j].tracks}`;
       }
     }
   }
