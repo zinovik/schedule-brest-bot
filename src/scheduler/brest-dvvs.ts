@@ -119,8 +119,11 @@ export const getDifference = (oldSchedule: ISchedules, newSchedule: ISchedules):
     const oldS = oldSchedule.schedules[i];
 
     for (let j = 0; j < newS.times.length; j += 1) {
-      if (newS.times[j].tracks !== oldS.times[j].tracks) {
-        result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldS.times[j].tracks} → ${newS.times[j].tracks}`;
+      const oldTracks = oldS.times[j].tracks === '-' ? '0' : oldS.times[j].tracks;
+      const newTracks = newS.times[j].tracks === '-' ? '0' : newS.times[j].tracks;
+
+      if (newTracks !== oldTracks) {
+        result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldTracks} → ${newTracks}`;
       }
     }
   }
