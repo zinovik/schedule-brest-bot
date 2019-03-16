@@ -45,7 +45,7 @@ const parseSchedule = (
 };
 
 export const formatSchedule = ({ title, schedules }: ISchedules): string => {
-  let scheduleFormatted = `${NEW_SCHEDULE}\n${title}`;
+  let scheduleFormatted = `${NEW_SCHEDULE}${title}`;
 
   schedules.forEach((schedule) => {
     const daySchedule = `${schedule.day}, ` + `${schedule.dayOfWeek}: ` + `${schedule.times}`;
