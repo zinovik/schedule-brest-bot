@@ -1,11 +1,13 @@
 process.env['NTBA_FIX_319'] = '1';
 
-require('dotenv').load();
-import axios from 'axios';
+import * as dotenv from 'dotenv';
 import * as path from 'path';
 import * as TelegramBot from 'node-telegram-bot-api';
 import * as express from 'express';
 import * as helmet from 'helmet';
+import axios from 'axios';
+
+dotenv.config();
 
 import { handleMessages } from './hedgehog';
 import {
