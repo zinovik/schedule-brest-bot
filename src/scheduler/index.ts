@@ -65,7 +65,42 @@ const commonScheduler = async ({
     }
 
     console.log(`New ${type} schedule. Sending message...`);
-    bot.sendMessage(channelId, scheduleFormatted);
+    bot.sendMessage(channelId, scheduleFormatted, {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: 'ПН',
+              callback_data: 'monday',
+            },
+            {
+              text: 'ВТ',
+              callback_data: 'tuesday',
+            },
+            {
+              text: 'СР',
+              callback_data: 'wednesday',
+            },
+            {
+              text: 'ЧТ',
+              callback_data: 'thursday',
+            },
+            {
+              text: 'ПТ',
+              callback_data: 'friday',
+            },
+            {
+              text: 'СБ',
+              callback_data: 'saturday',
+            },
+            {
+              text: 'ВС',
+              callback_data: 'sunday',
+            },
+          ],
+        ],
+      },
+    });
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
@@ -97,5 +132,44 @@ export const schedulerDvvs = async (bot: TelegramBot): Promise<boolean> => {
     formatSchedule: brestDvvs.formatSchedule,
     getDifference: brestDvvs.getDifference,
     channelId: process.env.DVVS_CHANNEL_ID || '',
+  });
+};
+
+export const addCallback = (bot: TelegramBot) => {
+  bot.on('callback_query', (callbackQuery) => {
+    if (!callbackQuery.message) {
+      return;
+    }
+
+    let text = callbackQuery.message.text || '';
+
+    switch (callbackQuery.data) {
+      case 'monday':
+        text += '\nПН';
+        break;
+      case 'tuesday':
+        text += '\nВТ';
+        break;
+      case 'wednesday':
+        text += '\nСР';
+        break;
+      case 'thursday':
+        text += '\nЧТ';
+        break;
+      case 'friday':
+        text += '\nПТ';
+        break;
+      case 'saturday':
+        text += '\nСБ';
+        break;
+      case 'sunday':
+        text += '\nВС';
+        break;
+    }
+
+    bot.editMessageText(text, {
+      chat_id: callbackQuery.message.chat.id,
+      message_id: callbackQuery.message.message_id,
+    });
   });
 };

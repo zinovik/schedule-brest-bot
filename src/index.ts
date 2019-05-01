@@ -15,6 +15,7 @@ import {
   schedulerDvvs,
   setIceBrestEndpoint,
   setDvvsBrestEndpoint,
+  addCallback,
 } from './scheduler';
 
 const CURRENT_URL = process.env.CURRENT_URL || 'https://zinovikbot.herokuapp.com';
@@ -36,6 +37,7 @@ app.listen(app.get('port'), () => {
 });
 
 // Schedules subscriptions
+addCallback(bot);
 schedulerIce(bot);
 schedulerDvvs(bot);
 setInterval(() => schedulerIce(bot), PERIOD * 60 * 1000);
