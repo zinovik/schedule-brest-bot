@@ -3,6 +3,7 @@ import * as brestDvvs from './brest-dvvs';
 import * as TelegramBot from 'node-telegram-bot-api';
 
 import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db';
+import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
 import { ISchedules } from './schedules.interface';
 
 export const setIceBrestEndpoint = (app: any) => {
@@ -65,42 +66,7 @@ const commonScheduler = async ({
     }
 
     console.log(`New ${type} schedule. Sending message...`);
-    bot.sendMessage(channelId, scheduleFormatted, {
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: 'ПН',
-              callback_data: 'monday',
-            },
-            {
-              text: 'ВТ',
-              callback_data: 'tuesday',
-            },
-            {
-              text: 'СР',
-              callback_data: 'wednesday',
-            },
-            {
-              text: 'ЧТ',
-              callback_data: 'thursday',
-            },
-            {
-              text: 'ПТ',
-              callback_data: 'friday',
-            },
-            {
-              text: 'СБ',
-              callback_data: 'saturday',
-            },
-            {
-              text: 'ВС',
-              callback_data: 'sunday',
-            },
-          ],
-        ],
-      },
-    });
+    bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
@@ -168,6 +134,7 @@ export const addCallback = (bot: TelegramBot) => {
     }
 
     bot.editMessageText(text, {
+      ...DAYS_OF_WEEK_BUTTONS,
       chat_id: callbackQuery.message.chat.id,
       message_id: callbackQuery.message.message_id,
     });
