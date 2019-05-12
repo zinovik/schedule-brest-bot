@@ -14,19 +14,19 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/1.jpg',
   },
   {
-    where: 'Львiв',
+    where: 'Lviv',
     who: 'Max',
     when: '2013.07.29',
     url: 'https://zinovikbot.herokuapp.com/2.jpg',
   },
   {
-    where: 'Крым',
+    where: 'Krym',
     who: 'Roma and Lena',
     when: '2013.08.XX',
     url: 'https://zinovikbot.herokuapp.com/3.jpg',
   },
   {
-    where: 'Нясвiж',
+    where: 'Nyasvizh',
     who: 'Roma and Lena',
     when: '2013.10.XX',
     url: 'https://zinovikbot.herokuapp.com/4.jpg',
@@ -38,31 +38,31 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/5.jpg',
   },
   {
-    where: 'Мiр',
+    where: 'Mir',
     who: 'Lena',
     when: '2014.04.12',
     url: 'https://zinovikbot.herokuapp.com/6.jpg',
   },
   {
-    where: 'Нясвiж & Мiр 1',
+    where: 'Nyasvizh & Mir 1',
     who: 'Lena',
     when: '2014.04.12',
     url: 'https://zinovikbot.herokuapp.com/7.jpg',
   },
   {
-    where: 'Нясвiж & Мiр 2',
+    where: 'Nyasvizh & Mir 2',
     who: 'Lena',
     when: '2014.04.12',
     url: 'https://zinovikbot.herokuapp.com/8.jpg',
   },
   {
-    where: 'Гародня',
+    where: 'Hrodna',
     who: 'Lena',
     when: '2014.04.22',
     url: 'https://zinovikbot.herokuapp.com/9.jpg',
   },
   {
-    where: 'Полацк',
+    where: 'Polatsk',
     who: 'Lena',
     when: '2014.04.24',
     url: 'https://zinovikbot.herokuapp.com/10.jpg',
@@ -86,7 +86,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/13.jpg',
   },
   {
-    where: 'Рэчыца',
+    where: 'Rechytsa',
     who: 'Max',
     when: '2014.08.18',
     url: 'https://zinovikbot.herokuapp.com/14.jpg',
@@ -98,7 +98,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/15.jpg',
   },
   {
-    where: 'Гародня',
+    where: 'Hrodna',
     who: 'Lena',
     when: '2014.09.0X',
     url: 'https://zinovikbot.herokuapp.com/16.jpg',
@@ -141,13 +141,13 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
   },
   {
     where: 'Oberhof',
-    who: 'Ирка',
+    who: 'Irka',
     when: '2015.04.28',
     url: 'https://zinovikbot.herokuapp.com/23.jpg',
   },
   {
     where: 'Brest',
-    who: 'Христина',
+    who: 'Hristina',
     when: '2015.05.23',
     url: 'https://zinovikbot.herokuapp.com/24.jpg',
   },
@@ -164,7 +164,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/26.jpg',
   },
   {
-    where: 'Дудуткi',
+    where: 'Dudutki',
     who: 'Lena',
     when: '2015.06.20',
     url: 'https://zinovikbot.herokuapp.com/27.jpg',
@@ -182,7 +182,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/29.jpg',
   },
   {
-    where: 'Санкт-Петербург',
+    where: 'Saint Petersburg',
     who: 'Roma and Lena',
     when: '2015.08.29',
     url: 'https://zinovikbot.herokuapp.com/30.jpg',
@@ -255,7 +255,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
   },
   {
     where: 'Munchen',
-    who: 'Сашка',
+    who: 'Sashka',
     when: '2016.12.27',
     url: 'https://zinovikbot.herokuapp.com/42.jpg',
   },
@@ -266,7 +266,7 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     url: 'https://zinovikbot.herokuapp.com/43.jpg',
   },
   {
-    where: 'Львiв',
+    where: 'Lviv',
     who: 'Lena',
     when: '2017.01.02',
     url: 'https://zinovikbot.herokuapp.com/44.jpg',
@@ -360,5 +360,11 @@ export const hedgehogs = (hedgehogsFromEnv as any) || [
     who: 'Lena',
     when: '2019.01.01',
     url: 'https://zinovikbot.herokuapp.com/59.jpg',
+  },
+  {
+    where: 'Yaremche',
+    who: 'Max',
+    when: '2019.05.07',
+    url: 'https://zinovikbot.herokuapp.com/60.jpg',
   },
 ];
