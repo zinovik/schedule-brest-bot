@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "env": {
+    "IS_NOW": "true"
+  },
+  "builds": [
+    {
+      "src": "./src/**/*.ts",
+      "use": "@now/node@canary"
+    }
+  ]
+}
