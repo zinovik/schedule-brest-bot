@@ -27,7 +27,6 @@ handleMessages(bot);
 const app = express();
 app.use(helmet());
 app.set('port', process.env.PORT || 8100);
-app.use(express.static(path.join(__dirname, '../public')));
 
 setIceBrestEndpoint(app);
 setDvvsBrestEndpoint(app);
