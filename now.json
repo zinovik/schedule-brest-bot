@@ -6,8 +6,10 @@
   "builds": [
     {
       "src": "./src/**/*.ts",
-      "use": "@now/node-server",
-      "config": { "maxLambdaSize": "50mb" }
+      "use": "@now/node"
     }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/src/$1" }
   ]
 }
