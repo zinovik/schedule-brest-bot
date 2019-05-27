@@ -1,12 +1,12 @@
 {
-  "name": "zinovikbot",
+  "name": "schedule-brest-bot",
   "version": "0.1.0",
   "description": "simple telegram bot",
   "main": "dist",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^8.0.0",
-    "express": "^4.17.0",
+    "express": "^4.17.1",
     "helmet": "^3.18.0",
     "jsdom": "^15.1.0",
     "node-telegram-bot-api": "^0.30.0",
@@ -22,7 +22,7 @@
     "@types/node-telegram-bot-api": "^0.31.0",
     "@types/redis": "^2.8.12",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.0",
+    "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
     "tslint": "^5.16.0",
@@ -42,12 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zinovik/zinovikbot.git"
+    "url": "git+https://github.com/zinovik/schedule-brest-bot.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/zinovik/zinovikbot/issues"
+    "url": "https://github.com/zinovik/schedule-brest-bot/issues"
   },
-  "homepage": "https://github.com/zinovik/zinovikbot#readme"
+  "homepage": "https://github.com/zinovik/schedule-brest-bot#readme"
 }

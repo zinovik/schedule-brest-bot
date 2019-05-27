@@ -17,7 +17,7 @@ import {
   addCallback,
 } from './scheduler';
 
-const CURRENT_URL = process.env.CURRENT_URL || 'https://zinovikbot.herokuapp.com';
+const CURRENT_URL = process.env.CURRENT_URL || 'https://schedule-brest-bot.herokuapp.com';
 const PERIOD = Number(process.env.PERIOD) || 60;
 
 const bot: TelegramBot = new TelegramBot(process.env.TOKEN || '', { polling: true });
