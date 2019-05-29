@@ -1,4 +1,7 @@
+import * as dotenv from 'dotenv';
 import { createClient, ClientOpts } from 'redis';
+
+dotenv.config();
 
 export const SCHEDULE_ICE: string = 'scheduleIce';
 export const SCHEDULE_DVVS: string = 'scheduleDvvs';
