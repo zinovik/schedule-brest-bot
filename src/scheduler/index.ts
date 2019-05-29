@@ -1,9 +1,8 @@
 import * as brestIce from './brest-ice';
 import * as brestDvvs from './brest-dvvs';
-import * as TelegramBot from 'node-telegram-bot-api';
 
 import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db';
-import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
+// import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
 import { ISchedules } from './schedules.interface';
 
 export const setIceBrestEndpoint = (app: any) => {
@@ -28,7 +27,7 @@ const commonScheduler = async ({
   getDifference,
   channelId,
 }: {
-  bot: TelegramBot;
+  bot: { sendMessage: (channelId: string, text: string) => Promise<void> };
   type: string;
   getSchedule: () => Promise<ISchedules>;
   formatSchedule: (schedule: ISchedules) => string;
@@ -66,7 +65,8 @@ const commonScheduler = async ({
     }
 
     console.log(`New ${type} schedule. Sending message...`);
-    bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+    // bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+    await bot.sendMessage(channelId, scheduleFormatted);
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
@@ -79,7 +79,7 @@ const commonScheduler = async ({
   return true;
 };
 
-export const schedulerIce = async (bot: TelegramBot) => {
+export const schedulerIce = async (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }) => {
   return await commonScheduler({
     bot,
     type: SCHEDULE_ICE,
@@ -90,7 +90,7 @@ export const schedulerIce = async (bot: TelegramBot) => {
   });
 };
 
-export const schedulerDvvs = async (bot: TelegramBot): Promise<boolean> => {
+export const schedulerDvvs = async (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
   return await commonScheduler({
     bot,
     type: SCHEDULE_DVVS,
@@ -101,42 +101,42 @@ export const schedulerDvvs = async (bot: TelegramBot): Promise<boolean> => {
   });
 };
 
-export const addCallback = (bot: TelegramBot) => {
-  bot.on('callback_query', (callbackQuery) => {
-    if (!callbackQuery.message) {
-      return;
-    }
+// export const addCallback = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }) => {
+//   bot.on('callback_query', (callbackQuery) => {
+//     if (!callbackQuery.message) {
+//       return;
+//     }
 
-    let text = callbackQuery.message.text || '';
+//     let text = callbackQuery.message.text || '';
 
-    switch (callbackQuery.data) {
-      case 'monday':
-        text += '\nПН';
-        break;
-      case 'tuesday':
-        text += '\nВТ';
-        break;
-      case 'wednesday':
-        text += '\nСР';
-        break;
-      case 'thursday':
-        text += '\nЧТ';
-        break;
-      case 'friday':
-        text += '\nПТ';
-        break;
-      case 'saturday':
-        text += '\nСБ';
-        break;
-      case 'sunday':
-        text += '\nВС';
-        break;
-    }
+//     switch (callbackQuery.data) {
+//       case 'monday':
+//         text += '\nПН';
+//         break;
+//       case 'tuesday':
+//         text += '\nВТ';
+//         break;
+//       case 'wednesday':
+//         text += '\nСР';
+//         break;
+//       case 'thursday':
+//         text += '\nЧТ';
+//         break;
+//       case 'friday':
+//         text += '\nПТ';
+//         break;
+//       case 'saturday':
+//         text += '\nСБ';
+//         break;
+//       case 'sunday':
+//         text += '\nВС';
+//         break;
+//     }
 
-    bot.editMessageText(text, {
-      ...DAYS_OF_WEEK_BUTTONS,
-      chat_id: callbackQuery.message.chat.id,
-      message_id: callbackQuery.message.message_id,
-    });
-  });
-};
+//     bot.editMessageText(text, {
+//       ...DAYS_OF_WEEK_BUTTONS,
+//       chat_id: callbackQuery.message.chat.id,
+//       message_id: callbackQuery.message.message_id,
+//     });
+//   });
+// };

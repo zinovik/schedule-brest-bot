@@ -13,6 +13,6 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules/
     ports:
-      - 8100:8100
+      - 6000:6000
     depends_on:
       - database
