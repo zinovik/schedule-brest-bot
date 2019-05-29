@@ -14,18 +14,13 @@ const TELEGRAM_API_URL = 'https://api.telegram.org/bot';
 
 const bot = {
   sendMessage: async (channelId: string, text: string): Promise<void> => {
-    await axios.get(`${TELEGRAM_API_URL}${process.env.TOKEN}/sendMessage?chat_id=${channelId}&text=${text}`);
+    await axios.get(encodeURI(`${TELEGRAM_API_URL}${process.env.TOKEN}/sendMessage?chat_id=${channelId}&text=${text}`));
   },
 };
 
 const handler = async (_: IncomingMessage, res: ServerResponse) => {
   await schedulerIce(bot);
   await schedulerDvvs(bot);
-
-  // TEST!
-  if (process.env.ICE_CHANNEL_ID) {
-    await bot.sendMessage(process.env.ICE_CHANNEL_ID, 'Schedules were checked');
-  }
 
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({
