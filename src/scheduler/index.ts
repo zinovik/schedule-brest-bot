@@ -5,20 +5,6 @@ import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db
 // import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
 import { ISchedules } from './schedules.interface';
 
-export const setIceBrestEndpoint = (app: any) => {
-  app.get('/icebrest', async (req: Request, res: any) => {
-    const scheduleIceDb = await getScheduleDb(SCHEDULE_ICE);
-    return res.status(200).send(scheduleIceDb);
-  });
-};
-
-export const setDvvsBrestEndpoint = (app: any) => {
-  app.get('/dvvsbrest', async (req: Request, res: any) => {
-    const scheduleDvvsDb = await getScheduleDb(SCHEDULE_DVVS);
-    return res.status(200).send(scheduleDvvsDb);
-  });
-};
-
 const commonScheduler = async ({
   bot,
   type,
