@@ -6,8 +6,11 @@ dotenv.config();
 export const SCHEDULE_ICE: string = 'scheduleIce';
 export const SCHEDULE_DVVS: string = 'scheduleDvvs';
 
+const redisUrl = process.env.REDIS_URL && (process.env.REDIS_URL.split('redis://')[1] || process.env.REDIS_URL);
+const redisPassword = redisUrl && redisUrl.split('@')[0];
+
 const client = createClient(process.env.REDIS_URL || '', {
-  no_ready_check: true,
+  auth_pass: redisPassword,
 } as ClientOpts);
 
 export const getScheduleDb = (type: string): Promise<string> => {

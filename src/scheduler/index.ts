@@ -20,7 +20,13 @@ const commonScheduler = async ({
   getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string,
   channelId: string;
 }): Promise<boolean> => {
-  const scheduleDb = await getScheduleDb(type);
+  let scheduleDb = '';
+
+  try {
+    scheduleDb = await getScheduleDb(type);
+  } catch (error) {
+    return false;
+  }
 
   let scheduleSite: ISchedules = {
     title: '',
@@ -51,8 +57,12 @@ const commonScheduler = async ({
     }
 
     console.log(`New ${type} schedule. Sending message...`);
-    // bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
-    await bot.sendMessage(channelId, scheduleFormatted);
+    try {
+      // await bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+      await bot.sendMessage(channelId, scheduleFormatted);
+    } catch (error) {
+      console.log(error);
+    }
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
