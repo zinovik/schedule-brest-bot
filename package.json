@@ -29,7 +29,6 @@
   "scripts": {
     "dev": "nodemon",
     "hello": "yarn dev src/lambda/hello",
-    "hello-async": "yarn dev src/lambda/hello-async",
     "icebrest": "yarn dev src/lambda/icebrest",
     "dvvsbrest": "yarn dev src/lambda/dvvsbrest",
     "check-schedules": "yarn dev src/lambda/check-schedules",
