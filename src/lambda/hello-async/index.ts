@@ -4,12 +4,14 @@ import { createServer, IncomingMessage, ServerResponse } from 'http';
 dotenv.config();
 
 const handler = (_: IncomingMessage, res: ServerResponse) => {
-  setTimeout(() => {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      hello: 'world',
-    }));
-  }, 4000);
+  setTimeout(
+    () => {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        hello: 'world',
+      }));
+    },
+    4000);
 };
 
 if (!process.env.IS_NOW) {
