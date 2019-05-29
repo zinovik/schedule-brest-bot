@@ -66,7 +66,7 @@ const commonScheduler = async ({
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
-      setTimeout(() => bot.sendMessage(channelId, difference), 1000);
+      setTimeout(async () => await bot.sendMessage(channelId, difference), 1000);
     }
 
     setScheduleDb(type, scheduleSiteJSON);
