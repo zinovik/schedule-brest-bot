@@ -41,7 +41,11 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     try {
       subTitle = table[7].children[0].children[0].children[0].textContent.trim();
     } catch (error) {
-      subTitle = table[8].children[0].children[0].children[0].textContent.trim();
+      try {
+        subTitle = table[8].children[0].children[0].children[0].textContent.trim();
+      } catch (error) {
+        subTitle = table[8].children[0].textContent.trim();
+      }
     }
   }
   result.title = `${result.title}${subTitle}\n`;
@@ -55,7 +59,13 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     try {
       pool50mSchedule = Array.from(table[7].children[0].children[0].children);
     } catch (error) {
-      pool50mSchedule = Array.from(table[8].children[0].children[0].children);
+      try {
+        pool50mSchedule = Array.from(table[8].children[0].children[0].children);
+      } catch (error) {
+        console.log(1);
+        pool50mSchedule = Array.from(table[10].children[0].children[0].children);
+        console.log(2);
+      }
     }
   }
 

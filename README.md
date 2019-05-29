@@ -14,3 +14,6 @@ or
 yarn
 yarn check-schedules
 ```
+
+https://schedule-brest-bot.zinovik.now.sh/api/icebrest
+https://schedule-brest-bot.zinovik.now.sh/api/dvvsbrest
