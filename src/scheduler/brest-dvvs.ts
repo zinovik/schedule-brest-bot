@@ -62,9 +62,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
       try {
         pool50mSchedule = Array.from(table[8].children[0].children[0].children);
       } catch (error) {
-        console.log(1);
         pool50mSchedule = Array.from(table[10].children[0].children[0].children);
-        console.log(2);
       }
     }
   }

@@ -3,7 +3,7 @@
   "env": {
     "IS_NOW": "true",
     "ICE_CHANNEL_ID": "@ice-channel-id",
-    "DVVS_CHANNEL_ID": "@dvvs-channgel-id",
+    "DVVS_CHANNEL_ID": "@dvvs-channel-id",
     "REDIS_URL": "@redis-url",
     "TOKEN": "@token"
   },
