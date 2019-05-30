@@ -10,7 +10,8 @@
   "builds": [
     {
       "src": "./src/**/*.ts",
-      "use": "@now/node"
+      "use": "@now/node-server",
+      "config": { "maxLambdaSize": "50mb" }
     }
   ],
   "routes": [
