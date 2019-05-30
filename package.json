@@ -32,6 +32,7 @@
     "icebrest": "yarn dev src/lambda/icebrest",
     "dvvsbrest": "yarn dev src/lambda/dvvsbrest",
     "check-schedules": "yarn dev src/lambda/check-schedules",
+    "start": "yarn check-schedules",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jestconfig.json",

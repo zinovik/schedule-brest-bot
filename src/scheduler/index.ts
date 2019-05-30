@@ -52,7 +52,7 @@ const commonScheduler = async ({
     try {
       scheduleFormatted = formatSchedule(scheduleSite);
     } catch (error) {
-      console.log('Error formatting brest ice schedule');
+      console.log(`Error formatting schedule: ${type}`);
       return false;
     }
 
@@ -66,7 +66,16 @@ const commonScheduler = async ({
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
     if (difference) {
-      setTimeout(async () => await bot.sendMessage(channelId, difference), 1000);
+      setTimeout(
+        async () => {
+          try {
+            await bot.sendMessage(channelId, difference);
+          } catch (error) {
+            console.log(error);
+          }
+        },
+        1000,
+      );
     }
 
     setScheduleDb(type, scheduleSiteJSON);
