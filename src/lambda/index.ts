@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const handler = (event: any, context: any, callback: any) => {
+exports.handler = (event: any, context: any, callback: any) => {
   callback(null, {
     statusCode: 200,
     headers: { 'Content-Type': 'application/json' },
@@ -11,9 +11,3 @@ const handler = (event: any, context: any, callback: any) => {
     }),
   });
 };
-
-// if (!process.env.IS_NOW) {
-//   createServer(handler).listen(6000);
-// }
-
-export default handler;

@@ -18,7 +18,7 @@ const bot = {
   },
 };
 
-const handler = async (event: any, context: any, callback: any) => {
+exports.handler = async (event: any, context: any, callback: any) => {
   try {
     await schedulerIce(bot);
     await schedulerDvvs(bot);
@@ -34,9 +34,3 @@ const handler = async (event: any, context: any, callback: any) => {
     }),
   });
 };
-
-// if (!process.env.IS_NOW) {
-//   createServer(handler).listen(6000);
-// }
-
-export default handler;

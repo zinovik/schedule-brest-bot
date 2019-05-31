@@ -4,7 +4,7 @@ import { getScheduleDb, SCHEDULE_DVVS } from '../db';
 
 dotenv.config();
 
-const handler = async (event: any, context: any, callback: any) => {
+exports.handler = async (event: any, context: any, callback: any) => {
 
   let scheduleDvvsDb = '';
 
@@ -20,9 +20,3 @@ const handler = async (event: any, context: any, callback: any) => {
     body: scheduleDvvsDb,
   });
 };
-
-// if (!process.env.IS_NOW) {
-//   createServer(handler).listen(6000);
-// }
-
-export default handler;
