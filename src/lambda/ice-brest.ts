@@ -1,6 +1,6 @@
-import * as dotenv from 'dotenv';
+const dotenv = require('dotenv');
 
-import { getScheduleDb, SCHEDULE_ICE } from '../db';
+const { getScheduleDb, SCHEDULE_ICE } = require('../db');
 
 dotenv.config();
 

@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-import { createClient, ClientOpts } from 'redis';
+const dotenv = require('dotenv');
+const { createClient, ClientOpts } = require('redis');
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const redisPassword = redisUrl && redisUrl.split('@')[0];
 
 const client = createClient(process.env.REDIS_URL || '', {
   auth_pass: redisPassword,
-} as ClientOpts);
+} as any);
 
 export const getScheduleDb = (type: string): Promise<string> => {
   return new Promise((resolve, reject) => {
