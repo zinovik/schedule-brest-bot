@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import axios from 'axios';
-import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 import {
   schedulerIce,
@@ -13,31 +12,30 @@ dotenv.config();
 const TELEGRAM_API_URL = 'https://api.telegram.org/bot';
 
 const bot = {
-  sendMessage: async (channelId: string, text: string): Promise<void> => {
-    const { data } = await axios.get(encodeURI(`${TELEGRAM_API_URL}${process.env.TOKEN}/sendMessage?chat_id=${channelId}&text=${text}`));
-    return data;
+  sendMessage: (channelId: string, text: string): Promise<any> => {
+    return axios.get(encodeURI(`${TELEGRAM_API_URL}${process.env.TOKEN}/sendMessage?chat_id=${channelId}&text=${text}`));
   },
 };
 
-const handler = async (_: IncomingMessage, res: ServerResponse) => {
-  try {
-    await schedulerIce(bot);
-    await schedulerDvvs(bot);
-  } catch (error) {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      error,
-    }));
-  }
-
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({
-    result: 'Schedules were checked',
-  }));
+exports.handler = (event: any, context: any, callback: any) => {
+  Promise.all([
+    schedulerIce(bot),
+    schedulerDvvs(bot),
+  ])
+    .then(([iceResult, dvvsResult]) => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          result: `Schedules were checked: Ice: ${iceResult}, Dvvs: ${dvvsResult}`,
+        }),
+      });
+    })
+    .catch(() => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: 'Something went wrong...',
+      });
+    });
 };
-
-// if (!process.env.IS_NOW) {
-//   createServer(handler).listen(6000);
-// }
-
-export default handler;

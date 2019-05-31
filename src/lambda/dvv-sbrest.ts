@@ -1,27 +1,23 @@
 import * as dotenv from 'dotenv';
-import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 import { getScheduleDb, SCHEDULE_DVVS } from '../db';
 
 dotenv.config();
 
-const handler = async (_: IncomingMessage, res: ServerResponse) => {
-
-  let scheduleDvvsDb = '';
-
-  try {
-    scheduleDvvsDb = await getScheduleDb(SCHEDULE_DVVS);
-  } catch (error) {
-    scheduleDvvsDb = 'Something went wrong...';
-  }
-
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(scheduleDvvsDb);
-
+exports.handler = (event: any, context: any, callback: any) => {
+  getScheduleDb(SCHEDULE_DVVS)
+    .then((scheduleDvvsDb: string) => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: scheduleDvvsDb,
+      });
+    })
+    .catch(() => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: 'Something went wrong...',
+      });
+    });
 };
-
-// if (!process.env.IS_NOW) {
-//   createServer(handler).listen(6000);
-// }
-
-export default handler;

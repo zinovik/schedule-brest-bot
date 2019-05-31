@@ -5,7 +5,7 @@ import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db
 // import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
 import { ISchedules } from './schedules.interface';
 
-const commonScheduler = async ({
+const commonScheduler = ({
   bot,
   type,
   getSchedule,
@@ -20,72 +20,64 @@ const commonScheduler = async ({
   getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string;
   channelId: string;
 }): Promise<boolean> => {
-  let scheduleDb = '';
 
-  try {
-    scheduleDb = await getScheduleDb(type);
-  } catch (error) {
-    return false;
-  }
+  let scheduleDb: string;
+  let scheduleSite: ISchedules;
+  let isUpdatingSchedule: boolean;
+  let scheduleSiteJSON: string;
 
-  let scheduleSite: ISchedules = {
-    title: '',
-    schedules: [],
-  };
+  return Promise.all([
+    getScheduleDb(type),
+    getSchedule(),
+  ])
+    .then(([
+      resultScheduleDb,
+      resultScheduleSite,
+    ]): any => {
+      scheduleDb = resultScheduleDb;
+      scheduleSite = resultScheduleSite;
 
-  try {
-    scheduleSite = await getSchedule();
-  } catch (error) {
-    console.log(`Error fetching schedule: ${type}`);
-    return false;
-  }
+      if (!scheduleSite) {
+        throw new Error();
+      }
 
-  if (!scheduleSite) {
-    return false;
-  }
+      scheduleSiteJSON = JSON.stringify(scheduleSite);
 
-  const scheduleSiteJSON = JSON.stringify(scheduleSite);
+      if (scheduleDb !== scheduleSiteJSON) {
+        isUpdatingSchedule = true;
 
-  if (scheduleDb !== scheduleSiteJSON) {
-    let scheduleFormatted = '';
+        const scheduleFormatted = formatSchedule(scheduleSite);
 
-    try {
-      scheduleFormatted = formatSchedule(scheduleSite);
-    } catch (error) {
-      console.log(`Error formatting schedule: ${type}`);
+        console.log(`New ${type} schedule. Sending message...`);
+        // await bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+        return bot.sendMessage(channelId, scheduleFormatted);
+      }
+    })
+    .then(() => {
+      if (isUpdatingSchedule) {
+        const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
+
+        if (difference) {
+          return bot.sendMessage(channelId, difference);
+        }
+      }
+    })
+    .then(() => {
+      if (isUpdatingSchedule) {
+        return setScheduleDb(type, scheduleSiteJSON);
+      }
+      return '';
+    })
+    .then(() => {
+      return true;
+    })
+    .catch(() => {
       return false;
-    }
-
-    console.log(`New ${type} schedule. Sending message...`);
-    try {
-      // await bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
-      await bot.sendMessage(channelId, scheduleFormatted);
-    } catch (error) {
-      console.log(error);
-    }
-
-    const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
-    if (difference) {
-      setTimeout(
-        async () => {
-          try {
-            await bot.sendMessage(channelId, difference);
-          } catch (error) {
-            console.log(error);
-          }
-        },
-        1000,
-      );
-    }
-
-    setScheduleDb(type, scheduleSiteJSON);
-  }
-
-  return true;
+    });
 };
 
-export const schedulerIce = async (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }) => {
-  return await commonScheduler({
+export const schedulerIce = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
+  return commonScheduler({
     bot,
     type: SCHEDULE_ICE,
     getSchedule: brestIce.getSchedule,
@@ -95,8 +87,8 @@ export const schedulerIce = async (bot: { sendMessage: (channelId: string, text:
   });
 };
 
-export const schedulerDvvs = async (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
-  return await commonScheduler({
+export const schedulerDvvs = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
+  return commonScheduler({
     bot,
     type: SCHEDULE_DVVS,
     getSchedule: brestDvvs.getSchedule,

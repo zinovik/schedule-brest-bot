@@ -10,6 +10,8 @@
     "redis": "^2.8.0"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/aws-lambda": "^8.10.25",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.13",
     "@types/jsdom": "^12.2.3",
@@ -33,8 +35,8 @@
     "icebrest": "yarn dev src/lambda/icebrest",
     "dvvsbrest": "yarn dev src/lambda/dvvsbrest",
     "check-schedules": "yarn dev src/lambda/check-schedules",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "start:lambda": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
+    "build:lambda": "netlify-lambda build src/lambda --config ./webpack.functions.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jestconfig.json"
