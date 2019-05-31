@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import * as dotenv from 'dotenv';
 import axios from 'axios';
 
@@ -17,25 +18,25 @@ const bot = {
   },
 };
 
-exports.handler = (event: any, context: any, callback: any) => {
-  Promise.all([
+exports.handler = async (event: any, context: any) => {
+  return Promise.all([
     schedulerIce(bot),
     schedulerDvvs(bot),
   ])
     .then(([iceResult, dvvsResult]) => {
-      callback(null, {
+      return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           result: `Schedules were checked: Ice: ${iceResult}, Dvvs: ${dvvsResult}`,
         }),
-      });
+      };
     })
     .catch(() => {
-      callback(null, {
+      return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
         body: 'Something went wrong...',
-      });
+      };
     });
 };
