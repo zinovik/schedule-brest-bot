@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 
-import { getScheduleDb, SCHEDULE_DVVS } from '../../db';
+import { getScheduleDb, SCHEDULE_DVVS } from '../db';
 
 dotenv.config();
 
