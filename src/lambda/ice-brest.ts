@@ -1,11 +1,10 @@
 import * as dotenv from 'dotenv';
-import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 import { getScheduleDb, SCHEDULE_ICE } from '../db';
 
 dotenv.config();
 
-const handler = async (_: IncomingMessage, res: ServerResponse) => {
+const handler = async (event: any, context: any, callback: any) => {
 
   let scheduleIceDb = '';
 
@@ -15,9 +14,11 @@ const handler = async (_: IncomingMessage, res: ServerResponse) => {
     scheduleIceDb = 'Something went wrong...';
   }
 
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(scheduleIceDb);
-
+  callback(null, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: scheduleIceDb,
+  });
 };
 
 // if (!process.env.IS_NOW) {

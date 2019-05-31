@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import axios from 'axios';
-import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 import {
   schedulerIce,
@@ -19,21 +18,21 @@ const bot = {
   },
 };
 
-const handler = async (_: IncomingMessage, res: ServerResponse) => {
+const handler = async (event: any, context: any, callback: any) => {
   try {
     await schedulerIce(bot);
     await schedulerDvvs(bot);
   } catch (error) {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      error,
-    }));
+    //
   }
 
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({
-    result: 'Schedules were checked',
-  }));
+  callback(null, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      result: 'Schedules were checked',
+    }),
+  });
 };
 
 // if (!process.env.IS_NOW) {

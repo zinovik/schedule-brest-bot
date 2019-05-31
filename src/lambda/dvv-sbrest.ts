@@ -1,11 +1,10 @@
 import * as dotenv from 'dotenv';
-import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 import { getScheduleDb, SCHEDULE_DVVS } from '../db';
 
 dotenv.config();
 
-const handler = async (_: IncomingMessage, res: ServerResponse) => {
+const handler = async (event: any, context: any, callback: any) => {
 
   let scheduleDvvsDb = '';
 
@@ -15,9 +14,11 @@ const handler = async (_: IncomingMessage, res: ServerResponse) => {
     scheduleDvvsDb = 'Something went wrong...';
   }
 
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(scheduleDvvsDb);
-
+  callback(null, {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: scheduleDvvsDb,
+  });
 };
 
 // if (!process.env.IS_NOW) {
