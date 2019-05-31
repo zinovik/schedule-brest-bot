@@ -4,19 +4,20 @@ import { getScheduleDb, SCHEDULE_DVVS } from '../db';
 
 dotenv.config();
 
-exports.handler = async (event: any, context: any, callback: any) => {
-
-  let scheduleDvvsDb = '';
-
-  try {
-    scheduleDvvsDb = await getScheduleDb(SCHEDULE_DVVS);
-  } catch (error) {
-    scheduleDvvsDb = 'Something went wrong...';
-  }
-
-  callback(null, {
-    statusCode: 200,
-    headers: { 'Content-Type': 'application/json' },
-    body: scheduleDvvsDb,
-  });
+exports.handler = (event: any, context: any, callback: any) => {
+  getScheduleDb(SCHEDULE_DVVS)
+    .then((scheduleDvvsDb: string) => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: scheduleDvvsDb,
+      });
+    })
+    .catch(() => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: 'Something went wrong...',
+      });
+    });
 };

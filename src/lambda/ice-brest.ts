@@ -4,19 +4,20 @@ import { getScheduleDb, SCHEDULE_ICE } from '../db';
 
 dotenv.config();
 
-exports.handler = async (event: any, context: any, callback: any) => {
-
-  let scheduleIceDb = '';
-
-  try {
-    scheduleIceDb = await getScheduleDb(SCHEDULE_ICE);
-  } catch (error) {
-    scheduleIceDb = 'Something went wrong...';
-  }
-
-  callback(null, {
-    statusCode: 200,
-    headers: { 'Content-Type': 'application/json' },
-    body: scheduleIceDb,
-  });
+exports.handler = (event: any, context: any, callback: any) => {
+  getScheduleDb(SCHEDULE_ICE)
+    .then((scheduleIceDb: string) => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: scheduleIceDb,
+      });
+    })
+    .catch(() => {
+      callback(null, {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: 'Something went wrong...',
+      });
+    });
 };

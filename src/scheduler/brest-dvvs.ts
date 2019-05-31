@@ -11,12 +11,13 @@ import {
 const URL = 'http://brest-dvvs.by/sched/';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-export const getSchedule = async (): Promise<ISchedules> => {
-  const { data } = await axios.get(URL);
+export const getSchedule = (): Promise<ISchedules> => {
+  return axios.get(URL)
+    .then(({ data }) => {
+      const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
 
-  const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
-
-  return { title, schedules };
+      return { title, schedules };
+    });
 };
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
