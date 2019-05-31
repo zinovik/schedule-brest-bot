@@ -17,6 +17,6 @@ yarn
 yarn start
 ```
 
-https://schedule-brest-bot.netlify.com/.netlify/functions/icebrest
+https://schedule-brest-bot.netlify.com/.netlify/functions/ice-brest
 
-https://schedule-brest-bot.netlify.com/.netlify/functions/dvvsbrest
+https://schedule-brest-bot.netlify.com/.netlify/functions/dvvs-brest

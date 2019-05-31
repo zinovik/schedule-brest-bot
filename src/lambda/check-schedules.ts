@@ -6,7 +6,7 @@ import {
   schedulerIce,
   schedulerDvvs,
   // addCallback,
-} from '../../scheduler';
+} from '../scheduler';
 
 dotenv.config();
 
