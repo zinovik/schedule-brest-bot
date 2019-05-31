@@ -12,8 +12,9 @@ docker-compose up
 or
 ```bash
 yarn
-yarn check-schedules
+yarn start
 ```
 
 https://schedule-brest-bot.zinovik.now.sh/api/icebrest
+
 https://schedule-brest-bot.zinovik.now.sh/api/dvvsbrest
