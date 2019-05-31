@@ -17,7 +17,7 @@ const commonScheduler = async ({
   type: string;
   getSchedule: () => Promise<ISchedules>;
   formatSchedule: (schedule: ISchedules) => string;
-  getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string,
+  getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string;
   channelId: string;
 }): Promise<boolean> => {
   let scheduleDb = '';

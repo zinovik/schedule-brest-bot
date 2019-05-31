@@ -20,8 +20,8 @@ const handler = async (_: IncomingMessage, res: ServerResponse) => {
 
 };
 
-if (!process.env.IS_NOW) {
-  createServer(handler).listen(6000);
-}
+// if (!process.env.IS_NOW) {
+//   createServer(handler).listen(6000);
+// }
 
 export default handler;

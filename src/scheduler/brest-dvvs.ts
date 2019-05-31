@@ -1,4 +1,4 @@
-import * as http from 'http';
+import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
 import { ISchedules, ISchedule, Time } from './schedules.interface';
@@ -11,27 +11,8 @@ import {
 const URL = 'http://brest-dvvs.by/sched/';
 const SCHEDULE_TABLE_SELECTOR = '#content';
 
-const makeApiRequest = (url: string): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    http.get(url, (resp) => {
-      let data = '';
-
-      resp.on('data', (chunk) => {
-        data += chunk;
-      });
-
-      resp.on('end', () => {
-        resolve(data);
-      });
-
-    }).on('error', (error) => {
-      reject(error);
-    });
-  });
-};
-
 export const getSchedule = async (): Promise<ISchedules> => {
-  const data = await makeApiRequest(URL);
+  const { data } = await axios.get(URL);
 
   const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
 
