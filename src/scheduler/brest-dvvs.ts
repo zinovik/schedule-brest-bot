@@ -45,7 +45,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
       try {
         subTitle = table[8].children[0].children[0].children[0].textContent.trim();
       } catch (error) {
-        subTitle = table[8].children[0].textContent.trim();
+        subTitle = `${table[10].children[0].children[0].children[0].textContent.trim()}\n${table[8].children[0].textContent.trim()}`;
       }
     }
   }

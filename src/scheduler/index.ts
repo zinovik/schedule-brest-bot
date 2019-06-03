@@ -62,6 +62,7 @@ const commonScheduler = ({
     .then(() => {
       if (isUpdatingSchedule) {
         const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
+
         if (difference) {
           // return bot.sendMessage(channelId, difference); // Bad Request: message is too long
         }
