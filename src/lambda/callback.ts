@@ -2,11 +2,14 @@ import 'babel-polyfill';
 
 import { sendMessage } from '../telegram/index';
 
+// TODO: Add request for monitoring
+
 exports.handler = async (event: any, context: any, callback: any) => {
-  sendMessage('@zinovik', event.body);
+  await sendMessage('@zinovik', event.body);
 
   return {
     statusCode: 200,
+    body: event.body,
   };
 };
 
