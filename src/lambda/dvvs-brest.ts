@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 
-import { getScheduleDb } from '../scheduler/brest-ice';
+import { getScheduleDb } from '../scheduler/brest-dvvs';
 
 exports.handler = async (event: any, context: any) => {
   let scheduleDvvsDb;
