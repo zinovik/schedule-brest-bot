@@ -1,7 +1,7 @@
 import * as brestIce from './brest-ice';
 import * as brestDvvs from './brest-dvvs';
 
-// import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
+import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
 import { sendMessage } from '../telegram/index';
 import { ISchedules } from './schedules.interface';
 
@@ -35,8 +35,7 @@ const commonScheduler = async ({
 
     await setScheduleDb(scheduleSiteJSON);
 
-    // await sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
-    await sendMessage(channelId, scheduleFormatted);
+    await sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
 
@@ -71,43 +70,3 @@ export const checkAndUpdateDvvs = (): Promise<string> => {
     channelId: process.env.DVVS_CHANNEL_ID || '',
   });
 };
-
-// export const addCallback = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }) => {
-//   bot.on('callback_query', (callbackQuery) => {
-//     if (!callbackQuery.message) {
-//       return;
-//     }
-
-//     let text = callbackQuery.message.text || '';
-
-//     switch (callbackQuery.data) {
-//       case 'monday':
-//         text += '\nПН';
-//         break;
-//       case 'tuesday':
-//         text += '\nВТ';
-//         break;
-//       case 'wednesday':
-//         text += '\nСР';
-//         break;
-//       case 'thursday':
-//         text += '\nЧТ';
-//         break;
-//       case 'friday':
-//         text += '\nПТ';
-//         break;
-//       case 'saturday':
-//         text += '\nСБ';
-//         break;
-//       case 'sunday':
-//         text += '\nВС';
-//         break;
-//     }
-
-//     bot.editMessageText(text, {
-//       ...DAYS_OF_WEEK_BUTTONS,
-//       chat_id: callbackQuery.message.chat.id,
-//       message_id: callbackQuery.message.message_id,
-//     });
-//   });
-// };
