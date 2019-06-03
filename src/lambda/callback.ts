@@ -5,7 +5,16 @@ import { sendMessage } from '../telegram/index';
 // TODO: Add request for monitoring
 
 exports.handler = async (event: any, context: any, callback: any) => {
-  await sendMessage('@zinovik', event.body);
+  try {
+    await sendMessage('@zinovik', event.body);
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: {
+        error,
+      },
+    };
+  }
 
   return {
     statusCode: 200,
