@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
+import { getDb, setDb } from '../db';
 import { ISchedules } from './schedules.interface';
 import {
   NEW_SCHEDULE,
@@ -9,8 +10,9 @@ import {
 
 const URL = 'http://brest-hockey.by/';
 const SCHEDULE_TABLE_SELECTOR = 'table tbody';
+const DB_NAME = 'scheduleIce';
 
-export const getSchedule = (): Promise<ISchedules> => {
+export const getScheduleSite = (): Promise<ISchedules> => {
   return axios.get(URL)
     .then(({ data }) => {
       const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
@@ -18,6 +20,10 @@ export const getSchedule = (): Promise<ISchedules> => {
       return { title, schedules };
     });
 };
+
+export const getScheduleDb = (): Promise<string> => getDb(DB_NAME);
+
+export const setScheduleDb = (schedule: string): Promise<string> => setDb(DB_NAME, schedule);
 
 const parseSchedule = (
   page: string,
