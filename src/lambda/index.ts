@@ -1,7 +1,3 @@
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
 exports.handler = (event: any, context: any, callback: any) => {
   callback(null, {
     statusCode: 200,

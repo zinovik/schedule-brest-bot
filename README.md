@@ -20,3 +20,5 @@ yarn start:lambda
 https://schedule-brest-bot.netlify.com/.netlify/functions/ice-brest
 
 https://schedule-brest-bot.netlify.com/.netlify/functions/dvvs-brest
+
+(Setup: https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://schedule-brest-bot.netlify.com/.netlify/functions/callback)
