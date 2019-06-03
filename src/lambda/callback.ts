@@ -7,15 +7,15 @@ import { sendMessage } from '../telegram/index';
 exports.handler = async (event: any, context: any, callback: any) => {
   try {
     const bodyParsed = JSON.parse(event.body);
+    console.log(bodyParsed);
 
-    await sendMessage(bodyParsed.message.chat.id, event.body);
+    // await sendMessage(bodyParsed.message.chat.id, event.body);
   } catch (error) {
     //
   }
 
   return {
     statusCode: 200,
-    body: event.body,
   };
 };
 
