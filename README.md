@@ -14,7 +14,7 @@ docker-compose up
 or
 ```bash
 yarn
-yarn start
+yarn start:lambda
 ```
 
 https://schedule-brest-bot.netlify.com/.netlify/functions/ice-brest

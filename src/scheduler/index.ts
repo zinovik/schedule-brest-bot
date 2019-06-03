@@ -23,8 +23,8 @@ const commonScheduler = ({
 
   let scheduleDb: string;
   let scheduleSite: ISchedules;
-  let isUpdatingSchedule: boolean;
   let scheduleSiteJSON: string;
+  let isUpdatingSchedule: boolean;
 
   return Promise.all([
     getScheduleDb(type),
@@ -55,18 +55,17 @@ const commonScheduler = ({
     })
     .then(() => {
       if (isUpdatingSchedule) {
-        const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
-
-        if (difference) {
-          return bot.sendMessage(channelId, difference);
-        }
-      }
-    })
-    .then(() => {
-      if (isUpdatingSchedule) {
         return setScheduleDb(type, scheduleSiteJSON);
       }
       return '';
+    })
+    .then(() => {
+      if (isUpdatingSchedule) {
+        const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
+        if (difference) {
+          // return bot.sendMessage(channelId, difference); // Bad Request: message is too long
+        }
+      }
     })
     .then(() => {
       return true;
