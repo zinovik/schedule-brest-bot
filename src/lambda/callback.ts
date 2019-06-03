@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 
-import { sendMessage } from '../telegram/index';
+import { editMessageText } from '../telegram/index';
 
 // TODO: Add request for monitoring
 
@@ -10,12 +10,12 @@ exports.handler = async (event: any, context: any, callback: any) => {
     console.log(bodyParsed);
     const firstName = bodyParsed.callback_query.from.first_name;
     const messageId = bodyParsed.callback_query.message.message_id;
-    const chatId = bodyParsed.callback_query.message.chat.id;
+    const chat = bodyParsed.callback_query.message.chat;
     const messageText = bodyParsed.callback_query.message.text;
     const data = bodyParsed.callback_query.data;
-    console.log(firstName, messageId, chatId, messageText, data);
+    console.log(firstName, messageId, chat, messageText, data);
 
-    // await sendMessage(bodyParsed.message.chat.id, event.body);
+    await editMessageText(chat.id, messageText, 'test');
   } catch (error) {
     //
   }
