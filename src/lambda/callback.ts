@@ -6,13 +6,15 @@ import { sendMessage } from '../telegram/index';
 
 exports.handler = async (event: any, context: any, callback: any) => {
   try {
-    await sendMessage('@zinovik', event.body);
+    const bodyParsed = JSON.parse(event.body);
+
+    await sendMessage(bodyParsed.message.chat.id, event.body);
   } catch (error) {
     return {
       statusCode: 500,
-      body: {
+      body: JSON.stringify({
         error,
-      },
+      }),
     };
   }
 
