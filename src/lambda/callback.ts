@@ -10,12 +10,7 @@ exports.handler = async (event: any, context: any, callback: any) => {
 
     await sendMessage(bodyParsed.message.chat.id, event.body);
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error,
-      }),
-    };
+    //
   }
 
   return {
