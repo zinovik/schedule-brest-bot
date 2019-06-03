@@ -1,97 +1,71 @@
 import * as brestIce from './brest-ice';
 import * as brestDvvs from './brest-dvvs';
 
-import { getScheduleDb, setScheduleDb, SCHEDULE_ICE, SCHEDULE_DVVS } from '../db';
 // import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
+import { sendMessage } from '../telegram/index';
 import { ISchedules } from './schedules.interface';
 
-const commonScheduler = ({
-  bot,
-  type,
-  getSchedule,
+const commonScheduler = async ({
+  getScheduleSite,
+  getScheduleDb,
+  setScheduleDb,
   formatSchedule,
   getDifference,
   channelId,
 }: {
-  bot: { sendMessage: (channelId: string, text: string) => Promise<void> };
-  type: string;
-  getSchedule: () => Promise<ISchedules>;
+  getScheduleSite: () => Promise<ISchedules>;
+  getScheduleDb: () => Promise<string>;
+  setScheduleDb: (schedule: string) => Promise<string>;
   formatSchedule: (schedule: ISchedules) => string;
   getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string;
   channelId: string;
-}): Promise<boolean> => {
+}): Promise<string> => {
 
-  let scheduleDb: string;
-  let scheduleSite: ISchedules;
-  let scheduleSiteJSON: string;
-  let isUpdatingSchedule: boolean;
+  const scheduleDb = await getScheduleDb();
+  const scheduleSite = await getScheduleSite();
 
-  return Promise.all([
-    getScheduleDb(type),
-    getSchedule(),
-  ])
-    .then(([
-      resultScheduleDb,
-      resultScheduleSite,
-    ]): any => {
-      scheduleDb = resultScheduleDb;
-      scheduleSite = resultScheduleSite;
+  if (!scheduleSite) {
+    return 'Error. No schedule from the site';
+  }
 
-      if (!scheduleSite) {
-        throw new Error();
-      }
+  const scheduleSiteJSON = JSON.stringify(scheduleSite);
 
-      scheduleSiteJSON = JSON.stringify(scheduleSite);
+  if (scheduleDb !== scheduleSiteJSON) {
+    const scheduleFormatted = formatSchedule(scheduleSite);
 
-      if (scheduleDb !== scheduleSiteJSON) {
-        isUpdatingSchedule = true;
+    await setScheduleDb(scheduleSiteJSON);
 
-        const scheduleFormatted = formatSchedule(scheduleSite);
+    // await sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+    await sendMessage(channelId, scheduleFormatted);
 
-        console.log(`New ${type} schedule. Sending message...`);
-        // await bot.sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
-        return bot.sendMessage(channelId, scheduleFormatted);
-      }
-    })
-    .then(() => {
-      if (isUpdatingSchedule) {
-        return setScheduleDb(type, scheduleSiteJSON);
-      }
-      return '';
-    })
-    .then(() => {
-      if (isUpdatingSchedule) {
-        const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
+    const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
 
-        if (difference) {
-          // return bot.sendMessage(channelId, difference); // Bad Request: message is too long
-        }
-      }
-    })
-    .then(() => {
-      return true;
-    })
-    .catch(() => {
-      return false;
-    });
+    if (difference) {
+      await sendMessage(channelId, difference);
+    }
+
+    return scheduleFormatted;
+  }
+
+  return 'Done. No new schedule from the site';
 };
 
-export const schedulerIce = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
+export const checkAndUpdateIce = (): Promise<string> => {
   return commonScheduler({
-    bot,
-    type: SCHEDULE_ICE,
-    getSchedule: brestIce.getSchedule,
+    getScheduleSite: brestIce.getScheduleSite,
+    getScheduleDb: brestIce.getScheduleDb,
+    setScheduleDb: brestIce.setScheduleDb,
     formatSchedule: brestIce.formatSchedule,
     getDifference: brestIce.getDifference,
     channelId: process.env.ICE_CHANNEL_ID || '',
   });
 };
 
-export const schedulerDvvs = (bot: { sendMessage: (channelId: string, text: string) => Promise<void> }): Promise<boolean> => {
+export const checkAndUpdateDvvs = (): Promise<string> => {
   return commonScheduler({
-    bot,
-    type: SCHEDULE_DVVS,
-    getSchedule: brestDvvs.getSchedule,
+    getScheduleSite: brestDvvs.getScheduleSite,
+    getScheduleDb: brestDvvs.getScheduleDb,
+    setScheduleDb: brestDvvs.setScheduleDb,
     formatSchedule: brestDvvs.formatSchedule,
     getDifference: brestDvvs.getDifference,
     channelId: process.env.DVVS_CHANNEL_ID || '',

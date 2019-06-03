@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
+import { getDb, setDb } from '../db';
 import { ISchedules, ISchedule, Time } from './schedules.interface';
 import {
   DAYS_OF_WEEK,
@@ -10,8 +11,9 @@ import {
 
 const URL = 'http://brest-dvvs.by/sched/';
 const SCHEDULE_TABLE_SELECTOR = '#content';
+const DB_NAME = 'scheduleDvvs';
 
-export const getSchedule = (): Promise<ISchedules> => {
+export const getScheduleSite = (): Promise<ISchedules> => {
   return axios.get(URL)
     .then(({ data }) => {
       const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
@@ -19,6 +21,10 @@ export const getSchedule = (): Promise<ISchedules> => {
       return { title, schedules };
     });
 };
+
+export const getScheduleDb = (): Promise<string> => getDb(DB_NAME);
+
+export const setScheduleDb = (schedule: string): Promise<string> => setDb(DB_NAME, schedule);
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
   const dom = new JSDOM(page);

@@ -1,25 +1,28 @@
 import 'babel-polyfill';
-import * as dotenv from 'dotenv';
 
-import { getScheduleDb, SCHEDULE_DVVS } from '../db';
-
-dotenv.config();
+import { getScheduleDb } from '../scheduler/brest-ice';
 
 exports.handler = async (event: any, context: any) => {
-  try {
-    const scheduleDvvsDb = await getScheduleDb(SCHEDULE_DVVS);
+  let scheduleDvvsDb;
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: scheduleDvvsDb,
-    };
+  try {
+
+    scheduleDvvsDb = await getScheduleDb();
+
   } catch (error) {
 
     return {
-      statusCode: 200,
+      statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: 'Something went wrong...',
+      body: {
+        error,
+      },
     };
   }
+
+  return {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: scheduleDvvsDb,
+  };
 };
