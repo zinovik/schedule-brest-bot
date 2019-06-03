@@ -3,7 +3,6 @@ import 'babel-polyfill';
 import {
   checkAndUpdateIce,
   checkAndUpdateDvvs,
-  // addCallback,
 } from '../scheduler';
 
 exports.handler = async (event: any, context: any) => {
