@@ -1,7 +1,0 @@
-{
-  "watch": ["./src/**/*.ts"],
-  "ext": "ts",
-  "verbose": true,
-  "ignore": ["*.test.js", "fixtures/*"],
-  "exec": "ts-node $1"
-}

@@ -9,7 +9,6 @@ RUN npm install yarn --global
 RUN mkdir /usr/src/app/src
 ADD src /usr/src/app/src/
 
-COPY nodemon.json /usr/src/app/
 COPY package.json /usr/src/app/
 COPY tslint.json /usr/src/app/
 
@@ -17,4 +16,4 @@ COPY tslint.json /usr/src/app/
 RUN yarn
 
 # Build and run the app
-CMD yarn check-schedules
+CMD yarn start:lambda
