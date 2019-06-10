@@ -39,7 +39,7 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     })),
   };
 
-  result.title = `${table[5].textContent.trim()}\n`;
+  const title = table[5].textContent.trim() || table[6].textContent.trim();
 
   let subTitle: string;
   try {
@@ -51,11 +51,16 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
       try {
         subTitle = table[8].children[0].children[0].children[0].textContent.trim();
       } catch (error) {
-        subTitle = `${table[10].children[0].children[0].children[0].textContent.trim()}\n${table[8].children[0].textContent.trim()}`;
+        try {
+          subTitle = `${table[10].children[0].children[0].children[0].textContent.trim()}`
+            + `\n${table[8].children[0].textContent.trim()}`;
+        } catch (error) {
+          subTitle = table[9].children[0].children[0].children[0].textContent.trim();
+        }
       }
     }
   }
-  result.title = `${result.title}${subTitle}\n`;
+  result.title = `${title}\n${subTitle}\n`;
 
   // const dates = subTitle.split(' с ')[1].split(' по ');
 
@@ -69,7 +74,11 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
       try {
         pool50mSchedule = Array.from(table[8].children[0].children[0].children);
       } catch (error) {
-        pool50mSchedule = Array.from(table[10].children[0].children[0].children);
+        try {
+          pool50mSchedule = Array.from(table[10].children[0].children[0].children);
+        } catch (error) {
+          pool50mSchedule = Array.from(table[9].children[0].children[0].children);
+        }
       }
     }
   }
