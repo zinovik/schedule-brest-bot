@@ -13,7 +13,7 @@ import {
 
 const URL = 'http://brest-dvvs.by/sched/';
 const SCHEDULE_TABLE_SELECTOR = '#content';
-const XPATH_TITLE = '//font//b';
+// const XPATH_TITLE = '//font//b';
 const DB_NAME = 'scheduleDvvs';
 
 export const getScheduleSite = (): Promise<ISchedules> => {
