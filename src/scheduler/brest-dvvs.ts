@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
-import { DOMParser } from 'xmldom';
-import { select } from 'xpath';
+// import { DOMParser } from 'xmldom';
+// import { select } from 'xpath';
 
 import { getDb, setDb } from '../db';
 import { ISchedules, ISchedule, Time } from './schedules.interface';
@@ -30,9 +30,9 @@ export const getScheduleDb = (): Promise<string> => getDb(DB_NAME);
 export const setScheduleDb = (schedule: string): Promise<string> => setDb(DB_NAME, schedule);
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
-  const domTest = new DOMParser().parseFromString(page);
+  // const domTest = new DOMParser().parseFromString(page);
 
-  const tableTest = select(XPATH_TITLE, domTest);
+  // const tableTest = select(XPATH_TITLE, domTest);
 
   const dom = new JSDOM(page);
 
