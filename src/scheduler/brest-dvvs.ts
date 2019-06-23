@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
+import { DOMParser } from 'xmldom';
+import { select } from 'xpath';
 
 import { getDb, setDb } from '../db';
 import { ISchedules, ISchedule, Time } from './schedules.interface';
@@ -11,6 +13,7 @@ import {
 
 const URL = 'http://brest-dvvs.by/sched/';
 const SCHEDULE_TABLE_SELECTOR = '#content';
+const XPATH_TITLE = '//font//b';
 const DB_NAME = 'scheduleDvvs';
 
 export const getScheduleSite = (): Promise<ISchedules> => {
@@ -27,6 +30,10 @@ export const getScheduleDb = (): Promise<string> => getDb(DB_NAME);
 export const setScheduleDb = (schedule: string): Promise<string> => setDb(DB_NAME, schedule);
 
 const parseSchedule = (page: string, scheduleTableSelector: string): any => {
+  const domTest = new DOMParser().parseFromString(page);
+
+  const tableTest = select(XPATH_TITLE, domTest);
+
   const dom = new JSDOM(page);
 
   const table: any[] = Array.from(dom.window.document.querySelector(scheduleTableSelector)!.children);
