@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
-// import { DOMParser } from 'xmldom';
-// import { select } from 'xpath';
+import { DOMParser } from 'xmldom';
+import { select1 } from 'xpath';
 
 import { getDb, setDb } from '../db';
 import { ISchedules, ISchedule, Time } from './schedules.interface';
@@ -12,14 +12,15 @@ import {
 } from '../phrases/phrases-rus';
 
 const URL = 'http://brest-dvvs.by/sched/';
-const SCHEDULE_TABLE_SELECTOR = '#content';
-// const XPATH_TITLE = '//font//b';
+const XPATH_TITLE = '//font//b';
+const XPATH_DATES = '//font[contains(@size, "5")]';
+// const XPATH_SCHEDULE = '(//tbody)[2]//tr';
 const DB_NAME = 'scheduleDvvs';
 
 export const getScheduleSite = (): Promise<ISchedules> => {
   return axios.get(URL)
     .then(({ data }) => {
-      const { title, schedules } = parseSchedule(data, SCHEDULE_TABLE_SELECTOR);
+      const { title, schedules } = parseSchedule(data);
 
       return { title, schedules };
     });
@@ -29,14 +30,8 @@ export const getScheduleDb = (): Promise<string> => getDb(DB_NAME);
 
 export const setScheduleDb = (schedule: string): Promise<string> => setDb(DB_NAME, schedule);
 
-const parseSchedule = (page: string, scheduleTableSelector: string): any => {
-  // const domTest = new DOMParser().parseFromString(page);
-
-  // const tableTest = select(XPATH_TITLE, domTest);
-
-  const dom = new JSDOM(page);
-
-  const table: any[] = Array.from(dom.window.document.querySelector(scheduleTableSelector)!.children);
+const parseSchedule = (page: string): any => {
+  const dom = new DOMParser().parseFromString(page.replace(new RegExp('<\s*html[^>]*>', 'gi'), '<html>'));
 
   const result: ISchedules = {
     title: '',
@@ -46,30 +41,15 @@ const parseSchedule = (page: string, scheduleTableSelector: string): any => {
     })),
   };
 
-  const title = table[5].textContent.trim() || table[6].textContent.trim();
+  const title = (select1(XPATH_TITLE, dom) as Node).textContent!.trim();
 
-  let subTitle: string;
-  try {
-    subTitle = table[6].children[2].children[0].children[0].children[0].textContent.trim();
-  } catch (error) {
-    try {
-      subTitle = table[7].children[0].children[0].children[0].textContent.trim();
-    } catch (error) {
-      try {
-        subTitle = table[8].children[0].children[0].children[0].textContent.trim();
-      } catch (error) {
-        try {
-          subTitle = `${table[10].children[0].children[0].children[0].textContent.trim()}`
-            + `\n${table[8].children[0].textContent.trim()}`;
-        } catch (error) {
-          subTitle = table[9].children[0].children[0].children[0].textContent.trim();
-        }
-      }
-    }
-  }
+  const subTitle = (select1(XPATH_DATES, dom) as Node).textContent!.trim();
   result.title = `${title}\n${subTitle}\n`;
 
   // const dates = subTitle.split(' с ')[1].split(' по ');
+
+  const domOld = new JSDOM(page);
+  const table: any[] = Array.from(domOld.window.document.querySelector('#content')!.children);
 
   let pool50mSchedule;
   try {
