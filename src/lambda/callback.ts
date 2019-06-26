@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 
 import { editMessageText } from '../telegram/index';
-import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
+import { getDaysOfWeekButtons } from '../phrases/phrases-rus';
 
 // TODO: Add request for monitoring
 
@@ -10,28 +10,31 @@ exports.handler = async (event: any, context: any, callback: any) => {
     const bodyParsed = JSON.parse(event.body);
 
     let text = bodyParsed.callback_query.message.text || '';
+    console.log(bodyParsed.callback_query.message.reply_markup);
+
+    const votes = [0, 0, 0, 0, 0, 0, 0];
 
     switch (bodyParsed.callback_query.data) {
       case 'monday':
-        text += '\nПН';
+        votes[0] = 1;
         break;
       case 'tuesday':
-        text += '\nВТ';
+        votes[1] = 1;
         break;
       case 'wednesday':
-        text += '\nСР';
+        votes[2] = 1;
         break;
       case 'thursday':
-        text += '\nЧТ';
+        votes[3] = 1;
         break;
       case 'friday':
-        text += '\nПТ';
+        votes[4] = 1;
         break;
       case 'saturday':
-        text += '\nСБ';
+        votes[5] = 1;
         break;
       case 'sunday':
-        text += '\nВС';
+        votes[5] = 1;
         break;
     }
 
@@ -39,7 +42,7 @@ exports.handler = async (event: any, context: any, callback: any) => {
       bodyParsed.callback_query.message.chat.id,
       bodyParsed.callback_query.message.message_id,
       text,
-      DAYS_OF_WEEK_BUTTONS,
+      getDaysOfWeekButtons(...votes),
     );
   } catch (error) {
     console.log(error);
