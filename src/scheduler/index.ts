@@ -1,7 +1,7 @@
 import * as brestIce from './brest-ice';
 import * as brestDvvs from './brest-dvvs';
 
-import { DAYS_OF_WEEK_BUTTONS } from '../phrases/phrases-rus';
+import { getDaysOfWeekButtons } from '../phrases/phrases-rus';
 import { sendMessage } from '../telegram/index';
 import { ISchedules } from './schedules.interface';
 
@@ -35,7 +35,7 @@ const commonScheduler = async ({
 
     await setScheduleDb(scheduleSiteJSON);
 
-    await sendMessage(channelId, scheduleFormatted, DAYS_OF_WEEK_BUTTONS);
+    await sendMessage(channelId, scheduleFormatted, getDaysOfWeekButtons(0, 0, 0, 0, 0, 0, 0));
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
 

@@ -46,8 +46,6 @@ const parseSchedule = (page: string): any => {
   const subTitle = (select1(XPATH_DATES, dom) as Node).textContent!.trim();
   result.title = `${title}\n${subTitle}\n`;
 
-  // const dates = subTitle.split(' с ')[1].split(' по ');
-
   const domOld = new JSDOM(page);
   const table: any[] = Array.from(domOld.window.document.querySelector('#content')!.children);
 

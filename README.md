@@ -2,23 +2,29 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/30e90369-716d-45ce-a923-d8524546f80c/deploy-status)](https://app.netlify.com/sites/schedule-brest-bot/deploys)
 
-1: 
-```bash
-.env
-```
+**working**
 
-2:
+1. fill .env
+
+2. start project
 ```bash
 docker-compose up
 ```
-or
+
+3. setup bot
 ```bash
-yarn
-yarn start:lambda
+curl https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://schedule-brest-bot.netlify.com/.netlify/functions/callback
 ```
+
+**testing**
+
+```bash
+curl https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<NGROK ID>.ngrok.io/callback
+~/ngrok http 9000
+```
+
+**api**
 
 https://schedule-brest-bot.netlify.com/.netlify/functions/ice-brest
 
 https://schedule-brest-bot.netlify.com/.netlify/functions/dvvs-brest
-
-(Setup: https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://schedule-brest-bot.netlify.com/.netlify/functions/callback)
