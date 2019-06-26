@@ -9,7 +9,7 @@ exports.handler = async (event: any, context: any, callback: any) => {
   try {
     const bodyParsed = JSON.parse(event.body);
 
-    let text = bodyParsed.callback_query.message.text || '';
+    const text = bodyParsed.callback_query.message.text || '';
     console.log(bodyParsed.callback_query.message.reply_markup);
 
     const votes = [0, 0, 0, 0, 0, 0, 0];
