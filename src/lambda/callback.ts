@@ -10,31 +10,34 @@ exports.handler = async (event: any, context: any, callback: any) => {
     const bodyParsed = JSON.parse(event.body);
 
     const text = bodyParsed.callback_query.message.text || '';
-    console.log(bodyParsed.callback_query.message.reply_markup);
 
-    const votes = [0, 0, 0, 0, 0, 0, 0];
+    const votes: number[] = [];
+
+    bodyParsed.callback_query.message.reply_markup.inline_keyboard[0].forEach(({ text }: { text: string }) => {
+      votes.push(Number(text.split('(')[1].split(')')[0]));
+    });
 
     switch (bodyParsed.callback_query.data) {
       case 'monday':
-        votes[0] = 1;
+        votes[0] = votes[0] + 1;
         break;
       case 'tuesday':
-        votes[1] = 1;
+        votes[1] = votes[1] + 1;
         break;
       case 'wednesday':
-        votes[2] = 1;
+        votes[2] = votes[2] + 1;
         break;
       case 'thursday':
-        votes[3] = 1;
+        votes[3] = votes[3] + 1;
         break;
       case 'friday':
-        votes[4] = 1;
+        votes[4] = votes[4] + 1;
         break;
       case 'saturday':
-        votes[5] = 1;
+        votes[5] = votes[5] + 1;
         break;
       case 'sunday':
-        votes[5] = 1;
+        votes[6] = votes[6] + 1;
         break;
     }
 
