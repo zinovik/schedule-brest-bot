@@ -14,7 +14,7 @@ exports.handler = async (event: any, context: any, callback: any) => {
     const votes: number[] = [];
 
     bodyParsed.callback_query.message.reply_markup.inline_keyboard[0].forEach(({ text }: { text: string }) => {
-      votes.push(Number(text.split('(')[1].split(')')[0]));
+      votes.push(Number(text.split(' ')[1]));
     });
 
     switch (bodyParsed.callback_query.data) {
@@ -51,5 +51,11 @@ exports.handler = async (event: any, context: any, callback: any) => {
     console.log(error);
   }
 
-  return { statusCode: 200 };
+  return {
+    statusCode: 200,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      result: 'success',
+    }),
+  };
 };

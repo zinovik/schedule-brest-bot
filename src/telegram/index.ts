@@ -1,4 +1,7 @@
+import * as dotenv from 'dotenv';
 import axios from 'axios';
+
+dotenv.config();
 
 const TELEGRAM_API_URL = 'https://api.telegram.org/bot';
 
