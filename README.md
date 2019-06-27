@@ -10,6 +10,13 @@
 ```bash
 docker-compose up
 ```
+or
+```bash
+cd database_redis
+docker-compose up
+
+npm run start:lambda
+```
 
 3. setup bot
 ```bash
