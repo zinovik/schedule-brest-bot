@@ -26,31 +26,31 @@ export const getDaysOfWeekButtons = (
       inline_keyboard: [
         [
           {
-            text: `ПН ${monday}`,
+            text: `П ${monday}`,
             callback_data: 'monday',
           },
           {
-            text: `ВТ ${tuesday}`,
+            text: `В ${tuesday}`,
             callback_data: 'tuesday',
           },
           {
-            text: `СР ${wednesday}`,
+            text: `С ${wednesday}`,
             callback_data: 'wednesday',
           },
           {
-            text: `ЧТ ${thursday}`,
+            text: `Ч ${thursday}`,
             callback_data: 'thursday',
           },
           {
-            text: `ПТ ${friday}`,
+            text: `П ${friday}`,
             callback_data: 'friday',
           },
           {
-            text: `СБ ${saturday}`,
+            text: `С ${saturday}`,
             callback_data: 'saturday',
           },
           {
-            text: `ВС ${sunday}`,
+            text: `В ${sunday}`,
             callback_data: 'sunday',
           },
         ],
