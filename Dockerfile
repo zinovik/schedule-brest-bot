@@ -8,6 +8,7 @@ RUN mkdir /usr/src/app/src
 ADD src /usr/src/app/src/
 
 COPY package.json /usr/src/app/
+COPY package-lock.json /usr/src/app/
 COPY tsconfig.json /usr/src/app/
 COPY tslint.json /usr/src/app/
 

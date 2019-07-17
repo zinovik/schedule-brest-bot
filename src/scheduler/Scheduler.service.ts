@@ -1,9 +1,13 @@
-import * as brestIce from './brest-ice';
-import * as brestDvvs from './brest-dvvs';
+import * as dotenv from 'dotenv';
 
-import { getDaysOfWeekButtons } from '../phrases/phrases-rus';
-import { sendMessage } from '../telegram/index';
-import { ISchedules } from './schedules.interface';
+import * as brestIce from '../schedules/brest-ice';
+import * as brestDvvs from '../schedules/brest-dvvs';
+
+import { getDaysOfWeekButtons } from '../language/Language.service';
+import { TelegramService } from '../telegram/Telegram.service';
+import { ISchedules } from '../schedules/ISchedules.interface';
+
+dotenv.config();
 
 const commonScheduler = async ({
   getScheduleSite,
@@ -18,9 +22,8 @@ const commonScheduler = async ({
   setScheduleDb: (schedule: string) => Promise<string>;
   formatSchedule: (schedule: ISchedules) => string;
   getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string;
-  channelId: string;
+  channelId: number;
 }): Promise<string> => {
-
   const scheduleDb = await getScheduleDb();
   const scheduleSite = await getScheduleSite();
 
@@ -35,12 +38,21 @@ const commonScheduler = async ({
 
     await setScheduleDb(scheduleSiteJSON);
 
-    await sendMessage(channelId, scheduleFormatted, getDaysOfWeekButtons(0, 0, 0, 0, 0, 0, 0));
+    const telegramService = new TelegramService(process.env.TOKEN as string);
+    await telegramService.sendMessage({
+      text: scheduleFormatted,
+      replyMarkup: getDaysOfWeekButtons(0, 0, 0, 0, 0, 0, 0),
+      chatId: channelId,
+    });
 
     const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
 
     if (difference) {
-      await sendMessage(channelId, difference);
+      await telegramService.sendMessage({
+        text: difference,
+        replyMarkup: '',
+        chatId: channelId,
+      });
     }
 
     return scheduleFormatted;
@@ -56,7 +68,7 @@ export const checkAndUpdateIce = (): Promise<string> => {
     setScheduleDb: brestIce.setScheduleDb,
     formatSchedule: brestIce.formatSchedule,
     getDifference: brestIce.getDifference,
-    channelId: process.env.ICE_CHANNEL_ID || '',
+    channelId: Number(process.env.DVVS_CHANNEL_ID) || 0,
   });
 };
 
@@ -67,6 +79,6 @@ export const checkAndUpdateDvvs = (): Promise<string> => {
     setScheduleDb: brestDvvs.setScheduleDb,
     formatSchedule: brestDvvs.formatSchedule,
     getDifference: brestDvvs.getDifference,
-    channelId: process.env.DVVS_CHANNEL_ID || '',
+    channelId: Number(process.env.DVVS_CHANNEL_ID) || 0,
   });
 };

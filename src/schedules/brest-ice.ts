@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
-import { getDb, setDb } from '../db';
-import { ISchedules } from './schedules.interface';
+import { getDb, setDb } from '../database/Redis.service';
+import { ISchedules } from './ISchedules.interface';
 import {
   NEW_SCHEDULE,
   CHANGES,
-} from '../phrases/phrases-rus';
+} from '../language/Language.service';
 
 const URL = 'http://brest-hockey.by/';
 const SCHEDULE_TABLE_SELECTOR = 'table tbody';

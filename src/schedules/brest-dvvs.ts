@@ -3,13 +3,13 @@ import { JSDOM } from 'jsdom';
 import { DOMParser } from 'xmldom';
 import { select1 } from 'xpath';
 
-import { getDb, setDb } from '../db';
-import { ISchedules, ISchedule, Time } from './schedules.interface';
+import { getDb, setDb } from '../database/Redis.service';
+import { ISchedules, ISchedule, Time } from './ISchedules.interface';
 import {
   DAYS_OF_WEEK,
   NEW_SCHEDULE,
   CHANGES,
-} from '../phrases/phrases-rus';
+} from '../language/Language.service';
 
 const URL = 'http://brest-dvvs.by/sched/';
 const XPATH_TITLE = '//font//b';
