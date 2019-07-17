@@ -26,6 +26,7 @@ curl https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://schedule-brest-b
 **testing**
 
 ```bash
+curl localhost:9000/check-schedules
 curl https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<NGROK ID>.ngrok.io/callback
 ~/ngrok http 9000
 ```

@@ -3,9 +3,9 @@ import 'babel-polyfill';
 import {
   checkAndUpdateIce,
   checkAndUpdateDvvs,
-} from '../scheduler';
+} from '../scheduler/Scheduler.service';
 
-exports.handler = async (event: any, context: any) => {
+exports.handler = async (event: never, context: never) => {
   let iceResult = '';
   let dvvsResult = '';
 

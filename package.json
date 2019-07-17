@@ -14,15 +14,15 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.3.3",
-    "@types/aws-lambda": "^8.10.27",
+    "@types/aws-lambda": "^8.10.30",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.15",
     "@types/jsdom": "^12.2.4",
-    "@types/node": "^12.0.10",
+    "@types/node": "^12.6.6",
     "@types/redis": "^2.8.13",
     "@types/xmldom": "^0.1.29",
     "jest": "^24.8.0",
-    "netlify-lambda": "^1.4.13",
+    "netlify-lambda": "^1.5.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
@@ -30,14 +30,14 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "start:lambda": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
     "build:lambda": "netlify-lambda build src/lambda --config ./webpack.functions.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json --coverage"
   },
   "repository": {
     "type": "git",

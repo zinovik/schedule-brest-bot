@@ -1,16 +1,13 @@
 import 'babel-polyfill';
 
-import { getScheduleDb } from '../scheduler/brest-ice';
+import { getScheduleDb } from '../schedules/brest-ice';
 
-exports.handler = async (event: any, context: any) => {
+exports.handler = async (event: never, context: never) => {
   let scheduleIceDb;
 
   try {
-
     scheduleIceDb = await getScheduleDb();
-
   } catch (error) {
-
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
