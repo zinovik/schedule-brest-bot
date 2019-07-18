@@ -1,4 +1,4 @@
-export interface ICallbackMessageBody {
+export interface IMessageBody {
   callback_query: {
     data: string;
     message: {
@@ -7,6 +7,7 @@ export interface ICallbackMessageBody {
       reply_markup: {
         inline_keyboard: {
           text: string;
+          callback_data: string;
         }[][];
       };
       chat: {

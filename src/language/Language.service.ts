@@ -1,50 +1,46 @@
-export const DAYS_OF_WEEK = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+import { ILanguageService } from './ILanguageService.interface';
 
-export const NEW_SCHEDULE = 'Новое расписание:';
+import { IPhrases } from './phrases/IPhrases.interface';
+import { en } from './phrases/en';
+import { ru } from './phrases/ru';
 
-export const CHANGES = 'Изменения:';
+const PHRASES: { [key: string]: IPhrases } = { en, ru };
 
-export const getDaysOfWeekButtons = (
-  monday?: number,
-  tuesday?: number,
-  wednesday?: number,
-  thursday?: number,
-  friday?: number,
-  saturday?: number,
-  sunday?: number,
-): string => {
-  return JSON.stringify({
-    inline_keyboard: [
-      [
-        {
-          text: `П ${monday}`,
-          callback_data: 'monday',
-        },
-        {
-          text: `В ${tuesday}`,
-          callback_data: 'tuesday',
-        },
-        {
-          text: `С ${wednesday}`,
-          callback_data: 'wednesday',
-        },
-        {
-          text: `Ч ${thursday}`,
-          callback_data: 'thursday',
-        },
-        {
-          text: `П ${friday}`,
-          callback_data: 'friday',
-        },
-        {
-          text: `С ${saturday}`,
-          callback_data: 'saturday',
-        },
-        {
-          text: `В ${sunday}`,
-          callback_data: 'sunday',
-        },
-      ],
-    ],
-  });
-};
+export class LanguageService implements ILanguageService {
+  getFullDaysOfWeek(languageCode: string): string[] {
+    const phrases = this.getPhrases(languageCode);
+
+    return phrases.fullDaysOfWeek;
+  }
+
+  getNewSchedulePhrase(languageCode: string): string {
+    const phrases = this.getPhrases(languageCode);
+
+    return phrases.newSchedule;
+  }
+
+  getChangesPhrase(languageCode: string): string {
+    const phrases = this.getPhrases(languageCode);
+
+    return phrases.changes;
+  }
+
+  getDaysOfWeekStartButtons(languageCode: string): string {
+    const phrases = this.getPhrases(languageCode);
+
+    const buttons = phrases.fullDaysOfWeek.map((fullDayOfWeek, index) => {
+      return {
+        text: `${fullDayOfWeek[0]} 0`,
+        callback_data: String(index),
+      };
+    });
+
+    return JSON.stringify({
+      inline_keyboard: [buttons],
+    });
+  }
+
+  private getPhrases(languageCode: string): IPhrases {
+    return PHRASES[languageCode] || PHRASES.en;
+  }
+}
