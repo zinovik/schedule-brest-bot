@@ -1,16 +1,18 @@
-export interface Time {
+export interface ITime {
   start: string;
-  session: string;
-  tracks: string;
+  session?: string;
+  tracks?: string;
 }
 
 export interface ISchedule {
   day?: string;
   dayOfWeek: string;
-  times: Time[];
+  times: ITime[];
 }
 
 export interface ISchedules {
   title: string;
+  // subTitle: string;
+  // additionalInfo: string;
   schedules: ISchedule[];
 }

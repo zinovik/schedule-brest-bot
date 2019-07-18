@@ -16,7 +16,7 @@ export class TelegramService implements ITelegramService {
   }: {
     text: string;
     replyMarkup: string;
-    chatId: number;
+    chatId: string | number;
   }): Promise<void> {
     const message = {
       text,
@@ -37,7 +37,7 @@ export class TelegramService implements ITelegramService {
     text,
     replyMarkup,
   }: {
-    chatId: number;
+    chatId: string | number;
     messageId: string;
     text: string;
     replyMarkup: string;

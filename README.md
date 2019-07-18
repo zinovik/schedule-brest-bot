@@ -33,6 +33,6 @@ curl https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<NGROK ID>.ngrok
 
 **api**
 
-https://schedule-brest-bot.netlify.com/.netlify/functions/ice-brest
+https://schedule-brest-bot.netlify.com/.netlify/functions/ice
 
-https://schedule-brest-bot.netlify.com/.netlify/functions/dvvs-brest
+https://schedule-brest-bot.netlify.com/.netlify/functions/dvvs

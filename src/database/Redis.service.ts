@@ -1,39 +1,39 @@
-import * as dotenv from 'dotenv';
-import { createClient, ClientOpts } from 'redis';
+import { createClient, RedisClient } from 'redis';
 
-dotenv.config();
+import { IDatabaseService } from './IDatabaseService.interface';
 
-const redisUrl = process.env.REDIS_URL && (process.env.REDIS_URL.split('redis://')[1] || process.env.REDIS_URL);
-const redisPassword = redisUrl && redisUrl.split('@')[0];
+export class RedisService implements IDatabaseService {
+  private redisPassword: string;
+  private client: RedisClient;
 
-const client = createClient(process.env.REDIS_URL || '', {
-  auth_pass: redisPassword,
-} as ClientOpts);
+  constructor(private redisUrl: string) {
+    this.redisUrl = redisUrl;
+    this.redisPassword = redisUrl.replace('redis://', '').split('@')[0];
 
-export const getDb = (name: string): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    client.get(name, (err: any, reply: string) => {
+    this.client = createClient(redisUrl, { auth_pass: this.redisPassword });
+  }
 
-      if (err) {
-        return reject(err);
-      }
+  async getDb(name: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.client.get(name, (err: any, reply: string) => {
+        if (err) {
+          return reject(err);
+        }
 
-      resolve(reply);
-
+        resolve(reply);
+      });
     });
-  });
-};
+  }
 
-export const setDb = (name: string, schedule: string): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    client.set(name, schedule, (err: any, reply: string) => {
+  async setDb(name: string, schedule: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.client.set(name, schedule, (err: any, reply: string) => {
+        if (err) {
+          return reject(err);
+        }
 
-      if (err) {
-        return reject(err);
-      }
-
-      resolve(reply);
-
+        resolve(reply);
+      });
     });
-  });
-};
+  }
+}

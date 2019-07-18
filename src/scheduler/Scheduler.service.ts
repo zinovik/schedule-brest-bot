@@ -1,84 +1,74 @@
-import * as dotenv from 'dotenv';
+import { ISchedules } from '../common/model/ISchedules.interface';
 
-import * as brestIce from '../schedules/brest-ice';
-import * as brestDvvs from '../schedules/brest-dvvs';
+import { ISchedulerService } from './ISchedulerService.interface';
+import { IScheduleService } from '../schedules/IScheduleService.interface';
+import { ILanguageService } from '../language/ILanguageService.interface';
+import { IDatabaseService } from '../database/IDatabaseService.interface';
+import { ITelegramService } from '../telegram/ITelegramService.interface';
 
-import { getDaysOfWeekButtons } from '../language/Language.service';
-import { TelegramService } from '../telegram/Telegram.service';
-import { ISchedules } from '../schedules/ISchedules.interface';
-
-dotenv.config();
-
-const commonScheduler = async ({
-  getScheduleSite,
-  getScheduleDb,
-  setScheduleDb,
-  formatSchedule,
-  getDifference,
-  channelId,
-}: {
-  getScheduleSite: () => Promise<ISchedules>;
-  getScheduleDb: () => Promise<string>;
-  setScheduleDb: (schedule: string) => Promise<string>;
-  formatSchedule: (schedule: ISchedules) => string;
-  getDifference: (oldSchedule: ISchedules, newSchedule: ISchedules) => string;
-  channelId: number;
-}): Promise<string> => {
-  const scheduleDb = await getScheduleDb();
-  const scheduleSite = await getScheduleSite();
-
-  if (!scheduleSite) {
-    return 'Error. No schedule from the site';
+export class SchedulerService implements ISchedulerService {
+  constructor(
+    private readonly databaseService: IDatabaseService,
+    private readonly languageService: ILanguageService,
+    private readonly telegramService: ITelegramService,
+  ) {
+    this.databaseService = databaseService;
+    this.languageService = languageService;
+    this.telegramService = telegramService;
   }
 
-  const scheduleSiteJSON = JSON.stringify(scheduleSite);
+  async checkAndUpdateSchedules(scheduleServices: IScheduleService[]): Promise<string[]> {
+    return Promise.all(scheduleServices.map(scheduleService => this.checkAndUpdateSchedule(scheduleService)));
+  }
 
-  if (scheduleDb !== scheduleSiteJSON) {
-    const scheduleFormatted = formatSchedule(scheduleSite);
+  private async checkAndUpdateSchedule(scheduleService: IScheduleService): Promise<string> {
+    const scheduleDb = await this.databaseService.getDb(scheduleService.getChannelId());
 
-    await setScheduleDb(scheduleSiteJSON);
+    let scheduleSite: ISchedules;
 
-    const telegramService = new TelegramService(process.env.TOKEN as string);
-    await telegramService.sendMessage({
-      text: scheduleFormatted,
-      replyMarkup: getDaysOfWeekButtons(0, 0, 0, 0, 0, 0, 0),
-      chatId: channelId,
-    });
-
-    const difference = getDifference(JSON.parse(scheduleDb), scheduleSite);
-
-    if (difference) {
-      await telegramService.sendMessage({
-        text: difference,
-        replyMarkup: '',
-        chatId: channelId,
-      });
+    try {
+      scheduleSite = await scheduleService.getScheduleSite(
+        this.languageService.getFullDaysOfWeek(scheduleService.getChannelLanguageCode()),
+      );
+    } catch (error) {
+      return 'Error. No schedule from the site';
     }
 
-    return scheduleFormatted;
+    const scheduleSiteJSON = JSON.stringify(scheduleSite);
+
+    if (scheduleDb !== scheduleSiteJSON) {
+      const scheduleFormatted = scheduleService.formatSchedule(
+        scheduleSite,
+        this.languageService.getNewSchedulePhrase(scheduleService.getChannelLanguageCode()),
+      );
+
+      await this.databaseService.setDb(scheduleService.getChannelId(), scheduleSiteJSON);
+
+      await this.telegramService.sendMessage({
+        text: scheduleFormatted,
+        replyMarkup: this.languageService.getDaysOfWeekStartButtons(scheduleService.getChannelLanguageCode()),
+        chatId: scheduleService.getChannelId(),
+      });
+
+      if (scheduleDb) {
+        const difference = scheduleService.getDifference(
+          JSON.parse(scheduleDb),
+          scheduleSite,
+          this.languageService.getChangesPhrase(scheduleService.getChannelLanguageCode()),
+        );
+
+        if (difference) {
+          await this.telegramService.sendMessage({
+            text: difference,
+            replyMarkup: '',
+            chatId: scheduleService.getChannelId(),
+          });
+        }
+      }
+
+      return scheduleFormatted;
+    }
+
+    return 'Done. No new schedule from the site';
   }
-
-  return 'Done. No new schedule from the site';
-};
-
-export const checkAndUpdateIce = (): Promise<string> => {
-  return commonScheduler({
-    getScheduleSite: brestIce.getScheduleSite,
-    getScheduleDb: brestIce.getScheduleDb,
-    setScheduleDb: brestIce.setScheduleDb,
-    formatSchedule: brestIce.formatSchedule,
-    getDifference: brestIce.getDifference,
-    channelId: Number(process.env.DVVS_CHANNEL_ID) || 0,
-  });
-};
-
-export const checkAndUpdateDvvs = (): Promise<string> => {
-  return commonScheduler({
-    getScheduleSite: brestDvvs.getScheduleSite,
-    getScheduleDb: brestDvvs.getScheduleDb,
-    setScheduleDb: brestDvvs.setScheduleDb,
-    formatSchedule: brestDvvs.formatSchedule,
-    getDifference: brestDvvs.getDifference,
-    channelId: Number(process.env.DVVS_CHANNEL_ID) || 0,
-  });
-};
+}
