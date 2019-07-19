@@ -1,45 +1,61 @@
 import axios from 'axios';
 import { DOMParser } from 'xmldom';
-import { select } from 'xpath';
+import { select, select1 } from 'xpath';
 
+import { ConfigurationError } from './error/ConfigParameterNotDefinedError';
 import { BaseService } from './Base.service';
-import { ISchedules, ITime } from '../common/model/ISchedules.interface';
-
-const URL = 'http://brest-hockey.by/';
-
-const DAYS = 9;
-
-const XPATH_DAYS = '//td[1]';
-const XPATH_DAYS_OF_WEEK = '//td[2]';
-const XPATH_TIMES_LINES = '//td[3]';
-
+import { ISportSchedule, ITime } from '../common/model/ISportSchedule.interface';
+import { IIceConfiguration } from './model/IIceConfiguration.interface';
 import { IScheduleService } from './IScheduleService.interface';
 
 export class IceService extends BaseService implements IScheduleService {
+  private configuration: IIceConfiguration | undefined;
+
   constructor(channelId: string, languageCode: string) {
     super(channelId, languageCode);
   }
 
-  async getScheduleSite(): Promise<ISchedules> {
-    const { data: page } = await axios.get(URL);
-
-    const { title, schedules } = this.parseSchedule(page);
-
-    return { title, schedules };
+  setConfiguration(configuration: IIceConfiguration): void {
+    this.configuration = configuration;
   }
 
-  private parseSchedule(page: string): ISchedules {
-    const domNew = new DOMParser().parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
+  async getScheduleSite(): Promise<ISportSchedule> {
+    if (!this.configuration) {
+      throw new ConfigurationError();
+    }
 
-    const days = this.selectPart(XPATH_DAYS, domNew, 0, DAYS);
-    const daysOfWeek = this.selectPart(XPATH_DAYS_OF_WEEK, domNew, 0, DAYS);
-    const timesLines = this.selectPart(XPATH_TIMES_LINES, domNew, 0, DAYS);
+    const { data: page } = await axios.get(this.configuration.url);
+
+    return this.parseSchedule(page);
+  }
+
+  private parseSchedule(page: string): ISportSchedule {
+    if (!this.configuration) {
+      throw new ConfigurationError();
+    }
+
+    const dom = new DOMParser({
+      errorHandler: {
+        warning: () => null,
+        error: () => null,
+        fatalError: () => null,
+      },
+    }).parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
+
+    const title = (select1(this.configuration.xPathTitle, dom) as Node).textContent!.trim();
+    const subTitle = (select1(this.configuration.xPathSubTitle, dom) as Node).textContent!.trim();
+
+    const dates = this.selectPart(this.configuration.xPathDates, dom, 0, this.configuration.days);
+    const daysOfWeek = this.selectPart(this.configuration.xPathDaysOfWeek, dom, 0, this.configuration.days - 1);
+    const timesLines = this.selectPart(this.configuration.xPathTimesLines, dom, 0, this.configuration.days - 1);
 
     return {
-      title: '',
-      schedules: Array.from({ length: DAYS }, (_: never, index) => {
+      title,
+      subTitle,
+      additionalInfo: '',
+      schedules: Array.from({ length: this.configuration.days }, (_: never, index) => {
         return {
-          day: days[index],
+          date: dates[index],
           dayOfWeek: daysOfWeek[index],
           times: this.timesLineToTimes(timesLines[index]),
         };
@@ -47,17 +63,17 @@ export class IceService extends BaseService implements IScheduleService {
     };
   }
 
-  private selectPart(xpath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
-    return select(xpath, dom)
+  private selectPart(xPath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
+    return select(xPath, dom)
       .filter((_, index) => index >= firstElementNumber && index <= lastElementNumber)
       .map(selectedValue => (selectedValue as Node).textContent!.trim());
   }
 
-  formatSchedule({ title, schedules }: ISchedules, newSchedulePhrase: string): string {
-    let scheduleFormatted = `${newSchedulePhrase}${title}`;
+  formatSchedule({ title, subTitle, schedules }: ISportSchedule, newSchedulePhrase: string): string {
+    let scheduleFormatted = `${newSchedulePhrase}\n\n${title}\n${subTitle}\n`;
 
     schedules.forEach(schedule => {
-      const daySchedule = `${schedule.day}, ${schedule.dayOfWeek}: ${this.timesToTimesLine(schedule.times)}`;
+      const daySchedule = `${schedule.date}, ${schedule.dayOfWeek}: ${this.timesToTimesLine(schedule.times)}`;
 
       scheduleFormatted = `${scheduleFormatted}\n${daySchedule}`;
     });
@@ -65,19 +81,19 @@ export class IceService extends BaseService implements IScheduleService {
     return scheduleFormatted;
   }
 
-  getDifference(oldSchedule: ISchedules, newSchedule: ISchedules, changesPhrase: string): string {
-    if (newSchedule.schedules[0].day !== oldSchedule.schedules[0].day) {
+  getDifference(oldSchedule: ISportSchedule, newSchedule: ISportSchedule, changesPhrase: string): string {
+    if (newSchedule.schedules[0].date === oldSchedule.schedules[0].date) {
       return '';
     }
 
-    let result = changesPhrase;
+    let result = `${changesPhrase}\n`;
 
     for (let i = 0; i < newSchedule.schedules.length; i += 1) {
       const oldTimesLine = this.timesToTimesLine(oldSchedule.schedules[i].times);
       const newTimesLine = this.timesToTimesLine(newSchedule.schedules[i].times);
 
       if (newTimesLine !== oldTimesLine) {
-        result = `${result}\n${newSchedule.schedules[i].day}: ${oldTimesLine} → ${newTimesLine}`;
+        result = `${result}\n${newSchedule.schedules[i].date}: ${oldTimesLine} → ${newTimesLine}`;
       }
     }
 

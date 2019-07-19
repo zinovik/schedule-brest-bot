@@ -1,9 +1,11 @@
-import { ISchedules } from '../common/model/ISchedules.interface';
+import { ConfigurationType } from './model/Configuration.type';
+import { ScheduleType } from '../common/model/Schedule.type';
 
 export interface IScheduleService {
   getChannelId(): string;
   getChannelLanguageCode(): string;
-  getScheduleSite(daysOfWeek?: string[]): Promise<ISchedules>;
-  formatSchedule({ title, schedules }: ISchedules, newSchedulePhrase: string): string;
-  getDifference(oldSchedule: ISchedules, newSchedule: ISchedules, changesPhrase: string): string;
+  setConfiguration(configurationType: ConfigurationType): void;
+  getScheduleSite(daysOfWeek?: string[]): Promise<ScheduleType>;
+  formatSchedule({ title, schedules }: ScheduleType, newSchedulePhrase: string): string;
+  getDifference(oldSchedule: ScheduleType, newSchedule: ScheduleType, changesPhrase: string): string;
 }
