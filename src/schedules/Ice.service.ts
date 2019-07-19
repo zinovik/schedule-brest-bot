@@ -82,7 +82,7 @@ export class IceService extends BaseService implements IScheduleService {
   }
 
   getDifference(oldSchedule: ISportSchedule, newSchedule: ISportSchedule, changesPhrase: string): string {
-    if (newSchedule.schedules[0].date === oldSchedule.schedules[0].date) {
+    if (newSchedule.schedules[0].date !== oldSchedule.schedules[0].date) {
       return '';
     }
 
