@@ -2,59 +2,73 @@ import axios from 'axios';
 import { DOMParser } from 'xmldom';
 import { select, select1 } from 'xpath';
 
+import { ConfigurationError } from './error/ConfigParameterNotDefinedError';
 import { BaseService } from './Base.service';
-import { ISchedules, ITime } from '../common/model/ISchedules.interface';
-
-const URL = 'http://brest-dvvs.by/sched/';
-const XPATH_TITLE = '//font//b';
-const XPATH_DATES = '//font[contains(@size, "5")]';
-
-const XPATH_TIMES_START = '//td[1]';
-const XPATH_SESSIONS = '//td[2]';
-
-const XPATH_TRACKS_MONDAY = '//td[3]';
-const XPATH_TRACKS_TUESDAY = '//td[4]';
-const XPATH_TRACKS_WEDNESDAY = '//td[5]';
-const XPATH_TRACKS_THURSDAY = '//td[6]';
-const XPATH_TRACKS_FRIDAY = '//td[7]';
-const XPATH_TRACKS_SATURDAY = '//td[8]';
-const XPATH_TRACKS_SUNDAY = '//td[9]';
-
+import { ISportSchedule, ITime } from '../common/model/ISportSchedule.interface';
+import { IDvvsConfiguration } from './model/IDvvsConfiguration.interface';
 import { IScheduleService } from './IScheduleService.interface';
 
 export class DvvsService extends BaseService implements IScheduleService {
+  private configuration: IDvvsConfiguration | undefined;
+
   constructor(channelId: string, languageCode: string) {
     super(channelId, languageCode);
   }
 
-  async getScheduleSite(daysOfWeek: string[] = []): Promise<ISchedules> {
-    const { data: page } = await axios.get(URL);
+  setConfiguration(configuration: IDvvsConfiguration): void {
+    this.configuration = configuration;
+  }
 
-    const { title, schedules } = this.parseSchedule(page, daysOfWeek);
+  async getScheduleSite(daysOfWeek: string[] = []): Promise<ISportSchedule> {
+    if (!this.configuration) {
+      throw new ConfigurationError();
+    }
 
-    return { title, schedules };
+    const { data: page } = await axios.get(this.configuration.url);
+
+    return this.parseSchedule(page, daysOfWeek);
   }
 
   private parseSchedule(page: string, daysOfWeek: string[]): any {
-    const dom = new DOMParser().parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
+    if (!this.configuration) {
+      throw new ConfigurationError();
+    }
 
-    const title = (select1(XPATH_TITLE, dom) as Node).textContent!.trim();
-    const subTitle = (select1(XPATH_DATES, dom) as Node).textContent!.trim();
+    const dom = new DOMParser({
+      errorHandler: {
+        warning: () => null,
+        error: () => null,
+        fatalError: () => null,
+      },
+    }).parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
 
-    const timesStart = this.selectPart(XPATH_TIMES_START, dom, 3, 22);
-    const sessions = this.selectPart(XPATH_SESSIONS, dom, 1, 20);
-    const tracksByDays = [
-      this.selectPart(XPATH_TRACKS_MONDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_TUESDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_WEDNESDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_THURSDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_FRIDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_SATURDAY, dom, 1, 20),
-      this.selectPart(XPATH_TRACKS_SUNDAY, dom, 1, 20),
-    ];
+    const title = (select1(this.configuration.xPathTitle, dom) as Node).textContent!.trim();
+    const subTitle = (select1(this.configuration.xPathSubTitle, dom) as Node).textContent!.trim();
+
+    const timesStart = this.selectPart(
+      this.configuration.xPathTimesStart,
+      dom,
+      this.configuration.firstTime + this.configuration.timeShift,
+      this.configuration.lastTime + this.configuration.timeShift,
+    );
+    const sessions = this.selectPart(
+      this.configuration.xPathSessions,
+      dom,
+      this.configuration.firstTime,
+      this.configuration.lastTime,
+    );
+    const tracksByDays = this.configuration.xPathTracks.map(tracks => {
+      if (!this.configuration) {
+        return [];
+      }
+
+      return this.selectPart(tracks, dom, this.configuration.firstTime, this.configuration.lastTime);
+    });
 
     return {
-      title: `${title}\n${subTitle}\n`,
+      title,
+      subTitle,
+      additionalInfo: '',
       schedules: tracksByDays.map((tracks, index) => {
         return {
           dayOfWeek: daysOfWeek[index],
@@ -70,14 +84,14 @@ export class DvvsService extends BaseService implements IScheduleService {
     };
   }
 
-  private selectPart(xpath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
-    return select(xpath, dom)
+  private selectPart(xPath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
+    return select(xPath, dom)
       .filter((_, index) => index >= firstElementNumber && index <= lastElementNumber)
       .map(selectedValue => (selectedValue as Node).textContent!.trim());
   }
 
-  formatSchedule({ title, schedules }: ISchedules, newSchedulePhrase: string): string {
-    let scheduleFormatted = `${newSchedulePhrase}\n${title}`;
+  formatSchedule({ title, subTitle, schedules }: ISportSchedule, newSchedulePhrase: string): string {
+    let scheduleFormatted = `${newSchedulePhrase}\n\n${title}\n${subTitle}\n`;
 
     schedules.forEach(schedule => {
       scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
@@ -100,12 +114,12 @@ export class DvvsService extends BaseService implements IScheduleService {
     return scheduleFormatted;
   }
 
-  getDifference(oldSchedule: ISchedules, newSchedule: ISchedules, changesPhrase: string): string {
-    if (newSchedule.title !== oldSchedule.title) {
+  getDifference(oldSchedule: ISportSchedule, newSchedule: ISportSchedule, changesPhrase: string): string {
+    if (newSchedule.subTitle === oldSchedule.subTitle) {
       return '';
     }
 
-    let result = changesPhrase;
+    let result = `${changesPhrase}\n`;
 
     for (let i = 0; i < newSchedule.schedules.length; i += 1) {
       const newS = newSchedule.schedules[i];

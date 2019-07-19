@@ -7,6 +7,7 @@
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
     "dotenv": "^8.0.0",
+    "iconv-lite": "^0.5.0",
     "redis": "^2.8.0",
     "xmldom": "^0.1.27",
     "xpath": "^0.0.27"
@@ -15,6 +16,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/aws-lambda": "^8.10.30",
     "@types/dotenv": "^6.1.1",
+    "@types/iconv-lite": "0.0.1",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
     "@types/redis": "^2.8.13",
@@ -28,6 +30,7 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
+    "typemoq": "^2.1.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
