@@ -3,22 +3,19 @@ import 'babel-polyfill';
 import * as dotenv from 'dotenv';
 
 import { ConfigParameterNotDefinedError } from './error/ConfigParameterNotDefinedError';
-import { SchedulerService } from '../scheduler/Scheduler.service';
+import { Scheduler } from '../scheduler/Scheduler';
 import { HardcodeConfigurationService } from '../configuration/HardcodeConfiguration.service';
 import { RedisService } from '../database/Redis.service';
 import { LanguageService } from '../language/Language.service';
 import { TelegramService } from '../telegram/Telegram.service';
 import { IceService } from '../schedules/Ice.service';
 import { DvvsService } from '../schedules/Dvvs.service';
-import { AvService } from '../schedules/Av.service';
+// import { AvService } from '../schedules/Av.service';
 import { IEvent } from './model/IEvent.interface';
 
 dotenv.config();
 
 exports.handler = async (event: IEvent, context: never) => {
-  const isIgnoreSend = event.queryStringParameters['ignore-send'] !== undefined;
-  const isForceSend = event.queryStringParameters['force-send'] !== undefined;
-
   if (process.env.REDIS_URL === undefined) {
     throw new ConfigParameterNotDefinedError('REDIS_URL');
   }
@@ -35,7 +32,10 @@ exports.handler = async (event: IEvent, context: never) => {
     throw new ConfigParameterNotDefinedError('AV_CHANNEL_ID');
   }
 
-  const schedulerService = new SchedulerService(
+  const isIgnoreSend = event.queryStringParameters['ignore-send'] !== undefined;
+  const isForceSend = event.queryStringParameters['force-send'] !== undefined;
+
+  const scheduler = new Scheduler(
     new HardcodeConfigurationService(),
     new RedisService(process.env.REDIS_URL),
     new LanguageService(),
@@ -45,11 +45,11 @@ exports.handler = async (event: IEvent, context: never) => {
   let results: string[] = [];
 
   try {
-    results = await schedulerService.checkUpdateAndSendSchedules(
+    results = await scheduler.checkUpdateAndSendSchedules(
       [
         new IceService(process.env.ICE_CHANNEL_ID, 'ru'),
         new DvvsService(process.env.DVVS_CHANNEL_ID, 'ru'),
-        new AvService(process.env.AV_CHANNEL_ID, 'ru'),
+        // new AvService(process.env.AV_CHANNEL_ID, 'ru'),
       ],
       {
         isIgnoreSend,

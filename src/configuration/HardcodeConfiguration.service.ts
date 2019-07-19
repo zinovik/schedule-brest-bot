@@ -10,13 +10,13 @@ export class HardcodeConfigurationService implements IConfigurationService {
         lastRoute: 999,
 
         xPathRoutes: '//table//table//td[1]',
-        xPathPlatforms: '//table//table//td[2]',
-        xPathRegularities: '//table//table//td[3]',
-        xPathDepartmentAS: '//table//table//td[4]',
-        xPathDepartmentTU: '//table//table//td[5]',
-        xPathArrival: '//table//table//td[6]',
-        xPathDepartmentBack: '//table//table//td[7]',
-        xPathArrivalBack: '//table//table//td[8]',
+        xPathPlatforms: '//td[2]',
+        xPathRegularities: '//td[3]',
+        xPathDepartmentAS: '//td[4]',
+        xPathDepartmentTU: '//td[5]',
+        xPathArrival: '//td[6]',
+        xPathDepartmentBack: '//td[7]',
+        xPathArrivalBack: '//td[8]',
       };
     }
 

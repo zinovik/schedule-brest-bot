@@ -13,7 +13,7 @@ export class RedisService implements IDatabaseService {
     this.client = createClient(redisUrl, { auth_pass: this.redisPassword });
   }
 
-  async getDb(name: string): Promise<string> {
+  async getSchedule(name: string): Promise<string> {
     return new Promise((resolve, reject) => {
       this.client.get(name, (err: any, reply: string) => {
         if (err) {
@@ -25,7 +25,7 @@ export class RedisService implements IDatabaseService {
     });
   }
 
-  async setDb(name: string, schedule: string): Promise<string> {
+  async setSchedule(name: string, schedule: string): Promise<string> {
     return new Promise((resolve, reject) => {
       this.client.set(name, schedule, (err: any, reply: string) => {
         if (err) {
