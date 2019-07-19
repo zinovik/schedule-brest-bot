@@ -115,7 +115,7 @@ export class DvvsService extends BaseService implements IScheduleService {
   }
 
   getDifference(oldSchedule: ISportSchedule, newSchedule: ISportSchedule, changesPhrase: string): string {
-    if (newSchedule.subTitle === oldSchedule.subTitle) {
+    if (newSchedule.subTitle !== oldSchedule.subTitle) {
       return '';
     }
 
