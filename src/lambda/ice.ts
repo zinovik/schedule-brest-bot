@@ -20,7 +20,7 @@ exports.handler = async (event: never, context: never) => {
   const databaseService = new RedisService(process.env.REDIS_URL);
 
   try {
-    schedule = await databaseService.getDb(process.env.ICE_CHANNEL_ID);
+    schedule = await databaseService.getSchedule(process.env.ICE_CHANNEL_ID);
   } catch (error) {
     console.error('Unexpected error occurred.', error.message);
     return {

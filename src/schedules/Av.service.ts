@@ -40,9 +40,7 @@ export class AvService extends BaseService implements IScheduleService {
         response.on('end', () => {
           const page = iconv.decode(Buffer.concat(chunks), 'win1251');
 
-          const { title, schedules } = this.parseSchedule(page);
-
-          resolve({ title, schedules });
+          resolve(this.parseSchedule(page));
         });
       });
     });

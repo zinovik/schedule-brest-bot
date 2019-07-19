@@ -1,13 +1,13 @@
 import { ScheduleType } from '../common/model/Schedule.type';
 
-import { ISchedulerService } from './ISchedulerService.interface';
+import { IScheduler } from './IScheduler.interface';
 import { IConfigurationService } from '../configuration/IConfigurationService.interface';
 import { IScheduleService } from '../schedules/IScheduleService.interface';
 import { ILanguageService } from '../language/ILanguageService.interface';
 import { IDatabaseService } from '../database/IDatabaseService.interface';
 import { ITelegramService } from '../telegram/ITelegramService.interface';
 
-export class SchedulerService implements ISchedulerService {
+export class Scheduler implements IScheduler {
   constructor(
     private readonly configurationService: IConfigurationService,
     private readonly databaseService: IDatabaseService,
@@ -22,15 +22,13 @@ export class SchedulerService implements ISchedulerService {
 
   async checkUpdateAndSendSchedules(
     scheduleServices: IScheduleService[],
-    { isIgnoreSend, isForceSend }: { isIgnoreSend: boolean; isForceSend: boolean } = {
+    options: { isIgnoreSend: boolean; isForceSend: boolean } = {
       isIgnoreSend: false,
       isForceSend: false,
     },
   ): Promise<string[]> {
     return Promise.all(
-      scheduleServices.map(scheduleService =>
-        this.checkUpdateAndSendSchedule(scheduleService, { isIgnoreSend, isForceSend }),
-      ),
+      scheduleServices.map(scheduleService => this.checkUpdateAndSendSchedule(scheduleService, options)),
     );
   }
 
@@ -38,20 +36,28 @@ export class SchedulerService implements ISchedulerService {
     scheduleService: IScheduleService,
     { isIgnoreSend, isForceSend }: { isIgnoreSend: boolean; isForceSend: boolean },
   ): Promise<string> {
-    const languageCode = scheduleService.getChannelLanguageCode();
     const channelId = scheduleService.getChannelId();
+    const languageCode = scheduleService.getChannelLanguageCode();
 
     const configuration = this.configurationService.getConfiguration(channelId);
     scheduleService.setConfiguration(configuration);
 
-    const scheduleDb = await this.databaseService.getDb(channelId);
+    let scheduleDb: string;
+
+    try {
+      scheduleDb = await this.databaseService.getSchedule(channelId);
+    } catch (error) {
+      console.error('Error getting schedule from the database', error.message);
+      return 'Error getting schedule from the database';
+    }
 
     let scheduleSite: ScheduleType;
 
     try {
       scheduleSite = await scheduleService.getScheduleSite(this.languageService.getFullDaysOfWeek(languageCode));
     } catch (error) {
-      return 'Error. No schedule from the site';
+      console.error('Error getting schedule from the site', error.message);
+      return 'Error getting schedule from the site';
     }
 
     const scheduleSiteJSON = JSON.stringify(scheduleSite);
@@ -62,34 +68,56 @@ export class SchedulerService implements ISchedulerService {
         this.languageService.getNewSchedulePhrase(languageCode),
       );
 
-      await this.databaseService.setDb(channelId, scheduleSiteJSON);
+      try {
+        await this.databaseService.setSchedule(channelId, scheduleSiteJSON);
+      } catch (error) {
+        console.error('Error saving schedule to the database', error.message);
+        return 'Error saving schedule to the database';
+      }
 
       if (isIgnoreSend) {
         return scheduleFormatted;
       }
 
-      await this.telegramService.sendMessage({
-        text: scheduleFormatted,
-        replyMarkup: this.languageService.getDaysOfWeekStartButtons(languageCode),
-        chatId: channelId,
-      });
+      try {
+        await this.telegramService.sendMessage({
+          text: scheduleFormatted,
+          replyMarkup: this.languageService.getDaysOfWeekStartButtons(languageCode),
+          chatId: channelId,
+        });
+      } catch (error) {
+        console.error('Error sending schedule message to telegram', error.message);
+        return 'Error sending schedule message to telegram';
+      }
 
       if (!scheduleDb) {
         return scheduleFormatted;
       }
 
-      const difference = scheduleService.getDifference(
-        JSON.parse(scheduleDb),
-        scheduleSite,
-        this.languageService.getChangesPhrase(languageCode),
-      );
+      let difference: string;
+
+      try {
+        difference = scheduleService.getDifference(
+          JSON.parse(scheduleDb),
+          scheduleSite,
+          this.languageService.getChangesPhrase(languageCode),
+        );
+      } catch (error) {
+        console.error('Error getting schedule difference', error.message);
+        return 'Error getting schedule difference';
+      }
 
       if (difference) {
-        await this.telegramService.sendMessage({
-          text: difference,
-          replyMarkup: '',
-          chatId: channelId,
-        });
+        try {
+          await this.telegramService.sendMessage({
+            text: difference,
+            replyMarkup: '',
+            chatId: channelId,
+          });
+        } catch (error) {
+          console.error('Error sending schedule difference message to telegram', error.message);
+          return 'Error sending schedule difference message to telegram';
+        }
       }
 
       return scheduleFormatted;

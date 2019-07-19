@@ -1,4 +1,4 @@
 export interface IDatabaseService {
-  getDb(name: string): Promise<string>;
-  setDb(name: string, schedule: string): Promise<string>;
+  getSchedule(name: string): Promise<string>;
+  setSchedule(name: string, schedule: string): Promise<string>;
 }

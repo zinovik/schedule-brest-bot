@@ -22,6 +22,7 @@ export class TelegramService implements ITelegramService {
       text,
       reply_markup: replyMarkup,
       chat_id: chatId,
+      disable_notification: true,
     };
 
     console.log(`Sending telegram message: ${JSON.stringify(message)}...`);
