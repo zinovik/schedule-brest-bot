@@ -1,6 +1,7 @@
 import { ILanguageService } from './ILanguageService.interface';
 
 import { IPhrases } from './phrases/IPhrases.interface';
+import { IReplyMarkup } from '../common/model/IReplyMarkup.interface';
 import { en } from './phrases/en';
 import { ru } from './phrases/ru';
 
@@ -28,16 +29,16 @@ export class LanguageService implements ILanguageService {
   getDaysOfWeekStartButtons(languageCode: string): string {
     const phrases = this.getPhrases(languageCode);
 
-    const buttons = phrases.fullDaysOfWeek.map((fullDayOfWeek, index) => {
-      return {
-        text: `${fullDayOfWeek[0]} 0`,
-        callback_data: String(index),
-      };
-    });
+    const replyMarkup: IReplyMarkup = {
+      inline_keyboard: [
+        phrases.fullDaysOfWeek.map((fullDayOfWeek, index) => ({
+          text: `${fullDayOfWeek[0]} 0`,
+          callback_data: String(index),
+        })),
+      ],
+    };
 
-    return JSON.stringify({
-      inline_keyboard: [buttons],
-    });
+    return JSON.stringify(replyMarkup);
   }
 
   private getPhrases(languageCode: string): IPhrases {

@@ -36,7 +36,11 @@ exports.handler = async (event: IEvent, context: never) => {
   const isForceSend = event.queryStringParameters['force-send'] !== undefined;
 
   const scheduler = new Scheduler(
-    new HardcodeConfigurationService(),
+    new HardcodeConfigurationService([
+      process.env.ICE_CHANNEL_ID,
+      process.env.DVVS_CHANNEL_ID,
+      process.env.AV_CHANNEL_ID,
+    ]),
     new RedisService(process.env.REDIS_URL),
     new LanguageService(),
     new TelegramService(process.env.TOKEN),
