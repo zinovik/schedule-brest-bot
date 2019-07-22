@@ -1,7 +1,8 @@
 import { IVoteService } from './IVoteService.interface';
 import { ITelegramService } from '../telegram/ITelegramService.interface';
 
-import { IMessageBody } from '../common/model/ICallbackMessageBody.interface';
+import { IMessageBody } from '../common/model/IMessageBody.interface';
+import { IReplyMarkup } from '../common/model/IReplyMarkup.interface';
 
 export class VoteService implements IVoteService {
   constructor(private readonly telegramService: ITelegramService) {
@@ -18,22 +19,33 @@ export class VoteService implements IVoteService {
       return false;
     }
 
-    const {
-      callback_query: {
-        data,
-        message: {
-          text,
-          message_id: messageId,
-          chat: { id: chatId },
-          reply_markup: replyMarkup,
+    let data: string;
+    let text: string;
+    let messageId: string;
+    let chatId: number;
+    let replyMarkup: IReplyMarkup;
+
+    try {
+      ({
+        callback_query: {
+          data,
+          message: {
+            text,
+            message_id: messageId,
+            chat: { id: chatId },
+            reply_markup: replyMarkup,
+          },
         },
-      },
-    } = messageParsed;
+      } = messageParsed);
+    } catch (error) {
+      console.error('Error user message format: ', error.message);
+      return false;
+    }
 
     const newReplyMarkup = {
       inline_keyboard: [
-        replyMarkup.inline_keyboard[0].map((button, index) => {
-          if (index !== Number(data)) {
+        replyMarkup.inline_keyboard[0].map(button => {
+          if (button.callback_data !== data) {
             return button;
           }
 

@@ -1,13 +1,13 @@
-import { IMock, Mock, It, Times } from 'typemoq';
+import { IMock, Mock, Times } from 'typemoq';
 
-import { Scheduler } from '../../src/scheduler/Scheduler';
-import { IConfigurationService } from '../../src/configuration/IConfigurationService.interface';
-import { IDatabaseService } from '../../src/database/IDatabaseService.interface';
-import { ILanguageService } from '../../src/language/ILanguageService.interface';
-import { ITelegramService } from '../../src/telegram/ITelegramService.interface';
-import { IScheduleService } from '../../src/schedules/IScheduleService.interface';
-import { ConfigurationType } from '../../src/schedules/model/Configuration.type';
-import { ScheduleType } from '../../src/common/model/Schedule.type';
+import { Scheduler } from '../../../src/scheduler/Scheduler';
+import { IConfigurationService } from '../../../src/configuration/IConfigurationService.interface';
+import { IDatabaseService } from '../../../src/database/IDatabaseService.interface';
+import { ILanguageService } from '../../../src/language/ILanguageService.interface';
+import { ITelegramService } from '../../../src/telegram/ITelegramService.interface';
+import { IScheduleService } from '../../../src/schedules/IScheduleService.interface';
+import { ConfigurationType } from '../../../src/schedules/model/Configuration.type';
+import { ScheduleType } from '../../../src/common/model/Schedule.type';
 
 describe('Scheduler', () => {
   let configurationServiceMock: IMock<IConfigurationService>;
@@ -65,10 +65,10 @@ describe('Scheduler', () => {
     scheduleServiceMockFormatSchedule(scheduleSite, newSchedulePhrase, formatedSchedule);
     databaseServiceMockSetSchedule(channelId, JSON.stringify(scheduleSite));
     languageServiceMockGetDaysOfWeekStartButtons(languageCode, daysOfWeekStartButtons);
-    telegramServiceMockSetSchedule(formatedSchedule, daysOfWeekStartButtons, channelId);
+    telegramServiceMockSendMessage(formatedSchedule, daysOfWeekStartButtons, channelId);
     languageServiceMockGetChangesPhrase(languageCode, changesPhrase);
     scheduleServiceMockGetDifference(JSON.parse(scheduleDb), scheduleSite, changesPhrase, difference);
-    telegramServiceMockSetSchedule(difference, '', channelId);
+    telegramServiceMockSendMessage(difference, '', channelId);
 
     // Act
     await scheduler.checkUpdateAndSendSchedules([scheduleServiceMock.object]);
@@ -158,7 +158,7 @@ describe('Scheduler', () => {
       .verifiable(Times.once());
   }
 
-  function telegramServiceMockSetSchedule(text: string, replyMarkup: string, chatId: string | number) {
+  function telegramServiceMockSendMessage(text: string, replyMarkup: string, chatId: string | number) {
     telegramServiceMock
       .setup((x: ITelegramService) => x.sendMessage({ text, replyMarkup, chatId }))
       .returns(async () => undefined)
