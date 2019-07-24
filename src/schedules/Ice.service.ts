@@ -100,8 +100,8 @@ export class IceService extends BaseService implements IScheduleService {
     return result;
   }
 
-  private timesLineToTimes(timeLine: string): ITime[] {
-    return timeLine.split(',').map(timeLine => ({ start: timeLine.trim() }));
+  private timesLineToTimes(timesLine: string): ITime[] {
+    return timesLine.split(',').map(time => ({ start: time.trim() }));
   }
 
   private timesToTimesLine(times: ITime[]): string {

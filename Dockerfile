@@ -1,19 +1,19 @@
-FROM node:latest
+FROM node:12.6.0
 
 # Create work directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy app source to work directory
-RUN mkdir /usr/src/app/src
-ADD src /usr/src/app/src/
-
-COPY package.json /usr/src/app/
-COPY package-lock.json /usr/src/app/
-COPY tsconfig.json /usr/src/app/
-COPY tslint.json /usr/src/app/
+# Copy app config files
+COPY package.json ./
+COPY package-lock.json ./
 
 # Install app dependencies
 RUN npm install
+
+# Copy app source to work directory
+COPY src ./src
+COPY tsconfig.json ./
+COPY tslint.json ./
 
 # Build and run the app
 CMD npm run start:lambda

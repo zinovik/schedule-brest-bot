@@ -51,12 +51,7 @@ export class DvvsService extends BaseService implements IScheduleService {
       this.configuration.firstTime + this.configuration.timeShift,
       this.configuration.lastTime + this.configuration.timeShift,
     );
-    const sessions = this.selectPart(
-      this.configuration.xPathSessions,
-      dom,
-      this.configuration.firstTime,
-      this.configuration.lastTime,
-    );
+    const sessions = this.selectPart(this.configuration.xPathSessions, dom, this.configuration.firstTime, this.configuration.lastTime);
     const tracksByDays = this.configuration.xPathTracks.map(tracks => {
       if (!this.configuration) {
         return [];
@@ -69,14 +64,14 @@ export class DvvsService extends BaseService implements IScheduleService {
       title,
       subTitle,
       additionalInfo: '',
-      schedules: tracksByDays.map((tracks, index) => {
+      schedules: tracksByDays.map((tracks, i) => {
         return {
-          dayOfWeek: daysOfWeek[index],
-          times: timesStart.map((timeStart, index) => {
+          dayOfWeek: daysOfWeek[i],
+          times: timesStart.map((timeStart, j) => {
             return {
               start: timeStart,
-              tracks: tracks[index],
-              session: sessions[index],
+              tracks: tracks[j],
+              session: sessions[j],
             };
           }),
         };
@@ -130,9 +125,7 @@ export class DvvsService extends BaseService implements IScheduleService {
         const newTracks = newS.times[j].tracks === '-' ? '0' : newS.times[j].tracks;
 
         if (newTracks !== oldTracks) {
-          result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${
-            newS.times[j].session
-          }) ${oldTracks} → ${newTracks}`;
+          result = `${result}\n${newS.dayOfWeek}: ${newS.times[j].start} (${newS.times[j].session}) ${oldTracks} → ${newTracks}`;
         }
       }
     }

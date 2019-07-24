@@ -25,12 +25,7 @@ describe('Scheduler', () => {
     telegramServiceMock = Mock.ofType<ITelegramService>();
     scheduleServiceMock = Mock.ofType<IScheduleService>();
 
-    scheduler = new Scheduler(
-      configurationServiceMock.object,
-      databaseServiceMock.object,
-      languageServiceMock.object,
-      telegramServiceMock.object,
-    );
+    scheduler = new Scheduler(configurationServiceMock.object, databaseServiceMock.object, languageServiceMock.object, telegramServiceMock.object);
   });
 
   afterEach(() => {
@@ -133,11 +128,7 @@ describe('Scheduler', () => {
       .verifiable(Times.once());
   }
 
-  function scheduleServiceMockFormatSchedule(
-    scheduleSite: ScheduleType,
-    newSchedulePhrase: string,
-    formatedSchedule: string,
-  ) {
+  function scheduleServiceMockFormatSchedule(scheduleSite: ScheduleType, newSchedulePhrase: string, formatedSchedule: string) {
     scheduleServiceMock
       .setup((x: IScheduleService) => x.formatSchedule(scheduleSite, newSchedulePhrase))
       .returns(() => formatedSchedule)
@@ -172,12 +163,7 @@ describe('Scheduler', () => {
       .verifiable(Times.once());
   }
 
-  function scheduleServiceMockGetDifference(
-    oldSchedule: ScheduleType,
-    newSchedule: ScheduleType,
-    changesPhrase: string,
-    difference: string,
-  ) {
+  function scheduleServiceMockGetDifference(oldSchedule: ScheduleType, newSchedule: ScheduleType, changesPhrase: string, difference: string) {
     scheduleServiceMock
       .setup((x: IScheduleService) => x.getDifference(oldSchedule, newSchedule, changesPhrase))
       .returns(() => difference)

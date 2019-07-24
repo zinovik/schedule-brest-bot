@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "simple telegram bot",
   "main": "index.ts",
+  "engines": {
+    "node": ">=12.6",
+    "npm": ">=6.9"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
@@ -14,7 +18,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.3.3",
-    "@types/aws-lambda": "^8.10.30",
+    "@types/aws-lambda": "^8.10.31",
     "@types/dotenv": "^6.1.1",
     "@types/iconv-lite": "0.0.1",
     "@types/jest": "^24.0.15",
@@ -29,17 +33,15 @@
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
-    "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
     "typemoq": "^2.1.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
     "start:lambda": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
     "build:lambda": "netlify-lambda build src/lambda --config ./webpack.functions.js",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts*\" \"test*/**/*.ts*\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest --config jestconfig.json --coverage"
   },
   "repository": {
