@@ -9,15 +9,7 @@ export class TelegramService implements ITelegramService {
     this.token = token;
   }
 
-  async sendMessage({
-    text,
-    replyMarkup,
-    chatId,
-  }: {
-    text: string;
-    replyMarkup: string;
-    chatId: string | number;
-  }): Promise<void> {
+  async sendMessage({ text, replyMarkup, chatId }: { text: string; replyMarkup: string; chatId: string | number }): Promise<void> {
     const message = {
       text,
       reply_markup: replyMarkup,

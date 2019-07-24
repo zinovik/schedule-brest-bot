@@ -64,12 +64,7 @@ describe('Scheduler', () => {
     expect(true).toBeTruthy();
   });
 
-  function telegramServiceMockEditMessageText(
-    text: string,
-    replyMarkup: string,
-    chatId: string | number,
-    messageId: string,
-  ) {
+  function telegramServiceMockEditMessageText(text: string, replyMarkup: string, chatId: string | number, messageId: string) {
     telegramServiceMock
       .setup((x: ITelegramService) => x.editMessageText({ text, replyMarkup, chatId, messageId }))
       .returns(async () => undefined)

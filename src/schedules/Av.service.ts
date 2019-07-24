@@ -59,54 +59,14 @@ export class AvService extends BaseService implements IScheduleService {
       },
     }).parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
 
-    const routes = this.selectPart(
-      this.configuration.xPathRoutes,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const platforms = this.selectPart(
-      this.configuration.xPathPlatforms,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const regularities = this.selectPart(
-      this.configuration.xPathRegularities,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const departmentsAS = this.selectPart(
-      this.configuration.xPathDepartmentAS,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const departmentsTU = this.selectPart(
-      this.configuration.xPathDepartmentTU,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const arrivals = this.selectPart(
-      this.configuration.xPathArrival,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const departmentsBack = this.selectPart(
-      this.configuration.xPathDepartmentBack,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
-    const arrivalsBack = this.selectPart(
-      this.configuration.xPathArrivalBack,
-      dom,
-      this.configuration.firstRoute,
-      this.configuration.lastRoute,
-    );
+    const routes = this.selectPart(this.configuration.xPathRoutes, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const platforms = this.selectPart(this.configuration.xPathPlatforms, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const regularities = this.selectPart(this.configuration.xPathRegularities, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const departmentsAS = this.selectPart(this.configuration.xPathDepartmentAS, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const departmentsTU = this.selectPart(this.configuration.xPathDepartmentTU, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const arrivals = this.selectPart(this.configuration.xPathArrival, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const departmentsBack = this.selectPart(this.configuration.xPathDepartmentBack, dom, this.configuration.firstRoute, this.configuration.lastRoute);
+    const arrivalsBack = this.selectPart(this.configuration.xPathArrivalBack, dom, this.configuration.firstRoute, this.configuration.lastRoute);
 
     return {
       title: '',
@@ -135,9 +95,7 @@ export class AvService extends BaseService implements IScheduleService {
     let scheduleFormatted = `${newSchedulePhrase}${title}`;
 
     schedules.forEach(schedule => {
-      const routeSchedule = `${schedule.route} (${schedule.regularity}, ${schedule.platform}): ${
-        schedule.departmentAS
-      }`;
+      const routeSchedule = `${schedule.route} (${schedule.regularity}, ${schedule.platform}): ${schedule.departmentAS}`;
 
       scheduleFormatted = `${scheduleFormatted}\n${routeSchedule}`;
     });
@@ -153,9 +111,7 @@ export class AvService extends BaseService implements IScheduleService {
       const newRoute = JSON.stringify(newSchedule.schedules[i]);
 
       if (oldRoute !== newRoute) {
-        result = `${result}\n${newSchedule.schedules[i].route}: ${oldSchedule.schedules[i].departmentAS} → ${
-          newSchedule.schedules[i].departmentAS
-        }`;
+        result = `${result}\n${newSchedule.schedules[i].route}: ${oldSchedule.schedules[i].departmentAS} → ${newSchedule.schedules[i].departmentAS}`;
       }
     }
 
