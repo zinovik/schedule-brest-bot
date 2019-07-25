@@ -38,7 +38,7 @@ export class AvService extends BaseService implements IScheduleService {
         });
 
         response.on('end', () => {
-          const page = iconv.decode(Buffer.concat(chunks), 'win1251');
+          const page = process.env.NODE_ENV === 'test' ? Buffer.concat(chunks).toString() : iconv.decode(Buffer.concat(chunks), 'win1251');
 
           resolve(this.parseSchedule(page));
         });
@@ -57,7 +57,16 @@ export class AvService extends BaseService implements IScheduleService {
         error: () => null,
         fatalError: () => null,
       },
-    }).parseFromString(page.replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>'));
+    }).parseFromString(
+      page
+        .replace(new RegExp('<s*html[^>]*>', 'gi'), '<html>')
+        .replace(new RegExp('&nbsp;', 'gi'), '')
+        .replace(new RegExp('<br', 'gi'), ' <br>') // added write spaces
+        .replace(new RegExp('<TD align=left>(.*)', 'gi'), '<TD align=left>$1 </TD>') // fixed missed </TD>
+        .replace(new RegExp('</TD> </TD>', 'gi'), ' </TD>') // fixed missed </TD>
+        .replace(new RegExp('<font size=2><strong', 'gi'), '<font size=2></font>') // fixed this part <TD><font size=2><strong >пн,вт,ср,чт,пт</TD>
+        .toLowerCase(),
+    );
 
     const routes = this.selectPart(this.configuration.xPathRoutes, dom, this.configuration.firstRoute, this.configuration.lastRoute);
     const platforms = this.selectPart(this.configuration.xPathPlatforms, dom, this.configuration.firstRoute, this.configuration.lastRoute);
@@ -88,14 +97,20 @@ export class AvService extends BaseService implements IScheduleService {
   private selectPart(xPath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
     return select(xPath, dom)
       .filter((_, index) => index >= firstElementNumber && index <= lastElementNumber)
-      .map(selectedValue => (selectedValue as Node).textContent!.trim());
+      .map(selectedValue =>
+        (selectedValue as Node)
+          .textContent!.replace(new RegExp('>', 'gi'), '')
+          .replace(new RegExp('\n', 'gi'), '')
+          .replace(new RegExp('  +', 'gi'), ' ')
+          .trim(),
+      );
   }
 
   formatSchedule({ title, schedules }: ITransportSchedule, newSchedulePhrase: string): string {
     let scheduleFormatted = `${newSchedulePhrase}${title}`;
 
     schedules.forEach(schedule => {
-      const routeSchedule = `${schedule.route} (${schedule.regularity}, ${schedule.platform}): ${schedule.departmentAS}`;
+      const routeSchedule = `${schedule.route} (${schedule.regularity}, ${schedule.platform}): ${schedule.departmentAS} - ${schedule.arrival}`;
 
       scheduleFormatted = `${scheduleFormatted}\n${routeSchedule}`;
     });
@@ -111,7 +126,10 @@ export class AvService extends BaseService implements IScheduleService {
       const newRoute = JSON.stringify(newSchedule.schedules[i]);
 
       if (oldRoute !== newRoute) {
-        result = `${result}\n${newSchedule.schedules[i].route}: ${oldSchedule.schedules[i].departmentAS} → ${newSchedule.schedules[i].departmentAS}`;
+        result =
+          `${result}\n${newSchedule.schedules[i].route} (${newSchedule.schedules[i].regularity}, ${newSchedule.schedules[i].platform}): ` +
+          `${oldSchedule.schedules[i].departmentAS} - ${oldSchedule.schedules[i].arrival} → ${newSchedule.schedules[i].departmentAS} - ` +
+          `${newSchedule.schedules[i].arrival}`;
       }
     }
 
