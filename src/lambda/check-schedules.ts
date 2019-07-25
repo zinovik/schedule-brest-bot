@@ -10,7 +10,7 @@ import { LanguageService } from '../language/Language.service';
 import { TelegramService } from '../telegram/Telegram.service';
 import { IceService } from '../schedules/Ice.service';
 import { DvvsService } from '../schedules/Dvvs.service';
-// import { AvService } from '../schedules/Av.service';
+import { AvService } from '../schedules/Av.service';
 import { IEvent } from './model/IEvent.interface';
 
 dotenv.config();
@@ -49,7 +49,7 @@ exports.handler = async (event: IEvent, context: never) => {
       [
         new IceService(process.env.ICE_CHANNEL_ID, 'ru'),
         new DvvsService(process.env.DVVS_CHANNEL_ID, 'ru'),
-        // new AvService(process.env.AV_CHANNEL_ID, 'ru'),
+        new AvService(process.env.AV_CHANNEL_ID, 'ru'),
       ],
       {
         isIgnoreSend,

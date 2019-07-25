@@ -9,19 +9,35 @@ export class TelegramService implements ITelegramService {
     this.token = token;
   }
 
+  private stringToChunks(str: string, size: number): string[] {
+    const chunks: string[] = [];
+
+    const chunksNumber = Math.ceil(str.length / size);
+
+    for (let i = 0; i < chunksNumber; i++) {
+      chunks.push(str.substring(i * size, (i + 1) * size));
+    }
+
+    return chunks;
+  }
+
   async sendMessage({ text, replyMarkup, chatId }: { text: string; replyMarkup: string; chatId: string | number }): Promise<void> {
-    const message = {
-      text,
-      reply_markup: replyMarkup,
-      chat_id: chatId,
-      disable_notification: true,
-    };
+    const chunks = this.stringToChunks(text, 4095);
 
-    console.log(`Sending telegram message: ${JSON.stringify(message)}...`);
+    for (const chunk of chunks) {
+      const message = {
+        text: chunk,
+        reply_markup: replyMarkup,
+        chat_id: chatId,
+        disable_notification: true,
+      };
 
-    const { data } = await axios.post(`${TELEGRAM_API_URL}${this.token}/sendMessage`, message);
+      // console.log(`Sending telegram message: ${JSON.stringify(message)}...`);
 
-    console.log(`Telegram message was successfully sent: ${JSON.stringify(data)}`);
+      const { data } = await axios.post(`${TELEGRAM_API_URL}${this.token}/sendMessage`, message);
+
+      // console.log(`Telegram message was successfully sent: ${JSON.stringify(data)}`);
+    }
   }
 
   async editMessageText({
@@ -42,7 +58,7 @@ export class TelegramService implements ITelegramService {
       reply_markup: replyMarkup,
     };
 
-    console.log(`Editing telegram message: ${JSON.stringify(message)}...`);
+    // console.log(`Editing telegram message: ${JSON.stringify(message)}...`);
 
     const { data } = await axios.post(`${TELEGRAM_API_URL}${process.env.TOKEN}/editMessageText`, message, {
       headers: {
@@ -50,6 +66,6 @@ export class TelegramService implements ITelegramService {
       },
     });
 
-    console.log(`Telegram message was successfully edited: ${JSON.stringify(data)}`);
+    // console.log(`Telegram message was successfully edited: ${JSON.stringify(data)}`);
   }
 }
