@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import * as dotenv from 'dotenv';
 
 import { ConfigParameterNotDefinedError } from './error/ConfigParameterNotDefinedError';
