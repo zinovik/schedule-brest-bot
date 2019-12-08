@@ -13,7 +13,7 @@ RUN npm install
 # Copy app source to work directory
 COPY src ./src
 COPY tsconfig.json ./
-COPY tslint.json ./
+COPY .eslintrc ./
 
 # Build and run the app
 CMD npm run start:lambda
