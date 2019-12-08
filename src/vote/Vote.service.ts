@@ -20,6 +20,7 @@ export class VoteService implements IVoteService {
     }
 
     let data: string;
+    let callbackQueryId: string;
     let text: string;
     let messageId: string;
     let chatId: number;
@@ -28,6 +29,7 @@ export class VoteService implements IVoteService {
     try {
       ({
         callback_query: {
+          id: callbackQueryId,
           data,
           message: {
             text,
@@ -64,6 +66,8 @@ export class VoteService implements IVoteService {
         messageId,
         replyMarkup: JSON.stringify(newReplyMarkup),
       });
+
+      await this.telegramService.answerCallback({ callbackQueryId, text: 'Your vote has been counted' });
     } catch (error) {
       console.error('Error editing telegram message message: ', error.message);
       return false;

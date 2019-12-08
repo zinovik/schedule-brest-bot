@@ -40,6 +40,19 @@ export class TelegramService implements ITelegramService {
     }
   }
 
+  async answerCallback({ callbackQueryId, text }: { callbackQueryId: string; text?: string }): Promise<void> {
+    const message = {
+      callback_query_id: callbackQueryId,
+      text,
+    };
+
+    console.log(`Sending telegram callback answer: ${JSON.stringify(message)}...`);
+
+    const { data } = await axios.post(`${TELEGRAM_API_URL}${this.token}/answerCallbackQuery`, message);
+
+    console.log(`Telegram callback answer was successfully sent: ${JSON.stringify(data)}`);
+  }
+
   async editMessageText({
     chatId,
     messageId,
