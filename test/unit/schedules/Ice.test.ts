@@ -15,7 +15,7 @@ describe('IceService', () => {
   beforeEach(() => {
     nock.cleanAll();
     iceService = new IceService(channelId, languageCode);
-    const configurationService = new HardcodeConfigurationService([channelId, 'fake-id1', 'fake-id2']);
+    const configurationService = new HardcodeConfigurationService([channelId, 'fake-id']);
     configuration = configurationService.getConfiguration(channelId) as IIceConfiguration;
     iceService.setConfiguration(configuration);
   });
