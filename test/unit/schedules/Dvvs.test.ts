@@ -15,7 +15,7 @@ describe('DvvsService', () => {
   beforeEach(() => {
     nock.cleanAll();
     dvvsService = new DvvsService(channelId, languageCode);
-    const configurationService = new HardcodeConfigurationService(['fake-id1', channelId, 'fake-id2']);
+    const configurationService = new HardcodeConfigurationService(['fake-id', channelId]);
     configuration = configurationService.getConfiguration(channelId) as IDvvsConfiguration;
     dvvsService.setConfiguration(configuration);
   });

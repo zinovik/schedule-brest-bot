@@ -11,9 +11,9 @@ COPY package-lock.json ./
 RUN npm install
 
 # Copy app source to work directory
+COPY .eslintrc ./
 COPY src ./src
 COPY tsconfig.json ./
-COPY .eslintrc ./
 
 # Build and run the app
 CMD npm run start:lambda

@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 import * as dotenv from 'dotenv';
 
 import { ConfigParameterNotDefinedError } from './error/ConfigParameterNotDefinedError';
@@ -10,7 +8,6 @@ import { LanguageService } from '../language/Language.service';
 import { TelegramService } from '../telegram/Telegram.service';
 import { IceService } from '../schedules/Ice.service';
 import { DvvsService } from '../schedules/Dvvs.service';
-import { AvService } from '../schedules/Av.service';
 import { IEvent } from './model/IEvent.interface';
 
 dotenv.config();
@@ -28,15 +25,12 @@ exports.handler = async (event: IEvent, context: never) => {
   if (process.env.DVVS_CHANNEL_ID === undefined) {
     throw new ConfigParameterNotDefinedError('DVVS_CHANNEL_ID');
   }
-  if (process.env.AV_CHANNEL_ID === undefined) {
-    throw new ConfigParameterNotDefinedError('AV_CHANNEL_ID');
-  }
 
   const isIgnoreSend = event.queryStringParameters['ignore-send'] !== undefined;
   const isForceSend = event.queryStringParameters['force-send'] !== undefined;
 
   const scheduler = new Scheduler(
-    new HardcodeConfigurationService([process.env.ICE_CHANNEL_ID, process.env.DVVS_CHANNEL_ID, process.env.AV_CHANNEL_ID]),
+    new HardcodeConfigurationService([process.env.ICE_CHANNEL_ID, process.env.DVVS_CHANNEL_ID]),
     new RedisService(process.env.REDIS_URL),
     new LanguageService(),
     new TelegramService(process.env.TOKEN),
@@ -46,11 +40,7 @@ exports.handler = async (event: IEvent, context: never) => {
 
   try {
     results = await scheduler.checkUpdateAndSendSchedules(
-      [
-        new IceService(process.env.ICE_CHANNEL_ID, 'ru'),
-        new DvvsService(process.env.DVVS_CHANNEL_ID, 'ru'),
-        new AvService(process.env.AV_CHANNEL_ID, 'ru'),
-      ],
+      [new IceService(process.env.ICE_CHANNEL_ID, 'ru'), new DvvsService(process.env.DVVS_CHANNEL_ID, 'ru')],
       {
         isIgnoreSend,
         isForceSend,

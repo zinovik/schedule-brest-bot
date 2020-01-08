@@ -27,20 +27,6 @@ export class HardcodeConfigurationService implements IConfigurationService {
       xPathSessions: '//td[2]',
       xPathTracks: Array.from({ length: 7 }, (_: never, index) => `//td[${index + 3}]`),
     },
-    {
-      url: 'https://av.brest.by/prigorod.htm',
-      firstRoute: 1,
-      lastRoute: 999,
-
-      xPathRoutes: '//table//table//td[1]',
-      xPathPlatforms: '//td[2]',
-      xPathRegularities: '//td[3]',
-      xPathDepartmentAS: '//td[4]',
-      xPathDepartmentTU: '//td[5]',
-      xPathArrival: '//td[6]',
-      xPathDepartmentBack: '//td[7]',
-      xPathArrivalBack: '//td[8]',
-    },
   ];
 
   constructor(private readonly channelIds: string[]) {
