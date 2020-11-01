@@ -11,8 +11,7 @@ export class HardcodeConfigurationService implements IConfigurationService {
       xPathSubTitle: '//h5//footer',
       xPathAdditionalInfo: '',
       xPathDates: '//td[1]',
-      xPathDaysOfWeek: '//td[2]',
-      xPathTimesLines: '//td[3]',
+      xPathTimesLines: '//td[2]',
     },
     {
       url: 'http://brest-dvvs.by/sched/',

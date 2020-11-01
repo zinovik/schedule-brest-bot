@@ -4,17 +4,17 @@ export const getSchedule = () => ({
   additionalInfo: '',
   schedules: [
     {
-      date: '19 Июля',
-      dayOfWeek: 'Пятница',
+      date: '23 Окт., Пятница',
+      dayOfWeek: '',
       times: [
         {
-          start: '21:45 (без выдачи коньков)',
+          start: 'сеансов катания нет (хоккей - экстралига)',
         },
       ],
     },
     {
-      date: '20 Июля',
-      dayOfWeek: 'Суббота',
+      date: '24 Окт., Суббота',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -22,14 +22,11 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '21 Июля',
-      dayOfWeek: 'Воскресенье',
+      date: '25 Окт., Воскресенье',
+      dayOfWeek: '',
       times: [
         {
-          start: '14:15',
-        },
-        {
-          start: '19:00',
+          start: '18:30',
         },
         {
           start: '21:15',
@@ -37,8 +34,8 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '22 Июля',
-      dayOfWeek: 'Понедельник',
+      date: '26 Окт., Понедельник',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -46,8 +43,8 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '23 Июля',
-      dayOfWeek: 'Вторник',
+      date: '27 Окт., Вторник',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -55,8 +52,8 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '24 Июля',
-      dayOfWeek: 'Среда',
+      date: '28 Окт., Среда',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -64,8 +61,8 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '25 Июля',
-      dayOfWeek: 'Четверг',
+      date: '29 Окт., Четверг',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -73,8 +70,8 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '26 Июля',
-      dayOfWeek: 'Пятница',
+      date: '30 Окт., Пятница',
+      dayOfWeek: '',
       times: [
         {
           start: '21:15',
@@ -82,24 +79,18 @@ export const getSchedule = () => ({
       ],
     },
     {
-      date: '27 Июля',
-      dayOfWeek: 'Суббота',
+      date: '31 Окт., Суббота',
+      dayOfWeek: '',
       times: [
-        {
-          start: '18:45',
-        },
         {
           start: '21:15',
         },
       ],
     },
     {
-      date: '28 Июля',
-      dayOfWeek: 'Воскресенье',
+      date: '01 Ноя., Воскресенье',
+      dayOfWeek: '',
       times: [
-        {
-          start: '16:15',
-        },
         {
           start: '18:45',
         },
@@ -114,1706 +105,4439 @@ export const getSchedule = () => ({
 export const getPageMock = () => `
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <title>Хоккейный клуб "Брест"</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style-modal.css">
-    <link rel="stylesheet" href="css/index-v2.css">
-    <link rel="stylesheet" href="css/bootstrap-social.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/basic.css">
-    <link rel="stylesheet" href="css/nprogress.css">
-    <link rel="stylesheet" href="css/eventCalendar_theme_responsive.css">
-    <link rel="stylesheet" href="css/ds-count-douwn-v2.css">
-    <link rel="stylesheet" href="css/eventCalendar.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  
-  
-  <body class='body' style="display:none">
-     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.php">ХК "Брест"</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Главная</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="list-news.php">Новости</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="photo-video.php">Фото/Видео</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Статистика</a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-            
-                        <a class="dropdown-item" href="statistic-extra.php?start=2018&stop=2019">Сезон:2018/2019</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2017&stop=2018">Сезон:2017/2018</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2016&stop=2017">Сезон:2016/2017</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2015&stop=2016">Сезон:2015/2016</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2014&stop=2015">Сезон:2014/2015</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2013&stop=2014">Сезон:2013/2014</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2012&stop=2013">Сезон:2012/2013</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2011&stop=2012">Сезон:2011/2012</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2010&stop=2011">Сезон:2010/2011</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2009&stop=2010">Сезон:2009/2010</a>
-                        <a class="dropdown-item" href="statistic-extra.php?start=2008&stop=2009">Сезон:2008/2009</a>
-                      </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbar-team" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Команда</a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-team">
-            <a class="dropdown-item" href ="players-extra.php" >ХК "Брест"</a>
-            <a class="dropdown-item" href ="players-high.php" >ХК "Брест-2"</a>
-          </div>	
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="school.php">Школа</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacts.php">Контакты</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Услуги</a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby	="navbarDropdownPortfolio">
-            <a class="dropdown-item"  data-toggle="modal" data-target	="#modal-scating-shedule"  href="#">Расписание свободного катания</a>
-            <a class="dropdown-item btn-schedule-area"  data-fancybox data-type="ajax" data-src="handlers/schedule-area.php" href="javascript:;" >Расписание ледовой арены</a>
-            <a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-sharpening-skates" href="#">Обслуживание коньков</a>
-            <a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-fitnes" href="#">Тренажёрный зал</a>
-            <a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rent" href="#">Прокат</a>
-            <a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-sauna" href="#">Сауна</a>
-            <a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rates"  href="#">Тарифы</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>         <div class ='fansy'>
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta property="og:title" content="ГУХК 'Брест'">
+		<meta content="http://www.brest-hockey.by/img/background/logo-brest.png" property="og:image">
+		<title>Хоккейный клуб "Брест"</title>
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/preloader.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/bootstrap-social.css">
+		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/slick.css">
+		<link rel="stylesheet" href="css/jquery.fancybox.css">
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">  
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body class='body'>
+		<div id="preloader">
+			<div class="dws-progress-bar"></div>
+		</div>
+		 <div class ='fansy'>
 </div>
 <!----------- Расписание свободного катания ---------------->
 <div class="modal fade" id="modal-scating-shedule" tabindex="-1" role="dialog" aria-labelledby="modal-scating-shedule" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-                <ul class="nav nav-tabs nav-tabs-custom mb-1" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active btn-switch" name='modal-scating-shedule' id="schedule-scating" data-toggle="tab"  role="tab"><em>Расписание</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-switch" name='modal-scating-shedule' id="scating-price" data-toggle="tab"  role="tab"><em >Стоимость</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  data-dismiss="modal" aria-label="Close"  role="tab"><em class='text-danger'>Закрыть</em></a>
-          </li>
-        </ul>
-        <div  class='card schedule-scating'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-            <strong><em >Расписание свободного катания</em></strong>
-            <footer class="blockquote-footer"><em>Катание проводится сеансами по 45 минут.</em></footer>
-          </h5>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-scating table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class='pl-2'><em>Дата</em></th>
-                  <th><em>День недели</em></th>
-                  <th class="text-right"><em>Время начала сеанса</em></th>
-                </tr>
-                                  
-                <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>19</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Пятница</td>
-                  <td class='text-right'>21:45 (без выдачи коньков)</td>
-                </tr>
-                                <tr class=''>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>20</em></b> <small><em>Июля</em></small>									</td>
-                  <td class='align-middle'>Суббота</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                  <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>21</em></b> <small><em>Июля</em></small>									</td>
-                  <td class='align-middle'>Воскресенье</td>
-                  <td class='text-right'>14:15, 19:00, 21:15</td>
-                </tr>
-                                <tr class='bg-warning-custom' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>22</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Понедельник</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>23</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Вторник</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>24</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Среда</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>25</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Четверг</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>26</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Пятница</td>
-                  <td class='text-right'>21:15</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>27</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Суббота</td>
-                  <td class='text-right'>18:45, 21:15</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>28</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Воскресенье</td>
-                  <td class='text-right'>16:15, 18:45, 21:15</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-                      <h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-          Контактные телефоны:
-          <footer class="blockquote-footer"><em>8(029)509-92-51, 53-47-90</em></footer>
-          </h5>
-        </div>
-        <div  class='card scating-price' style='display:none'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-            <strong><em >Стоимость проката</em></strong>
-            <footer class="blockquote-footer"><em>Катание проводится сеансами по 45 минут.</em></footer>
-          </h5>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-scating table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class='pl-1'><em>Наименование услуги</em></th>
-                  <th class='text-right pr-1'><em>Цена</em></th>
-                </tr>
-                              <tr>
-                  <td>Стоимость пользования льдом (для взрослых)</td>
-                  <td class='text-right'>2,90</td>
-                </tr>
-                                <tr>
-                  <td>Стоимость пользования льдом (для детей до 14-ти лет)</td>
-                  <td class='text-right'>2,20</td>
-                </tr>
-                                <tr>
-                  <td>Стоимость проката коньков (для взрослых)</td>
-                  <td class='text-right'>3,10; 4,10 (коньки менее одного года)</td>
-                </tr>
-                                <tr>
-                  <td>Стоимость проката коньков (для детей до 14-ти лет)</td>
-                  <td class='text-right'>2,40</td>
-                </tr>
-                                <tr>
-                  <td>Коньки + Лёд (для взрослых)</td>
-                  <td class='text-right'>6,00; 7,00 (коньки менее одного года)</td>
-                </tr>
-                                <tr>
-                  <td>Покат одной пары коньков хоккейных, фигурных для взрослых</td>
-                  <td class='text-right'>3,10</td>
-                </tr>
-                                <tr>
-                  <td>Абонемент на катание для взрослых</td>
-                  <td class='text-right'>21,00</td>
-                </tr>
-                                <tr>
-                  <td>Абонемент на катание для детей (до 14 лет)</td>
-                  <td class='text-right'>16,00</td>
-                </tr>
-                                <tr>
-                  <td>Общая стоимость коньки+лед для детей до 14 лет</td>
-                  <td class='text-right'>4,80 (6,3 с коньками сроком использования до 1 года)</td>
-                </tr>
-                              </table>
-            </div>
-          </div>
-                    <h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-          Контактные телефоны:
-          <footer class="blockquote-footer"><em>8(029)509-92-51, 53-47-90</em></footer>
-          </h5>
-        </div>
-              </div>
-    </div>
-  </div>
-</div>
-<!----------------------- Обслуживание коньков --------------------------------------------->
-<div class="modal fade" id="modal-sharpening-skates" tabindex="-1" role="dialog" aria-labelledby="modal-sharpening-skates" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-        <div  class='card'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-              <strong><em >Обслуживание коньков</em></strong>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-          </h5>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-scating table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class="align-middle pl-1"><em>Наименование услуги</em></th>
-                  <th><em>Ед. измерения</em></th>	
-                  <th class='text-right align-middle pr-1'><em>Цена</em></th>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Заточка коньков</td>
-                  <td class="align-middle">1 пара</td>	
-                  <td class='text-right align-middle'>6,00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Заточка коньков для учащихся СДЮШОР по хоккею с шайбой и фигурному катанию</td>
-                  <td class="align-middle">1 пара</td>	
-                  <td class='text-right align-middle'>3,00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Срочная заточка коньков</td>
-                  <td class="align-middle">1 пара</td>	
-                  <td class='text-right align-middle'>7,00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Замена лопнувшего лезвия конька</td>
-                  <td class="align-middle">1 шт.</td>	
-                  <td class='text-right align-middle'>3,00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Замена заклепок на коньках</td>
-                  <td class="align-middle">1 шт.</td>	
-                  <td class='text-right align-middle'>1,50</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Замена лопнувшего стакана конька</td>
-                  <td class="align-middle">1 шт.</td>	
-                  <td class='text-right align-middle'>12,00</td>
-                </tr>
-                              </table>
-            </div>
-          </div>
-        </div>
-                <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-          <strong><em >Режим работы</em></strong>
-          <footer class="blockquote-footer">Время работы: <em>Пн., Чт. с 11.00 до 17.30
-Вт., Ср., Пт. с 14.00 до 21.00</em></footer>
-          <footer class="blockquote-footer">Перерыв на обед:<em> 13.00-14.00
-</em></footer>
-          <footer class="blockquote-footer">Выходные:<em> Сб., Вс.</em></footer>
-        </h5>
-      </div>
-    </div>
-  </div>
-</div>
-<!------------------------------------- Тренажёрный зал ----------------------------------------------------->
-<div class="modal fade" id="modal-fitnes" tabindex="-1" role="dialog" aria-labelledby="modal-fitnes" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-        <ul class="nav nav-tabs nav-tabs-custom mb-1" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active btn-switch" name='modal-fitnes' id="fitnes-photo" data-toggle="tab"  role="tab"><em>Фото</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-switch" name='modal-fitnes' id="fitnes-price" data-toggle="tab"  role="tab"><em >Стоимость</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-switch" name='modal-fitnes' id="fitnes-schedule" data-toggle="tab"  role="tab"><em >Расписание</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  data-dismiss="modal" aria-label="Close"  role="tab"><em class='text-danger'>Закрыть</em></a>
-          </li>
-        </ul>
-        <div  class='card fitnes-photo'>
-                    <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Тренажёрный зал</em></strong>
-            <footer class="blockquote-footer">Время работы: <em>смотрите вкладку расписание</em></footer>
-          </h5>
-          <div class='card-body pl-1 pr-1 pt-1 pb-1'>
-            <div id="carousel-fitnes" class="carousel slide modal-carousel">
-              <ol class="carousel-indicators slider-indicators">
-                <li  data-target="#carousel-fitnes" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="1"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="2"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="3"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="4"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="5"></li>
-                <li data-target="#carousel-fitnes" data-slide-to="6"></li>
-              </ol>
-              <div class="carousel-inner" >
-                                <div class="carousel-item active">
-                  <img class="img-responsive" src="img/fitnes-img/img-1.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-2.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-3.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-4.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-5.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-6.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-                <div class="carousel-item ">
-                  <img  class="img-responsive" src="img/fitnes-img/img-7.jpg">
-                  <div class="carousel-caption d-none d-md-block item-main-caption">
-                  </div>
-                </div>
-                  
-              </div>
-              <a class="carousel-control-prev" href="#carousel-fitnes" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-fitnes" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-        <div class='card fitnes-price' style='display:none'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Тренажёрный зал</em></strong>
-            <footer class="blockquote-footer">Время работы: <em>смотрите вкладку расписание</em></footer>
-          </h5>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-fitnes table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class="align-middle">Наименование услуги</em></th>
-                  <th class='text-right align-middle'><em>Цена</em></th>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Разовое занятие (1 час)</td>
-                  <td class='text-right align-middle'>2,20</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Разовое занятие (1 час 30 мин.)</td>
-                  <td class='text-right align-middle'>3,30</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Месячный абонемент в тренажерный зал (8*1 час)</td>
-                  <td class='text-right align-middle'>16,00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Месячный абонемент в тренажерный зал (12*1 час)</td>
-                  <td class='text-right align-middle'>23,00</td>
-                </tr>
-                              </table>
-            </div>
-          </div>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-        <div  class='card fitnes-schedule' style='display:none'> 
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-            <strong><em >Расписание тренажёрного зала</em></strong>
-            <footer class="blockquote-footer"><em>Разовое занятие 1 час</em></footer>
-          </h5>
-                    <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-scating table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class='pl-2'><em>Дата</em></th>
-                  <th><em>День недели</em></th>
-                  <th class="text-right"><em>Время работы</em></th>
-                </tr>
-                                  
-                <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>05</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Пятница</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class=''>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>06</em></b> <small><em>Июля</em></small>									</td>
-                  <td class='align-middle'>Суббота</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                  <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>07</em></b> <small><em>Июля</em></small>									</td>
-                  <td class='align-middle'>Воскресенье</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>08</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Понедельник</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>09</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Вторник</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>10</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Среда</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr'>
-                  <td class='align-middle'><b><em class='pl-1 text-info'>11</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Четверг</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>12</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Пятница</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>13</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Суббота</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-                                <tr class='none-tr' >
-                  <td class='align-middle'><b><em class='pl-1 text-info'>14</em></b> <small><em>Июля</em></small></td>
-                  <td class='align-middle'>Воскресенье</td>
-                  <td class='text-right'>11:00 -22:00</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-                      <!--h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
-          Контактные телефоны:
-          <footer class="blockquote-footer"><em></em></footer>
-          </h5--->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!------- ЕРИП ------------------>
-<div id="modal-payment" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header card-header">
-        <h2 class="modal-title">Оплата через систему "Расчёт" (ЕРИП)</h2>
-        <button class="close btn-close" type="button" data-dismiss="modal">×</button>
-      </div>
-      <div class="modal-body">
-        <p>В любом удобном для Вас месте, в удобное для Вас время, в  удобном для Вас пункте банковского обслуживания - интернет-банке, с помощью мобильного банкинга, инфокиоске, кассе банков, банкомате и.т.д.</br>Совершить оплату можно с использованием наличных денежных средств, электронных денег и банковских платёжных карточек в пунктах банковского обслуживания банков, которые оказывают услуги по приёму платежей, а также
-        посредством инструментов дистанционного банковского обслуживания.</p>
-        <hr></hr>
-        <h3 class="text-center">Для проведения платежа необходимо:</h3>
-        <ol>
-          <li>Выбрать последовательно пункты:
-            <ul>
-              <li>Система "Расчёт"(ЕРИП) г.Брест Образование и развитие</li>
-              <li>Спорт и физическое развитие</li>
-              <li>Спортивные школы,клубы</li>
-              <li>Хоккейный клуб "Брест"</li>
-              <li>Оплата услуг</li>
-            </ul>
-          </li>
-          <li>Для оплаты ввести номер заказа (номер заказа можно узнать по тел. 8(029)509-92-51-администратор)</li>
-          
-        </ol>
-        <p>Если Вы осуществляете платёж в кассе банка, пожайлуста, сообщите кассиру о необходимости проведения платежа через систему "Расчёт" (ЕРИП)</br>
-        Техническое взаимодействие с системой "Расчёт" (ЕРИП) осуществляется  помощью сервиса "Экспресс Платежи"</p>
-      </div>
-      <div class='card-footer'>
-          <a href="https://express-pay.by" target="_blank">https://express-pay.by</a></br>
-           Телефон для справок: <b>53-29-90</b>, <b>МТС (029)509-92-51</b>
-      </div>
-    </div>
-  </div>
-</div>
-<!------------------------------------- Прокат ----------------------------------------------------->
-<div class="modal fade" id="modal-rent" tabindex="-1" role="dialog" aria-labelledby="modal-rent" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-        <div  class='card'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Прокат</em></strong>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </h5>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-fitnes table-sm mb-1">
-                <tr>
-                  <th class='text-center table-info text-success' colspan='3'>Спортивный инвентарь</th>
-                </tr>
-                <tr class='table-info text-muted'>
-                  <th><em class='pl-1'>Наименование предмета</em></th>
-                  <th>Ед. измерения</th>
-                  <th class='text-right'><em class='pr-1'>Цена</em></th>
-                </tr>
-                                <tr>
-                  <td>Палатки: Домик-4,Тайга-4,Мещера-4 (4-х местные)</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>7,10</td>
-                </tr>
-                                  <tr>
-                  <td>Палатки: Домик-3, Тайга-3 (3-х местные)</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>4,20</td>
-                </tr>
-                                  <tr>
-                  <td>Палатки: Домик-2, Дуговая Микрон-2 (2-х местные)</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>4,20</td>
-                </tr>
-                                  <tr>
-                  <td>Рюкзаки: Коломбо-30, Таежный-40, Полевой-15</td>
-                  <td>1 cутки</td>
-                  <td class='text-right'>1,35</td>
-                </tr>
-                                  <tr>
-                  <td>Рюкзаки: Скаут-80, Пионер-75</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>2,85</td>
-                </tr>
-                                </table>
-            </div>
-            <div class='table-responsive'>
-              <table class="table table-striped table-fitnes table-sm mb-0">
-                <tr>
-                  <th class='text-center table-info  text-success' colspan='3'>Инвентарь для туризма</th>
-                </tr>
-                <tr class='table-info text-muted' >
-                  <th><em class='pl-1'>Наименование предмета</em></th>
-                  <th>Ед. измерения</th>
-                  <th class='text-right'><em class='pr-1'>Цена</em></th>
-                </tr>
-                                <tr>
-                  <td>Спальные мешки</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>3,55</td>
-                </tr>
-                                  <tr>
-                  <td>Стул складной, стул рыбацкий</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>2,10</td>
-                </tr>
-                                  <tr>
-                  <td>Коврик туристический</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>2,10</td>
-                </tr>
-                                  <tr>
-                  <td>Тент туристический</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>7,15</td>
-                </tr>
-                                  <tr>
-                  <td>Лодка ПВХ (гребная)</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>9,95</td>
-                </tr>
-                                  <tr>
-                  <td>Лодка ПВХ (возможна установка мотора)</td>
-                  <td>1 сутки</td>
-                  <td class='text-right'>14,25</td>
-                </tr>
-                                </table>
-            </div>
-          </div>
-                    <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content modal-content-sch">
+			<div class="modal-body">
+				<i class="fa-close fa-2x far fa-times-circle" data-dismiss="modal" aria-label="Close"></i>
+								<div  class='card schedule-scating animated active-sct'>
+					<div class="card card-boton">
+						<div class="boton switch-price-sct">
+							Кликни, чтобы узнать стоимость услуг 
+						</div>
+					</div>
+					<h5 class="title-reglament ml-2 mt-2">
+						<strong><em >Расписание свободного катания</em></strong>
+						<footer class="blockquote-footer"><em>Катание проводится сеансами по 45 минут.</em></footer>
+					</h5>
+					<div class='card-body pl-2 pr-2 pt-2 pb-2'>
+						<div class='table-responsive'>
+							<table class="table table-scating table-sm mb-1">
+								<tr>
+									<th class='pl-2'><em>Дата</em></th>
+									<th class="text-right"><em>Время начала сеанса</em></th>
+								</tr>
+																	
+								<tr class='none-tr'>
+									<td class='align-middle'><b><em class='pl-1'>23</em></b> <small><em>Окт.</em></small>,<small><em> Пятница</em></small></td>
+									<td class='text-right'>сеансов катания нет (хоккей - экстралига)</td>
+								</tr>
+																<tr class=''>
+									<td class='align-middle'><b><em class='pl-1'>24</em></b> <small><em>Окт.</em></small>,<small><em> Суббота</em></small>
+									</td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																	<tr class='none-tr'>
+									<td class='align-middle'><b><em class='pl-1'>25</em></b> <small><em>Окт.</em></small>,<small><em> Воскресенье</em></small>
+									</td>
+									<td class='text-right'>18:30;   21:15</td>
+								</tr>
+																<tr class='none-tr' >
+									<td class='align-middle'><b><em class='pl-1'>26</em></b> <small><em>Окт.</em></small>,<small><em> Понедельник</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='none-tr' >
+									<td class='align-middle'><b><em class='pl-1'>27</em></b> <small><em>Окт.</em></small>,<small><em> Вторник</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='none-tr' >
+									<td class='align-middle'><b><em class='pl-1'>28</em></b> <small><em>Окт.</em></small>,<small><em> Среда</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='none-tr'>
+									<td class='align-middle'><b><em class='pl-1'>29</em></b> <small><em>Окт.</em></small>,<small><em> Четверг</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='none-tr' >
+									<td class='align-middle'><b><em class='pl-1'>30</em></b> <small><em>Окт.</em></small>,<small><em> Пятница</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='none-tr' >
+									<td class='align-middle'><b><em class='pl-1'>31</em></b> <small><em>Окт.</em></small>,<small><em> Суббота</em></small></td>
+									<td class='text-right'>21:15</td>
+								</tr>
+																<tr class='bg-warning-custom' >
+									<td class='align-middle'><b><em class='pl-1'>01</em></b> <small><em>Ноя.</em></small>,<small><em> Воскресенье</em></small></td>
+									<td class='text-right'>18:45;   21:15</td>
+								</tr>
+								<tr>
+									<td class='align-middle'>
+										<h5 class="title-reglament  mb-0 pl-1 pr-1 pt-1">
+											<strong><em >Контактные телефоны</em></strong>
+											
+										</h5>
+									</td>
+																		<td  class='text-right align-middle'><strong><em >8(029)509-92-51</em></strong></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div  class='card scating-price animated'>
+					<div class="card card-boton">
+						<div class="boton switch-schedule-sct ">
+							Кликни, чтобы узнать расписание 
+						</div>
+					</div>
+					<h5 class="title-reglament ml-2 mt-2">
+						<strong><em >Стоимость проката</em></strong>
+						<footer class="blockquote-footer"><em>Катание проводится сеансами по 45 минут.</em></footer>
+					</h5>
+					<div class='card-body pl-2 pr-2 pt-2 pb-2'>
+						<div class='table-responsive'>
+							<table class="table table-scating table-sm mb-1">
+								<tr>
+									<th class='pl-1'><em>Наименование услуги</em></th>
+									<th class='text-right pr-1'><em>Цена</em></th>
+								</tr>
+															<tr>
+									<td><small><em>Физкультурно-оздоровительное катание для взрослых без предоставления коньков (сеанс 45 мин.)</em></small></td>
+									<td class='text-right'>3,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Физкультурно-оздоровительное катание для детей до 14 лет без предоставления коньков (сеанс 45 мин.)</em></small></td>
+									<td class='text-right'>2,30</td>
+								</tr>
+																<tr>
+									<td><small><em>Услуга массового катания для взрослых без предоставления коньков в вечернее время (сеанс 45 мин)</em></small></td>
+									<td class='text-right'>4,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Услуга массового катания для детей до 14 лет без предоставления коньков в вечернее время (сеанс 45 мин)</em></small></td>
+									<td class='text-right'>3,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Абонемент на катание для взрослых	(8 сеансов)</em></small></td>
+									<td class='text-right'>28,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Абонемент на катание для взрослых (сезон)</em></small></td>
+									<td class='text-right'>200,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Абонемент на катание для детей (до 14 лет) (8сеансов)</em></small></td>
+									<td class='text-right'>20,00</td>
+								</tr>
+																<tr>
+									<td><small><em>Покат одной пары коньков хоккейных, фигурных (сроком использования до 1 года)</em></small></td>
+									<td class='text-right'>4,30</td>
+								</tr>
+																<tr>
+									<td><small><em>Покат одной пары коньков хоккейных, фигурных для взрослых</em></small></td>
+									<td class='text-right'>3,30</td>
+								</tr>
+																<tr>
+									<td><small><em>Покат одной пары коньков хоккейных, фигурных для детей до 14 лет</em></small></td>
+									<td class='text-right'>2,80</td>
+								</tr>
+																<tr>
+									<td  class='align-middle'>
+										<h5 class="title-reglament  mb-0 pl-1 pr-1 pt-1">
+											<strong><em >Контактные телефоны</em></strong>
+											
+										</h5>
+									</td>
+									
+									<td  class='text-right align-middle'><strong><em >8(029)509-92-51</em></strong></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+								<!--div  class='card'>
+										<h5 class="alert alert-success title-reglament text-muted mb-0 pl-1 pr-1 pt-1">
+						<strong><em ></em></strong>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</h5>
+					<div class='card-body pl-1 pr-1 pt-1 pb-1'>
+						<blockquote class="blockquote">
+							<p class="mb-0 ml-2 mr-2"></p>
+						</blockquote>
+					</div>
+				</div--->	
+							</div>
+		</div>
+	</div>
 </div>
 <!------------------------------------- Сауна ----------------------------------------------------->
 <div class="modal fade" id="modal-sauna" tabindex="-1" role="dialog" aria-labelledby="modal-fitnes" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-        <ul class="nav nav-tabs nav-tabs-custom mb-1" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active btn-switch" name='modal-sauna' id="sauna-photo" data-toggle="tab"  role="tab"><em>Фото</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-switch" name='modal-sauna' id="sauna-session" data-toggle="tab"  role="tab"><em >Расписание</em></a>
-          </li>
-          <li class="nav-item" >
-            <a class="nav-link btn-switch" name='modal-sauna' id="sauna-price" data-toggle="tab"  role="tab"><em >Стоимость</em></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  data-dismiss="modal" aria-label="Close"  role="tab"><em class='text-danger'>Закрыть</em></a>
-          </li>
-        </ul>
-        <div  class='card sauna-photo'>
-                    <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Сауна</em></strong>
-            <footer class="blockquote-footer"><em>Фотогалерея</em></footer>
-          </h5>
-          <div class='card-body pl-1 pr-1 pt-1 pb-1'>
-            <div class="wrap-carousel-modal">
-              <div id="carousel-sauna" class="carousel slide modal-carousel">
-                <ol class="carousel-indicators slider-indicators">
-                  <li  data-target="#carousel-sauna" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="1"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="2"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="3"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="4"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="5"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="6"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="7"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="8"></li>
-                  <li data-target="#carousel-sauna" data-slide-to="9"></li>
-                </ol>
-                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                    <img class="img-fluid" src="img/sauna-img/img-1.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-2.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-3.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-4.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-5.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-6.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-7.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-8.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-9.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                  <div class="carousel-item">
-                    <img  class="img-fluid" src="img/sauna-img/img-10.jpg">
-                    <div class="carousel-caption d-none d-md-block item-main-caption">
-                    </div>
-                  </div>
-                    
-                </div>
-                <a class="carousel-control-prev" href="#carousel-sauna" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel-sauna" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-        <div class='card sauna-session' style='display:none'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Сауна</em></strong>
-            <footer class="blockquote-footer"><em>Расписание сеансов</em></footer>
-          </h5>
-          <div class='card-body pl-1 pr-1 pt-1 pb-1'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-sauna table-sm mb-1">
-                                <tr>
-                  <td class="align-middle">1-й сеанc</td>
-                  <td class='text-right align-middle'>11:00 - 13:00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">2-й сеанс</td>
-                  <td class='text-right align-middle'>13:30 - 15:30</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">3-й сеанc</td>
-                  <td class='text-right align-middle'>16:00 - 18:00</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">4-й сеанс</td>
-                  <td class='text-right align-middle'>18:30 - 20:30</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">5-й сеанс</td>
-                  <td class='text-right align-middle'>21:00 - 23:00</td>
-                </tr>
-                              </table>
-            </div>
-          </div>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-        <div class='card sauna-price' style='display:none'>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Сауна</em></strong>
-            <footer class="blockquote-footer"><em>Стоимость услуг</em></footer>
-          </h5>
-          <div class='card-body pl-1 pr-1 pt-1 pb-1'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-sauna table-sm mb-1">
-                                <tr>
-                  <td class="align-middle">Стоимость услуги "Баня" (2 часа)</td>
-                  <td class='text-right align-middle'>41,50</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Стоимость услуги "Баня" (1 час)</td>
-                  <td class='text-right align-middle'>20,75</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Абонемент на посещение бани (сеанс 2 часа * 4 посещения)</td>
-                  <td class='text-right align-middle'>149,50</td>
-                </tr>
-                                <tr>
-                  <td class="align-middle">Прокат одной простыни (при посещении бани)</td>
-                  <td class='text-right align-middle'>1,35</td>
-                </tr>
-                              </table>
-            </div>
-          </div>
-          <h5 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Контактные телефоны:</em></strong>
-            <footer class="blockquote-footer"><em>8(029)509-92-51</em></footer>
-          </h5>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body ">
+				<i class="fa-close fa-2x far fa-times-circle" data-dismiss="modal" aria-label="Close"></i>
+				<div class='card sauna-session active-sct animated'>
+					<div class="card card-boton">
+						<div class="boton switch-price-sauna">
+							Кликни, чтобы узнать стоимость услуг 
+						</div>
+					</div>
+					<h5 class="title-reglament ml-2">
+						<strong><em >Сауна</em></strong>
+						<footer class="blockquote-footer"><em>Расписание сеансов</em></footer>
+					</h5>
+					<div class='card-body pl-1 pr-1 pt-1 pb-1'>
+						<div class='table-responsive'>
+							<table class="table table-sauna table-sm mb-1">
+																<tr>
+									<td class="align-middle">1-й сеанc</td>
+									<td class='text-right align-middle'>11:00 - 13:00  Пн, Вт, Чт-Вс 
+             </td>
+								</tr>
+																<tr>
+									<td class="align-middle"></td>
+									<td class='text-right align-middle'>10:00 - 12:00  Ср                 </td>
+								</tr>
+																<tr>
+									<td class="align-middle">2-й сеанс</td>
+									<td class='text-right align-middle'>13:30 - 15:30 Пн, Вт, Чт-Вс</td>
+								</tr>
+																<tr>
+									<td class="align-middle"></td>
+									<td class='text-right align-middle'>12:30 - 14:30 Ср   </td>
+								</tr>
+																<tr>
+									<td class="align-middle">3-й сеанc</td>
+									<td class='text-right align-middle'>16:00 - 18:00 Пн, Вт, Чт-Вс  </td>
+								</tr>
+																<tr>
+									<td class="align-middle"></td>
+									<td class='text-right align-middle'>17:30 - 19:30 Ср  </td>
+								</tr>
+																<tr>
+									<td class="align-middle">5-й сеанс</td>
+									<td class='text-right align-middle'>21:23 - 23:00 Пн, Вт, Чт-Вс</td>
+								</tr>
+																<tr>
+									<td class="align-middle"></td>
+									<td class='text-right align-middle'>15:00 - 17:00 Ср  </td>
+								</tr>
+																<tr>
+									<td class="align-middle">4-й сеанс</td>
+									<td class='text-right align-middle'>18:30 - 20:30 Пн, Вт, Чт-Вс</td>
+								</tr>
+																<tr>
+									<td class="align-middle"></td>
+									<td class='text-right align-middle'>20:00 - 22:00 Ср</td>
+								</tr>
+																<tr>
+									<td class='align-middle'>
+										<h5 class="title-reglament  mb-0 pl-1 pr-1 pt-1">
+											<strong><em >Контактные телефоны</em></strong>
+										</h5>
+									</td>
+										
+									<td  class='text-right align-middle'><strong><em >8(029)509-92-51</em></strong></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class='card sauna-price animated'>
+					<div class="card card-boton">
+						<div class="boton switch-schedule-sauna">
+							Кликни, чтобы узнать расписание сеансов 
+						</div>
+					</div>
+					<h5 class="ml-2">
+						<strong><em >Сауна</em></strong>
+						<footer class="blockquote-footer"><em>Стоимость услуг</em></footer>
+					</h5>
+					<div class='card-body pl-1 pr-1 pt-1 pb-1'>
+						<div class='table-responsive'>
+							<table class="table  table-sauna table-sm mb-1">
+																<tr>
+									<td class="align-middle">Стоимость услуги "Баня" (1 час)</td>
+									<td class='text-right align-middle'>20,75</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость услуги "Баня" (2 часа)</td>
+									<td class='text-right align-middle'>41,50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Абонемент на посещение бани (сеанс 2 часа * 4 посещения)</td>
+									<td class='text-right align-middle'>149,50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Прокат одной простыни (при посещении бани)</td>
+									<td class='text-right align-middle'>1,50</td>
+								</tr>
+																<tr>
+									<td class='align-middle'>
+										<h5 class="title-reglament  mb-0 pl-1 pr-1 pt-1">
+											<strong><em >Контактные телефоны</em></strong>
+										</h5>
+									</td>
+									
+									<td  class='text-right align-middle'><strong><em >8(029)509-92-51</em></strong></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+<!----------------------- Обслуживание коньков --------------------------------------------->
+<div class="modal fade" id="modal-sharpening-skates" tabindex="-1" role="dialog" aria-labelledby="modal-sharpening-skates" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body pl-1 pr-1 pb-1 pt-1">
+				<i class="fa-close fa-2x far fa-times-circle" data-dismiss="modal" aria-label="Close"></i>
+				<div class='card service-scating-price'>
+					<h5 class="ml-2">
+						<strong><em >Обслуживание коньков</em></strong>
+						<!--footer class="blockquote-footer">Время работы: <em>11:00 - 22:00</em></footer-->
+					</h5>
+					<div class='card-body pl-2 pr-2 pt-2 pb-2'>
+						<div class='table-responsive'>
+							<table class="table table-sm mb-1 table-fitnes">
+								<tr >
+									<th class="align-middle">Наименование услуги</em></th>
+									<th class='text-right align-middle'><em>Цена</em></th>
+								</tr>
+																<tr>
+									<td class="align-middle">Заточка коньков</td>
+									<td class='text-right align-middle'>6,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Заточка коньков для учащихся СДЮШОР по хоккею с шайбой и фигурному катанию</td>
+									<td class='text-right align-middle'>3,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Срочная заточка коньков</td>
+									<td class='text-right align-middle'>7,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Замена лопнувшего лезвия конька</td>
+									<td class='text-right align-middle'>3,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Замена заклепок на коньках (1 шт.)</td>
+									<td class='text-right align-middle'>1,50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Замена лопнувшего стакана конька</td>
+									<td class='text-right align-middle'>12,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">
+										<h5 class="ml-2"><strong><em >Контактные телефоны:</em></strong></h5>
+									</td>
+									<td class='text-right align-middle'>
+										<strong><em >8(029)509-92-51</em></strong>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!------- ЕРИП ------------------>
+<div id="modal-payment" class="modal fade">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header card-header">
+				<h2 class="modal-title">Оплата через систему "Расчёт" (ЕРИП)</h2>
+				<button class="close btn-close" type="button" data-dismiss="modal">×</button>
+			</div>
+			<div class="modal-body">
+				<p>В любом удобном для Вас месте, в удобное для Вас время, в  удобном для Вас пункте банковского обслуживания - интернет-банке, с помощью мобильного банкинга, инфокиоске, кассе банков, банкомате и.т.д.</br>Совершить оплату можно с использованием наличных денежных средств, электронных денег и банковских платёжных карточек в пунктах банковского обслуживания банков, которые оказывают услуги по приёму платежей, а также
+				посредством инструментов дистанционного банковского обслуживания.</p>
+				<hr></hr>
+				<h3 class="text-center">Для проведения платежа необходимо:</h3>
+				<ol>
+					<li>Оплата услуг:
+						<ul>
+							<li ><a href="https://raschet.by/platelshchikam/poisk-uslugi-v-dereve-uslug-punkty-soversheniya-platezhey/" target="_blank" >Перейти по ссылки </a></li>
+							<li>Билеты, лотереи</li>
+							<li>Спорт и физическое развитие</li>
+							<li>Спортивные школы,клубы</li>
+							<li>Брестская обл. </li>
+							<li>Хоккейный клуб "Брест"</li>
+							<li>Оплата услуг</li>
+						</ul>
+					</li>
+					
+					<li>Покупка билетов на хоккейный матч:
+						<ul>
+							<li ><a href="https://raschet.by/platelshchikam/poisk-uslugi-v-dereve-uslug-punkty-soversheniya-platezhey/" target="_blank" >Перейти по ссылки </a></li>
+							<li>Билеты, лотереи</li>
+							<li>Зрелищные, спортивные мероприятия</li>
+							<li>ХК "Брест" - оплата билетов</li>
+						</ul>
+					</li>
+					<li>Для оплаты ввести номер заказа (номер заказа можно узнать по тел. 8(029)509-92-51-администратор)</li>
+					
+				</ol>
+				<p>Если Вы осуществляете платёж в кассе банка, пожайлуста, сообщите кассиру о необходимости проведения платежа через систему "Расчёт" (ЕРИП)</br>
+				Техническое взаимодействие с системой "Расчёт" (ЕРИП) осуществляется  помощью сервиса "Экспресс Платежи"</p>
+			</div>
+			<div class='card-footer'>
+					<a href="https://express-pay.by" target="_blank">https://express-pay.by</a></br>
+					 Телефон для справок: <b>53-29-90</b>, <b>МТС (029)509-92-51</b>
+			</div>
+		</div>
+	</div>
+</div>
+<!------------------------------------- Прокат ----------------------------------------------------->
+<div class="modal fade" id="modal-rent" tabindex="-1" role="dialog" aria-labelledby="modal-rent" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body pl-1 pr-1 pb-1 pt-1">
+				<i class="fa-close fa-2x far fa-times-circle" data-dismiss="modal" aria-label="Close"></i>
+				<div class='card rent-price'>
+					<h5 class="ml-2">
+						<strong><em >Прокат</em></strong>
+						<!--footer class="blockquote-footer">Время работы: <em>11:00 - 22:00</em></footer-->
+					</h5>
+					<div class='card-body pl-2 pr-2 pt-2 pb-2'>
+						<div class='table-responsive'>
+							<table class="table table-sm mb-1 table-fitnes">
+								<tr >
+									<th class="align-middle">Наименование услуги</em></th>
+									<th class='text-right align-middle'><em>Цена</em></th>
+								</tr>
+																<tr>
+									<td class="align-middle">Палатки: Домик-4,Тайга-4,Мещера-4 / 4-х местные (1 сутки)</td>
+									<td class='text-right align-middle'>7,10</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Палатки: Домик-3, Тайга-3 / 3-х местные (1 сутки)</td>
+									<td class='text-right align-middle'>4,20</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Палатки: Домик-2, Дуговая Микрон-2 / 2-х местные (1 сутки)</td>
+									<td class='text-right align-middle'>4,20</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Рюкзаки: Коломбо-30, Таежный-40, Полевой-15 (1 сутки)</td>
+									<td class='text-right align-middle'>1,35</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Рюкзаки: Скаут-80, Пионер-75, Скаут (1 сутки)</td>
+									<td class='text-right align-middle'>3,80</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Спальные мешки (1 сутки)</td>
+									<td class='text-right align-middle'>4,50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стул складной, стул рыбацкий (1сутки)</td>
+									<td class='text-right align-middle'>2,10</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Коврик туристический (1сутки)</td>
+									<td class='text-right align-middle'>2,10</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Тент туристический (1сутки) </td>
+									<td class='text-right align-middle'>7,15</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Прокат велосипеда Cube Aim Pro (1час)</td>
+									<td class='text-right align-middle'>5,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Прокат велосипеда Cube Aim Pro (1 сутки)</td>
+									<td class='text-right align-middle'>20,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">
+										<h5 class="ml-2"><strong><em >Контактные телефоны:</em></strong></h5>
+									</td>
+									<td class='text-right align-middle'>
+										<strong><em >53-77-19, 8(029)509-92-51</em></strong>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!------------------------------------- Тарифы ----------------------------------------------------->
 <div class="modal fade" id="modal-rates" tabindex="-1" role="dialog" aria-labelledby="modal-rent" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body pl-1 pr-1 pb-1 pt-1 alert-info">
-        <div  class='card'>
-                    <h6 class="alert alert-success title-reglament text-muted mb-0 pl-2 pr-2">
-            <strong><em >Прейскурант на услуги, оказываемые ГУ «Хоккейный клуб «Брест»</em></strong>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </h6>
-          <div class='card-body pl-2 pr-2 pt-2 pb-2'>
-            <div class='table-responsive'>
-              <table class="table table-striped table-fitnes table-sm mb-1">
-                <tr class='table-info text-muted'>
-                  <th class="align-middle"><em class='pl-1'>Наименование услуги</em></th>
-                  <th><em>Ед. измерения</em></td>
-                  <th class='text-right align-middle'><em class='pr-1'>Цена</em></th>
-                </tr>
-                                <tr>
-                  <td>Стоимость услуг автобуса SCANIA-IRIZAR K114 за 1 час</td>
-                  <td>1час</td>
-                  <td class='text-right'>14,50</td>
-                </tr>
-                                  <tr>
-                  <td>Входной билет в Ледовый дворец и на ледовую арену (для родителей, сопровождающих детей до 11 лет)</td>
-                  <td>1 шт.</td>
-                  <td class='text-right'>0,55</td>
-                </tr>
-                                  <tr>
-                  <td>Игра в настольный теннис</td>
-                  <td>1 час</td>
-                  <td class='text-right'>2,20</td>
-                </tr>
-                                  <tr>
-                  <td>Игра в настольный теннис</td>
-                  <td>30 мин.</td>
-                  <td class='text-right'>1,10</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга бильярда</td>
-                  <td>1 час</td>
-                  <td class='text-right'>2,60</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга бильярда</td>
-                  <td>30 мин.</td>
-                  <td class='text-right'>1,30</td>
-                </tr>
-                                  <tr>
-                  <td>Программки хоккейные</td>
-                  <td>1 шт.</td>
-                  <td class='text-right'>0,35</td>
-                </tr>
-                                  <tr>
-                  <td>Билет на хоккейные матч (взрослый)</td>
-                  <td>1 шт.</td>
-                  <td class='text-right'>2,80</td>
-                </tr>
-                                  <tr>
-                  <td>Билет на хоккейные матч (для военнослужащих срочной службы)</td>
-                  <td>1 шт.</td>
-                  <td class='text-right'>1,40</td>
-                </tr>
-                                  <tr>
-                  <td>Абонемент на хоккейные матчи (сезон) для взрослых</td>
-                  <td>1 шт.</td>
-                  <td class='text-right'>50,00</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены</td>
-                  <td>15 мин.</td>
-                  <td class='text-right'>57,00</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены</td>
-                  <td>45мин.</td>
-                  <td class='text-right'>170,00</td>
-                </tr>
-                                  <tr>
-                  <td>Стоимость 1 км пробега автобуса SCANIA-IRIZAR K114</td>
-                  <td>1км</td>
-                  <td class='text-right'>1,20</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены</td>
-                  <td>1 час</td>
-                  <td class='text-right'>225,00</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами</td>
-                  <td>30 мин.</td>
-                  <td class='text-right'>67,50</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами</td>
-                  <td>1 час</td>
-                  <td class='text-right'>135,00</td>
-                </tr>
-                                  <tr>
-                  <td>Стоимость услуг автобуса МАЗ за 1 час</td>
-                  <td>1 час</td>
-                  <td class='text-right'>13,00</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами</td>
-                  <td>1 час 15 мин.</td>
-                  <td class='text-right'>170,00</td>
-                </tr>
-                                  <tr>
-                  <td>Услуга ледовой арены для организации учебно-тренировочных сборов на базе учреждения</td>
-                  <td>1 час</td>
-                  <td class='text-right'>240,00</td>
-                </tr>
-                                  <tr>
-                  <td>Стоимость 1 км пробега автобуса МАЗ</td>
-                  <td>1 км</td>
-                  <td class='text-right'>1,00</td>
-                </tr>
-                                  <tr>
-                  <td>Стоимость 1 км пробега автобуса "W-Каравелла АК 1110-1"</td>
-                  <td>1 км</td>
-                  <td class='text-right'>0,60</td>
-                </tr>
-                                </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body pl-1 pr-1 pb-1 pt-1">
+				<i class="fa-close fa-2x far fa-times-circle" data-dismiss="modal" aria-label="Close"></i>
+				<div class='card rent-price'>
+					<h5 class="ml-2">
+						<strong><em >Прокат</em></strong>
+						<!--footer class="blockquote-footer">Время работы: <em>11:00 - 22:00</em></footer-->
+					</h5>
+					<div class='card-body pl-2 pr-2 pt-2 pb-2'>
+						<div class='table-responsive'>
+							<table class="table table-sm mb-1 table-fitnes">
+								<tr >
+									<th class="align-middle">Наименование услуги</em></th>
+									<th class='text-right align-middle'><em>Цена</em></th>
+								</tr>
+																<tr>
+									<td class="align-middle">Игра в настольный теннис (30 мин.)</td>
+									<td class='text-right align-middle'>1,20</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Игра в настольный теннис (1час)</td>
+									<td class='text-right align-middle'>2,40</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга бильярда (30 мин.)</td>
+									<td class='text-right align-middle'>1.50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга бильярда (1час)</td>
+									<td class='text-right align-middle'>3,00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Билет на хоккейные матч (взрослый)</td>
+									<td class='text-right align-middle'>3.50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Билет на хоккейные матч (для военнослужащих срочной службы)</td>
+									<td class='text-right align-middle'>1.40</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Абонемент на хоккейные матчи (сезон) для взрослых</td>
+									<td class='text-right align-middle'>50.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Программки хоккейные (1 шт.)</td>
+									<td class='text-right align-middle'>0.35</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены (15 мин.)</td>
+									<td class='text-right align-middle'>60.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены (45 мин.)</td>
+									<td class='text-right align-middle'>180.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены (1 час)</td>
+									<td class='text-right align-middle'>240.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами (30 мин.)</td>
+									<td class='text-right align-middle'>75.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами (45 мин.)</td>
+									<td class='text-right align-middle'>112.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами (1 час)</td>
+									<td class='text-right align-middle'>150.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены для проведения тренировок по хоккею с шайбой любительскими командами (1 час 15 мин.)</td>
+									<td class='text-right align-middle'>187.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга ледовой арены для организации учебно-тренировочных сборов на базе учреждения (1 час)</td>
+									<td class='text-right align-middle'>260.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга по оформлению фойе 2 этажа для проведения торжественных мероприятий (1час)</td>
+									<td class='text-right align-middle'>400.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Услуга по подготовке арены к проведению культурно-массового мероприятия (монтаж, демонтаж защитного ограждения ледовой арены) </td>
+									<td class='text-right align-middle'>270.00</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость услуг автобуса SCANIA-IRIZAR K114 (1 час )</td>
+									<td class='text-right align-middle'>16,50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость 1 км пробега автобуса SCANIA-IRIZAR K114</td>
+									<td class='text-right align-middle'>1.40</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость услуг автобуса МАЗ за 1 час </td>
+									<td class='text-right align-middle'>14.50</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость 1 км пробега автобуса МАЗ </td>
+									<td class='text-right align-middle'>1.30</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Стоимость 1 км пробега автобуса "W-Каравелла АК 1110-1"</td>
+									<td class='text-right align-middle'>0,80</td>
+								</tr>
+																<tr>
+									<td class="align-middle">Входной билет в Ледовый дворец и на ледовую арену (для родителей, сопровождающих детей до 11 лет)</td>
+									<td class='text-right align-middle'>0,55</td>
+								</tr>
+																<tr>
+									<td class="align-middle">
+										<h5 class="ml-2"><strong><em >Контактные телефоны:</em></strong></h5>
+									</td>
+									<td class='text-right align-middle'>
+										<strong><em >8(029)509-92-51</em></strong>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-    <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators slider-indicators">
-          
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" ></li>
-          
-        <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
-          
-        <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
-              </ol>
-      <div class="carousel-inner main-slider" role="listbox">
-                <div class="carousel-item  carousel-item-custom  item-slider" style="background-image: url('/img/news/RsUVlvDubUM.jpg')">
-          <div class="carousel-caption  d-md-block item-main-caption">
-            <table class="table-custom">
-              <tr class="text-center">
-                <td>
-                  <footer class="blockquote-footer"><b class='text-white'><em>17 <small>Июля</small> 2019 <small>г.</small></em></b></footer>
-                </td>
-              </tr>
-              <tr>
-                <td >
-                  <a class="text-white" href="post.php?id=425"><h3 class="text-center">«Брест-2» 0:4 «Шахтер-2»</h3></a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-                <div class="carousel-item  carousel-item-custom  item-slider" style="background-image: url('/img/news/zCsa0i0Q_dI.jpg')">
-          <div class="carousel-caption  d-md-block item-main-caption">
-            <table class="table-custom">
-              <tr class="text-center">
-                <td>
-                  <footer class="blockquote-footer"><b class='text-white'><em>03 <small>Июня</small> 2019 <small>г.</small></em></b></footer>
-                </td>
-              </tr>
-              <tr>
-                <td >
-                  <a class="text-white" href="post.php?id=410"><h3 class="text-center">СДЮШОР «Бреста» приглашает на просмотр игроков 2002-2004 г.р. всех амплуа для участия в Первенстве Республики Беларусь сезона 2019/20</h3></a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-                <div class="carousel-item  carousel-item-custom  item-slider" style="background-image: url('/img/news/k-EfwwS1oTA.jpg')">
-          <div class="carousel-caption  d-md-block item-main-caption">
-            <table class="table-custom">
-              <tr class="text-center">
-                <td>
-                  <footer class="blockquote-footer"><b class='text-white'><em>22 <small>Май</small> 2019 <small>г.</small></em></b></footer>
-                </td>
-              </tr>
-              <tr>
-                <td >
-                  <a class="text-white" href="post.php?id=409"><h3 class="text-center">В сезоне-2019/20 изменится формула проведения регулярного чемпионата в экстралиге.</h3></a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-          
-        
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      </div>
-    </header>
-        <div class="container-fluid container-white">
-      <div id="btn-top" class='btn-up'>
-        <button class='btn btn-secondary'>
-          <i class="fa fa-arrow-circle-o-up fa-3x" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Новости </em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class="row">
-                    <div class="col-lg-6 col-sm-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=423"><img class="card-img-top" src="/img/news/69167c1033e3cfb21a0ca5521d24c423.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">11 <small>Июля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=423">Представлен проект изменений в регламенте проведения детско-юношеских соревнований под эгидой ФХБ</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                    <div class="col-lg-6 col-sm-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=421"><img class="card-img-top" src="/img/news/01-07-2019-1.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">01 <small>Июля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=421">Два талантливых легионера пополнили оборонительные ряды</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                  </div>
-        <div class='row'>
-                    <div class="col-lg-6  mb-2 portfolio-item-news">
-            <div class="wrap-btn-payment wrap-rek" data-toggle="modal" data-target="#modal-payment">
-              <img class="btn-payment img-fluid" src="img/rek/erip-1.jpg">
-            </div>
-          </div>
-                              <div class="col-lg-6  mb-2 portfolio-item-news">
-            <a href ="http://meat.by/bmkk/index.php" target="_blank"><img class="img-fluid" src="img/rek/beryoza.jpg"></a>
-          </div>
-                    </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid container-grey">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Интервью</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-         <div class="row">
-                  <div class="col-lg-4 col-sm-4 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=424"><img class="card-img-top " src="/img/news/Y7zgS96y-_8.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">09 <small>Июля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=424">Артур Малков: «Брест» добьётся успеха при Андрее Ковалёве</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>				
-                   <div class="col-lg-4 col-sm-4 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=418"><img class="card-img-top " src="/img/news/SuRvhL6h1vA.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">28 <small>Июня</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=418">Сергей Сушко: «Ковалев просто вернулся домой»</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>				
-                   <div class="col-lg-4 col-sm-4 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=414"><img class="card-img-top " src="/img/news/ddc_wedqMZo.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">16 <small>Июня</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=414">Игроки «Бреста» делятся мнениями о соперниках в грядущем Кубке Салея</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>				
-                  </div>
-         <div class='row'>
-                <div class="col-lg-6  mb-2 portfolio-item-news">
-          <a href="http://www.lncmilk.by/" target="_blank">
-            <img class="img-fluid" src="img/rek/lunenec.jpg">
-          </a>
-        </div>
-          
-                 <div class="col-lg-6  mb-2 portfolio-item-news">
-          <a href="https://gse.by/portal/brest/index.html?page=323" target="_blank">
-            <img class="img-fluid" src="img/rek/gosstroy.jpg">
-          </a>
-        </div>
-         
-      </div>
-      </div>
-    </div>
-    <div class="container-fluid container-white">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>События</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class="row">
-                    <div class="col-lg-6 col-sm-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=420"><img class="card-img-top " src="/img/news/d89iJLGngJc.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >30 <small>Июня</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=420">Вниманию представителей СМИ! Стартует аккредитация журналистов на сезон-2019/20.</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-             </div>
-          </div>
-                    <div class="col-lg-6 col-sm-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a href="post.php?id=417"><img class="card-img-top " src="/img/news/kCsW6zWDTYc.jpg"alt=""></a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >28 <small>Июня</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="post.php?id=417">Андрей Ковалев - новый главный тренер «Бреста» Известный 53-летний белорусский специалист воссоединился с командой спустя полгода</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-             </div>
-          </div>
-           
-        </div>
-        <div class='row'>
-                    <div class="col-lg-6  mb-2 portfolio-item-news">
-            <a href="http://www.pikant.by/" target="_blank">
-              <img class=" img-fluid" src="img/rek/pinsk.jpg">
-            </a>
-          </div>
-            
-                     <div class="col-lg-6  mb-2 portfolio-item-news">
-            <a href="http://www.kobrincheese.com/ru/" target="_blank">
-              <img class=" img-fluid" src="img/rek/kobrin.jpg">
-            </a>
-            
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid container-grey">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Турнирные таблицы</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 portfolio-item-news">
-            <div class="card mb-2">
-                            <h4 class="card-header text-muted"><strong><em>хк "Брест"</em></strong> 
-                <hr></hr>
-                <footer class="blockquote-footer">
-                  <b>
-                    <em>
-                      Игры Развития										</em>
-                  </b>
-                </footer>
-              </h4>
-              <div class="card-body card-body-custom">
-                <div class='table-responsive'>
-                  <table class="table table-striped table-sm table-standings" >
-                                        <tr>
-                      <th class="text-center">#</th>
-                      <th>Команда</th>
-                      <th class="text-center">Игры</th>
-                      <th class="text-center">Очки</th>
-                    </tr>
-                                         <tr>
-                      <td class="text-center">1</td>
-                      <td><img src ="img/team-extra/gomel.png"width="30" height="30">&nbsp;Гомель</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >29</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">2</td>
-                      <td><img src ="img/team-extra/bobruisk-1.png"width="30" height="30">&nbsp;Бобруйск</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >25</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">3</td>
-                      <td><img src ="img/team-extra/pinsk.png"width="30" height="30">&nbsp;Пинские ястребы</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >23</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">4</td>
-                      <td><img src ="img/team-extra/brest.png"width="30" height="30">&nbsp;Брест</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >22</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">5</td>
-                      <td><img src ="img/team-extra/himic.png"width="30" height="30">&nbsp;Химик</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >22</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">6</td>
-                      <td><img src ="img/team-extra/U-20.png"width="30" height="30">&nbsp;U20</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >20</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">7</td>
-                      <td><img src ="img/team-extra/baranovichi.png"width="30" height="30">&nbsp;Барановичи</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >20</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">8</td>
-                      <td><img src ="img/team-extra/vitebsk.png"width="30" height="30">&nbsp;Витебск</td>
-                      <td class="text-center">14</td>
-                      <td class="text-center" >7</td>
-                    </tr>
-                                      </table>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          <div class="col-lg-6 portfolio-item-news">
-            <div class="card mb-2">
-                            <h4 class="card-header text-muted"><strong><em>хк "Брест-2"</em></strong> 
-                <hr></hr>
-                <footer class="blockquote-footer">
-                  <b>
-                    <em>
-                      Высшая лига 2018/19										</em>
-                  </b>
-                </footer>
-              </h4>
-              <div class="card-body card-body-custom">
-                <div class='table-responsive'>
-                  <table class="table table-striped table-sm table-standings" >
-                                        <tr>
-                      <th class="text-center">#</th>
-                      <th>Команда</th>
-                      <th class="text-center">Игры</th>
-                      <th class="text-center">Очки</th>
-                    </tr>
-                                         <tr>
-                      <td class="text-center">1</td>
-                      <td><img src ="img/team-high/u-17.png"width="30" height="30">&nbsp;U17</td>
-                      <td class="text-center">42</td>
-                      <td class="text-center" >94</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">2</td>
-                      <td><img src ="img/team-high/gomel.png"width="30" height="30">&nbsp;Гомель-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >92</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">3</td>
-                      <td><img src ="img/team-high/grodno.png"width="30" height="30">&nbsp;Неман-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >83</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">4</td>
-                      <td><img src ="img/team-high/younost.png"width="30" height="30">&nbsp;Юниор</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >75</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">5</td>
-                      <td><img src ="img/team-high/bfso.png"width="30" height="30">&nbsp;БФСО "Динамо"</td>
-                      <td class="text-center">42</td>
-                      <td class="text-center" >68</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">6</td>
-                      <td><img src ="img/team-high/shahter.png"width="30" height="30">&nbsp;Шахтер-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >68</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">7</td>
-                      <td><img src ="img/team-high/mogilev.png"width="30" height="30">&nbsp;Могилев-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >68</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">8</td>
-                      <td><img src ="img/team-high/zhlobin.png"width="30" height="30">&nbsp;Металлург-2</td>
-                      <td class="text-center">42</td>
-                      <td class="text-center" >66</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">9</td>
-                      <td><img src ="img/team-high/brest.png"width="30" height="30">&nbsp;Брест-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >61</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">10</td>
-                      <td><img src ="img/team-high/vitebsk.png"width="30" height="30">&nbsp;Витебск-2</td>
-                      <td class="text-center">42</td>
-                      <td class="text-center" >60</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">11</td>
-                      <td><img src ="img/team-high/himic.png"width="30" height="30">&nbsp;Химик-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >24</td>
-                    </tr>
-                                        <tr>
-                      <td class="text-center">12</td>
-                      <td><img src ="img/team-high/lida.png"width="30" height="30">&nbsp;Лида-2</td>
-                      <td class="text-center">44</td>
-                      <td class="text-center" >21</td>
-                    </tr>
-                                      </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='row'>
-                    <div class="col-lg-6  mb-2 portfolio-item-news">
-            <a href="http://prosport.by/" target="_blank">
-              <img class=" img-fluid" src="img/rek/prosport-1.jpg">
-            </a>
-          </div>
-            
-                     <div class="col-lg-6  mb-2 portfolio-item-news">
-            <a href="https://www.cheese.by/" target="_blank">
-              <img class=" img-fluid" src="img/rek/beryozka-1.jpg">
-            </a>
-            
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid container-white">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Расписание</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class='row'>
-          <div class="col-lg-12 portfolio-item-news">
-            <div class="card mb-2">
-              <h4 class="card-header text-muted"><strong><em>Календарь игр</em></strong> </h4>
-              <div class="card-body card-body-custom">
-                                  <script>var eventsInline =[{"date":"2008-09-09 18:30:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-09'>История встреч</a></td></tr>"},{"date":"2008-09-11 18:30:00:00","title":"<td class='text-center align-middle'>Керамин-Минск</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-11'>История встреч</a></td></tr>"},{"date":"2008-09-14 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-14'>История встреч</a></td></tr>"},{"date":"2008-09-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-16'>История встреч</a></td></tr>"},{"date":"2008-09-19 18:30:00:00","title":"<td class='text-center align-middle'>АСК Огре</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-19'>История встреч</a></td></tr>"},{"date":"2008-09-21 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-21'>История встреч</a></td></tr>"},{"date":"2008-09-25 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-25'>История встреч</a></td></tr>"},{"date":"2008-09-29 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-09-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-09-29'>История встреч</a></td></tr>"},{"date":"2008-10-01 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-01'>История встреч</a></td></tr>"},{"date":"2008-10-04 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Латгале Даугавпилс</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-04'>История встреч</a></td></tr>"},{"date":"2008-10-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Рига-2000</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-06'>История встреч</a></td></tr>"},{"date":"2008-10-09 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-09'>История встреч</a></td></tr>"},{"date":"2008-10-11 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-11'>История встреч</a></td></tr>"},{"date":"2008-10-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-14'>История встреч</a></td></tr>"},{"date":"2008-10-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-16'>История встреч</a></td></tr>"},{"date":"2008-10-19 13:00:00:00","title":"<td class='text-center align-middle'>Латгале Даугавпилс</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-19'>История встреч</a></td></tr>"},{"date":"2008-10-21 18:30:00:00","title":"<td class='text-center align-middle'>Рига-2000</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-21'>История встреч</a></td></tr>"},{"date":"2008-10-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-24'>История встреч</a></td></tr>"},{"date":"2008-10-26 13:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-26'>История встреч</a></td></tr>"},{"date":"2008-10-30 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-10-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-10-30'>История встреч</a></td></tr>"},{"date":"2008-11-12 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>АСК Огре</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-12'>История встреч</a></td></tr>"},{"date":"2008-11-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-14'>История встреч</a></td></tr>"},{"date":"2008-11-17 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-17'>История встреч</a></td></tr>"},{"date":"2008-11-19 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-19'>История встреч</a></td></tr>"},{"date":"2008-11-27 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Латгале Даугавпилс</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-27'>История встреч</a></td></tr>"},{"date":"2008-11-29 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Рига-2000</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-11-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-11-29'>История встреч</a></td></tr>"},{"date":"2008-12-02 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-02'>История встреч</a></td></tr>"},{"date":"2008-12-04 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-04'>История встреч</a></td></tr>"},{"date":"2008-12-07 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-07'>История встреч</a></td></tr>"},{"date":"2008-12-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-09'>История встреч</a></td></tr>"},{"date":"2008-12-12 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-12'>История встреч</a></td></tr>"},{"date":"2008-12-25 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-25'>История встреч</a></td></tr>"},{"date":"2008-12-27 13:00:00:00","title":"<td class='text-center align-middle'>АСК Огре</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2008-12-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2008-12-27'>История встреч</a></td></tr>"},{"date":"2009-01-08 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-08'>История встреч</a></td></tr>"},{"date":"2009-01-10 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-10'>История встреч</a></td></tr>"},{"date":"2009-01-13 18:30:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-13'>История встреч</a></td></tr>"},{"date":"2009-01-19 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-19'>История встреч</a></td></tr>"},{"date":"2009-01-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-20'>История встреч</a></td></tr>"},{"date":"2009-01-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Керамин-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-22'>История встреч</a></td></tr>"},{"date":"2009-01-25 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>8 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-25'>История встреч</a></td></tr>"},{"date":"2009-01-27 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-27'>История встреч</a></td></tr>"},{"date":"2009-01-30 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>АСК Огре</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-01-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-01-30'>История встреч</a></td></tr>"},{"date":"2009-02-01 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-01'>История встреч</a></td></tr>"},{"date":"2009-02-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Керамин-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-09'>История встреч</a></td></tr>"},{"date":"2009-02-12 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-12'>История встреч</a></td></tr>"},{"date":"2009-02-15 13:00:00:00","title":"<td class='text-center align-middle'>Керамин-Минск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-15'>История встреч</a></td></tr>"},{"date":"2009-02-17 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-17'>История встреч</a></td></tr>"},{"date":"2009-02-19 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-19'>История встреч</a></td></tr>"},{"date":"2009-02-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-22'>История встреч</a></td></tr>"},{"date":"2009-02-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-24'>История встреч</a></td></tr>"},{"date":"2009-02-27 18:30:00:00","title":"<td class='text-center align-middle'>Латгале Даугавпилс</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-02-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-02-27'>История встреч</a></td></tr>"},{"date":"2009-03-01 13:00:00:00","title":"<td class='text-center align-middle'>Рига-2000</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-03-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-03-01'>История встреч</a></td></tr>"},{"date":"2009-08-05 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-08-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-08-05'>История встреч</a></td></tr>"},{"date":"2009-08-07 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Керамин-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-08-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-08-07'>История встреч</a></td></tr>"},{"date":"2009-08-10 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-08-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-08-10'>История встреч</a></td></tr>"},{"date":"2009-08-15 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-08-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-08-15'>История встреч</a></td></tr>"},{"date":"2009-09-03 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-03'>История встреч</a></td></tr>"},{"date":"2009-09-05 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-05'>История встреч</a></td></tr>"},{"date":"2009-09-09 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-09'>История встреч</a></td></tr>"},{"date":"2009-09-13 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-13'>История встреч</a></td></tr>"},{"date":"2009-09-15 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-15'>История встреч</a></td></tr>"},{"date":"2009-09-19 13:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-19'>История встреч</a></td></tr>"},{"date":"2009-09-21 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-21'>История встреч</a></td></tr>"},{"date":"2009-09-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-24'>История встреч</a></td></tr>"},{"date":"2009-09-26 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Керамин-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-26'>История встреч</a></td></tr>"},{"date":"2009-09-29 18:30:00:00","title":"<td class='text-center align-middle'>Динамо-Юниорс</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-09-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-09-29'>История встреч</a></td></tr>"},{"date":"2009-10-01 18:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-01'>История встреч</a></td></tr>"},{"date":"2009-10-04 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Сокол Киев</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-04'>История встреч</a></td></tr>"},{"date":"2009-10-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-06'>История встреч</a></td></tr>"},{"date":"2009-10-09 19:00:00:00","title":"<td class='text-center align-middle'>Сокол Киев</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-09'>История встреч</a></td></tr>"},{"date":"2009-10-11 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-11'>История встреч</a></td></tr>"},{"date":"2009-10-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Юниорс</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-14'>История встреч</a></td></tr>"},{"date":"2009-10-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-16'>История встреч</a></td></tr>"},{"date":"2009-10-19 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-19'>История встреч</a></td></tr>"},{"date":"2009-10-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 10<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-21'>История встреч</a></td></tr>"},{"date":"2009-10-29 18:30:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-29'>История встреч</a></td></tr>"},{"date":"2009-10-31 13:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-10-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-10-31'>История встреч</a></td></tr>"},{"date":"2009-11-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-11'>История встреч</a></td></tr>"},{"date":"2009-11-13 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-13'>История встреч</a></td></tr>"},{"date":"2009-11-16 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-16'>История встреч</a></td></tr>"},{"date":"2009-11-18 18:30:00:00","title":"<td class='text-center align-middle'>Керамин-Минск</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-18'>История встреч</a></td></tr>"},{"date":"2009-11-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-22'>История встреч</a></td></tr>"},{"date":"2009-11-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Керамин-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-24'>История встреч</a></td></tr>"},{"date":"2009-11-27 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-27'>История встреч</a></td></tr>"},{"date":"2009-11-29 13:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-11-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-11-29'>История встреч</a></td></tr>"},{"date":"2009-12-02 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-02'>История встреч</a></td></tr>"},{"date":"2009-12-04 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-04'>История встреч</a></td></tr>"},{"date":"2009-12-07 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-07'>История встреч</a></td></tr>"},{"date":"2009-12-09 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-09'>История встреч</a></td></tr>"},{"date":"2009-12-27 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>10 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-27'>История встреч</a></td></tr>"},{"date":"2009-12-29 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2009-12-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2009-12-29'>История встреч</a></td></tr>"},{"date":"2010-01-10 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Сокол Киев</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-10'>История встреч</a></td></tr>"},{"date":"2010-01-12 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-12'>История встреч</a></td></tr>"},{"date":"2010-01-15 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>7 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-15'>История встреч</a></td></tr>"},{"date":"2010-01-17 13:00:00:00","title":"<td class='text-center align-middle'>Сокол Киев</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-17'>История встреч</a></td></tr>"},{"date":"2010-01-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-20'>История встреч</a></td></tr>"},{"date":"2010-01-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Юниорс</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-22'>История встреч</a></td></tr>"},{"date":"2010-01-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-26'>История встреч</a></td></tr>"},{"date":"2010-01-28 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-01-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-01-28'>История встреч</a></td></tr>"},{"date":"2010-02-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-01'>История встреч</a></td></tr>"},{"date":"2010-02-05 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-05'>История встреч</a></td></tr>"},{"date":"2010-02-07 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-07'>История встреч</a></td></tr>"},{"date":"2010-02-11 18:30:00:00","title":"<td class='text-center align-middle'>Динамо-Юниорс</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-11'>История встреч</a></td></tr>"},{"date":"2010-02-13 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-13'>История встреч</a></td></tr>"},{"date":"2010-02-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-16'>История встреч</a></td></tr>"},{"date":"2010-02-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-18'>История встреч</a></td></tr>"},{"date":"2010-02-22 18:30:00:00","title":"<td class='text-center align-middle'>Керамин-Минск</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-22'>История встреч</a></td></tr>"},{"date":"2010-02-24 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-02-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-02-24'>История встреч</a></td></tr>"},{"date":"2010-08-19 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-08-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-08-19'>История встреч</a></td></tr>"},{"date":"2010-08-24 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-08-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-08-24'>История встреч</a></td></tr>"},{"date":"2010-08-26 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-08-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-08-26'>История встреч</a></td></tr>"},{"date":"2010-08-29 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-08-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-08-29'>История встреч</a></td></tr>"},{"date":"2010-09-08 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Сокол Киев</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-08'>История встреч</a></td></tr>"},{"date":"2010-09-10 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-10'>История встреч</a></td></tr>"},{"date":"2010-09-13 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-13'>История встреч</a></td></tr>"},{"date":"2010-09-15 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-15'>История встреч</a></td></tr>"},{"date":"2010-09-18 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-18'>История встреч</a></td></tr>"},{"date":"2010-09-20 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-20'>История встреч</a></td></tr>"},{"date":"2010-09-23 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-23'>История встреч</a></td></tr>"},{"date":"2010-09-25 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-25'>История встреч</a></td></tr>"},{"date":"2010-09-28 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-28'>История встреч</a></td></tr>"},{"date":"2010-09-30 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-09-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-09-30'>История встреч</a></td></tr>"},{"date":"2010-10-03 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-03'>История встреч</a></td></tr>"},{"date":"2010-10-05 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-05'>История встреч</a></td></tr>"},{"date":"2010-10-10 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>11 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-10'>История встреч</a></td></tr>"},{"date":"2010-10-13 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-13'>История встреч</a></td></tr>"},{"date":"2010-10-15 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-15'>История встреч</a></td></tr>"},{"date":"2010-10-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-18'>История встреч</a></td></tr>"},{"date":"2010-10-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-20'>История встреч</a></td></tr>"},{"date":"2010-10-23 13:00:00:00","title":"<td class='text-center align-middle'>Сокол Киев</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-23'>История встреч</a></td></tr>"},{"date":"2010-10-25 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-25'>История встреч</a></td></tr>"},{"date":"2010-10-29 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>8 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-29'>История встреч</a></td></tr>"},{"date":"2010-10-30 17:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-10-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-10-30'>История встреч</a></td></tr>"},{"date":"2010-11-02 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-02'>История встреч</a></td></tr>"},{"date":"2010-11-04 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-04'>История встреч</a></td></tr>"},{"date":"2010-11-06 13:00:00:00","title":"<td class='text-center align-middle'>Сокол Киев</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-06'>История встреч</a></td></tr>"},{"date":"2010-11-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-16'>История встреч</a></td></tr>"},{"date":"2010-11-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-18'>История встреч</a></td></tr>"},{"date":"2010-11-21 13:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-21'>История встреч</a></td></tr>"},{"date":"2010-11-23 18:30:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-23'>История встреч</a></td></tr>"},{"date":"2010-11-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-11-26'>История встреч</a></td></tr>"},{"date":"2010-12-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-01'>История встреч</a></td></tr>"},{"date":"2010-12-03 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-03'>История встреч</a></td></tr>"},{"date":"2010-12-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 9<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-06'>История встреч</a></td></tr>"},{"date":"2010-12-07 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-07'>История встреч</a></td></tr>"},{"date":"2010-12-10 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-10'>История встреч</a></td></tr>"},{"date":"2010-12-12 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-12'>История встреч</a></td></tr>"},{"date":"2010-12-18 18:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-18'>История встреч</a></td></tr>"},{"date":"2010-12-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-22'>История встреч</a></td></tr>"},{"date":"2010-12-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Сокол Киев</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-24'>История встреч</a></td></tr>"},{"date":"2010-12-27 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-27'>История встреч</a></td></tr>"},{"date":"2010-12-29 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2010-12-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2010-12-29'>История встреч</a></td></tr>"},{"date":"2011-01-04 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-04'>История встреч</a></td></tr>"},{"date":"2011-01-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-06'>История встреч</a></td></tr>"},{"date":"2011-01-09 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-09'>История встреч</a></td></tr>"},{"date":"2011-01-16 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-16'>История встреч</a></td></tr>"},{"date":"2011-01-18 18:30:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>4 - 6<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-18'>История встреч</a></td></tr>"},{"date":"2011-01-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-20'>История встреч</a></td></tr>"},{"date":"2011-01-22 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-22'>История встреч</a></td></tr>"},{"date":"2011-01-29 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-01-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-01-29'>История встреч</a></td></tr>"},{"date":"2011-02-02 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Сокол Киев</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-02'>История встреч</a></td></tr>"},{"date":"2011-02-05 13:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-05'>История встреч</a></td></tr>"},{"date":"2011-02-16 18:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-16'>История встреч</a></td></tr>"},{"date":"2011-02-19 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-19'>История встреч</a></td></tr>"},{"date":"2011-02-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-22'>История встреч</a></td></tr>"},{"date":"2011-02-25 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-25'>История встреч</a></td></tr>"},{"date":"2011-02-28 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-02-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-02-28'>История встреч</a></td></tr>"},{"date":"2011-03-04 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-03-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-03-04'>История встреч</a></td></tr>"},{"date":"2011-03-05 17:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-03-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-03-05'>История встреч</a></td></tr>"},{"date":"2011-03-08 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-03-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-03-08'>История встреч</a></td></tr>"},{"date":"2011-03-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-03-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-03-09'>История встреч</a></td></tr>"},{"date":"2011-08-18 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-08-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-08-18'>История встреч</a></td></tr>"},{"date":"2011-08-20 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-08-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-08-20'>История встреч</a></td></tr>"},{"date":"2011-08-23 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-08-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-08-23'>История встреч</a></td></tr>"},{"date":"2011-08-25 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-08-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-08-25'>История встреч</a></td></tr>"},{"date":"2011-08-28 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>7 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск МХЛ</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-08-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-08-28'>История встреч</a></td></tr>"},{"date":"2011-09-07 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-07'>История встреч</a></td></tr>"},{"date":"2011-09-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-09'>История встреч</a></td></tr>"},{"date":"2011-09-12 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-12'>История встреч</a></td></tr>"},{"date":"2011-09-14 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-14'>История встреч</a></td></tr>"},{"date":"2011-09-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-22'>История встреч</a></td></tr>"},{"date":"2011-09-24 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-24'>История встреч</a></td></tr>"},{"date":"2011-09-27 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-27'>История встреч</a></td></tr>"},{"date":"2011-09-29 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-09-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-09-29'>История встреч</a></td></tr>"},{"date":"2011-10-02 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-02'>История встреч</a></td></tr>"},{"date":"2011-10-05 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-05'>История встреч</a></td></tr>"},{"date":"2011-10-07 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-07'>История встреч</a></td></tr>"},{"date":"2011-10-11 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-11'>История встреч</a></td></tr>"},{"date":"2011-10-13 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>11 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-13'>История встреч</a></td></tr>"},{"date":"2011-10-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-18'>История встреч</a></td></tr>"},{"date":"2011-10-22 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-22'>История встреч</a></td></tr>"},{"date":"2011-10-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-24'>История встреч</a></td></tr>"},{"date":"2011-10-29 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-29'>История встреч</a></td></tr>"},{"date":"2011-10-31 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-10-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-10-31'>История встреч</a></td></tr>"},{"date":"2011-11-03 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-03'>История встреч</a></td></tr>"},{"date":"2011-11-05 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-05'>История встреч</a></td></tr>"},{"date":"2011-11-16 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-16'>История встреч</a></td></tr>"},{"date":"2011-11-18 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-18'>История встреч</a></td></tr>"},{"date":"2011-11-26 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-26'>История встреч</a></td></tr>"},{"date":"2011-11-28 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-11-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-11-28'>История встреч</a></td></tr>"},{"date":"2011-12-01 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-01'>История встреч</a></td></tr>"},{"date":"2011-12-03 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-03'>История встреч</a></td></tr>"},{"date":"2011-12-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-06'>История встреч</a></td></tr>"},{"date":"2011-12-08 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-08'>История встреч</a></td></tr>"},{"date":"2011-12-11 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-11'>История встреч</a></td></tr>"},{"date":"2011-12-21 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-21'>История встреч</a></td></tr>"},{"date":"2011-12-23 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-23'>История встреч</a></td></tr>"},{"date":"2011-12-26 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-26'>История встреч</a></td></tr>"},{"date":"2011-12-28 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2011-12-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2011-12-28'>История встреч</a></td></tr>"},{"date":"2012-01-04 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-04'>История встреч</a></td></tr>"},{"date":"2012-01-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-06'>История встреч</a></td></tr>"},{"date":"2012-01-08 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-08'>История встреч</a></td></tr>"},{"date":"2012-01-11 19:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-11'>История встреч</a></td></tr>"},{"date":"2012-01-13 19:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-13'>История встреч</a></td></tr>"},{"date":"2012-01-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-16'>История встреч</a></td></tr>"},{"date":"2012-01-19 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-19'>История встреч</a></td></tr>"},{"date":"2012-01-23 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-23'>История встреч</a></td></tr>"},{"date":"2012-01-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-26'>История встреч</a></td></tr>"},{"date":"2012-01-29 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-01-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-01-29'>История встреч</a></td></tr>"},{"date":"2012-02-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 10<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-01'>История встреч</a></td></tr>"},{"date":"2012-02-04 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-04'>История встреч</a></td></tr>"},{"date":"2012-02-15 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-15'>История встреч</a></td></tr>"},{"date":"2012-02-18 18:00:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-18'>История встреч</a></td></tr>"},{"date":"2012-02-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-21'>История встреч</a></td></tr>"},{"date":"2012-02-24 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-02-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-02-24'>История встреч</a></td></tr>"},{"date":"2012-03-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-03-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-03-01'>История встреч</a></td></tr>"},{"date":"2012-08-13 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 6<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-08-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-08-13'>История встреч</a></td></tr>"},{"date":"2012-08-18 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-08-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-08-18'>История встреч</a></td></tr>"},{"date":"2012-08-20 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>8 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-08-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-08-20'>История встреч</a></td></tr>"},{"date":"2012-08-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-08-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-08-22'>История встреч</a></td></tr>"},{"date":"2012-09-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-06'>История встреч</a></td></tr>"},{"date":"2012-09-08 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-08'>История встреч</a></td></tr>"},{"date":"2012-09-11 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-11'>История встреч</a></td></tr>"},{"date":"2012-09-13 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-13'>История встреч</a></td></tr>"},{"date":"2012-09-16 17:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-16'>История встреч</a></td></tr>"},{"date":"2012-09-18 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 9<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-18'>История встреч</a></td></tr>"},{"date":"2012-09-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-21'>История встреч</a></td></tr>"},{"date":"2012-09-23 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-23'>История встреч</a></td></tr>"},{"date":"2012-09-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-09-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-09-26'>История встреч</a></td></tr>"},{"date":"2012-10-01 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск МХЛ</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-01'>История встреч</a></td></tr>"},{"date":"2012-10-09 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-09'>История встреч</a></td></tr>"},{"date":"2012-10-11 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-11'>История встреч</a></td></tr>"},{"date":"2012-10-14 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-14'>История встреч</a></td></tr>"},{"date":"2012-10-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-16'>История встреч</a></td></tr>"},{"date":"2012-10-19 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-19'>История встреч</a></td></tr>"},{"date":"2012-10-21 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-21'>История встреч</a></td></tr>"},{"date":"2012-10-24 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-24'>История встреч</a></td></tr>"},{"date":"2012-10-26 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-26'>История встреч</a></td></tr>"},{"date":"2012-10-28 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-28'>История встреч</a></td></tr>"},{"date":"2012-10-31 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск МХЛ</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-10-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-10-31'>История встреч</a></td></tr>"},{"date":"2012-11-08 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-08'>История встреч</a></td></tr>"},{"date":"2012-11-10 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Латгале Даугавпилс</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-10'>История встреч</a></td></tr>"},{"date":"2012-11-13 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-13'>История встреч</a></td></tr>"},{"date":"2012-11-15 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>4 - 9<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-15'>История встреч</a></td></tr>"},{"date":"2012-11-19 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>9 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-19'>История встреч</a></td></tr>"},{"date":"2012-11-21 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-21'>История встреч</a></td></tr>"},{"date":"2012-11-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-11-26'>История встреч</a></td></tr>"},{"date":"2012-12-04 18:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-04'>История встреч</a></td></tr>"},{"date":"2012-12-06 18:30:00:00","title":"<td class='text-center align-middle'>Лиепаяc Металургc</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-06'>История встреч</a></td></tr>"},{"date":"2012-12-09 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск МХЛ</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-09'>История встреч</a></td></tr>"},{"date":"2012-12-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лиепаяc Металургc</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-11'>История встреч</a></td></tr>"},{"date":"2012-12-19 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>14 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-19'>История встреч</a></td></tr>"},{"date":"2012-12-21 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>10 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-21'>История встреч</a></td></tr>"},{"date":"2012-12-24 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-24'>История встреч</a></td></tr>"},{"date":"2012-12-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2012-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2012-12-26'>История встреч</a></td></tr>"},{"date":"2013-01-05 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-05'>История встреч</a></td></tr>"},{"date":"2013-01-07 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-07'>История встреч</a></td></tr>"},{"date":"2013-01-10 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск МХЛ</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-10'>История встреч</a></td></tr>"},{"date":"2013-01-13 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-13'>История встреч</a></td></tr>"},{"date":"2013-01-15 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-15'>История встреч</a></td></tr>"},{"date":"2013-01-20 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-20'>История встреч</a></td></tr>"},{"date":"2013-01-23 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-23'>История встреч</a></td></tr>"},{"date":"2013-01-26 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск МХЛ</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-26'>История встреч</a></td></tr>"},{"date":"2013-01-29 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-01-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-01-29'>История встреч</a></td></tr>"},{"date":"2013-02-16 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-02-16'>История встреч</a></td></tr>"},{"date":"2013-02-19 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск МХЛ</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-02-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-02-19'>История встреч</a></td></tr>"},{"date":"2013-02-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-02-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-02-22'>История встреч</a></td></tr>"},{"date":"2013-02-25 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-02-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-02-25'>История встреч</a></td></tr>"},{"date":"2013-08-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-08-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-08-20'>История встреч</a></td></tr>"},{"date":"2013-08-22 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-08-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-08-22'>История встреч</a></td></tr>"},{"date":"2013-08-25 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск МХЛ</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-08-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-08-25'>История встреч</a></td></tr>"},{"date":"2013-08-27 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-08-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-08-27'>История встреч</a></td></tr>"},{"date":"2013-08-29 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-08-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-08-29'>История встреч</a></td></tr>"},{"date":"2013-09-06 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>9 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-06'>История встреч</a></td></tr>"},{"date":"2013-09-08 17:00:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-08'>История встреч</a></td></tr>"},{"date":"2013-09-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-11'>История встреч</a></td></tr>"},{"date":"2013-09-13 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-13'>История встреч</a></td></tr>"},{"date":"2013-09-17 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>5 - 6<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-17'>История встреч</a></td></tr>"},{"date":"2013-09-21 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-21'>История встреч</a></td></tr>"},{"date":"2013-09-23 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-23'>История встреч</a></td></tr>"},{"date":"2013-09-26 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-26'>История встреч</a></td></tr>"},{"date":"2013-09-28 17:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-09-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-09-28'>История встреч</a></td></tr>"},{"date":"2013-10-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-01'>История встреч</a></td></tr>"},{"date":"2013-10-03 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-03'>История встреч</a></td></tr>"},{"date":"2013-10-06 17:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>7 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-06'>История встреч</a></td></tr>"},{"date":"2013-10-08 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-08'>История встреч</a></td></tr>"},{"date":"2013-10-12 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-12'>История встреч</a></td></tr>"},{"date":"2013-10-16 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-16'>История встреч</a></td></tr>"},{"date":"2013-10-18 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-18'>История встреч</a></td></tr>"},{"date":"2013-10-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-21'>История встреч</a></td></tr>"},{"date":"2013-10-23 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-23'>История встреч</a></td></tr>"},{"date":"2013-10-26 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-26'>История встреч</a></td></tr>"},{"date":"2013-10-28 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-28'>История встреч</a></td></tr>"},{"date":"2013-10-31 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-10-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-10-31'>История встреч</a></td></tr>"},{"date":"2013-11-02 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-02'>История встреч</a></td></tr>"},{"date":"2013-11-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-14'>История встреч</a></td></tr>"},{"date":"2013-11-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-18'>История встреч</a></td></tr>"},{"date":"2013-11-20 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-20'>История встреч</a></td></tr>"},{"date":"2013-11-23 17:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-23'>История встреч</a></td></tr>"},{"date":"2013-11-25 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-25'>История встреч</a></td></tr>"},{"date":"2013-11-29 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-11-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-11-29'>История встреч</a></td></tr>"},{"date":"2013-12-01 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-01'>История встреч</a></td></tr>"},{"date":"2013-12-04 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-04'>История встреч</a></td></tr>"},{"date":"2013-12-06 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-06'>История встреч</a></td></tr>"},{"date":"2013-12-08 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-08'>История встреч</a></td></tr>"},{"date":"2013-12-14 13:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-14'>История встреч</a></td></tr>"},{"date":"2013-12-24 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>8 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-24'>История встреч</a></td></tr>"},{"date":"2013-12-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-26'>История встреч</a></td></tr>"},{"date":"2013-12-28 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2013-12-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2013-12-28'>История встреч</a></td></tr>"},{"date":"2014-01-04 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-04'>История встреч</a></td></tr>"},{"date":"2014-01-09 21:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-09'>История встреч</a></td></tr>"},{"date":"2014-01-11 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-11'>История встреч</a></td></tr>"},{"date":"2014-01-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-14'>История встреч</a></td></tr>"},{"date":"2014-01-16 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-16'>История встреч</a></td></tr>"},{"date":"2014-01-21 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-21'>История встреч</a></td></tr>"},{"date":"2014-01-24 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-24'>История встреч</a></td></tr>"},{"date":"2014-01-29 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-29'>История встреч</a></td></tr>"},{"date":"2014-01-31 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-01-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-01-31'>История встреч</a></td></tr>"},{"date":"2014-02-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-11'>История встреч</a></td></tr>"},{"date":"2014-02-13 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-13'>История встреч</a></td></tr>"},{"date":"2014-02-16 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-16'>История встреч</a></td></tr>"},{"date":"2014-02-18 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-18'>История встреч</a></td></tr>"},{"date":"2014-02-23 13:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-23'>История встреч</a></td></tr>"},{"date":"2014-02-26 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-26'>История встреч</a></td></tr>"},{"date":"2014-02-28 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-02-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-02-28'>История встреч</a></td></tr>"},{"date":"2014-03-04 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-03-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-03-04'>История встреч</a></td></tr>"},{"date":"2014-03-05 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>9 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-03-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-03-05'>История встреч</a></td></tr>"},{"date":"2014-03-08 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-03-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-03-08'>История встреч</a></td></tr>"},{"date":"2014-03-09 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-03-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-03-09'>История встреч</a></td></tr>"},{"date":"2014-08-20 18:30:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-08-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-08-20'>История встреч</a></td></tr>"},{"date":"2014-08-22 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-08-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-08-22'>История встреч</a></td></tr>"},{"date":"2014-08-24 17:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск МХЛ</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-08-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-08-24'>История встреч</a></td></tr>"},{"date":"2014-08-27 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-08-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-08-27'>История встреч</a></td></tr>"},{"date":"2014-08-29 13:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-08-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-08-29'>История встреч</a></td></tr>"},{"date":"2014-09-06 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-06'>История встреч</a></td></tr>"},{"date":"2014-09-08 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-08'>История встреч</a></td></tr>"},{"date":"2014-09-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-11'>История встреч</a></td></tr>"},{"date":"2014-09-13 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 6<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-13'>История встреч</a></td></tr>"},{"date":"2014-09-16 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-16'>История встреч</a></td></tr>"},{"date":"2014-09-18 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-18'>История встреч</a></td></tr>"},{"date":"2014-09-21 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-21'>История встреч</a></td></tr>"},{"date":"2014-09-23 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-23'>История встреч</a></td></tr>"},{"date":"2014-09-25 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-25'>История встреч</a></td></tr>"},{"date":"2014-09-28 17:00:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-09-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-09-28'>История встреч</a></td></tr>"},{"date":"2014-10-04 13:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-04'>История встреч</a></td></tr>"},{"date":"2014-10-06 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-06'>История встреч</a></td></tr>"},{"date":"2014-10-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-09'>История встреч</a></td></tr>"},{"date":"2014-10-11 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-11'>История встреч</a></td></tr>"},{"date":"2014-10-14 18:30:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-14'>История встреч</a></td></tr>"},{"date":"2014-10-16 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-16'>История встреч</a></td></tr>"},{"date":"2014-10-18 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-18'>История встреч</a></td></tr>"},{"date":"2014-10-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-21'>История встреч</a></td></tr>"},{"date":"2014-10-24 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-24'>История встреч</a></td></tr>"},{"date":"2014-10-26 17:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-10-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-10-26'>История встреч</a></td></tr>"},{"date":"2014-11-11 18:30:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-11'>История встреч</a></td></tr>"},{"date":"2014-11-13 18:30:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-13'>История встреч</a></td></tr>"},{"date":"2014-11-16 17:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-16'>История встреч</a></td></tr>"},{"date":"2014-11-18 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-18'>История встреч</a></td></tr>"},{"date":"2014-11-21 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-21'>История встреч</a></td></tr>"},{"date":"2014-11-23 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-23'>История встреч</a></td></tr>"},{"date":"2014-11-26 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-26'>История встреч</a></td></tr>"},{"date":"2014-11-28 18:30:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-11-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-11-28'>История встреч</a></td></tr>"},{"date":"2014-12-01 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-01'>История встреч</a></td></tr>"},{"date":"2014-12-03 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-03'>История встреч</a></td></tr>"},{"date":"2014-12-06 17:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-06'>История встреч</a></td></tr>"},{"date":"2014-12-08 18:30:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-08'>История встреч</a></td></tr>"},{"date":"2014-12-11 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-11'>История встреч</a></td></tr>"},{"date":"2014-12-13 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 9<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-13'>История встреч</a></td></tr>"},{"date":"2014-12-23 18:30:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-23'>История встреч</a></td></tr>"},{"date":"2014-12-25 17:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>8 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2014-12-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2014-12-25'>История встреч</a></td></tr>"},{"date":"2015-01-04 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-04'>История встреч</a></td></tr>"},{"date":"2015-01-06 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-06'>История встреч</a></td></tr>"},{"date":"2015-01-09 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-09'>История встреч</a></td></tr>"},{"date":"2015-01-11 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-11'>История встреч</a></td></tr>"},{"date":"2015-01-14 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-14'>История встреч</a></td></tr>"},{"date":"2015-01-16 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-16'>История встреч</a></td></tr>"},{"date":"2015-01-18 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-18'>История встреч</a></td></tr>"},{"date":"2015-01-21 18:30:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-21'>История встреч</a></td></tr>"},{"date":"2015-01-25 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-25'>История встреч</a></td></tr>"},{"date":"2015-01-28 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-28'>История встреч</a></td></tr>"},{"date":"2015-01-30 18:30:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-01-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-01-30'>История встреч</a></td></tr>"},{"date":"2015-02-01 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-02-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-02-01'>История встреч</a></td></tr>"},{"date":"2015-02-14 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-02-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-02-14'>История встреч</a></td></tr>"},{"date":"2015-02-16 18:30:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>7 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-02-16'>История встреч</a></td></tr>"},{"date":"2015-02-19 18:30:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-02-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-02-19'>История встреч</a></td></tr>"},{"date":"2015-02-21 17:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>8 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-02-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-02-21'>История встреч</a></td></tr>"},{"date":"2015-08-07 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-08-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-08-07'>История встреч</a></td></tr>"},{"date":"2015-08-10 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-08-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-08-10'>История встреч</a></td></tr>"},{"date":"2015-08-12 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-08-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-08-12'>История встреч</a></td></tr>"},{"date":"2015-08-15 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-08-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-08-15'>История встреч</a></td></tr>"},{"date":"2015-08-18 18:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-08-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-08-18'>История встреч</a></td></tr>"},{"date":"2015-09-03 19:00:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-03'>История встреч</a></td></tr>"},{"date":"2015-09-05 13:00:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-05'>История встреч</a></td></tr>"},{"date":"2015-09-09 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-09'>История встреч</a></td></tr>"},{"date":"2015-09-11 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-11'>История встреч</a></td></tr>"},{"date":"2015-09-17 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-17'>История встреч</a></td></tr>"},{"date":"2015-09-19 12:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-19'>История встреч</a></td></tr>"},{"date":"2015-09-24 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-24'>История встреч</a></td></tr>"},{"date":"2015-09-26 13:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-09-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-09-26'>История встреч</a></td></tr>"},{"date":"2015-10-01 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-01'>История встреч</a></td></tr>"},{"date":"2015-10-03 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-03'>История встреч</a></td></tr>"},{"date":"2015-10-08 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-08'>История встреч</a></td></tr>"},{"date":"2015-10-10 13:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>12 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-10'>История встреч</a></td></tr>"},{"date":"2015-10-15 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-15'>История встреч</a></td></tr>"},{"date":"2015-10-17 13:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-17'>История встреч</a></td></tr>"},{"date":"2015-10-22 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-22'>История встреч</a></td></tr>"},{"date":"2015-10-24 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-24'>История встреч</a></td></tr>"},{"date":"2015-10-29 19:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-29'>История встреч</a></td></tr>"},{"date":"2015-10-31 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-10-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-10-31'>История встреч</a></td></tr>"},{"date":"2015-11-10 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-10'>История встреч</a></td></tr>"},{"date":"2015-11-12 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-12'>История встреч</a></td></tr>"},{"date":"2015-11-14 13:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-14'>История встреч</a></td></tr>"},{"date":"2015-11-19 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-19'>История встреч</a></td></tr>"},{"date":"2015-11-26 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>7 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-26'>История встреч</a></td></tr>"},{"date":"2015-11-28 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-11-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-11-28'>История встреч</a></td></tr>"},{"date":"2015-12-01 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-01'>История встреч</a></td></tr>"},{"date":"2015-12-03 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-03'>История встреч</a></td></tr>"},{"date":"2015-12-06 17:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-06'>История встреч</a></td></tr>"},{"date":"2015-12-07 19:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-07'>История встреч</a></td></tr>"},{"date":"2015-12-24 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-24'>История встреч</a></td></tr>"},{"date":"2015-12-26 17:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2015-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2015-12-26'>История встреч</a></td></tr>"},{"date":"2016-01-09 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-09'>История встреч</a></td></tr>"},{"date":"2016-01-11 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-11'>История встреч</a></td></tr>"},{"date":"2016-01-14 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-14'>История встреч</a></td></tr>"},{"date":"2016-01-16 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-16'>История встреч</a></td></tr>"},{"date":"2016-01-19 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-19'>История встреч</a></td></tr>"},{"date":"2016-01-21 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-21'>История встреч</a></td></tr>"},{"date":"2016-01-26 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-26'>История встреч</a></td></tr>"},{"date":"2016-01-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-01-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-01-28'>История встреч</a></td></tr>"},{"date":"2016-02-02 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>5 - 6<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-02-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-02-02'>История встреч</a></td></tr>"},{"date":"2016-02-04 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-02-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-02-04'>История встреч</a></td></tr>"},{"date":"2016-02-18 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-02-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-02-18'>История встреч</a></td></tr>"},{"date":"2016-02-20 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-02-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-02-20'>История встреч</a></td></tr>"},{"date":"2016-07-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-07-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-07-28'>История встреч</a></td></tr>"},{"date":"2016-07-30 17:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-07-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-07-30'>История встреч</a></td></tr>"},{"date":"2016-08-02 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 9<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-08-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-08-02'>История встреч</a></td></tr>"},{"date":"2016-08-07 17:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-08-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-08-07'>История встреч</a></td></tr>"},{"date":"2016-09-08 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-08'>История встреч</a></td></tr>"},{"date":"2016-09-10 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-10'>История встреч</a></td></tr>"},{"date":"2016-09-15 19:00:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-15'>История встреч</a></td></tr>"},{"date":"2016-09-17 13:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-17'>История встреч</a></td></tr>"},{"date":"2016-09-22 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-22'>История встреч</a></td></tr>"},{"date":"2016-09-24 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 16<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-24'>История встреч</a></td></tr>"},{"date":"2016-09-29 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-09-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-09-29'>История встреч</a></td></tr>"},{"date":"2016-10-01 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-01'>История встреч</a></td></tr>"},{"date":"2016-10-06 19:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-06'>История встреч</a></td></tr>"},{"date":"2016-10-08 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>8 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-08'>История встреч</a></td></tr>"},{"date":"2016-10-13 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-13'>История встреч</a></td></tr>"},{"date":"2016-10-15 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-15'>История встреч</a></td></tr>"},{"date":"2016-10-20 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-20'>История встреч</a></td></tr>"},{"date":"2016-10-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-22'>История встреч</a></td></tr>"},{"date":"2016-10-27 19:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>12 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-27'>История встреч</a></td></tr>"},{"date":"2016-10-29 13:00:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-10-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-10-29'>История встреч</a></td></tr>"},{"date":"2016-11-10 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-10'>История встреч</a></td></tr>"},{"date":"2016-11-12 13:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>10 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-12'>История встреч</a></td></tr>"},{"date":"2016-11-17 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-17'>История встреч</a></td></tr>"},{"date":"2016-11-19 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-19'>История встреч</a></td></tr>"},{"date":"2016-11-24 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-24'>История встреч</a></td></tr>"},{"date":"2016-11-26 13:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-11-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-11-26'>История встреч</a></td></tr>"},{"date":"2016-12-01 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-01'>История встреч</a></td></tr>"},{"date":"2016-12-03 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-03'>История встреч</a></td></tr>"},{"date":"2016-12-08 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-08'>История встреч</a></td></tr>"},{"date":"2016-12-10 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-10'>История встреч</a></td></tr>"},{"date":"2016-12-24 13:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-24'>История встреч</a></td></tr>"},{"date":"2016-12-26 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-26'>История встреч</a></td></tr>"},{"date":"2016-12-27 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2016-12-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2016-12-27'>История встреч</a></td></tr>"},{"date":"2017-01-10 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-10'>История встреч</a></td></tr>"},{"date":"2017-01-12 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-12'>История встреч</a></td></tr>"},{"date":"2017-01-15 17:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-15'>История встреч</a></td></tr>"},{"date":"2017-01-17 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-17'>История встреч</a></td></tr>"},{"date":"2017-01-19 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-19'>История встреч</a></td></tr>"},{"date":"2017-01-26 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-26'>История встреч</a></td></tr>"},{"date":"2017-01-28 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-01-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-01-28'>История встреч</a></td></tr>"},{"date":"2017-02-02 19:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-02'>История встреч</a></td></tr>"},{"date":"2017-02-04 13:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-04'>История встреч</a></td></tr>"},{"date":"2017-02-13 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-13'>История встреч</a></td></tr>"},{"date":"2017-02-16 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-16'>История встреч</a></td></tr>"},{"date":"2017-02-19 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-19'>История встреч</a></td></tr>"},{"date":"2017-02-21 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-02-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-02-21'>История встреч</a></td></tr>"},{"date":"2017-08-10 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Црвена Звезда</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-10'>История встреч</a></td></tr>"},{"date":"2017-08-12 17:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-12'>История встреч</a></td></tr>"},{"date":"2017-08-14 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-14'>История встреч</a></td></tr>"},{"date":"2017-08-17 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-17'>История встреч</a></td></tr>"},{"date":"2017-08-19 17:00:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-19'>История встреч</a></td></tr>"},{"date":"2017-08-24 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-08-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-08-24'>История встреч</a></td></tr>"},{"date":"2017-09-06 19:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-06'>История встреч</a></td></tr>"},{"date":"2017-09-08 19:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-08'>История встреч</a></td></tr>"},{"date":"2017-09-14 19:00:00:00","title":"<td class='text-center align-middle'>Динамо-Молодечно</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-14'>История встреч</a></td></tr>"},{"date":"2017-09-16 13:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-16'>История встреч</a></td></tr>"},{"date":"2017-09-21 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-21'>История встреч</a></td></tr>"},{"date":"2017-09-23 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Неман</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-23'>История встреч</a></td></tr>"},{"date":"2017-09-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юность-Минск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-28'>История встреч</a></td></tr>"},{"date":"2017-09-30 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-09-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-09-30'>История встреч</a></td></tr>"},{"date":"2017-10-05 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-05'>История встреч</a></td></tr>"},{"date":"2017-10-07 13:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-07'>История встреч</a></td></tr>"},{"date":"2017-10-12 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-12'>История встреч</a></td></tr>"},{"date":"2017-10-14 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-14'>История встреч</a></td></tr>"},{"date":"2017-10-19 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-19'>История встреч</a></td></tr>"},{"date":"2017-10-21 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-21'>История встреч</a></td></tr>"},{"date":"2017-10-28 13:00:00:00","title":"<td class='text-center align-middle'>Неман</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-28'>История встреч</a></td></tr>"},{"date":"2017-10-30 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-10-30'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-10-30'>История встреч</a></td></tr>"},{"date":"2017-11-02 19:00:00:00","title":"<td class='text-center align-middle'>Юность-Минск</td><td class='text-center align-middle'><h5><strong>11 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-02'>История встреч</a></td></tr>"},{"date":"2017-11-04 19:00:00:00","title":"<td class='text-center align-middle'>Шахтер-Солигорск</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-04'>История встреч</a></td></tr>"},{"date":"2017-11-16 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Динамо-Молодечно</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-16'>История встреч</a></td></tr>"},{"date":"2017-11-18 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-18'>История встреч</a></td></tr>"},{"date":"2017-11-23 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-23'>История встреч</a></td></tr>"},{"date":"2017-11-25 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-11-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-11-25'>История встреч</a></td></tr>"},{"date":"2017-12-02 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>7 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-02'>История встреч</a></td></tr>"},{"date":"2017-12-08 19:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-08'>История встреч</a></td></tr>"},{"date":"2017-12-10 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-10'>История встреч</a></td></tr>"},{"date":"2017-12-21 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-21'>История встреч</a></td></tr>"},{"date":"2017-12-23 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-23'>История встреч</a></td></tr>"},{"date":"2017-12-26 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-26'>История встреч</a></td></tr>"},{"date":"2017-12-28 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2017-12-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2017-12-28'>История встреч</a></td></tr>"},{"date":"2018-01-09 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-01-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-01-09'>История встреч</a></td></tr>"},{"date":"2018-01-17 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-01-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-01-17'>История встреч</a></td></tr>"},{"date":"2018-01-19 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-01-19'>История встреч</a></td></tr>"},{"date":"2018-01-22 19:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-01-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-01-22'>История встреч</a></td></tr>"},{"date":"2018-01-27 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-01-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-01-27'>История встреч</a></td></tr>"},{"date":"2018-02-01 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-01'>История встреч</a></td></tr>"},{"date":"2018-02-05 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>7 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-05'>История встреч</a></td></tr>"},{"date":"2018-02-09 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-09'>История встреч</a></td></tr>"},{"date":"2018-02-13 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-13'>История встреч</a></td></tr>"},{"date":"2018-02-15 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-15'>История встреч</a></td></tr>"},{"date":"2018-02-20 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-20'>История встреч</a></td></tr>"},{"date":"2018-02-22 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-22'>История встреч</a></td></tr>"},{"date":"2018-02-25 17:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-02-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-02-25'>История встреч</a></td></tr>"},{"date":"2018-03-17 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-17'>История встреч</a></td></tr>"},{"date":"2018-03-20 19:00:00:00","title":"<td class='text-center align-middle'>БФСО  Динамо</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-20'>История встреч</a></td></tr>"},{"date":"2018-03-21 12:45:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-21'>История встреч</a></td></tr>"},{"date":"2018-03-26 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-26'>История встреч</a></td></tr>"},{"date":"2018-03-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-28'>История встреч</a></td></tr>"},{"date":"2018-03-31 13:00:00:00","title":"<td class='text-center align-middle'>Металлург-Жлобин</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-03-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-03-31'>История встреч</a></td></tr>"},{"date":"2018-04-01 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-01'>История встреч</a></td></tr>"},{"date":"2018-04-05 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-05'>История встреч</a></td></tr>"},{"date":"2018-04-07 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-Жлобин</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-07'>История встреч</a></td></tr>"},{"date":"2018-04-10 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 6<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-10'>История встреч</a></td></tr>"},{"date":"2018-04-12 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>2 - 8<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-12'>История встреч</a></td></tr>"},{"date":"2018-04-16 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-16'>История встреч</a></td></tr>"},{"date":"2018-04-18 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>8 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>БФСО  Динамо</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-18'>История встреч</a></td></tr>"},{"date":"2018-04-21 13:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-04-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-04-21'>История встреч</a></td></tr>"},{"date":"2018-08-05 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-05'>История встреч</a></td></tr>"},{"date":"2018-08-07 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Локомотив-Орша</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-07'>История встреч</a></td></tr>"},{"date":"2018-08-09 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-09'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-09'>История встреч</a></td></tr>"},{"date":"2018-08-11 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-11'>История встреч</a></td></tr>"},{"date":"2018-08-14 19:00:00:00","title":"<td class='text-center align-middle'>Лида</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-14'>История встреч</a></td></tr>"},{"date":"2018-08-18 17:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-18'>История встреч</a></td></tr>"},{"date":"2018-08-21 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-21'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-21'>История встреч</a></td></tr>"},{"date":"2018-08-22 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-22'>История встреч</a></td></tr>"},{"date":"2018-08-26 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>10 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-26'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-26'>История встреч</a></td></tr>"},{"date":"2018-08-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-08-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-08-28'>История встреч</a></td></tr>"},{"date":"2018-09-18 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Барановичи</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-09-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-09-18'>История встреч</a></td></tr>"},{"date":"2018-09-20 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U18</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-09-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-09-20'>История встреч</a></td></tr>"},{"date":"2018-09-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-09-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-09-22'>История встреч</a></td></tr>"},{"date":"2018-09-27 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-09-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-09-27'>История встреч</a></td></tr>"},{"date":"2018-09-29 13:00:00:00","title":"<td class='text-center align-middle'>Локомотив-Орша</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-09-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-09-29'>История встреч</a></td></tr>"},{"date":"2018-10-01 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-01'>История встреч</a></td></tr>"},{"date":"2018-10-03 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-03'>История встреч</a></td></tr>"},{"date":"2018-10-06 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Пинские ястребы</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-06'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-06'>История встреч</a></td></tr>"},{"date":"2018-10-11 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-11'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-11'>История встреч</a></td></tr>"},{"date":"2018-10-13 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-13'>История встреч</a></td></tr>"},{"date":"2018-10-18 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-18'>История встреч</a></td></tr>"},{"date":"2018-10-20 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Локомотив-Орша</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-20'>История встреч</a></td></tr>"},{"date":"2018-10-23 19:00:00:00","title":"<td class='text-center align-middle'>Барановичи</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-23'>История встреч</a></td></tr>"},{"date":"2018-10-25 19:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-25'>История встреч</a></td></tr>"},{"date":"2018-10-27 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-10-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-10-27'>История встреч</a></td></tr>"},{"date":"2018-11-03 13:00:00:00","title":"<td class='text-center align-middle'>Пинские ястребы</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-11-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-11-03'>История встреч</a></td></tr>"},{"date":"2018-11-17 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Барановичи</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-11-17'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-11-17'>История встреч</a></td></tr>"},{"date":"2018-11-22 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U18</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-11-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-11-22'>История встреч</a></td></tr>"},{"date":"2018-11-24 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-11-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-11-24'>История встреч</a></td></tr>"},{"date":"2018-11-29 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-11-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-11-29'>История встреч</a></td></tr>"},{"date":"2018-12-01 13:00:00:00","title":"<td class='text-center align-middle'>Локомотив-Орша</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-01'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-01'>История встреч</a></td></tr>"},{"date":"2018-12-03 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-03'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-03'>История встреч</a></td></tr>"},{"date":"2018-12-05 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-05'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-05'>История встреч</a></td></tr>"},{"date":"2018-12-08 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Пинские ястребы</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-08'>История встреч</a></td></tr>"},{"date":"2018-12-18 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-18'>История встреч</a></td></tr>"},{"date":"2018-12-20 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-20'>История встреч</a></td></tr>"},{"date":"2018-12-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>7 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-22'>История встреч</a></td></tr>"},{"date":"2018-12-29 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Локомотив-Орша</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2018-12-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2018-12-29'>История встреч</a></td></tr>"},{"date":"2019-01-10 19:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>0 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-01-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-01-10'>История встреч</a></td></tr>"},{"date":"2019-01-12 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-01-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-01-12'>История встреч</a></td></tr>"},{"date":"2019-01-19 13:00:00:00","title":"<td class='text-center align-middle'>Пинские ястребы</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-01-19'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-01-19'>История встреч</a></td></tr>"},{"date":"2019-01-22 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Барановичи</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-01-22'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-01-22'>История встреч</a></td></tr>"},{"date":"2019-01-29 19:00:00:00","title":"<td class='text-center align-middle'>Барановичи</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-01-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-01-29'>История встреч</a></td></tr>"},{"date":"2019-02-02 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-02'>История встреч</a></td></tr>"},{"date":"2019-02-14 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>1 - 8<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-14'>История встреч</a></td></tr>"},{"date":"2019-02-16 13:00:00:00","title":"<td class='text-center align-middle'>Локомотив-Орша</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-16'>История встреч</a></td></tr>"},{"date":"2019-02-18 19:00:00:00","title":"<td class='text-center align-middle'>Могилёв</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-18'>История встреч</a></td></tr>"},{"date":"2019-02-20 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>2 - 9<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-20'>История встреч</a></td></tr>"},{"date":"2019-02-23 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Пинские ястребы</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-23'>История встреч</a></td></tr>"},{"date":"2019-02-28 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-02-28'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-02-28'>История встреч</a></td></tr>"},{"date":"2019-03-02 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>5 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Могилёв</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-02'>История встреч</a></td></tr>"},{"date":"2019-03-04 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Локомотив-Орша</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-04'>История встреч</a></td></tr>"},{"date":"2019-03-07 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-07'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-07'>История встреч</a></td></tr>"},{"date":"2019-03-12 19:00:00:00","title":"<td class='text-center align-middle'>Барановичи</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-12'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-12'>История встреч</a></td></tr>"},{"date":"2019-03-14 19:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-14'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-14'>История встреч</a></td></tr>"},{"date":"2019-03-16 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-16'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-16'>История встреч</a></td></tr>"},{"date":"2019-03-23 13:00:00:00","title":"<td class='text-center align-middle'>Пинские ястребы</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-23'>История встреч</a></td></tr>"},{"date":"2019-03-24 14:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U18</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-24'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-24'>История встреч</a></td></tr>"},{"date":"2019-03-27 19:00:00:00","title":"<td class='text-center align-middle'>Витебск</td><td class='text-center align-middle'><h5><strong>6 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-27'>История встреч</a></td></tr>"},{"date":"2019-03-29 19:00:00:00","title":"<td class='text-center align-middle'>Химик</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-29'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-29'>История встреч</a></td></tr>"},{"date":"2019-03-31 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>9 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Пинские ястребы</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-03-31'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-03-31'>История встреч</a></td></tr>"},{"date":"2019-04-02 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-02'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-02'>История встреч</a></td></tr>"},{"date":"2019-04-04 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-04'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-04'>История встреч</a></td></tr>"},{"date":"2019-04-08 19:00:00:00","title":"<td class='text-center align-middle'>U20</td><td class='text-center align-middle'><h5><strong>7 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-08'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-08'>История встреч</a></td></tr>"},{"date":"2019-04-10 19:00:00:00","title":"<td class='text-center align-middle'>Барановичи</td><td class='text-center align-middle'><h5><strong>2 - 8<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-10'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-10'>История встреч</a></td></tr>"},{"date":"2019-04-13 13:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Барановичи</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-13'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-13'>История встреч</a></td></tr>"},{"date":"2019-04-15 17:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U20</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-15'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-15'>История встреч</a></td></tr>"},{"date":"2019-04-18 19:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-18'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-18'>История встреч</a></td></tr>"},{"date":"2019-04-20 13:00:00:00","title":"<td class='text-center align-middle'>Гомель</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-20'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-20'>История встреч</a></td></tr>"},{"date":"2019-04-23 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-23'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-23'>История встреч</a></td></tr>"},{"date":"2019-04-25 19:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'><h5><strong>7 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-25'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-25'>История встреч</a></td></tr>"},{"date":"2019-04-27 13:00:00:00","title":"<td class='text-center align-middle'>Пинские ястребы</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение по булиитам</footer></strong></h5></td><td class='text-center align-middle'>Брест</td>","description":"<tr class='table-info'><td colspan='2'><a class='btn btn-block btn-warning' href='statistic-match-extra.php?date=2019-04-27'>Статистика матча</a></td><td colspan='2'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-04-27'>История встреч</a></td></tr>"},{"date":"2019-08-01 00:00:00:00","title":"<td class='text-center align-middle'>Брест</td><td class='text-center align-middle'> - - </td><td class='text-center align-middle'>Шахтер-Солигорск</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-success' href='history-games-extra.php?date=2019-08-01'>История встреч</a></td></tr>"},]</script>
-                                <script>var eventsInlineH = [{"date":"2017-09-10 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-10'>Статистика матча</a></td></tr>"},{"date":"2017-09-11 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Бобруйск</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-11'>Статистика матча</a></td></tr>"},{"date":"2017-09-17 17:00:00:00","title":"<td class='text-center align-middle'>Неман-2</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-17'>Статистика матча</a></td></tr>"},{"date":"2017-09-18 13:00:00:00","title":"<td class='text-center align-middle'>Неман-2</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-18'>Статистика матча</a></td></tr>"},{"date":"2017-09-24 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>БФСО  Динамо</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-24'>Статистика матча</a></td></tr>"},{"date":"2017-09-25 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>БФСО  Динамо</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-09-25'>Статистика матча</a></td></tr>"},{"date":"2017-10-01 17:00:00:00","title":"<td class='text-center align-middle'>U17</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-01'>Статистика матча</a></td></tr>"},{"date":"2017-10-02 13:00:00:00","title":"<td class='text-center align-middle'>U17</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Поражение по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-02'>Статистика матча</a></td></tr>"},{"date":"2017-10-08 18:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-08'>Статистика матча</a></td></tr>"},{"date":"2017-10-09 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Химик-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-09'>Статистика матча</a></td></tr>"},{"date":"2017-10-14 18:30:00:00","title":"<td class='text-center align-middle'>Энергия</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-14'>Статистика матча</a></td></tr>"},{"date":"2017-10-15 13:30:00:00","title":"<td class='text-center align-middle'>Энергия</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-15'>Статистика матча</a></td></tr>"},{"date":"2017-10-22 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>0 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-22'>Статистика матча</a></td></tr>"},{"date":"2017-10-23 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-23'>Статистика матча</a></td></tr>"},{"date":"2017-10-29 18:30:00:00","title":"<td class='text-center align-middle'>Гомель-2</td><td class='text-center align-middle'><h5><strong>5 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-29'>Статистика матча</a></td></tr>"},{"date":"2017-10-30 13:00:00:00","title":"<td class='text-center align-middle'>Гомель-2</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-10-30'>Статистика матча</a></td></tr>"},{"date":"2017-11-04 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Юниор</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-04'>Статистика матча</a></td></tr>"},{"date":"2017-11-05 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>5 - 8<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юниор</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-05'>Статистика матча</a></td></tr>"},{"date":"2017-11-09 19:00:00:00","title":"<td class='text-center align-middle'>Металлург-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-09'>Статистика матча</a></td></tr>"},{"date":"2017-11-10 14:00:00:00","title":"<td class='text-center align-middle'>Металлург-2</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-10'>Статистика матча</a></td></tr>"},{"date":"2017-11-14 18:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Арарат</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-14'>Статистика матча</a></td></tr>"},{"date":"2017-11-15 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Арарат</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-15'>Статистика матча</a></td></tr>"},{"date":"2017-11-20 18:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>6 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-20'>Статистика матча</a></td></tr>"},{"date":"2017-11-21 13:00:00:00","title":"<td class='text-center align-middle'>U18</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение по буллитам</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-21'>Статистика матча</a></td></tr>"},{"date":"2017-11-25 19:00:00:00","title":"<td class='text-center align-middle'>Витебск-2</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-25'>Статистика матча</a></td></tr>"},{"date":"2017-11-26 13:00:00:00","title":"<td class='text-center align-middle'>Витебск-2</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-11-26'>Статистика матча</a></td></tr>"},{"date":"2017-12-03 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-03'>Статистика матча</a></td></tr>"},{"date":"2017-12-04 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>10 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Витебск-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-04'>Статистика матча</a></td></tr>"},{"date":"2017-12-09 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>U18</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-09'>Статистика матча</a></td></tr>"},{"date":"2017-12-10 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U18</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-10'>Статистика матча</a></td></tr>"},{"date":"2017-12-18 18:30:00:00","title":"<td class='text-center align-middle'>Арарат</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-18'>Статистика матча</a></td></tr>"},{"date":"2017-12-19 13:00:00:00","title":"<td class='text-center align-middle'>Арарат</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-19'>Статистика матча</a></td></tr>"},{"date":"2017-12-24 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>7 - 10<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-24'>Статистика матча</a></td></tr>"},{"date":"2017-12-25 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2017-12-25'>Статистика матча</a></td></tr>"},{"date":"2018-01-05 17:00:00:00","title":"<td class='text-center align-middle'>Юниор</td><td class='text-center align-middle'><h5><strong>9 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-05'>Статистика матча</a></td></tr>"},{"date":"2018-01-06 13:00:00:00","title":"<td class='text-center align-middle'>Юниор</td><td class='text-center align-middle'><h5><strong>4 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-06'>Статистика матча</a></td></tr>"},{"date":"2018-01-15 17:00:00:00","title":"<td class='text-center align-middle'>Шахтер-2</td><td class='text-center align-middle'><h5><strong>6 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-15'>Статистика матча</a></td></tr>"},{"date":"2018-01-16 13:00:00:00","title":"<td class='text-center align-middle'>Шахтер-2</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-16'>Статистика матча</a></td></tr>"},{"date":"2018-01-21 19:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Энергия</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-21'>Статистика матча</a></td></tr>"},{"date":"2018-01-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Энергия</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-22'>Статистика матча</a></td></tr>"},{"date":"2018-01-28 17:00:00:00","title":"<td class='text-center align-middle'>Химик-2</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-28'>Статистика матча</a></td></tr>"},{"date":"2018-01-29 13:00:00:00","title":"<td class='text-center align-middle'>Химик-2</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-01-29'>Статистика матча</a></td></tr>"},{"date":"2018-02-01 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-01'>Статистика матча</a></td></tr>"},{"date":"2018-02-02 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-02'>Статистика матча</a></td></tr>"},{"date":"2018-02-04 19:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U17</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-04'>Статистика матча</a></td></tr>"},{"date":"2018-02-05 14:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>U17</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-05'>Статистика матча</a></td></tr>"},{"date":"2018-02-10 17:00:00:00","title":"<td class='text-center align-middle'>БФСО  Динамо</td><td class='text-center align-middle'><h5><strong>3 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-10'>Статистика матча</a></td></tr>"},{"date":"2018-02-11 13:00:00:00","title":"<td class='text-center align-middle'>БФСО  Динамо</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-11'>Статистика матча</a></td></tr>"},{"date":"2018-02-15 18:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-15'>Статистика матча</a></td></tr>"},{"date":"2018-02-16 13:00:00:00","title":"<td class='text-center align-middle'>Бобруйск</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-16'>Статистика матча</a></td></tr>"},{"date":"2018-02-20 14:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-20'>Статистика матча</a></td></tr>"},{"date":"2018-02-21 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 4<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-02-21'>Статистика матча</a></td></tr>"},{"date":"2018-09-09 17:00:00:00","title":"<td class='text-center align-middle'>Неман-2</td><td class='text-center align-middle'><h5><strong>3 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-09'>Статистика матча</a></td></tr>"},{"date":"2018-09-16 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>БФСО  Динамо</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-16'>Статистика матча</a></td></tr>"},{"date":"2018-09-17 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>5 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>БФСО  Динамо</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-17'>Статистика матча</a></td></tr>"},{"date":"2018-09-23 17:00:00:00","title":"<td class='text-center align-middle'>Металлург-2</td><td class='text-center align-middle'><h5><strong>1 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-23'>Статистика матча</a></td></tr>"},{"date":"2018-09-24 13:00:00:00","title":"<td class='text-center align-middle'>Металлург-2</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-24'>Статистика матча</a></td></tr>"},{"date":"2018-09-30 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Гомель-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-30'>Статистика матча</a></td></tr>"},{"date":"2018-10-01 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Гомель-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-01'>Статистика матча</a></td></tr>"},{"date":"2018-09-10 13:00:00:00","title":"<td class='text-center align-middle'>Неман-2</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-09-10'>Статистика матча</a></td></tr>"},{"date":"2018-10-07 17:00:00:00","title":"<td class='text-center align-middle'>Могилёв-2</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-07'>Статистика матча</a></td></tr>"},{"date":"2018-10-08 13:00:00:00","title":"<td class='text-center align-middle'>Могилёв-2</td><td class='text-center align-middle'><h5><strong>0 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-08'>Статистика матча</a></td></tr>"},{"date":"2018-10-14 17:00:00:00","title":"<td class='text-center align-middle'>Лида-2</td><td class='text-center align-middle'><h5><strong>2 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-14'>Статистика матча</a></td></tr>"},{"date":"2018-10-15 13:00:00:00","title":"<td class='text-center align-middle'>Лида-2</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-15'>Статистика матча</a></td></tr>"},{"date":"2018-10-21 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Химик-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-21'>Статистика матча</a></td></tr>"},{"date":"2018-10-22 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 1<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Химик-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-22'>Статистика матча</a></td></tr>"},{"date":"2018-10-28 17:00:00:00","title":"<td class='text-center align-middle'>U17</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-28'>Статистика матча</a></td></tr>"},{"date":"2018-10-29 13:00:00:00","title":"<td class='text-center align-middle'>U17</td><td class='text-center align-middle'><h5><strong>7 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-10-29'>Статистика матча</a></td></tr>"},{"date":"2018-11-04 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юниор</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-04'>Статистика матча</a></td></tr>"},{"date":"2018-11-05 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Юниор</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-05'>Статистика матча</a></td></tr>"},{"date":"2018-11-11 17:00:00:00","title":"<td class='text-center align-middle'>Витебск-2</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-11'>Статистика матча</a></td></tr>"},{"date":"2018-11-12 13:00:00:00","title":"<td class='text-center align-middle'>Витебск-2</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-12'>Статистика матча</a></td></tr>"},{"date":"2018-11-18 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-18'>Статистика матча</a></td></tr>"},{"date":"2018-11-19 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>2 - 0<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Шахтер-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-19'>Статистика матча</a></td></tr>"},{"date":"2018-11-25 17:00:00:00","title":"<td class='text-center align-middle'>Шахтер-2</td><td class='text-center align-middle'><h5><strong>1 - 7<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-25'>Статистика матча</a></td></tr>"},{"date":"2018-11-26 13:00:00:00","title":"<td class='text-center align-middle'>Шахтер-2</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-11-26'>Статистика матча</a></td></tr>"},{"date":"2018-12-02 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 4<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Витебск-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-02'>Статистика матча</a></td></tr>"},{"date":"2018-12-03 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>3 - 6<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Витебск-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-03'>Статистика матча</a></td></tr>"},{"date":"2018-12-10 13:00:00:00","title":"<td class='text-center align-middle'>Юниор</td><td class='text-center align-middle'><h5><strong>2 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-10'>Статистика матча</a></td></tr>"},{"date":"2018-12-18 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>0 - 1<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U17</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-18'>Статистика матча</a></td></tr>"},{"date":"2018-12-19 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>U17</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-19'>Статистика матча</a></td></tr>"},{"date":"2018-12-09 17:00:00:00","title":"<td class='text-center align-middle'>Юниор</td><td class='text-center align-middle'><h5><strong>5 - 0<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2018-12-09'>Статистика матча</a></td></tr>"},{"date":"2019-01-07 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>8 - 3<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Лида-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-07'>Статистика матча</a></td></tr>"},{"date":"2019-01-13 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 3<footer class='blockquote-footer'>Победа в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Могилёв-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-13'>Статистика матча</a></td></tr>"},{"date":"2019-01-14 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Могилёв-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-14'>Статистика матча</a></td></tr>"},{"date":"2019-01-20 17:00:00:00","title":"<td class='text-center align-middle'>Гомель-2</td><td class='text-center align-middle'><h5><strong>2 - 1<footer class='blockquote-footer'>Поражение в овертайме</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-20'>Статистика матча</a></td></tr>"},{"date":"2019-01-27 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>7 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Металлург-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-27'>Статистика матча</a></td></tr>"},{"date":"2019-01-28 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 7<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Металлург-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-28'>Статистика матча</a></td></tr>"},{"date":"2019-01-06 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>1 - 3<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Лида-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-06'>Статистика матча</a></td></tr>"},{"date":"2019-01-21 13:00:00:00","title":"<td class='text-center align-middle'>Гомель-2</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-01-21'>Статистика матча</a></td></tr>"},{"date":"2019-02-03 17:00:00:00","title":"<td class='text-center align-middle'>БФСО  Динамо</td><td class='text-center align-middle'><h5><strong>1 - 2<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-03'>Статистика матча</a></td></tr>"},{"date":"2019-02-04 13:00:00:00","title":"<td class='text-center align-middle'>БФСО  Динамо</td><td class='text-center align-middle'><h5><strong>2 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-04'>Статистика матча</a></td></tr>"},{"date":"2019-02-10 17:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>4 - 5<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Неман-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-10'>Статистика матча</a></td></tr>"},{"date":"2019-02-11 13:00:00:00","title":"<td class='text-center align-middle'>Брест-2</td><td class='text-center align-middle'><h5><strong>6 - 5<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Неман-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-11'>Статистика матча</a></td></tr>"},{"date":"2019-02-06 17:00:00:00","title":"<td class='text-center align-middle'>Химик-2</td><td class='text-center align-middle'><h5><strong>4 - 2<footer class='blockquote-footer'>Поражение</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-06'>Статистика матча</a></td></tr>"},{"date":"2019-02-07 13:00:00:00","title":"<td class='text-center align-middle'>Химик-2</td><td class='text-center align-middle'><h5><strong>2 - 7<footer class='blockquote-footer'>Победа</footer></strong></h5></td><td class='text-center align-middle'>Брест-2</td>","description":"<tr class='table-info'><td colspan='4'><a class='btn btn-block btn-warning' href='statistic-match-high.php?date=2019-02-07'>Статистика матча</a></td></tr>"},]  </script>
-                <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="extra-calendar" data-toggle="tab"  role="tab">Брест</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="high-calendar" data-toggle="tab"  role="tab">Брест-2</a>
-                  </li>
-                </ul>
-                <div class="extra-calendar active-calendar animated" id='calendar'></div>
-                <div class="high-calendar animated"  id='calendar-h'></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class='row'>
-           
-            
-        </div>
-      </div>
-    </div>
-        <div class="container-fluid container-white">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Видео</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class='row'>
-                    <div class="col-lg-3  portfolio-item-news ">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe  src="https://www.youtube.com/embed/UB45HW0KPs4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								</div>
-              </div>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >11 <small>Июля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b class="text-dark text-uppercase">
-                      Рассказываем о выходных (которых нет) команды на предсезонном сборе в Томашовке										</b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                    <div class="col-lg-3  portfolio-item-news ">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe  src="https://www.youtube.com/embed/FUoE62_P1Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								</div>
-              </div>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >23 <small>Май</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b class="text-dark text-uppercase">
-                      БОЛЬШАЯ БЕСЕДА С ИГОРЕМ КОВАЛЕНЕЙ										</b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                    <div class="col-lg-3  portfolio-item-news ">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe src="https://www.youtube.com/embed/pX6Wtwe0qeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								</div>
-              </div>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >27 <small>Апреля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b class="text-dark text-uppercase">
-                      Главный тренер «Бреста» Константин Кольцов благодарит всех вас за сезон!										</b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                    <div class="col-lg-3  portfolio-item-news ">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe  src="https://www.youtube.com/embed/bK02XDdDaHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								</div>
-              </div>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary" >27 <small>Апреля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b class="text-dark text-uppercase">
-                      Обзор заключительного матча сезона.										</b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                  </div>
-      </div>
-    </div>
-    <div class="container-fluid container-grey">
-      <div class="container container-news">
-        <div class='row'>
-          <div class="col-lg-12  portfolio-item-news">
-            <h4 class='text-muted mb-0 mt-4 text-uppercase'><strong><em>Фото</em></strong></h4>
-            <hr class="hr-deverse"></hr>
-          </div>
-        </div>
-        <div class='row'>
-                    <div class="col-lg-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a  href="photogallery.php?id=2448">
-                <img class="card-img-top d-block" src="/img/photogalery/2019-5-16-9-10-29/8MncX-MhEZc.jpg"alt="">
-              </a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">16 <small>Май</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="photogallery.php?id=2448">фототчёт: Встреча с Евгением Оксентюком</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                    <div class="col-lg-6 mb-2 portfolio-item-news">
-            <div class="card h-100">
-              <a  href="photogallery.php?id=2410">
-                <img class="card-img-top d-block" src="/img/photogalery/2019-4-14-7-51-10/2Pn5LzUzfLQ.jpg"alt="">
-              </a>
-              <div class="card-body">
-                <footer class="blockquote-footer">
-                  <b >
-                    <em class="text-primary">13 <small>Апреля</small> 2019 <small>г.</small></em>
-                  </b>
-                </footer>
-                <blockquote class="blockquote-footer">
-                  <em>
-                    <b>
-                      <a class="text-dark text-uppercase" href="photogallery.php?id=2410">Фотоотчёт с матча "Брест" - "Барановичи"</a>
-                    </b>
-                  </em>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-                  </div>
-      </div>
-    </div>	
-  </body>
-  
-    <footer class="py-5 bg-dark footer footer-custom">
-  <div class="container container-black">
-      <h2 >Соцсети</h2>
-        <hr></hr>
-      <div class='row'>
-        <div class='col-lg-4'>
-          <a class="btn btn-block btn-vk btn-social btn-adn" href="https://vk.com/brest_hc" target="_blank">
-            <i class="fa fa-vk text-white"></i> <b class='text-white'>В контакте</b>
-          </a>
-        </div>
-        <div class='col-lg-4'>
-          <a class="btn btn-block btn-instagram btn-social btn-pinterest" href="https://www.instagram.com/brest_hc/" target="_blank">
-            <i class="fa fa-instagram text-white"></i> <b class='text-white'>Инстаграм</b>
-          </a>
-        </div>
-        <div class='col-lg-4'>
-          <a class="btn btn-block  btn-social btn-twitter" href="https://twitter.com/brest_hc" target="_blank">
-            <i class="fa fa-2x fa-twitter-square text-white"></i> <b class='text-white'>Твиттер</b>
-          </a>
-        </div>
-      </div>
-        
-      <h2 class="mt-4">Наши спонсоры</h2>
-        <hr></hr>
-      <div class="row">
-                <div class="col-md-3 col-sm-6 mb-4">
-          <a href="http://www.savushkin.by/" target="_blank" ><img class="img-fluid"  src="img/sponsors/savushkin.jpg" alt=""></a>
-        </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-          <a href="http://www.dsk-brest.by/" target="_blank" ><img class="img-fluid"  src="img/sponsors/bjs.jpg" alt=""></a>
-        </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-          <a href="http://www.brestvodka.com/" target="_blank" ><img class="img-fluid"  src="img/sponsors/belalco.jpg" alt=""></a>
-        </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-          <a href="http://www.santa-bremor.com/" target="_blank" ><img class="img-fluid"  src="img/sponsors/santa-1.jpg" alt=""></a>
-        </div>
-              </div>
-        <p class="mt-2 mb-2 text-center text-white">Copyright &copy; 2018 ГУ ХК "Брест" Все права защищены.</p>
-  </div>
-</footer>		<!--[if lte IE 9]>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
-    
-    <!--<![endif]-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/moment.min.js"></script>
-    <script type="text/javascript" src="js/jquery.eventCalendar1.js"></script>
-    <script type="text/javascript" src="js/dsCountDown-v1.js"></script>
-    <script  type="text/javascript" src="js/jquery.fancybox.js"></script>
-    <script  type="text/javascript" src="js/nprogress.js"></script>
-    <script  type="text/javascript"  src="js/modal.js"></script>
-    <script  type="text/javascript"  src="js/index.js"></script>
+		 <div class="container-fluid container-menu">
+	<div class="row">
+		<div class="col-lg-12  pl-0 pr-0 col-header-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-2 text-right">
+						<div class="wrap-logo">
+							<a class="navbar-brand navbar-brand-custom text-white mt-0" href="index.php">
+								<img class="logo" src="img/background/logo-brest.png" class="d-inline-block" alt="brest-hockey.by">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-10 col-md-8 col-sm-8 col-8 text-center">
+						<span class="header-large"><h3 class="h3-menu" >Государственное учреждение </br> "Хоккейный клуб "Брест"</h3></span>
+						<span class="header-small"><h3 class="h3-menu" > ГУХK "Брест"</h3></span>
+					</div>
+					<div class=" col-sm-2 col-2 wrap-icon-gam ">
+						<div class="icon nav-icon-1 navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid nav-large container-menu">
+	<div class="container container-menu">
+		<div class="row">
+			<div class="col-lg-12">
+				<nav class="top-menu" >
+					<ul class="menu-main">
+						<li class="dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbar-team" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Команда</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-team">
+								<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/players/" >ХК "Брест"</a>
+								<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/coaches/" >Тренерский состав ХК "Брест"</a>
+								<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/farm-klub/igroki/" >ХК "Брест-2"</a>
+								<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/farm-klub/trenery/" >Тренерский состав ХК "Брест-2"</a>
+							</div>	
+						</li>
+						<li class="">
+							<a class="nav-link" href="school.php">Школа</a>
+						</li>
+						<li class="">
+							<a class="nav-link" href="contacts.php">Контакты</a>
+						</li>
+						<li class="">
+							<a class="nav-link"  href="sauna.php">Сауна</a>
+						</li>
+						<li>
+							<a class="dropdown-custom" href="fitnes.php">Тренажёрный зал</a>
+						</li>
+						
+					</ul>
+					<ul class="menu-main-second-lvl">
+						<li>
+							<a class="dropdown-item"  data-toggle="modal" data-target="#modal-scating-shedule"  href="#">	
+								Расписание свободного катания
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item btn-schedule-area"  data-fancybox data-type="ajax" data-src="handlers/schedule-area.php" href="javascript:;" >
+								Расписание ледовой арены
+							</a>
+						</li>
+						<li class=" dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Услуги и тарифы</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-sharpening-skates" href="#">Обслуживание коньков</a>
+								<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rent" href="#">Прокат</a>
+								<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rates"  href="#">Тарифы</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav ml-auto navbar-custom-mobile">
+		<li class="nav-item dropdown nav-item-custom ">
+			<a class="dropdown-toggle dropdown-custom" href="#" id="navbar-team" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Команда</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-team">
+				<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/players/" >ХК "Брест"</a>
+				<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/coaches/" >Тренерский состав ХК "Брест"</a>
+				<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/farm-klub/igroki/" >ХК "Брест-2"</a>
+				<a class="dropdown-item" target="_blank" href ="http://brest.hockey.by/farm-klub/trenery/" >Тренерский состав ХК "Брест-2"</a>
+			</div>	
+		</li>
+		<li class="nav-item nav-item-custom">
+			<a class="dropdown-custom" data-toggle="modal" data-target="#modal-scating-shedule"  href="#">	
+			Расписание свободного катания
+			</a>
+		</li>
+		<li class="nav-item nav-item-custom" >
+			<a class="dropdown-custom btn-schedule-area"  data-fancybox data-type="ajax" data-src="handlers/schedule-area.php" href="javascript:;" >
+			Расписание ледовой арены
+			</a>
+		</li>
+		
+		<li class="nav-item nav-item-custom">
+			<a class="dropdown-custom" href="school.php">Школа</a>
+		</li>
+		<li class="nav-item nav-item-custom">
+			<a class="dropdown-custom" href="contacts.php">Контакты</a>
+		</li>
+		<li class="nav-item nav-item-custom">
+			<a class="dropdown-custom" href="sauna.php">Сауна</a>
+		</li>
+		<li class="nav-item nav-item-custom">
+			<a class="dropdown-custom" href="fitnes.php">Тренажёрный зал</a>
+		</li>
+		<li class="nav-item dropdown nav-item-custom">
+			<a class="dropdown-custom dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Услуги</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby	="navbarDropdownPortfolio">
+				<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-sharpening-skates" href="#">Обслуживание коньков</a>
+				<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rent" href="#">Прокат</a>
+				<a class="dropdown-item"  data-toggle="modal" data-target 	= "#modal-rates"  href="#">Тарифы</a>
+			</div>
+		</li>
+	</ul>
+</div>
+		 <div class="inner-schedule">
+	<div class="slick-new-schedule">
+					<div class="section-hsc">
+			
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"></span>
+											</div>
+														</div>
+				<div class="hsc-date">Пн, 00 00 0000г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3be6ae0b48f873eebac05dbd21dfbaaf-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-Солигорск</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/159/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 01 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/167/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 03 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/177/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 05 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/187/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 07 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/196/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 10 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Кубок Руслана Салея Группа "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/42a24f07b43c2275256aa891ccb6dff6-100x100.jpg">
+						<span class="hsc-team-name">Динамо-Молодечно</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/213/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 14 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/032bab26fa9f9f4ea914566b84480856-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/228/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 27 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/239/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 29 Авг. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/248/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 01 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/254/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 02 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2677121efdf4f9b9d046373994454887-100x100.jpg">
+						<span class="hsc-team-name">U20</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/256/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 02 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/264/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 03 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e1f3cdfbd5b3d13e98748e71c07de1ff-100x100.jpg">
+						<span class="hsc-team-name">Гомель-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/282/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 08 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e1f3cdfbd5b3d13e98748e71c07de1ff-100x100.jpg">
+						<span class="hsc-team-name">Гомель-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/283/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 09 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/292/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 10 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="1">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/297/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 12 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/305/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 13 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/315/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 15 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/320/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 16 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/310/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 16 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/334/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 19 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/338/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 20 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/344/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 22 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/375/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 28 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/376/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 29 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2677121efdf4f9b9d046373994454887-100x100.jpg">
+						<span class="hsc-team-name">U20</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/412/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 30 Сен. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/416/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 02 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/428/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 06 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/397/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 08 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/032bab26fa9f9f4ea914566b84480856-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/432/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 08 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/398/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 09 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">----</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/032bab26fa9f9f4ea914566b84480856-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/444/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 13 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="11">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/405/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 13 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/406/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 14 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/449/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 14 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="2">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/458/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 17 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/460/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 19 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2677121efdf4f9b9d046373994454887-100x100.jpg">
+						<span class="hsc-team-name">U20</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/469/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 21 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/490/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 23 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/491/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 24 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/fe55d7868b286908bdb83fd64e799d29-100x100.jpg">
+						<span class="hsc-team-name">Юниор</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/508/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 28 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/fe55d7868b286908bdb83fd64e799d29-100x100.jpg">
+						<span class="hsc-team-name">Юниор</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/509/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 29 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/516/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 30 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/524/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 31 Окт. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/534/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 03 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/544/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 04 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/545/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 05 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/554/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 06 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/555/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 07 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/556/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 10 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/563/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 10 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/564/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 11 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2677121efdf4f9b9d046373994454887-100x100.jpg">
+						<span class="hsc-team-name">U20</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/588/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 16 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/6c34cd8ff26a2958c66e669036ad4fb7-100x100.jpg">
+						<span class="hsc-team-name">Неман-2</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/634/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 18 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/608/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 18 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/6c34cd8ff26a2958c66e669036ad4fb7-100x100.jpg">
+						<span class="hsc-team-name">Неман-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/635/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 19 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/032bab26fa9f9f4ea914566b84480856-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/610/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 21 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="1">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/616/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 23 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/d69c6fce6b985c1c478c88c5ddfe8e7d-100x100.jpg">
+						<span class="hsc-team-name">Минские зубры</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/658/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 24 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/d69c6fce6b985c1c478c88c5ddfe8e7d-100x100.jpg">
+						<span class="hsc-team-name">Минские зубры</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/659/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 25 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/619/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 26 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Дивизион"Б" 1 этап</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/622/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 28 Ноя. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/667/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 02 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/964b3c1c93b0ba760d6be503d889da1c-100x100.jpg">
+						<span class="hsc-team-name">Могилев</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/672/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 04 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/682/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 06 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/6c34cd8ff26a2958c66e669036ad4fb7-100x100.jpg">
+						<span class="hsc-team-name">Неман-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/692/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 07 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/6c34cd8ff26a2958c66e669036ad4fb7-100x100.jpg">
+						<span class="hsc-team-name">Неман-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/693/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 08 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>10</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/713/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 15 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/714/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 16 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/844/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 16 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/858/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 20 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/727/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 22 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/728/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 23 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/862/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 23 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/867/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 25 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/fe55d7868b286908bdb83fd64e799d29-100x100.jpg">
+						<span class="hsc-team-name">Юниор</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/735/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 29 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/fe55d7868b286908bdb83fd64e799d29-100x100.jpg">
+						<span class="hsc-team-name">Юниор</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/736/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 30 Дек. 2019г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="2">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/745/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 04 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/746/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 05 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">Пб</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/886/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 06 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/889/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 08 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/964b3c1c93b0ba760d6be503d889da1c-100x100.jpg">
+						<span class="hsc-team-name">Могилев</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/894/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 10 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="12">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>10</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/757/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 11 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"></span>
+											</div>
+														</div>
+				<div class="hsc-date">Вос, 12 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/902/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 13 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/964b3c1c93b0ba760d6be503d889da1c-100x100.jpg">
+						<span class="hsc-team-name">Могилев</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/904/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 15 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/911/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 17 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/775/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 18 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/776/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 19 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/918/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 20 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/927/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 24 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/789/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 27 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/933/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 27 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/790/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 28 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/942/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 31 Янв. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/964b3c1c93b0ba760d6be503d889da1c-100x100.jpg">
+						<span class="hsc-team-name">Могилев</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/963/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 03 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/966/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 05 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/805/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 09 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="2">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/806/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 10 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1015/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 12 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/964b3c1c93b0ba760d6be503d889da1c-100x100.jpg">
+						<span class="hsc-team-name">Могилев</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1017/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 14 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1022/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 16 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e1f3cdfbd5b3d13e98748e71c07de1ff-100x100.jpg">
+						<span class="hsc-team-name">Гомель-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/825/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 16 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e1f3cdfbd5b3d13e98748e71c07de1ff-100x100.jpg">
+						<span class="hsc-team-name">Гомель-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/826/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 17 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1024/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 19 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Переходной турнир</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/eedee46e09770f84f4fbc1dbb8c74698-100x100.jpg">
+						<span class="hsc-team-name">Локомотив-Орша</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+										<div class="hsc-match-extd">
+						<div class="hsc-match-circle">ОТ</div>
+					</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1027/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 21 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/833/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 23 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="11">
+							<div class="hsc-league">Высшая лига</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/834/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 24 Фев. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Товарищеский матч</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/85d4c7802f065963f55bdaebec8a8a4e-100x100.jpg">
+						<span class="hsc-team-name">Нёман</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+														</div>
+				<div class="hsc-date">Чт, 23 Июл. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Товарищеский матч</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/42a24f07b43c2275256aa891ccb6dff6-100x100.jpg">
+						<span class="hsc-team-name">Динамо-Молодечно</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+														</div>
+				<div class="hsc-date">Ср, 29 Июл. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Товарищеский матч</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3be6ae0b48f873eebac05dbd21dfbaaf-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-Солигорск</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+														</div>
+				<div class="hsc-date">Чт, 30 Июл. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/bec74b34b8c810ec5aff92a7b0e4606a-100x100.jpg">
+						<span class="hsc-team-name">Металлург</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+														</div>
+				<div class="hsc-date">Сб, 08 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/111172/">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 18 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/111196/">статистика</a>
+									</div>
+				<div class="hsc-date">Чт, 20 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/111202/">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 22 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="1">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/f4cbb129e7e08be5df5c44197b2027f3-100x100.jpg">
+						<span class="hsc-team-name">Гомель</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/111532/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 24 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Кубок Салея (группа "А")</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3be6ae0b48f873eebac05dbd21dfbaaf-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-Солигорск</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/111931/#game-tab-5">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 26 Авг. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113216/">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 08 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/8087f3626b199a025b321d7e7cb0e168-100x100.jpg">
+						<span class="hsc-team-name">Шахтер-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113218/#game-tab-4">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 09 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113594/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 13 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ef112def9945addf56ce6e06fc61abbc-100x100.jpg">
+						<span class="hsc-team-name">Химик-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113596/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 14 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>0</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113902/">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 16 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113906/">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 18 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113966/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 20 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/9137ae3d536897f7a9bd55a8256add57-100x100.jpg">
+						<span class="hsc-team-name">Металлург-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113968/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 21 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/113916/">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 23 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114128/">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 25 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0d160b4a9717dae1c83b49850f98baf4-100x100.jpg">
+						<span class="hsc-team-name">Соболь</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/new-admin/games/1295/?print=protocol">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 27 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0d160b4a9717dae1c83b49850f98baf4-100x100.jpg">
+						<span class="hsc-team-name">Соболь</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://www.hockey.by/gamecenter/114174/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 28 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114134/">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 30 Сен. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>4</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114200/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 04 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>8</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a3a88ecbb7b2358679379ee5e867cc6c-100x100.jpg">
+						<span class="hsc-team-name">Могилев-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114202/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 05 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="9">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg">
+						<span class="hsc-team-name">U18</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>8</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/116958/">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 07 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg">
+						<span class="hsc-team-name">Лида</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/116960/">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 09 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114234/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 11 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e99d9e38d97174072ba33ddff2886291-100x100.jpg">
+						<span class="hsc-team-name">Витебск-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114236/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 12 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="7">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>6</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg">
+						<span class="hsc-team-name">Витебск</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/116968/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 12 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg">
+						<span class="hsc-team-name">Химик</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/116972/">статистика</a>
+									</div>
+				<div class="hsc-date">Ср, 14 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114277/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 18 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="4">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/2ed5c3b2a6fd13f5492baa5b5b884a4d-100x100.jpg">
+						<span class="hsc-team-name">Лида-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114279/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 19 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="6">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/117669/">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 20 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg">
+						<span class="hsc-team-name">Пинские Ястребы</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/117679/">статистика</a>
+									</div>
+				<div class="hsc-date">Вт, 20 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="3">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>1</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114307/">статистика</a>
+									</div>
+				<div class="hsc-date">Вос, 25 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="8">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/59318256f7a0edddcf85d9e45cbc3ec6-100x100.jpg">
+						<span class="hsc-team-name">Бобруйск-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114309/">статистика</a>
+									</div>
+				<div class="hsc-date">Пн, 26 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="10">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>8</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/114350/">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 30 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="5">
+							<div class="hsc-league">Экстралига  - 2020 / 21 - Дивизион "Б"</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg">
+						<span class="hsc-team-name">Авиатор</span>
+													<span class="hsc-team-points"><b>2</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg">
+						<span class="hsc-team-name">Брест</span>
+													<span class="hsc-team-points"><b>3</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://hockey.by/gamecenter/117717/">статистика</a>
+									</div>
+				<div class="hsc-date">Пт, 30 Окт. 2020г. </div>
+			</div>
+					<div class="section-hsc">
+			
+							<input type="hidden" class="inp-sum-score" value="12">
+							<div class="hsc-league">Высшая лига - 2020/21</div>
+				<div class="hsc-match">
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/df7f5178f4da61f893b356a8af660652-100x100.jpg">
+						<span class="hsc-team-name">Брест-2</span>
+													<span class="hsc-team-points"><b>5</b></span>
+											</div>
+					<div class="hsc-team">
+						<img class="hsc-team-logo" src="img/team-logo/e22f00e802b233f661a91ba25cbfe0d4-100x100.jpg">
+						<span class="hsc-team-name">U17</span>
+													<span class="hsc-team-points"><b>7</b></span>
+											</div>
+																<a class="match-link" target="_blank" href="https://www.hockey.by/gamecenter/114352/">статистика</a>
+									</div>
+				<div class="hsc-date">Сб, 31 Окт. 2020г. </div>
+			</div>
+			</div>
+</div>
+			 	
+<div class="top-news-back" style="background-image: url('/img/title/top/e9f19577076d904a1e37e07160ab2920-1900x380.jpg');">
+	<div class="wrap-top-news text-center">
+		<h3 class="h3-header-top-news-1">Топ</h3>
+		<a class="h3-header-top-news btn-draw" href="post.php?id=551">Набор мальчиков и девочек в СДЮШОР</a>
+		
+		<div class="stickers stickers-top">
+							<a href="list-news.php?type_news=объявление"><span class="bg-warning text-dark sticker-type">объявление</span></a>
+				 		</div>
+	</div>
+</div>
+			
+		 <div class="container">	
+			<div class="row">
+								<div class="mt-2">
+					<a href = "https://gse.by/portal/brest/index.html?page=323" target="_blank">
+						<img class="img-fluid" src ="../img/rek/03bfd4cc71c807c56bc9a0f7ef7fc20f-1290x90.jpg">
+					</a>
+				</div>
+								<div class="col-xl-12 col-lg-12 col-md-12">
+				<div class="row sidebar">
+	
+	<div class="col-xl-8 col-lg-12 col-md-12">
+		
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="title-chunk"> Последние новости</h3>
+					<hr></hr>
+				</div>
+									<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+						<div class="wrap-news">
+							<div class="img-news">
+								<a href= "post.php?id=663" >
+									<img  src="/img/title/img-standart/098845c29919d5e4212561c983ce92c0-700x400.jpg"alt="">
+								</a>
+								<div class="stickers">
+																	<a href="list-news.php?type_news=матч"><span class="bg-danger sticker-type">матч</span></a>
+									 								</div>
+							</div>
+							<div class="title">
+								<a href= "post.php?id=663" >Фарм в двух домашних играх проигрывает юниорской сборной</a>
+							</div>
+							<hr class="mb-1"></hr>
+							<div class="date-news">
+								<i class="i-clock-gray"></i>
+								<span class="sp-date text-muted">31 Окт. 2020 | 16 : 36</span>
+							</div>
+							<input type="hidden" class="date-last-news" value="2020-10-31 16:36:06">
+						</div>
+					</div>
+					
+										<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+						<div class="wrap-news">
+							<div class="img-news">
+								<a href= "post.php?id=662" >
+									<img  src="/img/title/img-standart/626f8d8e9a2f4f1f727ccd5294454709-700x400.jpg"alt="">
+								</a>
+								<div class="stickers">
+																	<a href="list-news.php?type_news=интервью"><span class="bg-primary sticker-type">интервью</span></a>
+									 								</div>
+							</div>
+							<div class="title">
+								<a href= "post.php?id=662" >Комментарии главных тренеров Андрей Ковалёв - Алексей Страхов</a>
+							</div>
+							<hr class="mb-1"></hr>
+							<div class="date-news">
+								<i class="i-clock-gray"></i>
+								<span class="sp-date text-muted">30 Окт. 2020 | 22 : 27</span>
+							</div>
+							<input type="hidden" class="date-last-news" value="2020-10-30 22:27:02">
+						</div>
+					</div>
+					
+										<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+						<div class="wrap-news">
+							<div class="img-news">
+								<a href= "post.php?id=661" >
+									<img  src="/img/title/img-standart/beb1b811a28baf85a8e00e558e688d8e-700x400.jpg"alt="">
+								</a>
+								<div class="stickers">
+																		<a href="list-news.php?type_news=матч"><span class="bg-danger sticker-type">матч</span></a>	
+											
+																		<a href="list-news.php?type_news=фото"><span class="bg-success sticker-type">фото</span></a>	
+											
+																								</div>
+							</div>
+							<div class="title">
+								<a href= "post.php?id=661" >После валидольного матча с &quot;Авиатором&quot; забираем в копилку победные три очка</a>
+							</div>
+							<hr class="mb-1"></hr>
+							<div class="date-news">
+								<i class="i-clock-gray"></i>
+								<span class="sp-date text-muted">30 Окт. 2020 | 21 : 47</span>
+							</div>
+							<input type="hidden" class="date-last-news" value="2020-10-30 21:47:56">
+						</div>
+					</div>
+					
+										<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+						<div class="wrap-news">
+							<div class="img-news">
+								<a href= "post.php?id=660" >
+									<img  src="/img/title/img-standart/1ba0f305d801b105428ab00f6c73cffc-700x400.jpg"alt="">
+								</a>
+								<div class="stickers">
+																	<a href="list-news.php?type_news=объявление"><span class="bg-warning text-dark sticker-type">объявление</span></a>
+									 								</div>
+							</div>
+							<div class="title">
+								<a href= "post.php?id=660" >&quot;Авиатор&quot; - &quot;Брест&quot; День матча.</a>
+							</div>
+							<hr class="mb-1"></hr>
+							<div class="date-news">
+								<i class="i-clock-gray"></i>
+								<span class="sp-date text-muted">30 Окт. 2020 | 09 : 26</span>
+							</div>
+							<input type="hidden" class="date-last-news" value="2020-10-30 09:26:13">
+						</div>
+					</div>
+					
+								</div>
+	</div>	
+		<div class="col-xl-4 col-lg-12 col-md-12">
+			<div class="sidebar" >
+	<div class="table-responsive">
+		<table class="table table-scating-today table-sm">
+			<thead>
+				<tr colspan=2>
+					<th colspan=6 class="text-center align-middle h3-title-standings" >
+						Расписание свободного катания
+					</th>
+				</tr>
+			</thead>
+			</tbody>
+								<tr class="tr-scting-today">
+					
+				</tr>
+							</tbody>
+		</table>
+	</div>
+		<div class="text-center align-middle mt-1 pb-3">
+		<a class="btn btn-secondary btn-link"  data-toggle="modal" data-target="#modal-scating-shedule"  href="#">	
+			Расписание на неделю
+		</a>
+	</div>
+		<table class="table table-sm">
+		<thead>
+			<tr >
+				<th colspan=6 class="text-center align-middle h3-title-standings" >
+					Турнирная таблица
+				</th>
+			</tr>
+		</thead>
+	</table>
+	<select class="form-control form-control-sm select-tbl-stn mb-2">
+		
+				<option>Выберите турнир</option>
+				<option value ="7,extra" >Экстралига    -    2019    -    2020    -    Дивизион"Б" 1 этап</option>
+				<option value ="8,extra" >Экстралига     -     2019     -     2020     -     Переходной турнир</option>
+				<option value ="9,extra" >Экстралига  -  2019  -  2020  -  Кубок Руслана Салея Группа "Б"</option>
+				<option value ="10,extra" >Экстралига        -        2020        -        2021        -        Кубок Салея (группа "А")</option>
+				<option value ="11,extra" >Экстралига                      -                      2020                      -                      2021                      -                      Дивизион "Б"</option>
+						<option value ="4,high" >Высшая лига  -  2019  -  2020  -  Высшая лига</option>
+				<option value ="5,high" >Высшая лига          -          2020          -          2021          -          Высшая лига</option>
+			</select>
+	<div class="table-responsive wrap-table-stan">
+		<table class="table table-sm">
+			<thead>
+				
+				<tr class="text-center align-middle"  >
+										<th colspan=6 class="text-center align-middle th-title" >
+						Экстралига                      -                      2020                      -                      2021                      -                      Дивизион "Б"					</th>
+				</tr>
+				<tr>
+					<th class='text-left' colspan=2>Команда</th>
+					<th class='text-center'>И</th>
+					<th class='text-center'>В</th>
+					<th class='text-center'>П</th>
+					<th class='text-center'>О</th>
+				</tr>
+			</thead>
+			<tbody>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/0310c14eafbd9488df8bf507d248fb94-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Химик					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						13					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						9					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						4					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						28					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/a20a5e92d1a86f6b16764eae7c33cd8b-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Брест					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						13					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						9					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						4					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						27					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/2f1e00375631a6c2a7ec3dfe123e586e-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Лида					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						13					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						7					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						6					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						22					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/50bd80110b1b7aaf51711e4f34a317c3-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Авиатор					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						13					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						6					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						6					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						17					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/3a4a629406e9fe530eb1656b07ff77e6-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						U18					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						15					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						6					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						9					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						17					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/89af14f825f3e5e8bd51e8bff9bc9f4d-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Витебск					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						15					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						5					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						10					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						16					</td>
+				</tr>
+								<tr>
+					<td class='text-center align-middle' style='width:5%'>
+						<img src='img/team-logo/ed3b1e1c961ec768966d5a98c1ee3e7b-100x100.jpg' class='img-logo-team'>
+					</td>
+					<td class='text-left align-middle font-weight-bold' style='width:20%' >
+						Пинские Ястребы					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						14					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						6					</td>
+					<td class=' align-middle text-center' style='width:10%'>
+						8					</td>
+					<td class='align-middle text-center font-weight-bold' style='width:10%'>
+						16					</td>
+				</tr>
+							</tbody>
+		</table>
+		<div class="text-center align-middle mt-3">
+			<a class="btn btn-secondary btn-link" href="https://hockey.by/statistic/tables/?division=40&command=" target="_blank">Подробная таблица</a>
+		</div>
+		<div class="text-center align-middle mt-3 mb-3">
+			<a class="btn btn-secondary btn-link" href="https://hockey.by/statistic/competition/?division=40&command=147" target="_blank">Статистика игроков</a>
+		</div>
+	</div>
+	
+</div>
+
+		</div>
+	
+</div>
+				</div>
+				
+			</div>
+		 </div>
+		 <div class="container">	
+			<div class="row">
+								<div >
+					<a href = "https://raschet.by/platelshchikam/poisk-uslugi-v-dereve-uslug-punkty-soversheniya-platezhey/" target="_blank">
+						<img class="img-fluid" src ="../img/rek/cddb181dbb79220a7c549225ed836f92-1290x90.jpg">
+					</a>
+				</div>
+								<div class="col-xl-12 col-lg-12 col-md-12">
+					
+<div class="row " >
+	<div class="col-xl-9 col-lg-9 col-md-12 sidebar">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 class="title-chunk">Видео</h3>
+				<hr></hr>
+			</div>
+		</div>
+		<div class="row">
+							<div class="col-lg-6 col-sm-12 portfolio-item  61 mb-4">
+					
+						<div class="wrap-link-video">
+							<a class="a-video" data-fancybox href="https://youtu.be/pstlwYIx01s">
+								<img class="img-fluid img-photo-gallery" src="https://img.youtube.com/vi/pstlwYIx01s/maxresdefault.jpg">
+							</a>
+							<a class="wrap-icon-video" data-fancybox  href="https://youtu.be/pstlwYIx01s">
+								<i class="fab fa-youtube fa-3x " area-hidden="true"></i>
+							</a>
+						</div>
+						<div class="wrap-title-gallery title-video pl-2 pr-2 mt-2">
+							<a data-fancybox href="https://youtu.be/pstlwYIx01s">Авиатор – Брест – 2:3</a>
+						</div>
+						<hr class="mb-1"></hr>
+						<div class="date-news">
+							<span class="sp-date text-muted"> Видео # <span class="num-video">54 | <i class="i-clock-gray"></i> 30 Окт. 2020</span></span>
+						</div>
+					<input type="hidden" class="date-video" value="2020-10-30 22:07:56">
+					
+				</div>
+							<div class="col-lg-6 col-sm-12 portfolio-item  60 mb-4">
+					
+						<div class="wrap-link-video">
+							<a class="a-video" data-fancybox href="https://youtu.be/7vsguyMUJW0">
+								<img class="img-fluid img-photo-gallery" src="https://img.youtube.com/vi/7vsguyMUJW0/maxresdefault.jpg">
+							</a>
+							<a class="wrap-icon-video" data-fancybox  href="https://youtu.be/7vsguyMUJW0">
+								<i class="fab fa-youtube fa-3x " area-hidden="true"></i>
+							</a>
+						</div>
+						<div class="wrap-title-gallery title-video pl-2 pr-2 mt-2">
+							<a data-fancybox href="https://youtu.be/7vsguyMUJW0">Обзор голов "Брест" - "Пинские ястребы"</a>
+						</div>
+						<hr class="mb-1"></hr>
+						<div class="date-news">
+							<span class="sp-date text-muted"> Видео # <span class="num-video">53 | <i class="i-clock-gray"></i> 30 Окт. 2020</span></span>
+						</div>
+					<input type="hidden" class="date-video" value="2020-10-23 23:42:11">
+					
+				</div>
+						
+		</div>
+	</div>
+	<div class="col-xl-3 col-lg-3 col-md-12 col-left-rek">
+		<div class="text-center">
+			<a href = "http://www.brest-hockey.by/post.php?id=525" target="_blank" ><img class="img-fluid" src ="../img/rek/98fd2a0aa31cc7cbcc9d1e4438a52899-1290x90.jpg"></a>
+		</div>
+	</div>
+</div>
+<div class="sidebar row wrap-button-add-video mt-0">
+	<div class="col-lg-12 col-but pl-0 pr-0">
+		<button class="btn btn-block btn-load-video btn-primary font-weight-bold text-uppercase">загрузить ещё видео</button>
+	</div>
+	<div class="col-lg-12 pl-0 pr-0 col-pan" style="display:none">
+		<h4 class=" h4-empty bg-secondary text-uppercase">архив видео пуст</h4>
+	</div>
+</div>
+	
+				</div>
+			</div>
+			<div class="row">
+								<div >
+					<a href = "https://sovets.net/17429-profilaktika-narkomanii.html" target="_blank">
+						<img class="img-fluid" src ="../img/rek/9ee1cc49259554a0d6f29e4a1e96e6a2-1290x90.jpg">
+					</a>
+				</div>
+								<div class="col-xl-12 col-lg-12 col-md-12">
+					<div class="row" >
+	<div class="col-xl-9 col-lg-9 col-md-12 sidebar">
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 class="title-chunk">Фото</h3>
+				<hr></hr>
+			</div>
+		</div>
+		<div class="row">
+						<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+				<div class="wrap-news">
+					<div class="img-news">
+						<a href= "post.php?id=661" >
+							<img  src="/img/title/img-standart/beb1b811a28baf85a8e00e558e688d8e-700x400.jpg"alt="">
+						</a>
+					</div>
+					<div class="title">
+						<a href= "post.php?id=661" >После валидольного матча с &quot;Авиатором&quot; забираем в копилку победные три очка</a>
+					</div>
+					<hr class="mb-1"></hr>
+					<div class="date-news">
+						<span class="sp-date text-muted"> Фотогалерея # <span class="num-photo">29 | <i class="i-clock-gray"></i> 30 Окт. 2020</span></span>
+					</div>
+					<input type="hidden" class="date-photo" value="2020-10-30 21:47:56">
+				</div>
+			</div>
+						<div class="col-xl-6 col-lg-6 col-md-12  col-sm-12">
+				<div class="wrap-news">
+					<div class="img-news">
+						<a href= "post.php?id=655" >
+							<img  src="/img/title/img-standart/132cb881d08f2db9d42162c00a5775d5-700x400.jpg"alt="">
+						</a>
+					</div>
+					<div class="title">
+						<a href= "post.php?id=655" >В третьем периоде &quot;ястре5ы&quot; переломили ход игры, и решили её исход в свою пользу</a>
+					</div>
+					<hr class="mb-1"></hr>
+					<div class="date-news">
+						<span class="sp-date text-muted"> Фотогалерея # <span class="num-photo">28 | <i class="i-clock-gray"></i> 30 Окт. 2020</span></span>
+					</div>
+					<input type="hidden" class="date-photo" value="2020-10-23 22:44:26">
+				</div>
+			</div>
+					</div>
+	</div>
+	<div class="col-xl-3 col-lg-3 col-md-12  col-left-rek">
+		<div class="text-center">
+			<a href = "http://качество-услуг.бел/RatingPortal" target="_blank"><img class="img-fluid" src ="../img/rek/fd41f233789184a2f97e71933005598d-1290x90.jpg"></a>
+		</div>
+	</div>
+</div>
+<div class="sidebar row wrap-button-add-photo mt-0">
+	<div class="col-lg-12 col-but pl-0 pr-0">
+		<button class="btn btn-block btn-load-photo btn-primary font-weight-bold text-uppercase">загрузить ещё фото</button>
+	</div>
+	<div class="col-lg-12 pl-0 pr-0 col-pan" style="display:none">
+		<h4 class=" h4-empty bg-secondary text-uppercase">фотоархив пуст</h4>
+	</div>
+</div>
+				</div>
+			</div>
+		 </div>
+		 <div class="container">	
+			<div class="row">
+								<div >
+					<a href = "http://mogilev.gov.by/kultura-zdorovya/4237-6619-lektsiya-po-profilaktike-kureniya-zhizn-bez-tabaka.html?lngdjecbimohdjmo" target="_blank">
+						<img class="img-fluid" src ="../img/rek/08f4cd145359f498331918def74a7c2e-1290x90.jpg">
+					</a>
+				</div>
+								<div class="col-xl-12 col-lg-12 col-md-12">
+					
+<div class="row sidebar">
+<div class="col-lg-12">
+	<h3 class="title-chunk"> Архив новостей</h3>
+	<hr></hr>
+</div>
+	<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=659" >
+					<img  src="/img/title/img-standart/1bb4d762fbe270d99213ab15a0cc3baa-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=матч"><span class="bg-danger sticker-type">матч</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=659" >&quot;Брест-2&quot; проиграл две игры на выезде фарму из Бобруйска</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">26 Окт. 2020 | 20 : 26</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-26 20:26:27">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=658" >
+					<img  src="/img/title/img-standart/f9c25e82705331db7e3c3a27db806d80-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=интервью"><span class="bg-primary sticker-type">интервью</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=658" >Капитан команды Михаил Хоромандо прокомментировал встречу с &quot;Пинскими ястребами&quot;</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">24 Окт. 2020 | 10 : 40</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-24 10:40:43">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=657" >
+					<img  src="/img/title/img-standart/466c1b6b8a5072914df88c84ef134467-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=видео"><span class="bg-secondary sticker-type">видео</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=657" >Обзор голов &quot;Брест&quot; - &quot;Пинские ястребы&quot;</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">23 Окт. 2020 | 23 : 41</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-23 23:41:50">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=656" >
+					<img  src="/img/title/img-standart/7659481bc3f4aa1095c3ec17035e04c7-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=интервью"><span class="bg-primary sticker-type">интервью</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=656" >Комментарии главных тренеров: Саяпин Дмитрий - Ковалёв Андрей</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">23 Окт. 2020 | 22 : 45</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-23 22:45:31">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=655" >
+					<img  src="/img/title/img-standart/132cb881d08f2db9d42162c00a5775d5-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+										<a href="list-news.php?type_news=матч"><span class="bg-danger sticker-type">матч</span></a>	
+							
+										<a href="list-news.php?type_news=фото"><span class="bg-success sticker-type">фото</span></a>	
+							
+												</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=655" >В третьем периоде &quot;ястре5ы&quot; переломили ход игры, и решили её исход в свою пользу</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">23 Окт. 2020 | 22 : 44</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-23 22:44:26">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=654" >
+					<img  src="/img/title/img-standart/bd9a35acb06dbf9505b0849ecd70b8a3-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=объявление"><span class="bg-warning text-dark sticker-type">объявление</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=654" >&quot;Брест&quot; - &quot;Пинские ястребы&quot;. Анонс мачта.</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">23 Окт. 2020 | 09 : 32</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-23 09:32:11">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=653" >
+					<img  src="/img/title/img-standart/42071024b2dbc3ee9674b3ac56f1cfe7-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=объявление"><span class="bg-warning text-dark sticker-type">объявление</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=653" >&quot;Химику&quot; будут засчитаны технические поражения</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">22 Окт. 2020 | 14 : 11</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-22 14:11:33">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=652" >
+					<img  src="/img/title/img-standart/fc3920a7e212f4c9a01c6215d3fc73ad-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=событие"><span class="bg-info sticker-type">событие</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=652" >Голкипер «Бреста-2» Дмитрий Свистунов дисквалифицирован на пять матчей</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">21 Окт. 2020 | 14 : 20</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-21 14:20:34">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=651" >
+					<img  src="/img/title/img-standart/9131c1a5569b3cff4108208159b71495-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=интервью"><span class="bg-primary sticker-type">интервью</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=651" >Комментарии главных тренеров: Страхов Алексей - Ковалёв Андрей</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">20 Окт. 2020 | 22 : 08</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-20 22:08:59">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=650" >
+					<img  src="/img/title/img-standart/fdcc43c26a7db0f3b4e85a5aa795f8aa-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+										<a href="list-news.php?type_news=матч"><span class="bg-danger sticker-type">матч</span></a>	
+							
+										<a href="list-news.php?type_news=видео"><span class="bg-secondary sticker-type">видео</span></a>	
+							
+												</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=650" >Уверенно одерживаем победу над &quot;Авиатором&quot;</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">20 Окт. 2020 | 22 : 07</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-20 22:07:58">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=649" >
+					<img  src="/img/title/img-standart/9eaa39c6d26a936b5a6f6ec9bff36b69-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=объявление"><span class="bg-warning text-dark sticker-type">объявление</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=649" >&quot;Брест&quot; - &quot;Авиатор&quot;. Анонс матча.</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">20 Окт. 2020 | 10 : 22</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-20 10:22:56">
+	</div>
+		<div class="col-xl-3 col-lg-4 col-md-6  col-sm-12">
+		<div class="wrap-news">
+			<div class="img-news">
+				<a href= "post.php?id=648" >
+					<img  src="/img/title/img-standart/619e3b3e813d9bb0a8ef518f98b14b76-700x400.jpg"alt="">
+				</a>
+				<div class="stickers">
+									<a href="list-news.php?type_news=событие"><span class="bg-info sticker-type">событие</span></a>
+					 				</div>
+			</div>
+			<div class="title">
+				<a href= "post.php?id=648" >Павел Корсаков покинул «Брест»</a>
+			</div>
+			<hr class="mb-1"></hr>
+			<div class="date-news">
+				<i class="i-clock-gray"></i>
+				<span class="sp-date text-muted">19 Окт. 2020 | 21 : 59</span>
+			</div>
+		</div>
+		<input type ="hidden" class="last-date-news" value="2020-10-19 21:59:28">
+	</div>
+	</div>
+
+<div class="sidebar wrap-button-add-news row">
+	<div class="col-lg-12 col-but pl-0 pr-0">
+		<button class="btn btn-block btn-load-news btn-primary font-weight-bold text-uppercase"> Загрузить ещё новости</button>
+	</div>
+	<div class="col-lg-12 pl-0 pr-0 col-pan" style="display:none">
+		<h4 class=" h4-empty bg-secondary text-uppercase">архив новостей пуст</h4>
+	</div>
+</div>
+				</div>
+								<div class="mb-3">
+					<a href = "https://17bobruisk.schools.by/pages/profilaktika-i-preduprezhdenie-suitsidalnogo-povedenija" target="_blank">
+						<img class="img-fluid" src ="../img/rek/1ac78200e76022377bba743e2a74d691-1290x90.jpg">
+					</a>
+				</div>
+							</div>
+		</div>
+   </body>   
+	<footer class="py-5 footer footer-custom">
+	<div class="container container-black">
+			<h2 class="footer-h2">Соцсети</h2>
+				<hr class="hr-footer"></hr>
+			<div class='row'>
+				<div class='col-lg-4'>
+					<a class="btn btn-block btn-vk btn-social btn-adn" href="https://vk.com/brest_hc" target="_blank">
+						<i class="fab fa-vk"></i><b class='text-white'>В контакте</b>
+					</a>
+				</div>
+				<div class='col-lg-4'>
+					<a class="btn btn-block btn-instagram btn-social btn-pinterest" href="https://www.instagram.com/brest_hc/" target="_blank">
+						<i class="fab fa-instagram"></i> <b class='text-white'>Инстаграм</b>
+					</a>
+				</div>
+				<div class='col-lg-4'>
+					<a class="btn btn-block  btn-social btn-twitter" href="https://twitter.com/brest_hc" target="_blank">
+						<i class="fab fa-twitter"></i> <b class='text-white'>Твиттер</b>
+					</a>
+				</div>
+			</div>
+		    
+			<h2 class="mt-4 footer-h2">Наши спонсоры</h2>
+				<hr class="hr-footer"></hr>
+			<div class="row">
+								<div class="col-md-3 col-sm-6 mb-4">
+				  <a href="http://www.santa-bremor.com/" target="_blank" ><img class="img-fluid"  src="img/sponsors/santa-1.jpg" alt=""></a>
+				</div>
+								<div class="col-md-3 col-sm-6 mb-4">
+				  <a href="http://www.savushkin.by/" target="_blank" ><img class="img-fluid"  src="img/sponsors/savushkin.jpg" alt=""></a>
+				</div>
+								<div class="col-md-3 col-sm-6 mb-4">
+				  <a href="https://prodtovary.com/" target="_blank" ><img class="img-fluid"  src="img/sponsors/prod.jpg" alt=""></a>
+				</div>
+							</div>
+				<p class="mt-2 mb-2 text-center p-footer">Copyright &copy; 2020 ГУ ХК "Брест" Все права защищены.</p>
+	</div>
+</footer>	<!--[if lte IE 9]>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+	<!--<![endif]-->
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script  type="text/javascript"  src="js/index-2.js"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/slick.js"></script>
+	<script  type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<script  type="text/javascript"  src="js/menu.js"></script>
+	<script  type="text/javascript"  src="js/plugin-preloader.js"></script>
+	<script  type="text/javascript"  src="js/modal.js"></script>
+	
+	
 </html>`;
