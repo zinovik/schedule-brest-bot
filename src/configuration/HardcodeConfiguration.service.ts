@@ -19,9 +19,9 @@ export class HardcodeConfigurationService implements IConfigurationService {
       lastTime: 20,
       timeShift: 2,
 
-      xPathTitle: '//font//b',
-      xPathSubTitle: '//font[contains(@size, "5")]',
-      xPathAdditionalInfo: '',
+      xPathTitle: '//font[contains(@size, "6")]//b',
+      xPathSubTitle: '//p//font',
+      xPathAdditionalInfo: '//i',
       xPathTimesStart: '//td[1]',
       xPathSessions: '//td[2]',
       xPathTracks: Array.from({ length: 7 }, (_: never, index) => `//td[${index + 3}]`),
