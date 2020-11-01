@@ -21,7 +21,15 @@ export class TelegramService implements ITelegramService {
     return chunks;
   }
 
-  async sendMessage({ text, replyMarkup, chatId }: { text: string; replyMarkup: string; chatId: string | number }): Promise<void> {
+  async sendMessage({
+    text,
+    replyMarkup,
+    chatId,
+  }: {
+    text: string;
+    replyMarkup: string;
+    chatId: string | number;
+  }): Promise<void> {
     const chunks = this.stringToChunks(text, 4095);
 
     for (const chunk of chunks) {

@@ -46,7 +46,7 @@ export class VoteService implements IVoteService {
 
     const newReplyMarkup = {
       inline_keyboard: [
-        replyMarkup.inline_keyboard[0].map(button => {
+        replyMarkup.inline_keyboard[0].map((button) => {
           if (button.callback_data !== data) {
             return button;
           }

@@ -6,6 +6,5 @@ export interface IIceConfiguration {
   xPathSubTitle: string;
   xPathAdditionalInfo: string;
   xPathDates: string;
-  xPathDaysOfWeek: string;
   xPathTimesLines: string;
 }

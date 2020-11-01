@@ -46,7 +46,6 @@ export class IceService extends BaseService implements IScheduleService {
     const subTitle = (select1(this.configuration.xPathSubTitle, dom) as Node).textContent!.trim();
 
     const dates = this.selectPart(this.configuration.xPathDates, dom, 0, this.configuration.days);
-    const daysOfWeek = this.selectPart(this.configuration.xPathDaysOfWeek, dom, 0, this.configuration.days - 1);
     const timesLines = this.selectPart(this.configuration.xPathTimesLines, dom, 0, this.configuration.days - 1);
 
     return {
@@ -56,7 +55,7 @@ export class IceService extends BaseService implements IScheduleService {
       schedules: Array.from({ length: this.configuration.days }, (_: never, index) => {
         return {
           date: dates[index],
-          dayOfWeek: daysOfWeek[index],
+          dayOfWeek: '',
           times: this.timesLineToTimes(timesLines[index]),
         };
       }),
@@ -66,14 +65,14 @@ export class IceService extends BaseService implements IScheduleService {
   private selectPart(xPath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
     return select(xPath, dom)
       .filter((_, index) => index >= firstElementNumber && index <= lastElementNumber)
-      .map(selectedValue => (selectedValue as Node).textContent!.trim());
+      .map((selectedValue) => (selectedValue as Node).textContent!.trim());
   }
 
   formatSchedule({ title, subTitle, schedules }: ISportSchedule, newSchedulePhrase: string): string {
     let scheduleFormatted = `${newSchedulePhrase}\n\n${title}\n${subTitle}\n`;
 
-    schedules.forEach(schedule => {
-      const daySchedule = `${schedule.date}, ${schedule.dayOfWeek}: ${this.timesToTimesLine(schedule.times)}`;
+    schedules.forEach((schedule) => {
+      const daySchedule = `${schedule.date}: ${this.timesToTimesLine(schedule.times)}`;
 
       scheduleFormatted = `${scheduleFormatted}\n${daySchedule}`;
     });
@@ -101,10 +100,10 @@ export class IceService extends BaseService implements IScheduleService {
   }
 
   private timesLineToTimes(timesLine: string): ITime[] {
-    return timesLine.split(',').map(time => ({ start: time.trim() }));
+    return timesLine.split(';').map((time) => ({ start: time.trim() }));
   }
 
   private timesToTimesLine(times: ITime[]): string {
-    return times.map(time => time.start).join(', ');
+    return times.map((time) => time.start).join(', ');
   }
 }
