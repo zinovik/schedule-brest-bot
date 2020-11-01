@@ -44,6 +44,7 @@ export class DvvsService extends BaseService implements IScheduleService {
 
     const title = (select1(this.configuration.xPathTitle, dom) as Node).textContent!.trim();
     const subTitle = (select1(this.configuration.xPathSubTitle, dom) as Node).textContent!.trim();
+    const additionalInfo = (select1(this.configuration.xPathAdditionalInfo, dom) as Node).textContent!.trim();
 
     const timesStart = this.selectPart(
       this.configuration.xPathTimesStart,
@@ -68,7 +69,7 @@ export class DvvsService extends BaseService implements IScheduleService {
     return {
       title,
       subTitle,
-      additionalInfo: '',
+      additionalInfo,
       schedules: tracksByDays.map((tracks, i) => {
         return {
           dayOfWeek: daysOfWeek[i],
