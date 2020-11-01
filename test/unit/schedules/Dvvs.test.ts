@@ -23,9 +23,7 @@ describe('DvvsService', () => {
   it('Should return schedule site', async () => {
     // Arrange
     const url = configuration.url;
-    nock(url)
-      .get('/')
-      .reply(200, getPageMock());
+    nock(url).get('/').reply(200, getPageMock());
 
     // Act
     const scheduleSite = await dvvsService.getScheduleSite(getDaysOfWeek());

@@ -27,7 +27,9 @@ export class Scheduler implements IScheduler {
       isForceSend: false,
     },
   ): Promise<string[]> {
-    return Promise.all(scheduleServices.map(scheduleService => this.checkUpdateAndSendSchedule(scheduleService, options)));
+    return Promise.all(
+      scheduleServices.map((scheduleService) => this.checkUpdateAndSendSchedule(scheduleService, options)),
+    );
   }
 
   private async checkUpdateAndSendSchedule(
@@ -61,7 +63,10 @@ export class Scheduler implements IScheduler {
     const scheduleSiteJSON = JSON.stringify(scheduleSite);
 
     if (isForceSend || scheduleDb !== scheduleSiteJSON) {
-      const scheduleFormatted = scheduleService.formatSchedule(scheduleSite, this.languageService.getNewSchedulePhrase(languageCode));
+      const scheduleFormatted = scheduleService.formatSchedule(
+        scheduleSite,
+        this.languageService.getNewSchedulePhrase(languageCode),
+      );
 
       try {
         await this.databaseService.setSchedule(channelId, scheduleSiteJSON);
@@ -92,7 +97,11 @@ export class Scheduler implements IScheduler {
       let difference: string;
 
       try {
-        difference = scheduleService.getDifference(JSON.parse(scheduleDb), scheduleSite, this.languageService.getChangesPhrase(languageCode));
+        difference = scheduleService.getDifference(
+          JSON.parse(scheduleDb),
+          scheduleSite,
+          this.languageService.getChangesPhrase(languageCode),
+        );
       } catch (error) {
         console.error('Error getting schedule difference', error.message);
         return 'Error getting schedule difference';

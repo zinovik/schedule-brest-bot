@@ -51,8 +51,13 @@ export class DvvsService extends BaseService implements IScheduleService {
       this.configuration.firstTime + this.configuration.timeShift,
       this.configuration.lastTime + this.configuration.timeShift,
     );
-    const sessions = this.selectPart(this.configuration.xPathSessions, dom, this.configuration.firstTime, this.configuration.lastTime);
-    const tracksByDays = this.configuration.xPathTracks.map(tracks => {
+    const sessions = this.selectPart(
+      this.configuration.xPathSessions,
+      dom,
+      this.configuration.firstTime,
+      this.configuration.lastTime,
+    );
+    const tracksByDays = this.configuration.xPathTracks.map((tracks) => {
       if (!this.configuration) {
         return [];
       }
@@ -82,13 +87,13 @@ export class DvvsService extends BaseService implements IScheduleService {
   private selectPart(xPath: string, dom: Document, firstElementNumber: number, lastElementNumber: number): string[] {
     return select(xPath, dom)
       .filter((_, index) => index >= firstElementNumber && index <= lastElementNumber)
-      .map(selectedValue => (selectedValue as Node).textContent!.trim());
+      .map((selectedValue) => (selectedValue as Node).textContent!.trim());
   }
 
   formatSchedule({ title, subTitle, schedules }: ISportSchedule, newSchedulePhrase: string): string {
     let scheduleFormatted = `${newSchedulePhrase}\n\n${title}\n${subTitle}\n`;
 
-    schedules.forEach(schedule => {
+    schedules.forEach((schedule) => {
       scheduleFormatted = `${scheduleFormatted}\n${schedule.dayOfWeek}\n`;
 
       schedule.times.forEach(({ tracks, start, session }: ITime) => {

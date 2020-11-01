@@ -1,5 +1,13 @@
 export interface ITelegramService {
-  sendMessage({ text, replyMarkup, chatId }: { text: string; replyMarkup: string; chatId: string | number }): Promise<void>;
+  sendMessage({
+    text,
+    replyMarkup,
+    chatId,
+  }: {
+    text: string;
+    replyMarkup: string;
+    chatId: string | number;
+  }): Promise<void>;
 
   answerCallback({ callbackQueryId, text }: { callbackQueryId: string; text?: string }): Promise<void>;
 
