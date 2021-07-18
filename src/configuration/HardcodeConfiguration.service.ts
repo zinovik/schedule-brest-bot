@@ -16,8 +16,8 @@ export class HardcodeConfigurationService implements IConfigurationService {
     {
       url: 'http://brest-dvvs.by/sched/',
       firstTime: 1,
-      lastTime: 20,
-      timeShift: 2,
+      lastTime: 19,
+      timeShift: 3,
 
       xPathTitle: '//font[contains(@size, "6")]//b',
       xPathSubTitle: '//p//font',
